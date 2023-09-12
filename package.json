@@ -10,6 +10,9 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@bookshop/astro-bookshop": "^3.6.5",
+    "@bookshop/astro-engine": "^3.6.5",
+    "@bookshop/generate": "^3.6.5",
     "astro": "^3.0.12"
   }
 }
