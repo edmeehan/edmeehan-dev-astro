@@ -1,11 +1,10 @@
 ---
-_schema: paginated_posts
-title: Projects
-hidden: false
+title:
+hidden: true
 seo:
   no_index: false
   page_title:
-  page_description: Projects on edmeehan.dev
+  page_description: 
   featured_image:
   featured_image_alt:
   open_graph_type:

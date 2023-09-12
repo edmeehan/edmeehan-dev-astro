@@ -1,0 +1,19 @@
+---
+import Layout from "./Layout.astro";
+
+type Props = {
+  frontmatter: {
+    title: string;
+  };
+};
+
+const { frontmatter } = Astro.props;
+
+if (!frontmatter) {
+  throw new Error("Page frontmatter must be defined");
+}
+---
+
+<Layout {...frontmatter}>
+  This is a post layout.
+</Layout>
