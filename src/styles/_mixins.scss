@@ -1,0 +1,110 @@
+// ----------- MOBILE MEDIA QUERY
+@mixin media-mobile-sm {
+  @media (min-width: $mobileS) {
+    @content;
+  }
+}
+@mixin media-mobile-sm-max {
+  @media (max-width: ($mobileS - 1)) {
+    @content;
+  }
+}
+@mixin media-mobile-md {
+  @media (min-width: $mobileM) {
+    @content;
+  }
+}
+@mixin media-mobile-md-max {
+  @media (max-width: ($mobileM - 1)) {
+    @content;
+  }
+}
+@mixin media-mobile-lg {
+  @media (min-width: $mobileL) {
+    @content;
+  }
+}
+@mixin media-mobile-lg-max {
+  @media (max-width: ($mobileL - 1)) {
+    @content;
+  }
+}
+@mixin media-mobile-only {
+  @media (max-width: ($tablet - 1)) {
+    @content;
+  }
+}
+// ----------- TABLET MEDIA QUERY
+@mixin media-tablet-sm {
+  @media (min-width: $tabletS) {
+    @content;
+  }
+}
+@mixin media-tablet-sm-max {
+  @media (max-width: ($tabletS - 1)) {
+    @content;
+  }
+}
+@mixin media-tablet {
+  @media (min-width: $tablet) {
+    @content;
+  }
+}
+@mixin media-tablet-max {
+  @media (max-width: ($tablet - 1)) {
+    @content;
+  }
+}
+@mixin media-tablet-only {
+  @media (min-width: $tablet) and (max-width: ($laptop - 1)) {
+    @content;
+  }
+}
+// ----------- LAPTOP MEDIA QUERY
+@mixin media-laptop-sm {
+  @media (min-width: $laptopS) {
+    @content;
+  }
+}
+@mixin media-laptop-sm-max {
+  @media (max-width: ($laptopS - 1)) {
+    @content;
+  }
+}
+@mixin media-laptop {
+  @media (min-width: $laptop) {
+    @content;
+  }
+}
+@mixin media-laptop-max {
+  @media (max-width: ($laptop - 1)) {
+    @content;
+  }
+}
+@mixin media-laptop-only {
+  @media (min-width: $laptop) and (max-width: ($desktop - 1)) {
+    @content;
+  }
+}
+// ----------- DESKTOP MEDIA QUERY
+@mixin media-desktop {
+  @media (min-width: $desktop) {
+    @content;
+  }
+}
+@mixin media-desktop-max {
+  @media (max-width: ($desktop - 1)) {
+    @content;
+  }
+}
+@mixin media-desktop-only {
+  @media (min-width: $desktop) {
+    @content;
+  }
+}
+// ----------- SPECIAL CASE MEDIA QUERY
+@mixin media-laptop-sm-height {
+  @media (min-width: $laptop) and (min-height: 800px) {
+    @content;
+  }
+}

@@ -1,0 +1,111 @@
+/*----------------------
+  GLOBAL STYLE VARIABLES
+  ----------------------*/
+$color_primary: #113F67;
+$color_primary_lite: #155084;
+$color_primary_transition: #0F3759;
+$color_secondary: #2C2828;
+$color_secondary_lite: #504949;
+$color_secondary_transition: #252222;
+
+$color_blue_1: #408AB4;
+$color_black_1: #13202B;
+$color_grey_1: #A7BCCE;
+$color_white: #fff;
+
+$color_alert_fail: #cc3a3a;
+$color_alert_success: #64ca70;
+$color_alert_warning: #a7a448;
+
+$color_text_dark: #000;
+$color_text_lite: #fff;
+$color_text_form_input: #e8e8e8;
+$color_text_form_placeholder: #A7BCCE;
+$color_text_default: #D0E7FF;
+$color_text_dark_alt: #2F3A4A;
+$color_text_primary_highlight: #65C6C4;
+$color_text_secondary_highlight: #4EA7FB;
+
+$color_grad_1A: #035397;
+$color_grad_1B: #65C6C4;
+
+$color_cta_loud: #F26E50;
+$color_cta_secondary: #4EA7FB;
+$color_cta_bkg: rgba(44,40,40,.5);
+$color_cta_hover: rgba(78,167,251,.3);
+
+$header_border_color: rgba(140, 185, 234, 0.1);
+$header_bkg_color: rgba(17, 63, 103, 0.5);
+$header_mobile_height: 70px;
+$header_tablet_height: 80px;
+$header_laptop_height: 100px;
+
+$text_font_family: "Source Sans Pro", Open-Sans, Helvetica, Sans-Serif;
+$text_font_family_alt: "Times New Roman", Times, serif;
+
+$text_mobile_font_size: 16px;
+$text_mobile_line_height: 1.5em;
+$text_mobile_line_height_root: 1.5rem;
+$text_mobile_eyebrow: 1.1rem;
+$text_mobile_eyebrow_line_height: 1.3em;
+$text_mobile_hero_headline: 2.125rem;
+$text_mobile_hero_headline_line_height: 1.2em;
+$text_mobile_mini_headline: 1.187rem;
+$text_mobile_mini_headline_line_height: 1.263em;
+$text_mobile_section_headline: 1.625rem;
+$text_mobile_section_headline_line_height: 1.1em;
+$text_mobile_step_down: .875rem;
+$text_mobile_step_down_line_height: 1.428em;
+$text_mobile_small: .75rem;
+$text_mobile_small_line_height: 1.666em;
+$text_mobile_cta: .875rem;
+$text_mobile_cta_line_height: 1.428em;
+
+$text_laptop_font_size: 18px;
+$text_desktop_font_size: 22px;
+$text_desktop_line_height: 1.363em;
+$text_desktop_line_height_root: 1.363rem;
+$text_desktop_eyebrow: 1.1rem;
+$text_desktop_eyebrow_line_height: 1.3em;
+$text_desktop_hero_headline: 3.272rem;
+$text_desktop_hero_headline_line_height: 1.1em;
+$text_desktop_mini_headline: 1.09rem;
+$text_desktop_mini_headline_line_height: 1.25em;
+$text_desktop_section_headline: 2.181rem;
+$text_desktop_section_headline_line_height: 1.1em;
+$text_desktop_step_down: .818rem;
+$text_desktop_step_down_line_height: 1.5em;
+$text_desktop_small: .636rem;
+$text_desktop_small_line_height: 1.928em;
+$text_desktop_cta: .818rem;
+$text_desktop_cta_line_height: 1.666em;
+
+$text_weight_normal: 400;
+$text_weight_bold: 700;
+
+$layout_max_width: 1600px;
+$layout_max_width_small: 1250px;
+$layout_gutter: 1.5rem;
+// z-index
+$zindex_base: 0;
+$zindex_background: 1;
+$zindex_foreground: 5;
+$zindex_popover: 50;
+$zindex_menu: 100;
+$zindex_modal: 200;
+$zindex_top: 300;
+// rounded corners
+$radius_sm: 4px;
+$radius_md: .4rem;
+$radius_lg: 1rem;
+$radius_circle: 1000px;
+// media query sizes
+$mobileS: 320px;
+$mobileM: 375px;
+$mobileL: 425px;
+$tabletS: 580px;
+$tablet: 768px;
+$laptopS: 910px;
+$laptop: 1024px;
+$laptopL: 1440px;
+$desktop: 2560px;
