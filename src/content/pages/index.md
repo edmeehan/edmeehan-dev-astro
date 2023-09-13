@@ -11,4 +11,11 @@ seo:
   open_graph_type:
   canonical_url:
 content_blocks:
+  - _bookshop_name: test
+    title: >-
+      # this is the test title
+      
+      ## good stuff
+      
+      <p style="font-weight:bold; color: green;">This is the stuff.</p>
 ---

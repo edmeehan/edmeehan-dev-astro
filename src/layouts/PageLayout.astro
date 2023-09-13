@@ -1,4 +1,5 @@
 ---
+import Page from "@shared/page";
 import Layout from "./Layout.astro";
 
 type Props = {
@@ -15,6 +16,5 @@ if (!frontmatter) {
 ---
 
 <Layout {...frontmatter}>
-  This is a page layout.
-  <p>{ frontmatter.title }</p>
+  <Page bookshop:live contentBlocks={frontmatter.content_blocks} />
 </Layout>

@@ -1,19 +1,19 @@
 ---
 import Layout from "./Layout.astro";
 
-type Props = {
-  frontmatter: {
-    title: string;
-  };
-};
+// type Props = {
+//   frontmatter: {
+//     title: string;
+//   };
+// };
 
-const { frontmatter } = Astro.props;
+const { frontmatter, body } = Astro.props;
 
-if (!frontmatter) {
-  throw new Error("Page frontmatter must be defined");
+if (!body && !frontmatter) {
+  throw new Error("Post body and frontmatter must be defined");
 }
 ---
 
 <Layout {...frontmatter}>
-  This is a post layout.
+  <slot />
 </Layout>
