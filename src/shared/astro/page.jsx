@@ -17,7 +17,19 @@ export default function Page({ contentBlocks }) {
     <main>
       {contentBlocks.map((block, i) => {
         const Component = components[block._bookshop_name];
-        return <Component {...block} key={i} />;
+        // updated block model with data related to next and previous block sections
+        const blockModel = {
+          ...block,
+          section: {
+            ...block.section,
+            is_first: i === 0,
+            is_last: contentBlocks.length === i + 1,
+            index: i,
+            prev: contentBlocks[i - 1]?.section,
+            next: contentBlocks[i + 1]?.section,
+          }
+        };
+        return <Component {...blockModel} key={i} />;
       })}
     </main>
   );

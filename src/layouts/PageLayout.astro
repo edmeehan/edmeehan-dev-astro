@@ -1,10 +1,9 @@
 ---
-import Page from "@shared/page";
 import Layout from "./Layout.astro";
 
 type Props = {
   frontmatter: {
-    title: string;
+    content_blocks: any;
   };
 };
 
@@ -13,8 +12,28 @@ const { frontmatter } = Astro.props;
 if (!frontmatter) {
   throw new Error("Page frontmatter must be defined");
 }
+
+const components = {};
+
+const componentImports = import.meta.glob('../components/**/*.astro', {
+  eager: true,
+});
+
+Object.entries(componentImports).forEach(([path, obj]:Array<any>) => {
+  const parts = path.replace('../components/', '').split('.')[0].split('/');
+  if (parts.length > 1 && parts[parts.length - 1] === parts[parts.length - 2]) {
+    parts.pop();
+  }
+  const bookshopName = parts.join('/');
+  components[bookshopName] = obj.default;
+});
 ---
 
 <Layout {...frontmatter}>
-  <Page bookshop:live contentBlocks={frontmatter.content_blocks} />
+  <main>
+    {frontmatter.content_blocks.map((block) => {
+      const Component = components[block._bookshop_name];
+      return <Component bookshop:live {...block} />;
+    })}
+  </main>
 </Layout>
