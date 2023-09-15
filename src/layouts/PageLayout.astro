@@ -1,5 +1,11 @@
 ---
 import Layout from "./Layout.astro";
+import page from "@shared/page.js";
+import PageSVG from "@components/svg/page.astro";
+
+const componentImports = import.meta.glob('../components/**/*.astro', {
+  eager: true,
+});
 
 type Props = {
   frontmatter: {
@@ -7,33 +13,21 @@ type Props = {
   };
 };
 
-const { frontmatter } = Astro.props;
+const { frontmatter, frontmatter: {content_blocks = []} } = Astro.props;
 
 if (!frontmatter) {
   throw new Error("Page frontmatter must be defined");
 }
 
-const components = {};
-
-const componentImports = import.meta.glob('../components/**/*.astro', {
-  eager: true,
-});
-
-Object.entries(componentImports).forEach(([path, obj]:Array<any>) => {
-  const parts = path.replace('../components/', '').split('.')[0].split('/');
-  if (parts.length > 1 && parts[parts.length - 1] === parts[parts.length - 2]) {
-    parts.pop();
-  }
-  const bookshopName = parts.join('/');
-  components[bookshopName] = obj.default;
-});
+const [components, mutateBlock] = page(content_blocks, componentImports);
 ---
 
 <Layout {...frontmatter}>
+  <PageSVG />
   <main>
-    {frontmatter.content_blocks.map((block) => {
+    {content_blocks.map((block, i) => {
       const Component = components[block._bookshop_name];
-      return <Component bookshop:live {...block} />;
+      return <Component bookshop:live {...mutateBlock(block, i)} />;
     })}
   </main>
 </Layout>

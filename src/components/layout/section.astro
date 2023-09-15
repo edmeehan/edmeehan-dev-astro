@@ -2,16 +2,31 @@
 import Bubbles from '@components/bubbles.jsx';
 
 const { transition, is_first, is_last, index, background, prev, next, is_mini = false } = Astro.props;
+
+const svg_id = `#${transition}-${background}${background === 'loud' ? `-${next?.background}` : ''}`
 ---
 <style lang="scss">
   $transition_swoosh: 12.5%;
   $transition_curve: 6.6%;
 
-  .wrapper {
+  section {
     position: relative;
     overflow: hidden;
     background: none;
     margin-bottom: 0;
+
+    &.primary {
+      background: $color_primary;
+    }
+
+    &.secondary {
+      background: $color_secondary;
+    }
+
+    &.loud {
+      background: linear-gradient(0deg, $color_grad_1A, $color_grad_1B);
+      margin-bottom: 0;
+    }
   }
 
   // Transitions
@@ -37,23 +52,6 @@ const { transition, is_first, is_last, index, background, prev, next, is_mini = 
     }
   }
 
-  // Styles
-  .primary {
-    @extend .wrapper;
-    background: $color_primary;
-  }
-
-  .secondary {
-    @extend .wrapper;
-    background: $color_secondary;
-  }
-
-  .loud {
-    @extend .wrapper;
-    background: linear-gradient(0deg, $color_grad_1A, $color_grad_1B);
-    margin-bottom: 0;
-  }
-
   .content {
     padding-bottom: 4rem;
     padding-left: $layout_gutter;
@@ -64,13 +62,13 @@ const { transition, is_first, is_last, index, background, prev, next, is_mini = 
     z-index: 1;
     min-height: auto;
 
-    &.content--curve {
+    &.curve {
       padding-top: $transition_curve;
     }
-    &.content--swoosh {
+    &.swoosh {
       padding-top: $transition_swoosh;
     }
-    &.content--loud {
+    &.loud {
       padding-top: 1px;
     }
   }
@@ -99,9 +97,21 @@ const { transition, is_first, is_last, index, background, prev, next, is_mini = 
   }
 </style>
 
-<section class:list={[ background, { [transition]: (!is_last && !!transition), is_mini } ]}>
-  <div class:list={[ 'content', `content--${background}`, {} ]}>
-  <!-- ${is_first && transition ? styles[`content--${transition}`] : styles[`content--${prev?.transition}`]}`}> -->
+<section class:list={[
+  background,
+  {
+    [transition]: (!is_last && !!transition),
+    is_mini
+  }
+]}>
+  <div class:list={[
+    'content',
+    background,
+    {
+      [transition]: is_first && transition,
+      [prev?.transition]: !is_first
+    }
+  ]}>
     <slot />
   </div>
   { background === 'loud' && (
@@ -110,7 +120,7 @@ const { transition, is_first, is_last, index, background, prev, next, is_mini = 
   { !is_last && !!transition && (
     <div class="svg">
       <svg>
-        <use xlink:href={`#${transition}-${background}${background === 'loud' ? `-${next?.background}` : ''}`}></use>
+        <use xlink:href={svg_id}></use>
       </svg>
     </div>
   )}

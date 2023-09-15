@@ -1,0 +1,45 @@
+---
+
+---
+<svg
+  version="1.1"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlnsXlink="http://www.w3.org/1999/xlink"
+  style={{
+    // hide the sprite without using display none - bug with svg gradients
+    visibility: 'hidden',
+    height: 0,
+    width: 0,
+    position: 'absolute',
+  }}
+>
+  {/* <defs>
+    <linearGradient id="loud-transition-shadow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stopColor={theme.color_grad_3A} />
+      <stop offset="100%" stopColor={theme.color_grad_3B} />
+    </linearGradient>
+  </defs> */}
+  {/* SVG Sprites */}
+  <symbol viewBox="0 0 600 50" id="card-wave">
+    <path
+      className="fill"
+      d="M600,50V20.7C555.9,6.9,500.6,0,434.2,0c-99.6,0-152.9,20.7-257.6,20.7C106.8,20.7,47.9,14.5,0,2v48H600z"
+    />
+  </symbol>
+  <symbol viewBox="0 0 1600 105" id="card-curve">
+    <path
+      className="section-2"
+      d="M0,90.5C0,90.5,287.7,5,800,5s800,85.5,800,85.5v16.7H0V90.5z"
+    />
+    <path
+      className="section-1"
+      d="M0,91.9c0,0,287.7-85.5,800-85.5s800,85.5,800,85.5V-2.4H0V91.9z"
+    />
+  </symbol>
+  <symbol viewBox="0 0 320 512" id="xmark">
+    <path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z" />
+  </symbol>
+  <symbol viewBox="0 0 256 512" id="caret-right">
+    <path d="M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z" />
+  </symbol>
+</svg>
