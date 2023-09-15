@@ -1,0 +1,54 @@
+paths:
+  uploads: uploads
+collections_config:
+  pages:
+    path: src/content/pages
+    output: false
+    url: /
+    name: Pages
+    icon: pages
+    singular_name: Page
+    _editables: {}
+    _inputs: {}
+    _select_data: {}
+    _structures: {}
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
+    schemas: {}
+  blog:
+    path: src/content/blog
+    output: false
+    url: /blog
+    name: Blog Posts
+    icon: pages
+    singular_name: Blog Post
+    _editables: {}
+    _inputs: {}
+    _select_data: {}
+    _structures: {}
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
+    schemas: {}
+  projects:
+    path: src/content/projects
+    output: false
+    url: /projects
+    name: Projects
+    icon: pages
+    singular_name: Project
+    _editables: {}
+    _inputs: {}
+    _select_data: {}
+    _structures: {}
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
+    schemas: {}
+_inputs: {}
+_select_data: {}
+_structures: {}
+_editables: {}
+data_config: {}
+timezone: America/Los_Angeles
