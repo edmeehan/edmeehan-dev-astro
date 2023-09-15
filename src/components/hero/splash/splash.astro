@@ -1,8 +1,47 @@
 ---
-import Section from '@components/layout/section.astro'
+import MarkdownIt from 'markdown-it';
 const block = Astro.props;
+const md = new MarkdownIt({ html: true });
 ---
+<style lang="scss">
+  .wrapper {
+    @include media-tablet {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+  }
+  .content {
+    @include media-tablet {
+      flex: 0 1 auto;
+    }
+    @include media-tablet-max {
+      padding-bottom: 4rem;
+    }
+  }
+  .image {
+    position: relative;
+    z-index: -1;
+    margin-bottom: -100px;
 
-<Section {...block.section}>
-  <div>{ block.title }</div>
-</Section>
+    @include media-tablet {
+      flex: 0 0 40%;
+      margin-bottom: 0;
+    }
+  }
+</style>
+
+<div class="wrapper">
+  <div class="image"></div>
+  <div class="content">
+    { block.eyebrow && (
+      <p class="txt-eyebrow">
+        <span class="eyebrow">{ block.eyebrow }</span>
+      </p>
+    )}
+    <h1 class="h1">{ block.title }</h1>
+    <div set:html={md.render(block.content)}></div>
+  </div>
+</div>

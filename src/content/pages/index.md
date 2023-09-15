@@ -17,6 +17,7 @@ content_blocks:
     content: >-
       Users expect websites to be fast, secure, and responsive, but many businesses struggle with outdated, slow, and insecure technology.
 
+      
       With a focus on modern frameworks and tools, I deliver websites built on the latest web technology. Translation? Faster page speeds, superior security, and the ability to handle high demand through scalability.
     cta:
       label: Request a free consultation

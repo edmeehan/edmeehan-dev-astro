@@ -2,6 +2,7 @@
 import Layout from "./Layout.astro";
 import page from "@shared/page.js";
 import PageSVG from "@components/svg/page.astro";
+import Section from '@components/layout/section.astro'
 
 const componentImports = import.meta.glob('../components/**/*.astro', {
   eager: true,
@@ -19,7 +20,7 @@ if (!frontmatter) {
   throw new Error("Page frontmatter must be defined");
 }
 
-const [components, mutateBlock] = page(content_blocks, componentImports);
+const [components, adapter] = page(content_blocks, componentImports);
 ---
 
 <Layout {...frontmatter}>
@@ -27,7 +28,12 @@ const [components, mutateBlock] = page(content_blocks, componentImports);
   <main>
     {content_blocks.map((block, i) => {
       const Component = components[block._bookshop_name];
-      return <Component bookshop:live {...mutateBlock(block, i)} />;
+      const blockData = adapter(block, i);
+      return (
+        <Section {...blockData.section}>
+          <Component bookshop:live {...blockData} />
+        </Section>
+      );
     })}
   </main>
 </Layout>
