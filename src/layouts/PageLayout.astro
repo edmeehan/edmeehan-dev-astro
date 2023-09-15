@@ -14,7 +14,7 @@ type Props = {
   };
 };
 
-const { frontmatter, frontmatter: {content_blocks = []} } = Astro.props;
+const { frontmatter, frontmatter: {content_blocks} } = Astro.props;
 
 if (!frontmatter) {
   throw new Error("Page frontmatter must be defined");
@@ -26,7 +26,7 @@ const [components, adapter] = page(content_blocks, componentImports);
 <Layout {...frontmatter}>
   <PageSVG />
   <main>
-    {content_blocks.map((block, i) => {
+    {content_blocks?.map((block, i) => {
       const Component = components[block._bookshop_name];
       const blockData = adapter(block, i);
       return (

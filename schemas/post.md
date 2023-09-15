@@ -9,5 +9,4 @@ seo:
   featured_image_alt:
   open_graph_type:
   canonical_url:
-content_blocks:
 ---

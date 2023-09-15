@@ -20,11 +20,11 @@ export async function getStaticPaths() {
 
 const { page : { data } } = Astro.props;
 
-if (!data.content_blocks) {
-  throw new Error(
-    `Tried to output page with unsupported schema: ${data._schema}`
-  );
-}
+// if (!data.content_blocks) {
+//   throw new Error(
+//     `Tried to output page with unsupported schema: ${data._schema}`
+//   );
+// }
 ---
 
 <PageLayout frontmatter={data} />
