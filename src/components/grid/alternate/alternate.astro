@@ -1,0 +1,104 @@
+---
+import MarkdownIt from 'markdown-it';
+const block = Astro.props;
+const md = new MarkdownIt({ html: true });
+---
+<style lang="scss">
+  .wrapper {
+    @extend %primary-wrapper;
+    padding: 4.5rem 0;
+
+    @include media-tablet {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    &--left {
+      @extend .wrapper;
+    }
+
+    &--right {
+      @extend .wrapper;
+      @include media-tablet {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+  .content {
+    @include media-tablet {
+      flex: 0 1 auto;
+    }
+
+    @include media-tablet-max {
+      padding-bottom: 4rem;
+    }
+  }
+  .image {
+    margin-bottom: -50px;
+
+    @include media-tablet-max {
+      z-index: -1;
+    }
+
+    @include media-tablet {
+      margin-bottom: 0;
+      flex: 0 0 50%;
+    }
+
+    &--small {
+      @extend .image;
+      @include media-tablet {
+        flex: 0 0 35%;
+      }
+    }
+
+    &--large {
+      @extend .image;
+    }
+  }
+  .items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    // grid-template-rows: repeat(${({count}) => Math.ceil(count / 2)}, 1fr);
+    gap: 1.5rem;
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+
+    &--small {
+      @extend .items;
+      @include media-tablet-sm {
+        grid-template-columns: repeat(3, 1fr);
+        //grid-template-rows: repeat(${({count,imageWide}) => Math.ceil(count / (imageWide ? 2 : 3))}, 1fr);
+      }
+    }
+
+    &--large {
+      @extend .items;
+    }
+  }
+</style>
+
+<div class:list={[`wrapper--${block.layout.image_align}`]}>
+  <div class:list={[`image--${block.layout.image_width}`]}></div>
+  <div class="content">
+    { block.eyebrow && (
+      <p class="txt-eyebrow">
+        <span class="eyebrow">{ block.eyebrow }</span>
+      </p>
+    )}
+    <h1 class="h1">{ block.title }</h1>
+    <div set:html={md.render(block.content)}></div>
+    { block.grid_items && (
+      <ul class:list={[`items--${block.layout.image_width}`]}>
+        { block.grid_items.map((item) => (
+          <li>
+            <h5 class="h3">{ item.title }</h5>
+            <div set:html={md.render(item.content)}></div>
+          </li>
+        )) }
+      </ul>
+    )}
+  </div>
+</div>

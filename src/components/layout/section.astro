@@ -1,7 +1,7 @@
 ---
 import Bubbles from '@components/bubbles.jsx';
 
-const { transition, is_first, is_last, index, background, prev, next, is_mini = false } = Astro.props;
+const { transition, is_first, is_last, index, background, prev, next} = Astro.props;
 
 const svg_id = `#${transition}-${background}${background === 'loud' ? `-${next?.background}` : ''}`
 ---
@@ -11,7 +11,7 @@ const svg_id = `#${transition}-${background}${background === 'loud' ? `-${next?.
 
   section {
     position: relative;
-    overflow: hidden;
+    // overflow: hidden;
     background: none;
     margin-bottom: 0;
 
@@ -56,8 +56,6 @@ const svg_id = `#${transition}-${background}${background === 'loud' ? `-${next?.
     padding-bottom: 4rem;
     padding-left: $layout_gutter;
     padding-right: $layout_gutter;
-    max-width: $layout_max_width;
-    margin: 0 auto;
     position: relative;
     z-index: 1;
     min-height: auto;
@@ -71,10 +69,6 @@ const svg_id = `#${transition}-${background}${background === 'loud' ? `-${next?.
     &.loud {
       padding-top: 1px;
     }
-  }
-
-  .mini {
-    max-width: $layout_max_width_small;
   }
 
   .svg {
@@ -100,8 +94,7 @@ const svg_id = `#${transition}-${background}${background === 'loud' ? `-${next?.
 <section class:list={[
   background,
   {
-    [transition]: (!is_last && !!transition),
-    is_mini
+    [transition]: (!is_last && !!transition)
   }
 ]}>
   <div class:list={[

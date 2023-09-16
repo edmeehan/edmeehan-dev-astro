@@ -1,17 +1,26 @@
 ---
 
 ---
+<style lang="scss">
+  // hide the sprite without using display none - bug with svg gradients
+  svg {
+    visibility: hidden;
+    height: 0;
+    width: 0;
+    position: absolute;
+  }
+  #card-wave {
+    .fill {fill: $color_text_default;}
+  }
+  #card-curve {
+    .section-1 {fill: $color_text_default;}
+    .section-2 {fill: transparent;}
+  }
+</style>
 <svg
   version="1.1"
   xmlns="http://www.w3.org/2000/svg"
-  xmlnsXlink="http://www.w3.org/1999/xlink"
-  style={{
-    // hide the sprite without using display none - bug with svg gradients
-    visibility: 'hidden',
-    height: 0,
-    width: 0,
-    position: 'absolute',
-  }}
+  xmlns:xlink="http://www.w3.org/1999/xlink"
 >
   {/* <defs>
     <linearGradient id="loud-transition-shadow" x1="0%" y1="0%" x2="100%" y2="0%">

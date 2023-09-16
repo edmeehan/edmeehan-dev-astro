@@ -1,19 +1,60 @@
 ---
 
 ---
+<style lang="scss">
+  // hide the sprite without using display none - bug with svg gradients
+  svg {
+    visibility: hidden;
+    height: 0;
+    width: 0;
+    position: absolute;
+  }
+  #curve-primary {
+    .shadow {fill: $color_primary_transition;}
+    .section-1 {fill: $color_primary;}
+    .section-2 {fill: transparent;}
+  }
+  #curve-secondary {
+    .shadow {fill: $color_primary_transition;}
+    .section-1 {fill: $color_secondary;}
+    .section-2 {fill: transparent;}
+  }
+  #curve-loud-primary {
+    .shadow {fill: $color_primary_transition;}
+    .section-2 {fill: $color_primary;}
+    .section-1 {fill: transparent;}
+  }
+  #curve-loud-secondary {
+    .shadow {fill: $color_primary_transition;}
+    .section-2 {fill: $color_secondary;}
+    .section-1 {fill: transparent;}
+  }
+  #swoosh-primary {
+    .shadow {fill: $color_primary_transition;}
+    .section-1 {fill: $color_primary;}
+    .section-2 {fill: transparent;}
+  }
+  #swoosh-secondary {
+    .shadow {fill: $color_primary_transition;}
+    .section-1 {fill: $color_secondary;}
+    .section-2 {fill: transparent;}
+  }
+  #swoosh-loud-primary {
+    .shadow {fill: $color_primary_transition;}
+    .section-2 {fill: $color_primary;}
+    .section-1 {fill: transparent;}
+  }
+  #swoosh-loud-secondary {
+    .shadow {fill: $color_primary_transition;}
+    .section-2 {fill: $color_secondary;}
+    .section-1 {fill: transparent;}
+  }
+</style>
 <svg
   version="1.1"
   xmlns="http://www.w3.org/2000/svg"
-  xmlnsXlink="http://www.w3.org/1999/xlink"
-  style={{
-    // hide the sprite without using display none - bug with svg gradients
-    visibility: 'hidden',
-    height: 0,
-    width: 0,
-    position: 'absolute',
-  }}
+  xmlns:xlink="http://www.w3.org/1999/xlink"
 >
-  {/* SVG Sprites */}
   <symbol viewBox="0 0 1600 105" id="curve-primary">
     <path
       class="section-2"
@@ -125,8 +166,5 @@
       class="shadow"
       d="M1600,197.8c-237.8-59.7-504.5-89.6-800-89.6S237.8,90.3,0,54.3V2.2c237.8,63.4,504.5,95.1,800,95.1s562.2,15.7,800,47V197.8z"
     />
-  </symbol>
-  <symbol viewBox="0 0 256 512" id="caret-right">
-    <path d="M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z" />
   </symbol>
 </svg>

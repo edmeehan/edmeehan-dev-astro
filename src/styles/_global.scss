@@ -217,55 +217,6 @@ a.cta-simple {
   height: 1px;
 }
 
-#curve-primary {
-  .shadow {fill: $color_primary_transition;}
-  .section-1 {fill: $color_primary;}
-  .section-2 {fill: transparent;}
-}
-#curve-secondary {
-  .shadow {fill: $color_primary_transition;}
-  .section-1 {fill: $color_secondary;}
-  .section-2 {fill: transparent;}
-}
-#curve-loud-primary {
-  .shadow {fill: $color_primary_transition;}
-  .section-2 {fill: $color_primary;}
-  .section-1 {fill: transparent;}
-}
-#curve-loud-secondary {
-  .shadow {fill: $color_primary_transition;}
-  .section-2 {fill: $color_secondary;}
-  .section-1 {fill: transparent;}
-}
-
-#swoosh-primary {
-  .shadow {fill: $color_primary_transition;}
-  .section-1 {fill: $color_primary;}
-  .section-2 {fill: transparent;}
-}
-#swoosh-secondary {
-  .shadow {fill: $color_primary_transition;}
-  .section-1 {fill: $color_secondary;}
-  .section-2 {fill: transparent;}
-}
-#swoosh-loud-primary {
-  .shadow {fill: $color_primary_transition;}
-  .section-2 {fill: $color_primary;}
-  .section-1 {fill: transparent;}
-}
-#swoosh-loud-secondary {
-  .shadow {fill: $color_primary_transition;}
-  .section-2 {fill: $color_secondary;}
-  .section-1 {fill: transparent;}
-}
-#card-wave {
-  .fill {fill: $color_text_default;}
-}
-#card-curve {
-  .section-1 {fill: $color_text_default;}
-  .section-2 {fill: transparent;}
-}
-
 .keepscrolling {
   @include media-tablet {
     border: solid 2px $color_blue_1;

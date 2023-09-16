@@ -1,0 +1,8 @@
+%primary-wrapper {
+  max-width: $layout_max_width;
+  margin: 0 auto;
+
+  &.mini {
+    max-width: $layout_max_width_small;
+  }
+}

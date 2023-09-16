@@ -13,6 +13,7 @@ export default defineConfig({
         scss: {
           additionalData: `
             @import "src/styles/variables.scss";
+            @import "src/styles/placeholders.scss";
             @import "src/styles/mixins.scss";
           `
         }

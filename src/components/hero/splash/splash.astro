@@ -5,6 +5,7 @@ const md = new MarkdownIt({ html: true });
 ---
 <style lang="scss">
   .wrapper {
+    @extend %primary-wrapper;
     @include media-tablet {
       display: flex;
       flex-direction: row-reverse;
