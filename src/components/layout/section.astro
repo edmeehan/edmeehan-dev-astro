@@ -2,72 +2,62 @@
 import Bubbles from '@components/bubbles.jsx';
 
 const { transition, is_first, is_last, index, background, prev, next} = Astro.props;
-
-const svg_id = `#${transition}-${background}${background === 'loud' ? `-${next?.background}` : ''}`
+const svg_id = `#${transition}-${background}${background === 'loud' ? `-${next?.background}` : ''}`;
+const set_transition = transition && !is_last;
+const set_prev = !is_first && prev.background !== 'loud';
 ---
 <style lang="scss">
   $transition_swoosh: 12.5%;
   $transition_curve: 6.6%;
 
-  section {
+  .section {
     position: relative;
-    // overflow: hidden;
-    background: none;
-    margin-bottom: 0;
 
-    &.primary {
+    &--primary {
+      @extend .section;
       background: $color_primary;
     }
 
-    &.secondary {
+    &--secondary {
+      @extend .section;
       background: $color_secondary;
     }
 
-    &.loud {
+    &--loud {
+      @extend .section;
       background: linear-gradient(0deg, $color_grad_1A, $color_grad_1B);
-      margin-bottom: 0;
-    }
-  }
+      margin-bottom: 0!important;
 
-  // Transitions
-  %transitions {
-    .content {
-      padding-bottom: 1px;
+      .svg {
+        transform: translateY(1px);
+      }
     }
-  }
 
-  .swoosh {
-    @extend %transitions;
-    margin-bottom: -($transition_swoosh);
-    .svg {
-      padding-bottom: $transition_swoosh;
+    &--swoosh {
+      margin-bottom: -($transition_swoosh);
     }
-  }
 
-  .curve {
-    @extend %transitions;
-    margin-bottom: -($transition_curve);
-    .svg {
-      padding-bottom: $transition_curve;
+    &--curve {
+      margin-bottom: -($transition_curve);
     }
   }
 
   .content {
-    padding-bottom: 4rem;
     padding-left: $layout_gutter;
     padding-right: $layout_gutter;
     position: relative;
     z-index: 1;
-    min-height: auto;
 
-    &.curve {
+    &--prev-curve {
+      @extend .content;
       padding-top: $transition_curve;
     }
-    &.swoosh {
+    &--prev-swoosh {
+      @extend .content;
       padding-top: $transition_swoosh;
     }
-    &.loud {
-      padding-top: 1px;
+    &--prev-none {
+      @extend .content;
     }
   }
 
@@ -76,9 +66,6 @@ const svg_id = `#${transition}-${background}${background === 'loud' ? `-${next?.
     height: 0;
     position: relative;
     z-index: $zindex_background;
-    
-    /* SVG IMAGE RATIO HACK */
-    /* allows the graphic to scale at 100% width - keeps the ratio */
     padding-bottom: 0;
 
     svg {
@@ -88,30 +75,31 @@ const svg_id = `#${transition}-${background}${background === 'loud' ? `-${next?.
       left: 0; 
       top: 0;
     }
+
+    &--curve {
+      @extend .svg;
+      padding-bottom: $transition_curve;
+    }
+
+    &--swoosh {
+      @extend .svg;
+      padding-bottom: $transition_swoosh;
+    }
   }
 </style>
 
-<section class:list={[
-  background,
-  {
-    [transition]: (!is_last && !!transition)
-  }
-]}>
-  <div class:list={[
-    'content',
-    background,
-    {
-      [transition]: is_first && transition,
-      [prev?.transition]: !is_first
-    }
-  ]}>
+<section
+  data-index={ index }
+  class:list={[`section--${background}`, {[`section--${transition}`]: set_transition}]}
+>
+  <div class={`content--prev-${set_prev ? prev.transition : 'none'}`}>
     <slot />
   </div>
   { background === 'loud' && (
     <Bubbles client:visible />
   )}
-  { !is_last && !!transition && (
-    <div class="svg">
+  { set_transition && (
+    <div class={`svg--${transition}`}>
       <svg>
         <use xlink:href={svg_id}></use>
       </svg>

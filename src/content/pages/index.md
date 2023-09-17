@@ -48,6 +48,33 @@ content_blocks:
       image_align: left
       image_width: small
     grid_items:
+  - _bookshop_name: cards/testimonials
+    eyebrow:
+    title: Client stories
+    content: >-
+      These individuals can speak to my work ethic, professionalism, and ability to deliver high-quality results consistently.
+    section:
+      transition: swoosh
+      background: secondary
+    testimonials:
+      - name: Ryan Garner
+        company: Clearhead
+        title: Co-Founder / Chief Product Officer
+        testimonial: >-
+          Ed has been a reliable, long-term partner to Clearhead for several years while delivering high-quality code for a number of key projects. He’s meticulous when it comes to ensuring he understands the scope and requirements of the work, and he takes pride in ensuring his work is well tested and of high quality.
+        photo:
+      - name: Cody Small
+        company: Caava Design
+        title: Founder / Creative Director
+        testimonial: >-
+          Ed is perhaps the most detail-oriented, design attentive developer I have worked with. On the multiple projects we collaborated on, he always went the extra mile to lay a good foundation for his work, then made suggestions on how to improve or optimize the final product I was looking for. I've never seen a design I've created for a website executed with as much precision as Ed was able to achieve on our projects. This is something I consider extremely rare in the development world and highly recommend working with him.
+        photo:
+      - name: Megan Lowe
+        company: Sun Bum LLC
+        title: Director of Digital Design and Development
+        testimonial: >-
+          It's been a great experience working with Ed! He has excellent attention to detail and I rarely have feedback when he delivers updates. I value his advice and feedback as we work through problems and I have full trust in his abilities to get work done efficiently and correctly.
+        photo:
   - _bookshop_name: grid/alternate
     eyebrow: Services
     title: Learn. Build. Improve.
@@ -78,4 +105,14 @@ content_blocks:
           label: View Analytics Services
           link: /test
           style: null
+  - _bookshop_name: grid/simple
+    eyebrow: Millions have seen my work
+    title: Brands I’ve worked with
+    content: >-
+      I have had the opportunity to work on some high-profile websites for well-known brands.
+    cta:
+    section:
+      transition: swoosh
+      background: primary
+    grid_items:
 ---

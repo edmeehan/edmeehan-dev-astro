@@ -1,0 +1,63 @@
+---
+import MarkdownIt from 'markdown-it';
+import Card from "@components/card/testimonial.astro";
+import { Code, Debug } from 'astro:components';
+
+const block = Astro.props;
+const md = new MarkdownIt({ html: true });
+---
+<style lang="scss">
+  .wrapper {
+    @extend %primary-wrapper;
+  }
+  header {
+    text-align: center;
+    padding-top: 4.5rem;
+    padding-bottom: 3rem;
+  }
+  .title {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  ul {
+    margin-top: 0;
+    padding-left: 0;
+    padding-bottom: 4.5rem;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+
+    @include media-tablet {
+      column-gap: 5%;
+      row-gap: 2em;
+    }
+  }
+  li {
+    @include media-tablet {
+      flex: 0 0 30%;
+    }
+  }
+</style>
+
+<div class="wrapper">
+  <header>
+    { block.eyebrow && (
+      <p class="txt-eyebrow">
+        <span class="eyebrow">{ block.eyebrow }</span>
+      </p>
+    )}
+    <h1 class="h1 title">{ block.title }</h1>
+    <div set:html={md.render(block.content)}></div>
+  </header>
+  { block.testimonials && (
+    <ul>
+      { block.testimonials.map((item) => (
+        <li>
+          <Card {...item} />
+        </li>
+      ))}
+    </ul>
+  )}
+</div>

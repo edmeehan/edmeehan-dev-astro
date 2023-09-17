@@ -1,6 +1,7 @@
 ---
 import 'normalize.css';
 import "../styles/theme.scss";
+import DefaultSVG from "@components/svg/default.astro";
 ---
 
 <!DOCTYPE html>
@@ -11,6 +12,7 @@ import "../styles/theme.scss";
     <meta name="generator" content={Astro.generator} />
   </head>
   <body>
+    <DefaultSVG />
     <slot />
   </body>
 </html>
