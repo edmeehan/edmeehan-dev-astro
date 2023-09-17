@@ -1,0 +1,15 @@
+spec:
+  structures:
+    - content_blocks
+    - page_blocks
+  label: Simple Grid
+  description: Primary content area with list of secondary items
+  icon: grid_view
+  tags:
+    - grid
+
+blueprint:
+
+preview:
+
+_inputs:

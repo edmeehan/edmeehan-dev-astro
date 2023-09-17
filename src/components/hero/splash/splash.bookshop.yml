@@ -1,0 +1,15 @@
+spec:
+  structures:
+    - content_blocks
+    - page_blocks
+  label: Splash Hero
+  description: Text area with a support image
+  icon: image
+  tags:
+    - hero
+
+blueprint:
+
+preview:
+
+_inputs:

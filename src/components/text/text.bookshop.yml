@@ -1,0 +1,15 @@
+spec:
+  structures:
+    - content_blocks
+    - page_blocks
+  label: Simple Text
+  description: Just a simple dispaly of text, no image.
+  icon: notes
+  tags:
+    - text
+
+blueprint:
+
+preview:
+
+_inputs:

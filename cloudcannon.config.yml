@@ -1,29 +1,37 @@
 paths:
   data: data
   static: public
-  uploads: public/uploads
+  uploads: public/uploads/[collection]
 collections_config:
   pages:
     path: src/content/pages
     output: true
     # url: /
     name: Pages
-    icon: pages
+    icon: wysiwyg
     singular_name: Page
     _editables: {}
-    _inputs: {}
+    _inputs:
+      content_blocks:
+        options:
+          structures: _structures.page_blocks
+          empty_type: null
     _select_data: {}
     _structures: {}
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
-    schemas: {}
+    schemas:
+      page:
+        path: schemas/page.md
+      paginated_posts:
+        path: schemas/paginated_posts.md
   blog:
     path: src/content/blog
     output: true
-    # url: /blog
-    name: Blog Posts
-    icon: pages
+    url: /blog/[slug].html
+    name: Blog
+    icon: wysiwyg
     singular_name: Blog Post
     _editables: {}
     _inputs: {}
@@ -32,13 +40,15 @@ collections_config:
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
-    schemas: {}
+    schemas:
+      post:
+        path: schemas/post.md
   projects:
     path: src/content/projects
     output: true
-    # url: /projects
+    url: /projects/[slug].html
     name: Projects
-    icon: pages
+    icon: work
     singular_name: Project
     _editables: {}
     _inputs: {}
@@ -47,7 +57,9 @@ collections_config:
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
-    schemas: {}
+    schemas:
+      post:
+        path: schemas/post.md
 collection_groups:
   - heading: Pages
     collections:
@@ -59,9 +71,53 @@ collection_groups:
   - heading: Settings
     collections:
       - data
-_inputs: {}
-_select_data: {}
-_structures: {}
+_inputs:
+  title:
+    comment: Page title displayed in browser tab.
+  hidden:
+    comment: Enabling this will stop page from being built.
+    type: checkbox
+  seo:
+    comment: Set page title, description, canonical, share image, and no follow.
+    options:
+      preview:
+        icon: travel_explore
+        text: false
+  seo.page_title:
+    comment: Ideal length is 60-70 characters.
+  seo.page_description:
+    comment: Ideal length is 150-160 characters.
+  seo.canonical_url:
+    comment: Relative paths only.
+  seo.featured_image:
+    comment: Open graph image used in social media.
+  seo.featured_image_alt:
+    comment: Open graph image alternate text to descibe the image.
+  seo.no_index:
+    type: checkbox
+    comment: When selected this removes the page from your sitemap and adds the noindex robots meta tag
+  content_blocks[*].section.transition:
+    comment: Set the graphic that is displayed between blocks on a page.
+    type: select
+    options:
+      values: _select_data.section_transition
+  content_blocks[*].section.background:
+    comment: Set the background of the block on the page.
+    type: select
+    options:
+      values: _select_data.section_background
+_select_data:
+  section_transition:
+    none: None
+    curve: Curve
+    swoosh: Swoosh
+  section_background:
+    primary: Primary
+    secondary: Secondary
+    loud: Loud
+_structures:
+  page_blocks:
+    style: modal
 _editables: {}
 data_config: {}
 timezone: America/Los_Angeles

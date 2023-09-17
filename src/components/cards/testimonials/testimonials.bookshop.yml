@@ -1,0 +1,15 @@
+spec:
+  structures:
+    - content_blocks
+    - page_blocks
+  label: Testimonial Cards
+  description: Display multiple testimonials in cards
+  icon: record_voice_over
+  tags:
+    - cards
+
+blueprint:
+
+preview:
+
+_inputs:

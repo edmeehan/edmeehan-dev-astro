@@ -1,0 +1,15 @@
+spec:
+  structures:
+    - content_blocks
+    - page_blocks
+  label: Post Cards
+  description: Display multiple blog and project posts in cards
+  icon: article
+  tags:
+    - cards
+
+blueprint:
+
+preview:
+
+_inputs:
