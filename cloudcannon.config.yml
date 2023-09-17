@@ -10,6 +10,7 @@ collections_config:
     name: Pages
     icon: web
     singular_name: Page
+    create: [relative_base_path]/{slug}.md
     _editables: {}
     _inputs:
       content_blocks:
