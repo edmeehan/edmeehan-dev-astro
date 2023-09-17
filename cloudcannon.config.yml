@@ -1,10 +1,12 @@
 paths:
-  uploads: uploads
+  data: data
+  static: public
+  uploads: public/uploads
 collections_config:
   pages:
     path: src/content/pages
-    output: false
-    url: /
+    output: true
+    # url: /
     name: Pages
     icon: pages
     singular_name: Page
@@ -18,8 +20,8 @@ collections_config:
     schemas: {}
   blog:
     path: src/content/blog
-    output: false
-    url: /blog
+    output: true
+    # url: /blog
     name: Blog Posts
     icon: pages
     singular_name: Blog Post
@@ -33,8 +35,8 @@ collections_config:
     schemas: {}
   projects:
     path: src/content/projects
-    output: false
-    url: /projects
+    output: true
+    # url: /projects
     name: Projects
     icon: pages
     singular_name: Project
@@ -46,6 +48,17 @@ collections_config:
     disable_add_folder: false
     disable_file_actions: false
     schemas: {}
+collection_groups:
+  - heading: Pages
+    collections:
+      - pages
+  - heading: Posts
+    collections:
+      - blog
+      - projects
+  - heading: Settings
+    collections:
+      - data
 _inputs: {}
 _select_data: {}
 _structures: {}
