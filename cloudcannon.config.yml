@@ -6,9 +6,9 @@ collections_config:
   pages:
     path: src/content/pages
     output: true
-    # url: /
+    url: /[slug]/
     name: Pages
-    icon: wysiwyg
+    icon: web
     singular_name: Page
     _editables: {}
     _inputs:
@@ -29,7 +29,7 @@ collections_config:
   blog:
     path: src/content/blog
     output: true
-    url: /blog/[slug].html
+    url: /blog/[slug]/
     name: Blog
     icon: wysiwyg
     singular_name: Blog Post
@@ -46,7 +46,7 @@ collections_config:
   projects:
     path: src/content/projects
     output: true
-    url: /projects/[slug].html
+    url: /projects/[slug]/
     name: Projects
     icon: work
     singular_name: Project
@@ -96,6 +96,8 @@ _inputs:
   seo.no_index:
     type: checkbox
     comment: When selected this removes the page from your sitemap and adds the noindex robots meta tag
+  content_blocks[*].section:
+    comment: Set the transition and background of section.
   content_blocks[*].section.transition:
     comment: Set the graphic that is displayed between blocks on a page.
     type: select
@@ -106,6 +108,26 @@ _inputs:
     type: select
     options:
       values: _select_data.section_background
+  content_blocks[*].layout:
+    comment: Set some basic layout of section.
+  content_blocks[*].layout.image_align:
+    comment: Set the alignment of image.
+    type: select
+    options:
+      values: _select_data.layout_image_align
+  content_blocks[*].layout.image_width:
+    comment: Set the width of image.
+    type: select
+    options:
+      values: _select_data.layout_image_width
+  content_blocks[*].layout.text_align:
+    comment: Set the alignment of text.
+    type: select
+    options:
+      values: _select_data.layout_text_align
+  content_blocks[*].layout.is_mini:
+    comment: Set the content width to small.
+    type: checkbox
 _select_data:
   section_transition:
     none: None
@@ -115,6 +137,17 @@ _select_data:
     primary: Primary
     secondary: Secondary
     loud: Loud
+  layout_image_align:
+    left: Left
+    center: Center
+    right: Right
+  layout_image_width:
+    small: Small
+    large: Large
+  layout_text_align:
+    left: Left
+    center: Center
+    right: Right
 _structures:
   page_blocks:
     style: modal
