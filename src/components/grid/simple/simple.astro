@@ -1,0 +1,71 @@
+---
+import MarkdownIt from 'markdown-it';
+const block = Astro.props;
+const md = new MarkdownIt({ html: true });
+---
+<style lang="scss">
+  .wrapper {
+    @extend %primary-wrapper;
+  }
+  .content {
+    padding-top: 4.5rem;
+    padding-bottom: 3rem;
+  }
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 4.5rem;
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+    row-gap: 1.7rem;
+    column-gap: 8%;
+
+    &--left {
+      @extend .list;
+      justify-content: flex-start;
+    }
+
+    &--center {
+      @extend .list;
+      justify-content: center;
+    }
+  }
+  li {
+    flex: 0 0 46%;
+    // transition: ${({transitionDelay:delay}) => `opacity 500ms ${delay * 250 + 200}ms, transform 500ms ${delay * 250}ms`};
+    // opacity: ${({transition}) => transition ? 1 : 0};
+    // transform: translateY(${({transition}) => transition ? '0%' : '50%'});
+
+    @include media-laptop-sm {
+      flex-basis: 28%;
+    }
+  }
+</style>
+
+<div class="wrapper">
+  <div class:list={['content', { 'rt-center': block.layout.text_align === 'center'}]}>
+    { block.eyebrow && (
+      <p class="txt-eyebrow">
+        <span class="eyebrow">{ block.eyebrow }</span>
+      </p>
+    )}
+    <h1 class="h1">{ block.title }</h1>
+    <div set:html={md.render(block.content)}></div>
+  </div>
+  { block.grid_items && (
+    <ul class={`list--${block.layout.text_align}`}>
+      { block.grid_items.map((item) => (
+        <li>
+          <img src={item.image} />
+          { item.content && (
+            <div
+              class:list={[{ 'rt-center': block.layout.text_align === 'center'}]}
+              set:html={md.render(item.content)}
+            ></div>
+          )}
+        </li>
+      ))}  
+    </ul>
+  )}
+</div>

@@ -1,0 +1,27 @@
+---
+import MarkdownIt from 'markdown-it';
+const block = Astro.props;
+const md = new MarkdownIt({ html: true });
+---
+<style lang="scss">
+  .wrapper {
+    @extend %primary-wrapper;
+  }
+  .content {
+    padding: 4.5rem 0;
+  }
+</style>
+
+<div class:list={['wrapper', { mini: block.layout.is_mini }]}>
+  <div class:list={['content', { 'rt-center ': block.layout.text_align === 'center'}]}>
+    { block.eyebrow && (
+      <p class="txt-eyebrow">
+        <span class="eyebrow">{ block.eyebrow }</span>
+      </p>
+    )}
+    <h1 class="h1">{ block.title }</h1>
+    { block.content && (
+      <div set:html={md.render(block.content)}></div>
+    )}
+  </div>
+</div>
