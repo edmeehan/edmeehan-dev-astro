@@ -1,7 +1,8 @@
 ---
 import MarkdownIt from 'markdown-it';
 import Card from "src/components/card/testimonial.astro";
-const { content, testimonials } = Astro.props;
+import Section from "src/components/layout/section.astro";
+const { content, testimonials, section } = Astro.props;
 const md = new MarkdownIt({ html: true });
 ---
 <style lang="scss">
@@ -38,18 +39,19 @@ const md = new MarkdownIt({ html: true });
     }
   }
 </style>
-
-<div class="wrapper">
-  <header>
-    { content && <div class="rt" set:html={md.render(content)}></div>}
-  </header>
-  { testimonials && (
-    <ul>
-      { testimonials.map((item) => (
-        <li>
-          <Card {...item} />
-        </li>
-      ))}
-    </ul>
-  )}
-</div>
+<Section {...section}>
+  <div class="wrapper">
+    <header>
+      { content && <div class="rt" set:html={md.render(content)}></div>}
+    </header>
+    { testimonials && (
+      <ul>
+        { testimonials.map((item) => (
+          <li>
+            <Card {...item} />
+          </li>
+        ))}
+      </ul>
+    )}
+  </div>
+</Section>

@@ -8,7 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "bookshop": "npx @bookshop/generate"
+    "bookshop": "npx @bookshop/generate --bookshop src/components"
   },
   "dependencies": {
     "@astrojs/mdx": "^1.0.3",
