@@ -9,6 +9,15 @@ spec:
     - text
 
 blueprint:
+  eyebrow:
+  content:
+  cta:
+  section:
+    transition: curve
+    background: primary
+  layout:
+    text_align: center
+    is_mini: true
 
 preview:
 
