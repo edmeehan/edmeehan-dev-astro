@@ -109,6 +109,8 @@ _inputs:
     comment: When selected this removes the page from your sitemap and adds the noindex robots meta tag
   cta:
     type: object
+    options:
+      structures: _structures.cta
   cta.label:
     type: text
   cta.link:
@@ -182,15 +184,15 @@ _structures:
     values:
       - default: true
         value:
-          transition:
-          background:
+          transition: curve
+          background: primary
   cta:
     values:
       - default: true
         value:
-          label:
+          label: Click Me
           link:
-          style:
+          style: primary
 
 
 _editables: {}

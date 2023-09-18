@@ -13,6 +13,8 @@ blueprint:
   content:
   cta:
   section:
+    transition: curve
+    background: primary
 
 preview:
 
