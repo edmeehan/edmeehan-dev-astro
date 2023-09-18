@@ -1,8 +1,8 @@
 ---
 import Layout from "./Layout.astro";
-import page from "@shared/page.js";
-import PageSVG from "@components/svg/page.astro";
-import Section from "@components/layout/section.astro";
+import page from "src/shared/astro/page.js";
+import PageSVG from "src/components/svg/page.astro";
+import Section from "src/components/layout/section.astro";
 
 const componentImports = import.meta.glob('../components/**/*.astro', {
   eager: true,

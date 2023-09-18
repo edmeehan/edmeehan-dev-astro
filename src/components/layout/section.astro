@@ -1,5 +1,5 @@
 ---
-import Bubbles from '@components/bubbles.jsx';
+import Bubbles from 'src/components/bubbles.jsx';
 
 const { transition, is_first, is_last, index, background, prev, next} = Astro.props;
 const svg_id = `#${transition}-${background}${background === 'loud' ? `-${next?.background}` : ''}`;

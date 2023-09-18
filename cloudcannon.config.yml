@@ -6,7 +6,7 @@ collections_config:
   pages:
     path: src/content/pages
     output: true
-    url: /[slug]/
+    url: /[slug]/index.html
     name: Pages
     icon: web
     singular_name: Page
@@ -34,7 +34,7 @@ collections_config:
   blog:
     path: src/content/blog
     output: true
-    url: /blog/[slug]/
+    url: /blog/[slug]/index.html
     name: Blog
     icon: wysiwyg
     singular_name: Blog Post
@@ -55,7 +55,7 @@ collections_config:
   projects:
     path: src/content/projects
     output: true
-    url: /projects/[slug]/
+    url: /projects/[slug]/index.html
     name: Projects
     icon: work
     singular_name: Project

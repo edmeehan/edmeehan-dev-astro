@@ -1,7 +1,7 @@
 ---
 import MarkdownIt from 'markdown-it';
-import Image from '@components/image.astro';
-import CTA from '@components/cta.astro';
+import Image from 'src/components/image.astro';
+import CTA from 'src/components/cta.astro';
 const { content, image, cta } = Astro.props;
 const md = new MarkdownIt({ html: true });
 ---
