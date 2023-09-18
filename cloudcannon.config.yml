@@ -79,7 +79,9 @@ _inputs:
     comment: Enabling this will stop page from being built.
     type: checkbox
   content:
-    type: html
+    type: markdown
+    options:
+      styles: /src/styles/cloudcannon_editor.css
   seo:
     comment: Set page title, description, canonical, share image, and no follow.
     type: object
