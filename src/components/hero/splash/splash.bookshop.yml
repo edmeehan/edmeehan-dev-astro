@@ -9,8 +9,8 @@ spec:
     - hero
 
 blueprint:
-  eyebrow:
   content:
+  image:
   cta:
   section:
     transition: curve

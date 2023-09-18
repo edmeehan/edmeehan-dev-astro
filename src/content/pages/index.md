@@ -12,8 +12,9 @@ seo:
   canonical_url:
 content_blocks:
   - _bookshop_name: hero/splash
-    eyebrow: Fast, Secure, Scalable
-    title: I build supercharged websites that engage users and build online growth
+    image:
+      path: /uploads/whale-background.jpeg
+      alt: whales and water
     content: >-
       Users expect websites to be fast, secure, and responsive, but many businesses struggle with outdated, slow, and insecure technology.
 
@@ -22,7 +23,7 @@ content_blocks:
     cta:
       label: Request a free consultation
       link: /test
-      style: null
+      style: primary
     section:
       transition: swoosh
       background: loud

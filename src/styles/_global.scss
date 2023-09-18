@@ -161,44 +161,9 @@ span.sup {
   }
 }
 
-span[class*="cta-"] a,
-a[class*="cta-"] {
-  font-size: $text_mobile_cta;
-  line-height: $text_mobile_cta_line_height;
-  font-weight: $text_weight_bold;
-  color: $color_text_default;
-  text-transform: uppercase;
-  text-decoration: none;
-  border: solid 2px $color_text_default;
-  border-radius: .575em;
-  padding: .575em .855em;
-  display: inline-block;
-  background-color: $color_cta_bkg;
-  transition: background-color 500ms;
-
-  @include media-laptop {
-    font-size: $text_desktop_cta;
-    line-height: $text_desktop_cta_line_height;
-    border-radius: .444em;
-    padding: .444em 1em;
-  }
-
-  &:hover {
-    background-color: $color_cta_hover;
-  }
-}
-span.cta-secondary a,
-a.cta-secondary {
-  border-color: $color_cta_secondary;
-}
-span.cta-loud a,
-a.cta-loud {
-  border-color: $color_cta_loud;
-}
-
-p[class*="txt-cta-"]:last-child {
-  margin-bottom: 0;
-}
+// p[class*="txt-cta-"]:last-child {
+//   margin-bottom: 0;
+// }
 
 a.cta-simple {
   display: inline-block;

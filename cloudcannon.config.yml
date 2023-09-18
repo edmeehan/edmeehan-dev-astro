@@ -93,6 +93,14 @@ _inputs:
       horizontalrule: true
       undo: true
       redo: true
+  image:
+    type: object
+    options:
+      structures: _structures.image
+  image.path:
+    type: image
+  image.alt:
+    type: text
   seo:
     comment: Set page title, description, canonical, share image, and no follow.
     type: object
@@ -201,6 +209,20 @@ _select_data:
 _structures:
   page_blocks:
     style: modal
+  image:
+    values:
+      - default: true
+        value:
+          path:
+          alt:
+        preview:
+          icon: image
+          image:
+            - key: path
+          text:
+            - key: path
+          subtext:
+            - key: alt
   cta:
     values:
       - default: true
