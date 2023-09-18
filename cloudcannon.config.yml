@@ -78,6 +78,8 @@ _inputs:
   hidden:
     comment: Enabling this will stop page from being built.
     type: checkbox
+  content:
+    type: html
   seo:
     comment: Set page title, description, canonical, share image, and no follow.
     type: object
@@ -176,6 +178,21 @@ _select_data:
 _structures:
   page_blocks:
     style: modal
+  section:
+    values:
+      - default: true
+        value:
+          transition:
+          background:
+  cta:
+    values:
+      - default: true
+        value:
+          label:
+          link:
+          style:
+
+
 _editables: {}
 data_config: {}
 timezone: America/Los_Angeles

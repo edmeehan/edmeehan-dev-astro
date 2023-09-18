@@ -9,10 +9,10 @@ spec:
     - hero
 
 blueprint:
-  eyebrow: null
-  content: null
-  cta: null
-  section: null
+  eyebrow:
+  content:
+  cta:
+  section:
 
 preview:
 
