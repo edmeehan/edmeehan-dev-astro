@@ -114,7 +114,7 @@ _inputs:
   cta.label:
     type: text
   cta.link:
-    type: link
+    type: url
   cta.style:
     type: select
     options:
@@ -180,12 +180,6 @@ _select_data:
 _structures:
   page_blocks:
     style: modal
-  section:
-    values:
-      - default: true
-        value:
-          transition: curve
-          background: primary
   cta:
     values:
       - default: true
@@ -193,8 +187,6 @@ _structures:
           label: Click Me
           link:
           style: primary
-
-
 _editables: {}
 data_config: {}
 timezone: America/Los_Angeles
