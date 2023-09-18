@@ -82,6 +82,17 @@ _inputs:
     type: markdown
     options:
       styles: /src/styles/cloudcannon_editor.css
+      bold: true
+      format: p h1 h2 h3 h4
+      italic: true
+      strike: true
+      bulletedlist: true
+      indent: true
+      numberedlist: true
+      outdent: true
+      horizontalrule: true
+      undo: true
+      redo: true
   seo:
     comment: Set page title, description, canonical, share image, and no follow.
     type: object
@@ -113,14 +124,6 @@ _inputs:
     type: object
     options:
       structures: _structures.cta
-      preview:
-        icon: ads_click
-        text:
-          - key: label
-          - No Label
-        subtext:
-          - key: link
-          - No URL
   cta.label:
     type: text
   cta.link:
@@ -193,6 +196,14 @@ _structures:
   cta:
     values:
       - default: true
+        preview:
+        icon: ads_click
+        text:
+          - key: label
+          - No Label
+        subtext:
+          - key: link
+          - No URL
         value:
           label: Click Me
           link:
