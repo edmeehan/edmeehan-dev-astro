@@ -216,7 +216,6 @@ _structures:
           path:
           alt:
         preview:
-          icon: image
           image:
             - key: path
           text:
