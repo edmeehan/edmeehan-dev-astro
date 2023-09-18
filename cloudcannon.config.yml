@@ -113,6 +113,14 @@ _inputs:
     type: object
     options:
       structures: _structures.cta
+      preview:
+        icon: ads_click
+        text:
+          - key: label
+          - No Label
+        subtext:
+          - key: link
+          - No URL
   cta.label:
     type: text
   cta.link:
