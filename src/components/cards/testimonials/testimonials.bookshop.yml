@@ -9,7 +9,6 @@ spec:
     - cards
 
 blueprint:
-  eyebrow:
   content:
   section:
     transition: curve

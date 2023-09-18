@@ -67,17 +67,25 @@ a {
 
 /* ------------ STYLED TEXT CLASSES ------------ */
 
-/* rich text paragraph */
-p.rt {
-  max-width: 34.5em;
+.rt {
+  p {
+    max-width: 34.5em;
+  }
+
+  .h1 {
+    max-width: 12.5em;
+  }
 }
+
+
 /* rich text wrapper - center text */
 .rt-center {
   text-align: center;
-  p.rt,
-  .h1 {
-    margin-left: auto;
-    margin-right: auto;
+  .rt{
+    > * {
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 }
 
@@ -120,7 +128,6 @@ p.eyebrow {
 }
 
 .h1 {
-  max-width: 12.5em;
   // mobile default
   font-size: $text_mobile_hero_headline;
   line-height: $text_mobile_hero_headline_line_height;

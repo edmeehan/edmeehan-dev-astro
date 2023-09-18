@@ -9,7 +9,6 @@ spec:
     - grid
 
 blueprint:
-  eyebrow:
   content:
   cta:
   section:

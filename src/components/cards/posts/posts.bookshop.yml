@@ -9,6 +9,11 @@ spec:
     - cards
 
 blueprint:
+  content:
+  section:
+    transition: curve
+    background: primary
+  posts:
 
 preview:
 

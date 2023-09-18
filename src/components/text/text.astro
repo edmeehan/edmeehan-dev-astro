@@ -1,6 +1,7 @@
 ---
 import MarkdownIt from 'markdown-it';
-const block = Astro.props;
+import CTA from '@components/cta.astro';
+const { content, cta, section, layout } = Astro.props;
 const md = new MarkdownIt({ html: true });
 ---
 <style lang="scss">
@@ -12,16 +13,9 @@ const md = new MarkdownIt({ html: true });
   }
 </style>
 
-<div class:list={['wrapper', { mini: block.layout.is_mini }]}>
-  <div class:list={['content', { 'rt-center ': block.layout.text_align === 'center'}]}>
-    { block.eyebrow && (
-      <p class="txt-eyebrow">
-        <span class="eyebrow">{ block.eyebrow }</span>
-      </p>
-    )}
-    <h1 class="h1">{ block.title }</h1>
-    { block.content && (
-      <div set:html={md.render(block.content)}></div>
-    )}
+<div class:list={['wrapper', { mini: layout.is_mini }]}>
+  <div class:list={['content', { 'rt-center ': layout.text_align === 'center'}]}>
+    { content && <div class="rt" set:html={md.render(content)}></div>}
+    { cta && <CTA {...cta} />}
   </div>
 </div>

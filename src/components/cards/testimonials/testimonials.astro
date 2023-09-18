@@ -1,8 +1,7 @@
 ---
 import MarkdownIt from 'markdown-it';
 import Card from "@components/card/testimonial.astro";
-
-const block = Astro.props;
+const { content, testimonials } = Astro.props;
 const md = new MarkdownIt({ html: true });
 ---
 <style lang="scss">
@@ -14,7 +13,7 @@ const md = new MarkdownIt({ html: true });
     padding-top: 4.5rem;
     padding-bottom: 3rem;
   }
-  .title {
+  .rt > :global(*) {
     margin-left: auto;
     margin-right: auto;
   }
@@ -42,17 +41,11 @@ const md = new MarkdownIt({ html: true });
 
 <div class="wrapper">
   <header>
-    { block.eyebrow && (
-      <p class="txt-eyebrow">
-        <span class="eyebrow">{ block.eyebrow }</span>
-      </p>
-    )}
-    <h1 class="h1 title">{ block.title }</h1>
-    <div set:html={md.render(block.content)}></div>
+    { content && <div class="rt" set:html={md.render(content)}></div>}
   </header>
-  { block.testimonials && (
+  { testimonials && (
     <ul>
-      { block.testimonials.map((item) => (
+      { testimonials.map((item) => (
         <li>
           <Card {...item} />
         </li>

@@ -1,6 +1,8 @@
 ---
 import MarkdownIt from 'markdown-it';
-const block = Astro.props;
+import Image from '@components/image.astro';
+import CTA from '@components/cta.astro';
+const { content, image, cta, layout, grid_items } = Astro.props;
 const md = new MarkdownIt({ html: true });
 ---
 <style lang="scss">
@@ -80,19 +82,16 @@ const md = new MarkdownIt({ html: true });
   }
 </style>
 
-<div class:list={[`wrapper--${block.layout.image_align}`]}>
-  <div class:list={[`image--${block.layout.image_width}`]}></div>
+<div class:list={[`wrapper--${layout.image_align}`]}>
+  <div class:list={[`image--${layout.image_width}`]}>
+    { image && <Image {...image} width="768" height="900" />}
+  </div>
   <div class="content">
-    { block.eyebrow && (
-      <p class="txt-eyebrow">
-        <span class="eyebrow">{ block.eyebrow }</span>
-      </p>
-    )}
-    <h1 class="h1">{ block.title }</h1>
-    <div set:html={md.render(block.content)}></div>
-    { block.grid_items && (
-      <ul class:list={[`items--${block.layout.image_width}`]}>
-        { block.grid_items.map((item) => (
+    { content && <div class="rt" set:html={md.render(content)}></div>}
+    { cta && <CTA {...cta} />}
+    { grid_items && (
+      <ul class:list={[`items--${layout.image_width}`]}>
+        { grid_items.map((item) => (
           <li>
             <h5 class="h3">{ item.title }</h5>
             <div set:html={md.render(item.content)}></div>
