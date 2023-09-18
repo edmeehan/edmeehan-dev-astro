@@ -1,6 +1,6 @@
 ---
 import MarkdownIt from 'markdown-it';
-const block = Astro.props;
+const { eyebrow, title, content } = Astro.props;
 const md = new MarkdownIt({ html: true });
 ---
 <style lang="scss">
@@ -37,12 +37,12 @@ const md = new MarkdownIt({ html: true });
 <div class="wrapper">
   <div class="image"></div>
   <div class="content">
-    { block.eyebrow && (
+    { eyebrow && (
       <p class="txt-eyebrow">
-        <span class="eyebrow">{ block.eyebrow }</span>
+        <span class="eyebrow">{ eyebrow }</span>
       </p>
     )}
-    <h1 class="h1">{ block.title }</h1>
-    <div set:html={md.render(block.content)}></div>
+    <h1 class="h1">{ title }</h1>
+    <!-- <div set:html={md.render(content)}></div> -->
   </div>
 </div>
