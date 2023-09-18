@@ -133,8 +133,16 @@ _inputs:
     options:
       values: _select_data.cta_style
   content_blocks[*].section:
+    label: Section Styles
     comment: Set the transition and background of section.
     type: object
+    options:
+      preview:
+        icon: palette
+        text:
+          - key: transition
+        subtext:
+          - key: background
   content_blocks[*].section.transition:
     comment: Set the graphic that is displayed between blocks on a page.
     type: select
@@ -197,13 +205,13 @@ _structures:
     values:
       - default: true
         preview:
-        icon: ads_click
-        text:
-          - key: label
-          - No Label
-        subtext:
-          - key: link
-          - No URL
+          icon: ads_click
+          text:
+            - key: label
+            - No Label
+          subtext:
+            - key: link
+            - No URL
         value:
           label: Click Me
           link:

@@ -9,6 +9,15 @@ spec:
     - grid
 
 blueprint:
+  eyebrow:
+  content:
+  cta:
+  section:
+    transition: curve
+    background: primary
+  layout:
+    image_align: right
+    image_width: small
 
 preview:
 
