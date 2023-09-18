@@ -12,13 +12,19 @@ seo:
   canonical_url:
 content_blocks:
   - _bookshop_name: hero/splash
-    eyebrow: The eyebrow stuff
-    content: >-
-      <h3>This is the headline</h3><p>This is the text here.</p><p>What will it
-      be.</p><p>Okay.</p>
+    content: |-
+      <p class="eyebrow">This is the eyebrow</p>
+
+      <h1 class="h1">This is <strong>the big</strong> headline</h1>
+
+      This is all the stuff that is just content.
+
+      More content here.
+    image:
+      path: /uploads/whale-background.jpeg
+      alt: Whale photos
     cta:
-      label: Click Me
-      link:
-      style: primary
     section:
+      transition: curve
+      background: primary
 ---
