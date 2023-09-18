@@ -12,4 +12,13 @@ seo:
   canonical_url:
 content_blocks:
   - _bookshop_name: hero/splash
+    eyebrow: The eyebrow stuff
+    content: >-
+      <h3>This is the headline</h3><p>This is the text here.</p><p>What will it
+      be.</p><p>Okay.</p>
+    cta:
+      label: Click Me
+      link:
+      style: primary
+    section:
 ---
