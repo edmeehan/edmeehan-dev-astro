@@ -10,6 +10,10 @@ collections_config:
     name: Pages
     icon: web
     singular_name: Page
+    _enabled_editors:
+      - visual
+      - data
+      - source
     # create: [relative_base_path]/{slug}.md
     _editables: {}
     _inputs:
@@ -34,6 +38,10 @@ collections_config:
     name: Blog
     icon: wysiwyg
     singular_name: Blog Post
+    _enabled_editors:
+      - content
+      - data
+      - source
     _editables: {}
     _inputs: {}
     _select_data: {}
@@ -51,6 +59,10 @@ collections_config:
     name: Projects
     icon: work
     singular_name: Project
+    _enabled_editors:
+      - content
+      - data
+      - source
     _editables: {}
     _inputs: {}
     _select_data: {}
@@ -216,6 +228,7 @@ _structures:
           path:
           alt:
         preview:
+          icon: false
           image:
             - key: path
           text:
