@@ -3,76 +3,77 @@ import MarkdownIt from 'markdown-it';
 const block = Astro.props;
 const md = new MarkdownIt({ html: true });
 ---
-<style lang="scss">
-  article {
+<style lang="scss" is:global>
+  article[data-card-testimonial] {
     border-radius: $radius_md;
     overflow: hidden;
     background-color: $color_text_default;
     position: relative;
     max-width: 600px;
     min-width: 340px;
-  }
-  header {
-    background: linear-gradient(180deg, $color_grad_1B, $color_grad_1A);
-    padding: $text_mobile_line_height;
-    padding-top: 0!important;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    overflow: hidden;
 
-    @include media-laptop-sm {
-      padding: $text_desktop_line_height;
-    }
-  }
-  img {
-    width: 110px;
-    height: 110px;
-    border-radius: $radius_circle;
-    flex: 0 0 auto;
-    // transition: transform 500ms ${({offset}) => offset * 300 + 200}ms;
-    // transform: translateY(${({transition}) => transition ? '10%' : '100%'}); // translateY(10%);
-    transform: translateY(10%);
-    background-color: $color_white;
-  }
-  .svg {
-    width: 100%;
-    height: 0;
-    position: absolute;
-    padding-bottom: 8.33%;
-    transform: translateY(-95%);
+    header {
+      background: linear-gradient(180deg, $color_grad_1B, $color_grad_1A);
+      padding: $text_mobile_line_height;
+      padding-top: 0!important;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      overflow: hidden;
 
-    svg {
-      position: absolute; 
-      height: 100%; 
-      width: 100%; 
-      left: 0; 
-      top: 0;
+      @include media-laptop-sm {
+        padding: $text_desktop_line_height;
+      }
     }
-  }
-  .text {
-    margin-right: .75em;
-    flex: 0 1 auto;
-    color: $color_text_lite;
+    img {
+      width: 110px;
+      height: 110px;
+      border-radius: $radius_circle;
+      flex: 0 0 auto;
+      // transition: transform 500ms ${({offset}) => offset * 300 + 200}ms;
+      // transform: translateY(${({transition}) => transition ? '10%' : '100%'}); // translateY(10%);
+      transform: translateY(10%);
+      background-color: $color_white;
+    }
+    .svg {
+      width: 100%;
+      height: 0;
+      position: absolute;
+      padding-bottom: 8.33%;
+      transform: translateY(-95%);
 
-    > h5 {
-      margin-bottom: 0;
+      svg {
+        position: absolute; 
+        height: 100%; 
+        width: 100%; 
+        left: 0; 
+        top: 0;
+      }
     }
-  }
-  .body {
-    color: $color_text_dark;
-    font-style: italic;
-    padding: 1px $text_mobile_line_height 0;
-    margin-top: -($text_mobile_line_height_root);
-    
-    @include media-laptop-sm {
-      padding: 0 $text_desktop_line_height;
-      margin-top: -($text_desktop_line_height_root);
+    .text {
+      margin-right: .75em;
+      flex: 0 1 auto;
+      color: $color_text_lite;
+
+      > h5 {
+        margin-bottom: 0;
+      }
+    }
+    .body {
+      color: $color_text_dark;
+      font-style: italic;
+      padding: 1px $text_mobile_line_height 0;
+      margin-top: -($text_mobile_line_height_root);
+      
+      @include media-laptop-sm {
+        padding: 0 $text_desktop_line_height;
+        margin-top: -($text_desktop_line_height_root);
+      }
     }
   }
 </style>
 
-<article>
+<article data-card-testimonial>
   <header>
     <div class='text'>
       <h5 class='h3'>{ block.name }</h5>

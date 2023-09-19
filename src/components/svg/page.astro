@@ -1,9 +1,9 @@
 ---
 
 ---
-<style lang="scss">
+<style lang="scss" is:global>
   // hide the sprite without using display none - bug with svg gradients
-  svg {
+  svg[data-svg-page] {
     visibility: hidden;
     height: 0;
     width: 0;
@@ -51,6 +51,7 @@
   }
 </style>
 <svg
+  data-svg-page
   version="1.1"
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"

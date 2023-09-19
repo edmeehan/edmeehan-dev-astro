@@ -6,25 +6,22 @@ const svg_id = `#${transition}-${background}${background === 'loud' ? `-${next?.
 const set_transition = transition && !is_last;
 const set_prev = !is_first && prev.background !== 'loud';
 ---
-<style lang="scss">
+<style lang="scss" is:global>
   $transition_swoosh: 12.5%;
   $transition_curve: 6.6%;
 
-  .section {
+  .section[data-layout-section] {
     position: relative;
 
-    &--primary {
-      @extend .section;
+    &.section--primary {
       background: $color_primary;
     }
 
-    &--secondary {
-      @extend .section;
+    &.section--secondary {
       background: $color_secondary;
     }
 
-    &--loud {
-      @extend .section;
+    &.section--loud {
       background: linear-gradient(0deg, $color_grad_1A, $color_grad_1B);
       margin-bottom: 0!important;
 
@@ -33,64 +30,65 @@ const set_prev = !is_first && prev.background !== 'loud';
       }
     }
 
-    &--swoosh {
+    &.section--swoosh {
       margin-bottom: -($transition_swoosh);
     }
 
-    &--curve {
+    &.section--curve {
       margin-bottom: -($transition_curve);
     }
-  }
 
-  .content {
-    padding-left: $layout_gutter;
-    padding-right: $layout_gutter;
-    position: relative;
-    z-index: 1;
+    .content {
+      padding-left: $layout_gutter;
+      padding-right: $layout_gutter;
+      position: relative;
+      z-index: 1;
 
-    &--prev-curve {
-      @extend .content;
-      padding-top: $transition_curve;
-    }
-    &--prev-swoosh {
-      @extend .content;
-      padding-top: $transition_swoosh;
-    }
-    &--prev-none {
-      @extend .content;
-    }
-  }
-
-  .svg {
-    width: 100%;
-    height: 0;
-    position: relative;
-    z-index: $zindex_background;
-    padding-bottom: 0;
-
-    svg {
-      position: absolute; 
-      height: 100%; 
-      width: 100%; 
-      left: 0; 
-      top: 0;
+      &--prev-curve {
+        @extend .content;
+        padding-top: $transition_curve;
+      }
+      &--prev-swoosh {
+        @extend .content;
+        padding-top: $transition_swoosh;
+      }
+      &--prev-none {
+        @extend .content;
+      }
     }
 
-    &--curve {
-      @extend .svg;
-      padding-bottom: $transition_curve;
-    }
+    .svg {
+      width: 100%;
+      height: 0;
+      position: relative;
+      z-index: $zindex_background;
+      padding-bottom: 0;
 
-    &--swoosh {
-      @extend .svg;
-      padding-bottom: $transition_swoosh;
+      svg {
+        position: absolute; 
+        height: 100%; 
+        width: 100%; 
+        left: 0; 
+        top: 0;
+      }
+
+      &--curve {
+        @extend .svg;
+        padding-bottom: $transition_curve;
+      }
+
+      &--swoosh {
+        @extend .svg;
+        padding-bottom: $transition_swoosh;
+      }
     }
   }
 </style>
 
 <section
+  data-layout-section
   data-index={ index }
-  class:list={[`section--${background}`, {[`section--${transition}`]: set_transition}]}
+  class:list={[`section`,`section--${background}`, {[`section--${transition}`]: set_transition}]}
 >
   <div class={`content--prev-${set_prev ? prev.transition : 'none'}`}>
     <slot />
