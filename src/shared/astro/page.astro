@@ -22,18 +22,18 @@ Object.entries(componentImports).forEach(([path, obj]) => {
 <main>
   {contentBlocks?.map((block, index) => {
     const Component = components[block._bookshop_name];
-    const section = {
-      ...block.section,
-      is_first: index === 0,
-      is_last: contentBlocks.length === index + 1,
-      index,
-      prev: contentBlocks[index - 1]?.section,
-      next: contentBlocks[index + 1]?.section,
-    };
+    // const section = {
+    //   ...block.section,
+    //   is_first: index === 0,
+    //   is_last: contentBlocks.length === index + 1,
+    //   index,
+    //   prev: contentBlocks[index - 1]?.section,
+    //   next: contentBlocks[index + 1]?.section,
+    // };
     return (
-      <Section {...section}>
+      // <Section {...section}>
         <Component {...block} />
-      </Section>
+      // </Section>
     );
   })}
 </main>
