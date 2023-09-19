@@ -1,4 +1,5 @@
 ---
+import Section from 'src/components/layout/section.astro';
 const { contentBlocks } = Astro.props;
 const components = {};
 const componentImports = import.meta.glob("../../components/**/*.astro", {
@@ -16,20 +17,23 @@ Object.entries(componentImports).forEach(([path, obj]) => {
   const bookshopName = parts.join("/");
   components[bookshopName] = obj.default;
 });
-
-// section: {
-//   ...block.section,
-//   is_first: index === 0,
-//   is_last: blocks.length === index + 1,
-//   index,
-//   prev: blocks[index - 1]?.section,
-//   next: blocks[index + 1]?.section,
-// },
 ---
 
 <main>
-  {contentBlocks?.map((block) => {
+  {contentBlocks?.map((block, index) => {
     const Component = components[block._bookshop_name];
-    return <Component {...block} />;
+    const section = {
+      ...block.section,
+      is_first: index === 0,
+      is_last: contentBlocks.length === index + 1,
+      index,
+      prev: contentBlocks[index - 1]?.section,
+      next: contentBlocks[index + 1]?.section,
+    };
+    return (
+      <Section {...section}>
+        <Component {...block} />
+      </Section>
+    );
   })}
 </main>
