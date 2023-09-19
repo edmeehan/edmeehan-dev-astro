@@ -8,18 +8,14 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "bookshop": "npx @bookshop/generate --bookshop src/components",
-    "sass:build": "bookshop-sass -b src -o public/css/bookshop.css",
-    "sass:watch": "bookshop-sass -b src -o public/css/bookshop.css -w"
+    "bookshop": "npx @bookshop/generate --bookshop src/components"
   },
   "dependencies": {
     "@astrojs/mdx": "^1.0.3",
     "@astrojs/react": "^3.0.2",
     "@bookshop/astro-bookshop": "^3.6.5",
     "@bookshop/astro-engine": "^3.6.5",
-    "@bookshop/browser": "^3.6.5",
     "@bookshop/generate": "^3.6.5",
-    "@bookshop/sass": "^3.6.5",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
     "astro": "^3.0.12",

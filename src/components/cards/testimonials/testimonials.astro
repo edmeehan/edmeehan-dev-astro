@@ -5,42 +5,43 @@ import Section from "src/components/layout/section.astro";
 const { content, testimonials, section } = Astro.props;
 const md = new MarkdownIt({ html: true });
 ---
-<style lang="scss">
-  .wrapper {
+<style lang="scss" is:global>
+  .wrapper[data-cards-testimonials] {
     @extend %primary-wrapper;
-  }
-  header {
-    text-align: center;
-    padding-top: 4.5rem;
-    padding-bottom: 3rem;
-  }
-  .rt > :global(*) {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  ul {
-    margin-top: 0;
-    padding-left: 0;
-    padding-bottom: 4.5rem;
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2em;
-
-    @include media-tablet {
-      column-gap: 5%;
-      row-gap: 2em;
+  
+    header {
+      text-align: center;
+      padding-top: 4.5rem;
+      padding-bottom: 3rem;
     }
-  }
-  li {
-    @include media-tablet {
-      flex: 0 0 30%;
+    .rt > :global(*) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    ul {
+      margin-top: 0;
+      padding-left: 0;
+      padding-bottom: 4.5rem;
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2em;
+
+      @include media-tablet {
+        column-gap: 5%;
+        row-gap: 2em;
+      }
+    }
+    li {
+      @include media-tablet {
+        flex: 0 0 30%;
+      }
     }
   }
 </style>
 
-<div class="wrapper">
+<div class="wrapper" data-cards-testimonials>
   <header>
     { content && <div class="rt" set:html={md.render(content)}></div>}
   </header>

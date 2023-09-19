@@ -3,47 +3,48 @@ import MarkdownIt from 'markdown-it';
 const { content, cta, section, layout, grid_items } = Astro.props;
 const md = new MarkdownIt({ html: true });
 ---
-<style lang="scss">
-  .wrapper {
+<style lang="scss" is:global>
+  .wrapper[data-grid-simple] {
     @extend %primary-wrapper;
-  }
-  .content {
-    padding-top: 4.5rem;
-    padding-bottom: 3rem;
-  }
-  .list {
-    display: flex;
-    flex-wrap: wrap;
-    padding-bottom: 4.5rem;
-    padding-left: 0;
-    margin: 0;
-    list-style: none;
-    row-gap: 1.7rem;
-    column-gap: 8%;
 
-    &--left {
-      @extend .list;
-      justify-content: flex-start;
+    .content {
+      padding-top: 4.5rem;
+      padding-bottom: 3rem;
     }
+    .list {
+      display: flex;
+      flex-wrap: wrap;
+      padding-bottom: 4.5rem;
+      padding-left: 0;
+      margin: 0;
+      list-style: none;
+      row-gap: 1.7rem;
+      column-gap: 8%;
 
-    &--center {
-      @extend .list;
-      justify-content: center;
+      &--left {
+        @extend .list;
+        justify-content: flex-start;
+      }
+
+      &--center {
+        @extend .list;
+        justify-content: center;
+      }
     }
-  }
-  li {
-    flex: 0 0 46%;
-    // transition: ${({transitionDelay:delay}) => `opacity 500ms ${delay * 250 + 200}ms, transform 500ms ${delay * 250}ms`};
-    // opacity: ${({transition}) => transition ? 1 : 0};
-    // transform: translateY(${({transition}) => transition ? '0%' : '50%'});
+    li {
+      flex: 0 0 46%;
+      // transition: ${({transitionDelay:delay}) => `opacity 500ms ${delay * 250 + 200}ms, transform 500ms ${delay * 250}ms`};
+      // opacity: ${({transition}) => transition ? 1 : 0};
+      // transform: translateY(${({transition}) => transition ? '0%' : '50%'});
 
-    @include media-laptop-sm {
-      flex-basis: 28%;
+      @include media-laptop-sm {
+        flex-basis: 28%;
+      }
     }
   }
 </style>
 
-<div class="wrapper">
+<div class="wrapper" data-grid-simple>
   <div class:list={['content', { 'rt-center': layout.text_align === 'center'}]}>
     { content && <div class="rt" set:html={md.render(content)}></div>}
   </div>

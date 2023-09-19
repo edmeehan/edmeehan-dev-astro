@@ -5,9 +5,10 @@ import CTA from 'src/components/cta.astro';
 const { content, image, cta } = Astro.props;
 const md = new MarkdownIt({ html: true });
 ---
-<style lang="scss">
-  .wrapper {
+<style lang="scss" is:global>
+  .wrapper[data-hero-splash] {
     @extend %primary-wrapper;
+    
     @include media-tablet {
       display: flex;
       flex-direction: row-reverse;
@@ -15,28 +16,29 @@ const md = new MarkdownIt({ html: true });
       justify-content: center;
       min-height: 80vh;
     }
-  }
-  .content {
-    @include media-tablet {
-      flex: 0 1 auto;
-    }
-    @include media-tablet-max {
-      padding-bottom: 4rem;
-    }
-  }
-  .image {
-    position: relative;
-    z-index: -1;
-    margin-bottom: -100px;
 
-    @include media-tablet {
-      flex: 0 0 40%;
-      margin-bottom: 0;
+    .content {
+      @include media-tablet {
+        flex: 0 1 auto;
+      }
+      @include media-tablet-max {
+        padding-bottom: 4rem;
+      }
+    }
+    .image {
+      position: relative;
+      z-index: -1;
+      margin-bottom: -100px;
+
+      @include media-tablet {
+        flex: 0 0 40%;
+        margin-bottom: 0;
+      }
     }
   }
 </style>
 
-<div class="wrapper">
+<div class="wrapper" data-hero-splash>
   <div class="image">
   { image && <Image {...image} width="768" height="900" />}
   </div>
