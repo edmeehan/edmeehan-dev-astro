@@ -1,11 +1,8 @@
 ---
 import Layout from "./Layout.astro";
-import page from "src/shared/astro/page.js";
+import Page from "src/shared/astro/page.astro";
 import PageSVG from "src/components/svg/page.astro";
-
-const componentImports = import.meta.glob('../components/**/*.astro', {
-  eager: true,
-});
+// import Section from "src/components/layout/section.astro";
 
 type Props = {
   frontmatter: {
@@ -19,16 +16,8 @@ if (!frontmatter) {
   throw new Error("Page frontmatter must be defined");
 }
 
-const [components, adapter] = page(content_blocks, componentImports);
 ---
-
 <Layout {...frontmatter}>
   <PageSVG />
-  <main>
-    {content_blocks?.map((block, i) => {
-      const Component = components[block._bookshop_name];
-      const blockData = adapter(block, i);
-      return <Component bookshop:live {...blockData} />;
-    })}
-  </main>
+  <Page bookshop:live contentBlocks={content_blocks} />
 </Layout>

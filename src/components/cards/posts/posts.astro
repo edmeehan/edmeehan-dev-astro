@@ -1,7 +1,6 @@
 ---
 import MarkdownIt from 'markdown-it';
 import Card from "src/components/card/post.astro";
-import Section from "src/components/layout/section.astro";
 const { content, posts, section } = Astro.props;
 const md = new MarkdownIt({ html: true });
 ---
@@ -39,19 +38,18 @@ const md = new MarkdownIt({ html: true });
     }
   }
 </style>
-<Section {...section}>
-  <div class="wrapper">
-    <header>
-      { content && <div class="rt" set:html={md.render(content)}></div>}
-    </header>
-    { posts && (
-      <ul>
-        { posts.map((item) => (
-          <li>
-            <Card {...item} />
-          </li>
-        ))}
-      </ul>
-    )}
-  </div>
-</Section>
+
+<div class="wrapper">
+  <header>
+    { content && <div class="rt" set:html={md.render(content)}></div>}
+  </header>
+  { posts && (
+    <ul>
+      { posts.map((item) => (
+        <li>
+          <Card {...item} />
+        </li>
+      ))}
+    </ul>
+  )}
+</div>
