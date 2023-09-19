@@ -13,7 +13,7 @@ seo:
 content_blocks:
   - _bookshop_name: hero/splash
     content: |-
-      <p class="eyebrow">This is the eyebrow</p>
+      <p class="eyebrow">This is the eyebrow below</p>
 
       <h1 class="h1">This is <strong>the big</strong> headline</h1>
 
@@ -27,5 +27,13 @@ content_blocks:
     section:
       transition: curve
       background: primary
+  - _bookshop_name: text
+    content: This is the content.
+    cta:
+    section:
+      transition: curve
+      background: primary
+    layout:
+      text_align: center
+      is_mini: true
 ---
-
