@@ -1,5 +1,71 @@
 {
-  "redirects": [],
+  "redirects": [
+    {
+      "source": "/blog/2021/may/5-reasons-to-use-gatsby/",
+      "destination": "/blog/5-reasons-to-use-gatsby/",
+      "status": "301"
+    },
+    {
+      "source": "/blog/2020/sep/first-blog-post/",
+      "destination": "/blog/first-blog-post/",
+      "status": "301"
+    },
+    {
+      "source": "/services/",
+      "destination": "/web-development/",
+      "status": "301"
+    },
+    {
+      "source": "/services/e-commerce/",
+      "destination": "/web-development/",
+      "status": "301"
+    },
+    {
+      "source": "/services/cro-and-pagespeed/",
+      "destination": "/web-development/",
+      "status": "301"
+    },
+    {
+      "source": "/services/jamstack-website/",
+      "destination": "/web-development/",
+      "status": "301"
+    },
+    {
+      "source": "/services/google-analytics/",
+      "destination": "/analytics/",
+      "status": "301"
+    },
+    {
+      "source": "/projects/development/hostandporter",
+      "destination": "/projects/host-and-porter/",
+      "status": "301"
+    },
+    {
+      "source": "/projects/development/host-and-porter/",
+      "destination": "/projects/host-and-porter/",
+      "status": "301"
+    },
+    {
+      "source": "/projects/development/mx-trackbuilders/",
+      "destination": "/projects/mx-trackbuilders/",
+      "status": "301"
+    },
+    {
+      "source": "/projects/development/gym-attendance-app/",
+      "destination": "/projects/gym-attendance-app/",
+      "status": "301"
+    },
+    {
+      "source": "/projects/analytics/tcg-analytics/",
+      "destination": "/projects/tcg-analytics/",
+      "status": "301"
+    },
+    {
+      "source": "/projects/development/crimewire/",
+      "destination": "/projects/crimewire/",
+      "status": "301"
+    }
+  ],
   "_inputs": {
     "redirects": {
       "type": "array",
@@ -31,11 +97,15 @@
           },
           "preview": {
             "text": [
-              {"key":"source"},
+              {
+                "key": "source"
+              },
               "No source set"
             ],
             "subtext": [
-              {"key":"status"},
+              {
+                "key": "status"
+              },
               "No status set"
             ],
             "icon": "swap_horiz"

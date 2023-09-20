@@ -4,6 +4,11 @@ spec:
   label: Link
   description: Default link
   icon: ads_click
+  preview:
+    text: Sup Link
+    subtext:
+      - key: link
+      - No URL
   tags:
     - global
 
