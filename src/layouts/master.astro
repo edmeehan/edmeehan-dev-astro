@@ -2,6 +2,8 @@
 import 'normalize.css';
 import "../styles/theme.scss";
 import DefaultSVG from "src/components/svg/default.astro";
+import Header from "src/components/layout/header.astro";
+import Footer from "src/components/layout/footer.astro";
 ---
 
 <!DOCTYPE html>
@@ -13,6 +15,8 @@ import DefaultSVG from "src/components/svg/default.astro";
   </head>
   <body>
     <DefaultSVG />
+    <Header />
     <slot />
+    <Footer />
   </body>
 </html>

@@ -10,7 +10,7 @@ spec:
 
 blueprint:
   content:
-  cta:
+  cta: bookshop:global/cta
   section:
     transition: curve
     background: primary

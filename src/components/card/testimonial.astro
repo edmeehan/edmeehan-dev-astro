@@ -82,9 +82,7 @@ const md = new MarkdownIt({ html: true });
     <img src="" alt="">
   </header>
   <div class="svg">
-    <svg>
-      <use xlink:href='#card-wave'></use>
-    </svg>
+    <svg><use xlink:href='#card-wave'></use></svg>
   </div>
   <div class='body step-down' set:html={md.render(block.testimonial)}></div>
 </article>

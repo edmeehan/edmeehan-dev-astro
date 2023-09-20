@@ -11,7 +11,7 @@ spec:
 blueprint:
   content:
   image:
-  cta:
+  cta: bookshop:global/cta
   section:
     transition: curve
     background: primary

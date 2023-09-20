@@ -1,0 +1,17 @@
+spec:
+  structures:
+    - cta
+  label: CTA
+  description: Call to action button
+  icon: ads_click
+  tags:
+    - global
+
+blueprint:
+  label: Click Me
+  link:
+  style: primary
+
+preview:
+
+_inputs:

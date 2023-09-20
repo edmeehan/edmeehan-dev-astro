@@ -251,5 +251,8 @@ _structures:
           link:
           style: primary
 _editables: {}
-data_config: {}
+data_config:
+  settings:
+    path: data/
+
 timezone: America/Los_Angeles

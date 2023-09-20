@@ -1,0 +1,16 @@
+spec:
+  structures:
+    - image
+  label: Image
+  description:
+  icon: image
+  tags:
+    - global
+
+blueprint:
+  path:
+  alt:
+
+preview:
+
+_inputs:

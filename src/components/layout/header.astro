@@ -1,0 +1,184 @@
+---
+import data from "data/header.json"
+import Image from "src/components/global/image/image.astro"
+import CTA from "src/components/global/cta/cta.astro"
+import Link from "src/components/global/link/link.astro"
+
+const { logo, nav_primary, nav_secondary } = data;
+---
+<style lang="scss" is:global>
+  header[data-layout-header] {
+    position: sticky;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: $zindex_menu;
+    padding: 0 $text_mobile_line_height_root;
+    background-color: $header_bkg_color;
+    border-bottom: solid 1px $header_border_color;
+    backdrop-filter: blur(10px);
+    height: $header_mobile_height;
+
+    @include media-tablet {
+      height: $header_tablet_height;
+    }
+
+    @include media-desktop {
+      height: $header_laptop_height;
+    }
+
+    .flex {
+      display: flex;
+      flex: 1 0 25%;
+    }
+
+    .toggle {
+      justify-content: right;
+
+      @include media-tablet {
+        display: none;
+      }
+    }
+
+    .secondary {
+      flex: 1 0 50%;
+      justify-content: center;
+
+      @include media-tablet {
+        flex: 1 0 25%;
+        justify-content: right;
+      }
+    }
+
+    .primary {
+      justify-content: center;
+
+      @include media-tablet-max {
+        position: absolute;
+        width: 100vw;
+        top: $header_mobile_height;
+        left: 0;
+        background-color: $color_secondary;
+        overflow: hidden;
+        transition: height 300ms;
+        // height: ${({menuToggled, theme}) => menuToggled ? `calc(100vh - ${theme.header_mobile_height})` : '0px'};
+
+        ul {
+          flex-direction: column;
+          text-align: center;
+        }
+        li {
+          margin: .5em 0;
+
+          > a {
+            font-size: calc($text_mobile_cta * 2);
+            transition: opacity 250ms 300ms, transform 200ms 300ms;
+            // opacity: ${({menuToggled}) => menuToggled ? '1' : '0'};
+            // transform: ${({menuToggled}) => menuToggled ? 'translateX(0)' : 'translateX(-50vw)'};
+          }
+        }
+      }
+
+      @include media-tablet {
+        flex: 1 0 50%;
+      }
+    }
+
+    nav {
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: .5em;
+      }
+
+      li {
+        [data-global-link] {
+          font-size: $text_mobile_cta;
+          line-height: $text_mobile_cta_line_height;
+          font-weight: $text_weight_bold;
+          color: $color_text_default;
+          text-transform: uppercase;
+          padding: 0 .25em;
+          display: inline-block;
+
+          @include media-laptop-sm {
+            font-size: $text_desktop_cta;
+            line-height: $text_desktop_cta_line_height;
+          }
+        }
+      }
+    }
+
+    .menuBtn {
+      font-size: 1rem;
+      color: $color_primary;
+      background: none;
+      text-transform: uppercase;
+      border: none;
+      padding: 0 .25em;
+      line-height: $text_mobile_line_height;
+      height: $text_mobile_line_height;
+      cursor: pointer;
+
+      svg {
+        height: $text_mobile_line_height;
+        fill: $color_cta_secondary;
+      }
+
+      .bars {
+        // display: ${({menuToggled}) => menuToggled ? 'none' : ''};
+      }
+      .xmark {
+        // display: ${({menuToggled}) => menuToggled ? '' : 'none'};
+      }
+    }
+  }
+</style>
+
+<header data-layout-header>
+  <div class='brand flex'>
+    <a href="/" title="homepage">
+      <Image {...logo}
+        style={{
+          // width: settings.header_logo_width,
+          // height: settings.header_logo_height,
+          display: 'block'
+        }}
+      />
+    </a>
+  </div>
+  <nav class='primary flex'>
+    { nav_primary && (
+      <ul>
+        { nav_primary.map (item => (
+          <li>{ item.style ? <CTA {...item} /> : <Link {...item}/> }</li>
+        ))}  
+      </ul>
+    )}
+  </nav>
+  <nav class='secondary flex'>
+    { nav_secondary && (
+      <ul>
+        { nav_secondary.map (item => (
+            <li>{ item.style ? <CTA {...item} /> : <Link {...item}/> }</li>
+        ))}
+      </ul>
+    )}
+  </nav>
+  <div class='toggle flex'>
+    <button
+      class="menuBtn"
+      type="button"
+      aria-label="Toggle navigation"
+    >
+      <svg class='xmark' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg>
+      <svg class='bars' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
+    </button>
+  </div>
+</header>

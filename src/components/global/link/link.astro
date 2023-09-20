@@ -1,0 +1,10 @@
+---
+const { label, link } = Astro.props;
+---
+<style lang="scss" is:global>
+  [data-global-link] {
+
+  }
+</style>
+
+<a data-global-link href={ link }>{ label }</a>

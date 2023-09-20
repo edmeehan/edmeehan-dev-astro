@@ -1,8 +1,7 @@
 ---
-import Layout from "./Layout.astro";
-import Page from "src/shared/astro/page.astro";
+import MasterLayout from "./master.astro";
+import PageComponents from "src/shared/astro/page.astro";
 import PageSVG from "src/components/svg/page.astro";
-// import Section from "src/components/layout/section.astro";
 
 type Props = {
   frontmatter: {
@@ -17,7 +16,7 @@ if (!frontmatter) {
 }
 
 ---
-<Layout {...frontmatter}>
+<MasterLayout {...frontmatter}>
   <PageSVG />
-  <Page bookshop:live contentBlocks={content_blocks} />
-</Layout>
+  <PageComponents bookshop:live contentBlocks={content_blocks} />
+</MasterLayout>

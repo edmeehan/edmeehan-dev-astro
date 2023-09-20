@@ -1,0 +1,49 @@
+{
+  "logo": {
+    "path": "/uploads/wave-e-color.svg",
+    "width": 42,
+    "height": 42,
+    "alt": "edmeehan.dev logo"
+  },
+  "nav_primary": [
+    {
+      "link": "/web-development/",
+      "label": "Web Development"
+    },
+    {
+      "link": "/analytics/",
+      "label": "Analytics"
+    },
+    {
+      "link": "/projects/",
+      "label": "Projects"
+    },
+    {
+      "link": "/blog/",
+      "label": "Blog"
+    }
+  ],
+  "nav_secondary": [
+    {
+      "link": "/contact/",
+      "label": "Contact Me",
+      "style": "secondary"
+    }
+  ],
+
+  "_inputs": {
+    "logo": {
+      "type": "object",
+      "options": {
+        "structutures": "_structure.image",
+        "empty_type": null
+      }
+    },
+    "nav_primary": {
+      "type": "array"
+    },
+    "nav_secondary": {
+      "type": "array"
+    }
+  }
+}

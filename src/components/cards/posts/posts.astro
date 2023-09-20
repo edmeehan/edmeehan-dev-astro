@@ -5,19 +5,19 @@ const { content, posts, section } = Astro.props;
 const md = new MarkdownIt({ html: true });
 ---
 <style lang="scss" is:global>
-  .wrapper[data-cards-posts] {
+  [data-cards-posts] {
     @extend %primary-wrapper;
 
-    header {
+    > header {
       text-align: center;
       padding-top: 4.5rem;
       padding-bottom: 3rem;
     }
-    .rt > :global(*) {
+    .rt > * {
       margin-left: auto;
       margin-right: auto;
     }
-    ul {
+    > ul {
       margin: 0;
       padding-left: 0;
       padding-bottom: 4.5rem;
@@ -31,16 +31,17 @@ const md = new MarkdownIt({ html: true });
         column-gap: 5%;
         row-gap: 2em;
       }
-    }
-    li {
-      @include media-tablet {
-        flex: 0 0 30%;
+
+      > li {
+        @include media-tablet {
+          flex: 0 0 30%;
+        }
       }
     }
   }
 </style>
 
-<div class="wrapper" data-cards-posts>
+<div data-cards-posts>
   <header>
     { content && <div class="rt" set:html={md.render(content)}></div>}
   </header>

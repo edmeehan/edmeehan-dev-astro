@@ -2,7 +2,7 @@
 const { label, link, style } = Astro.props;
 ---
 <style lang="scss" is:global>
-  .cta {
+  [data-global-cta] {
     font-size: $text_mobile_cta;
     line-height: $text_mobile_cta_line_height;
     font-weight: $text_weight_bold;
@@ -27,18 +27,14 @@ const { label, link, style } = Astro.props;
       background-color: $color_cta_hover;
     }
 
-    &--primary {
-      @extend .cta;
-    }
-    &--secondary {
-      @extend .cta;
+    &.cta--primary {}
+    &.cta--secondary {
       border-color: $color_cta_secondary;
     }
-    &--loud {
-      @extend .cta;
+    &.cta--loud {
       border-color: $color_cta_loud;
     }
   }
 </style>
 
-<a class={`cta--${style}`} href={ link }>{ label }</a>
+<a data-global-cta class={`cta--${style}`} href={ link }>{ label }</a>

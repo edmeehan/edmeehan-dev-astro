@@ -25,7 +25,7 @@ const set_prev = !is_first && prev.background !== 'loud';
       background: linear-gradient(0deg, $color_grad_1A, $color_grad_1B);
       margin-bottom: 0!important;
 
-      .svg {
+      .svg[data-svg-transition] {
         transform: translateY(1px);
       }
     }
@@ -57,7 +57,7 @@ const set_prev = !is_first && prev.background !== 'loud';
       }
     }
 
-    .svg {
+    .svg[data-svg-transition] {
       width: 100%;
       height: 0;
       position: relative;
@@ -71,16 +71,14 @@ const set_prev = !is_first && prev.background !== 'loud';
         left: 0; 
         top: 0;
       }
+    }
 
-      &--curve {
-        @extend .svg;
-        padding-bottom: $transition_curve;
-      }
+    .svg--curve[data-svg-transition] {
+      padding-bottom: $transition_curve;
+    }
 
-      &--swoosh {
-        @extend .svg;
-        padding-bottom: $transition_swoosh;
-      }
+    .svg--swoosh[data-svg-transition] {
+      padding-bottom: $transition_swoosh;
     }
   }
 </style>
@@ -97,7 +95,7 @@ const set_prev = !is_first && prev.background !== 'loud';
     <Bubbles client:visible />
   )}
   { set_transition && (
-    <div class={`svg--${transition}`}>
+    <div class:list={[`svg`,`svg--${transition}`]} data-svg-transition>
       <svg>
         <use xlink:href={svg_id}></use>
       </svg>
