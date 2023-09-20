@@ -81,7 +81,8 @@ content_blocks:
     section:
       transition: swoosh
       background: secondary
-    testimonials: []
+    testimonials:
+      -
   - _bookshop_name: grid/alternate
     content: >-
       <p class="eyebrow">Services</p>
