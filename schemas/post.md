@@ -1,6 +1,7 @@
 ---
 title:
 hidden: true
+uuid:
 seo:
   no_index: false
   page_title:

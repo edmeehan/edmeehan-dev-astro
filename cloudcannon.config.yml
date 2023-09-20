@@ -105,8 +105,11 @@ collection_groups:
     collections:
       - data
 _inputs:
-  title:
-    comment: Page title displayed in browser tab.
+  uuid:
+    type: text
+    instance_value: UUID
+    hidden: true
+    cascade: false
   hidden:
     comment: Enabling this will stop page from being built.
     type: checkbox
@@ -154,13 +157,10 @@ _inputs:
     comment: When selected this removes the page from your sitemap and adds the noindex robots meta tag
   testimonials:
     type: array
-    # options:
-    #   structures: _structures.testimonials
   testimonials[*]:
     type: select
     options:
       values: collections.testimonials
-      value_key: name
       preview:
         text:
           - key: name
@@ -233,9 +233,5 @@ _select_data:
 _structures:
   page_blocks:
     style: modal
-  # testimonials:
-  #   values:
-  #     - value:
-  #         testimonial:
 _editables: {}
 timezone: America/Los_Angeles
