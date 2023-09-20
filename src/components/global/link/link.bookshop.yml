@@ -1,0 +1,17 @@
+spec:
+  structures:
+    - link
+  label: Link
+  description: Default link
+  icon: ads_click
+  tags:
+    - global
+
+blueprint:
+  label: Click Me
+  link:
+  new_tab: false
+
+preview:
+
+_inputs:

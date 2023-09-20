@@ -1,6 +1,6 @@
 spec:
   structures:
-    - cta
+    - link
   label: CTA
   description: Call to action button
   icon: ads_click
@@ -11,6 +11,7 @@ blueprint:
   label: Click Me
   link:
   style: primary
+  new_tab: false
 
 preview:
 
