@@ -35,6 +35,19 @@ collections_config:
         path: schemas/page.md
       paginated_posts:
         path: schemas/paginated_posts.md
+  testimonials:
+    path: src/content/testimonials
+    name: Testimonials
+    icon: 
+    singular_name: Testimonial
+    _enabled_editors:
+      - content
+      - data
+      - source
+    disable_add_folder: true
+    schemas:
+      testimonial:
+        path: schemas/testimonial.md
   blog:
     path: src/content/blog
     output: true
@@ -85,6 +98,9 @@ collection_groups:
     collections:
       - blog
       - projects
+  - heading: Other Models
+    collections:
+      - testimonials
   - heading: Site Settings
     collections:
       - data
@@ -136,6 +152,12 @@ _inputs:
   seo.no_index:
     type: checkbox
     comment: When selected this removes the page from your sitemap and adds the noindex robots meta tag
+  testimonials:
+    type: array
+  testimonials[*].testimonial:
+    type: select
+    options:
+      values: collections.testimonials
   content_blocks[*].section:
     label: Section Styles
     comment: Set the transition and background of section.
@@ -205,5 +227,9 @@ _select_data:
 _structures:
   page_blocks:
     style: modal
+  testimonials:
+    values:
+      - value:
+          testimonial
 _editables: {}
 timezone: America/Los_Angeles
