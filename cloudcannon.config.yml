@@ -3,6 +3,10 @@ paths:
   static: public
   uploads: public/uploads/[collection]
 collections_config:
+  data:
+    path: data
+    disable_add: true
+    disable_add_folder: true
   pages:
     path: src/content/pages
     output: true
@@ -251,8 +255,4 @@ _structures:
           link:
           style: primary
 _editables: {}
-data_config:
-  settings:
-    path: data/
-
 timezone: America/Los_Angeles
