@@ -1,21 +1,25 @@
 {
-  "content": "![Whale underwater](/uploads/whale-background.jpeg \"Blue whale\")\n\nEd Meehan is a freelance web developer living in San Diego, California, with his wife Ali, their son Leon, and dog Boo. He enjoys surfing, boxing, jiu-jitsu, and battle royal video games.",
+  "story_image": null,
+  "story": "Ed Meehan is a freelance web developer living in San Diego, California, with his wife Ali, their son Leon, and dog Boo. He enjoys surfing, boxing, jiu-jitsu, and battle royal video games.",
   "small_print": "",
   "links_list": [
     {
       "title": "Social Media Links",
       "links": [
         {
+          "_bookshop_name": "global/link",
           "link": "https://github.com/edmeehan",
           "label": "GitHub",
           "new_tab": true
         },
         {
+          "_bookshop_name": "global/link",
           "link": "https://www.linkedin.com/in/edwardmeehan",
           "label": "LinkedIn",
           "new_tab": true
         },
         {
+          "_bookshop_name": "global/link",
           "link": "https://codepen.io/edmeehan",
           "label": "CodePen",
           "new_tab": true
@@ -26,23 +30,43 @@
       "title": "Services",
       "links": [
         {
+          "_bookshop_name": "global/link",
           "link": "/web-development/",
-          "label": "Web Development"
+          "label": "Web Development",
+          "new_tab": false
         },
         {
+          "_bookshop_name": "global/link",
           "link": "/analytics/",
-          "label": "Analytics"
+          "label": "Analytics",
+          "new_tab": false
         }
       ]
     }
   ],
   "_inputs": {
-    "content": {
+    "story_image": {
+      "type": "object",
+      "options": {
+        "structures": "_structures.image"
+      }
+    },
+    "story": {
       "type": "markdown",
       "options": {
         "bold": true,
-        "format": "p",
-        "italic": true
+        "format": "p div",
+        "italic": true,
+        "link": true
+      }
+    },
+    "small_print": {
+      "type": "markdown",
+      "options": {
+        "bold": true,
+        "format": "p div",
+        "italic": true,
+        "link": true
       }
     },
     "links_list": {

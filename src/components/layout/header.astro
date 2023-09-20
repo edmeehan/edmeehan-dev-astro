@@ -1,9 +1,8 @@
 ---
+import Component from "src/shared/astro/component.astro"
 import data from "data/header.json"
 import Image from "src/components/global/image/image.astro"
-import CTA from "src/components/global/cta/cta.astro"
-import Link from "src/components/global/link/link.astro"
-
+import type { Code } from "astro:components";
 const { logo, nav_primary, nav_secondary } = data;
 ---
 <style lang="scss" is:global>
@@ -156,18 +155,14 @@ const { logo, nav_primary, nav_secondary } = data;
   <nav class='primary flex'>
     { nav_primary && (
       <ul>
-        { nav_primary.map (item => (
-          <li>{ item.style ? <CTA {...item} /> : <Link {...item}/> }</li>
-        ))}  
+        { nav_primary.map (item => <li><Component single={item} /></li>)}
       </ul>
     )}
   </nav>
   <nav class='secondary flex'>
     { nav_secondary && (
       <ul>
-        { nav_secondary.map (item => (
-            <li>{ item.style ? <CTA {...item} /> : <Link {...item}/> }</li>
-        ))}
+        { nav_secondary.map (item => <li><Component single={item} /></li>)}
       </ul>
     )}
   </nav>

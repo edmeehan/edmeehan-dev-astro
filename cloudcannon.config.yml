@@ -85,7 +85,7 @@ collection_groups:
     collections:
       - blog
       - projects
-  - heading: Settings
+  - heading: Site Settings
     collections:
       - data
 _inputs:
