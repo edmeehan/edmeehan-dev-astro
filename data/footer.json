@@ -1,34 +1,40 @@
 {
-  "content": "",
+  "content": "![Whale underwater](/uploads/whale-background.jpeg \"Blue whale\")\n\nEd Meehan is a freelance web developer living in San Diego, California, with his wife Ali, their son Leon, and dog Boo. He enjoys surfing, boxing, jiu-jitsu, and battle royal video games.",
   "small_print": "",
   "links_list": [
-    { "title": "Social Media Links", "links": [
-      {
-        "link": "https://github.com/edmeehan",
-        "label": "GitHub",
-        "new_tab": true
-      },
-      {
-        "link": "https://www.linkedin.com/in/edwardmeehan",
-        "label": "LinkedIn",
-        "new_tab": true
-      },
-      {
-        "link": "https://codepen.io/edmeehan",
-        "label": "CodePen",
-        "new_tab": true
-      }
-    ]},
-    { "title": "Services", "links": [
-      {
-        "link": "/web-development/",
-        "label": "Web Development"
-      },
-      {
-        "link": "/analytics/",
-        "label": "Analytics"
-      }
-    ]}
+    {
+      "title": "Social Media Links",
+      "links": [
+        {
+          "link": "https://github.com/edmeehan",
+          "label": "GitHub",
+          "new_tab": true
+        },
+        {
+          "link": "https://www.linkedin.com/in/edwardmeehan",
+          "label": "LinkedIn",
+          "new_tab": true
+        },
+        {
+          "link": "https://codepen.io/edmeehan",
+          "label": "CodePen",
+          "new_tab": true
+        }
+      ]
+    },
+    {
+      "title": "Services",
+      "links": [
+        {
+          "link": "/web-development/",
+          "label": "Web Development"
+        },
+        {
+          "link": "/analytics/",
+          "label": "Analytics"
+        }
+      ]
+    }
   ],
   "_inputs": {
     "content": {
@@ -36,11 +42,35 @@
       "options": {
         "bold": true,
         "format": "p",
-        "italic": true,
-        "horizontalrule": true,
-        "embed": true,
-        "image": true
+        "italic": true
       }
+    },
+    "links_list": {
+      "type": "array",
+      "options": {
+        "structures": "_structures.link_groups"
+      }
+    },
+    "links_list[*].title": {
+      "type": "text"
+    },
+    "links_list[*].links": {
+      "type": "array",
+      "options": {
+        "structures": "_structures.link"
+      }
+    }
+  },
+  "_structures": {
+    "link_groups": {
+      "values": [
+        {
+          "value": {
+            "title": "Link Group Title",
+            "links": []
+          }
+        }
+      ]
     }
   }
 }

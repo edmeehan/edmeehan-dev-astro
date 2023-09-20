@@ -1,6 +1,7 @@
 spec:
   structures:
     - link
+    - cta
   label: CTA
   description: Call to action button
   icon: ads_click
