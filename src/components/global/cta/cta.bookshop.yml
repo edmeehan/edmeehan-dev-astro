@@ -4,11 +4,11 @@ spec:
     - cta
   label: CTA
   description: Call to action button
-  icon: ads_click
+  icon: smart_button
   tags:
     - global
   preview:
-    icon: ads_click
+    icon: smart_button
     text:
       - key: label
       - No Label

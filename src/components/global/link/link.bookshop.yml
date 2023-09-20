@@ -3,9 +3,9 @@ spec:
     - link
   label: Link
   description: Default link
-  icon: ads_click
+  icon: link
   preview:
-    icon: ads_click
+    icon: link
     text:
       - key: label
       - No Label
