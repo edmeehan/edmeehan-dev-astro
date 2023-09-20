@@ -5,6 +5,7 @@ spec:
   description: Default link
   icon: ads_click
   preview:
+    icon: ads_click
     text:
       - key: label
       - No Label
