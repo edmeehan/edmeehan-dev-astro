@@ -82,7 +82,6 @@ content_blocks:
       transition: swoosh
       background: secondary
     testimonials:
-      -
   - _bookshop_name: grid/alternate
     content: >-
       <p class="eyebrow">Services</p>
