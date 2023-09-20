@@ -154,7 +154,9 @@ _inputs:
     comment: When selected this removes the page from your sitemap and adds the noindex robots meta tag
   testimonials:
     type: array
-  testimonials[*].testimonial:
+    # options:
+    #   structures: _structures.testimonials
+  testimonials[*]:
     type: select
     options:
       values: collections.testimonials
@@ -227,9 +229,9 @@ _select_data:
 _structures:
   page_blocks:
     style: modal
-  testimonials:
-    values:
-      - value:
-          testimonial
+  # testimonials:
+  #   values:
+  #     - value:
+  #         testimonial:
 _editables: {}
 timezone: America/Los_Angeles
