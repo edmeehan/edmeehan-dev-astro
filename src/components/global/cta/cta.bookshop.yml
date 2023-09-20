@@ -7,6 +7,13 @@ spec:
   icon: ads_click
   tags:
     - global
+  preview:
+    text:
+      - key: label
+      - No Label
+    subtext:
+      - key: link
+      - No URL
 
 blueprint:
   label: Click Me
@@ -17,3 +24,13 @@ blueprint:
 preview:
 
 _inputs:
+  label:
+    type: text
+  link:
+    type: url
+  new_tab:
+    type: checkbox
+  style:
+    type: select
+    options:
+      values: _select_data.cta_style

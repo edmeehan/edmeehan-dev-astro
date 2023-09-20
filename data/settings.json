@@ -1,7 +1,7 @@
 {
   "site_name": "edmeehan.dev",
   "phone": "1-858-876-8088",
-  "image_default": [],
+  "image_default": null,
   "image_og": null,
   "image_linkedIn": null,
   "_inputs": {
@@ -12,16 +12,19 @@
       "type": "text"
     },
     "image_default": {
+      "type": "object",
       "options": {
         "structures": "_structures.image"
       }
     },
     "image_og": {
+      "type": "object",
       "options": {
         "structures": "_structures.image"
       }
     },
     "image_linkedIn": {
+      "type": "object",
       "options": {
         "structures": "_structures.image"
       }

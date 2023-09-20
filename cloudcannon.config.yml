@@ -109,14 +109,6 @@ _inputs:
       horizontalrule: true
       undo: true
       redo: true
-  image:
-    type: object
-    options:
-      structures: _structures.image
-  image.path:
-    type: image
-  image.alt:
-    type: text
   seo:
     comment: Set page title, description, canonical, share image, and no follow.
     type: object
@@ -144,18 +136,6 @@ _inputs:
   seo.no_index:
     type: checkbox
     comment: When selected this removes the page from your sitemap and adds the noindex robots meta tag
-  cta:
-    type: object
-    options:
-      structures: _structures.cta
-  cta.label:
-    type: text
-  cta.link:
-    type: url
-  cta.style:
-    type: select
-    options:
-      values: _select_data.cta_style
   content_blocks[*].section:
     label: Section Styles
     comment: Set the transition and background of section.
@@ -225,34 +205,5 @@ _select_data:
 _structures:
   page_blocks:
     style: modal
-  image:
-    values:
-      - default: true
-        value:
-          path:
-          alt:
-        preview:
-          icon: false
-          image:
-            - key: path
-          text:
-            - key: path
-          subtext:
-            - key: alt
-  cta:
-    values:
-      - default: true
-        preview:
-          icon: ads_click
-          text:
-            - key: label
-            - No Label
-          subtext:
-            - key: link
-            - No URL
-        value:
-          label: Click Me
-          link:
-          style: primary
 _editables: {}
 timezone: America/Los_Angeles

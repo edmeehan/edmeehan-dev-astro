@@ -6,11 +6,32 @@ spec:
   icon: image
   tags:
     - global
+  preview:
+    icon: false
+    image:
+      - key: path
+    text:
+      - key: path
+    subtext:
+      - key: alt
 
 blueprint:
   path:
   alt:
+  title:
+  width:
+  height:
 
 preview:
 
 _inputs:
+  path:
+    type: image
+  alt:
+    type: text
+  title:
+    type: text
+  width:
+    type: number
+  height:
+    type: number

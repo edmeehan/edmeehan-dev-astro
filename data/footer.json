@@ -8,20 +8,20 @@
       "links": [
         {
           "_bookshop_name": "global/link",
-          "link": "https://github.com/edmeehan",
           "label": "GitHub",
+          "link": "https://github.com/edmeehan",
           "new_tab": true
         },
         {
           "_bookshop_name": "global/link",
-          "link": "https://www.linkedin.com/in/edwardmeehan",
           "label": "LinkedIn",
+          "link": "https://www.linkedin.com/in/edwardmeehan",
           "new_tab": true
         },
         {
           "_bookshop_name": "global/link",
-          "link": "https://codepen.io/edmeehan",
           "label": "CodePen",
+          "link": "https://codepen.io/edmeehan",
           "new_tab": true
         }
       ]
@@ -31,14 +31,14 @@
       "links": [
         {
           "_bookshop_name": "global/link",
-          "link": "/web-development/",
           "label": "Web Development",
+          "link": "/web-development/",
           "new_tab": false
         },
         {
           "_bookshop_name": "global/link",
-          "link": "/analytics/",
           "label": "Analytics",
+          "link": "/analytics/",
           "new_tab": false
         }
       ]

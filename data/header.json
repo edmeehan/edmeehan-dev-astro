@@ -1,42 +1,43 @@
 {
   "logo": {
     "path": "/uploads/wave-e-color.svg",
+    "alt": "edmeehan.dev logo",
+    "title": "",
     "width": 42,
-    "height": 42,
-    "alt": "edmeehan.dev logo"
+    "height": 42
   },
   "nav_primary": [
     {
       "_bookshop_name": "global/link",
-      "new_tab": true,
+      "label": "Web Development",
       "link": "/web-development/",
-      "label": "Web Development"
+      "new_tab": true
     },
     {
       "_bookshop_name": "global/link",
-      "new_tab": true,
+      "label": "Analytics",
       "link": "/analytics/",
-      "label": "Analytics"
+      "new_tab": true
     },
     {
       "_bookshop_name": "global/link",
-      "new_tab": true,
+      "label": "Projects",
       "link": "/projects/",
-      "label": "Projects"
+      "new_tab": true
     },
     {
       "_bookshop_name": "global/link",
-      "new_tab": true,
+      "label": "Blog",
       "link": "/blog/",
-      "label": "Blog"
+      "new_tab": true
     }
   ],
   "nav_secondary": [
     {
       "_bookshop_name": "global/cta",
-      "new_tab": false,
-      "link": "/contact/",
       "label": "Contact Me",
+      "link": "/contact/",
+      "new_tab": false,
       "style": "secondary"
     }
   ],

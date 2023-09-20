@@ -5,7 +5,9 @@ spec:
   description: Default link
   icon: ads_click
   preview:
-    text: Sup Link
+    text:
+      - key: label
+      - No Label
     subtext:
       - key: link
       - No URL
@@ -20,3 +22,9 @@ blueprint:
 preview:
 
 _inputs:
+  label:
+    type: text
+  link:
+    type: url
+  new_tab:
+    type: checkbox
