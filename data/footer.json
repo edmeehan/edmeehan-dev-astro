@@ -29,5 +29,18 @@
         "label": "Analytics"
       }
     ]}
-  ]
+  ],
+  "_inputs": {
+    "content": {
+      "type": "markdown",
+      "options": {
+        "bold": true,
+        "format": "p",
+        "italic": true,
+        "horizontalrule": true,
+        "embed": true,
+        "image": true
+      }
+    }
+  }
 }
