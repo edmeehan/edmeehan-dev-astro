@@ -53,13 +53,13 @@
     "nav_primary": {
       "type": "array",
       "options": {
-        "structures": "_structures.link"
+        "structures": "_structures.site_link"
       }
     },
     "nav_secondary": {
       "type": "array",
       "options": {
-        "structures": "_structures.link"
+        "structures": "_structures.site_link"
       }
     }
   }

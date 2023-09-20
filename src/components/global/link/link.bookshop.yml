@@ -1,6 +1,6 @@
 spec:
   structures:
-    - link
+    - site_link
   label: Link
   description: Default link
   icon: link

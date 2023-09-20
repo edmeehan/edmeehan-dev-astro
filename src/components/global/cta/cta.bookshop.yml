@@ -1,6 +1,6 @@
 spec:
   structures:
-    - link
+    - site_link
     - cta
   label: CTA
   description: Call to action button

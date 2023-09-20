@@ -81,7 +81,7 @@
     "links_list[*].links": {
       "type": "array",
       "options": {
-        "structures": "_structures.link"
+        "structures": "_structures.site_link"
       }
     }
   },
