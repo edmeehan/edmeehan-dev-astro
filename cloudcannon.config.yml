@@ -6,7 +6,7 @@ collections_config:
   data:
     path: data
     output: false
-    icon: notes
+    
     disable_add: true
     disable_add_folder: true
     disable_file_actions: false
@@ -41,14 +41,14 @@ collections_config:
         hide_extra_inputs: false
         remove_empty_inputs: false
         remove_extra_inputs: true
-        icon: notes
+        
       paginated_posts:
         path: schemas/paginated_posts.md
         reorder_inputs: true
         hide_extra_inputs: false
         remove_empty_inputs: false
         remove_extra_inputs: true
-        icon: notes
+        
   blog:
     path: src/content/blog
     output: true
@@ -74,7 +74,7 @@ collections_config:
         hide_extra_inputs: false
         remove_empty_inputs: false
         remove_extra_inputs: true
-        icon: notes
+        
   projects:
     path: src/content/projects
     output: true
@@ -100,7 +100,7 @@ collections_config:
         hide_extra_inputs: false
         remove_empty_inputs: false
         remove_extra_inputs: true
-        icon: notes
+        
 collection_groups:
   - heading: Pages
     collections:
