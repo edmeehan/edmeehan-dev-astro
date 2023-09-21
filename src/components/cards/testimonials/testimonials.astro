@@ -1,7 +1,7 @@
 ---
 import MarkdownIt from 'markdown-it';
 import Testimonial from 'src/components/card/testimonial.astro';
-const { content, testimonials, section } = Astro.props;
+const { content, testimonials } = Astro.props;
 const md = new MarkdownIt({ html: true });
 ---
 <style lang="scss" is:global>

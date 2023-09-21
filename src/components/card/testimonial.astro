@@ -1,8 +1,7 @@
 ---
 import MarkdownIt from 'markdown-it';
-const { path } = Astro.props;
+const block = Astro.props;
 const md = new MarkdownIt({ html: true });
-console.log(Test);
 ---
 <style lang="scss" is:global>
   article[data-card-testimonial] {
