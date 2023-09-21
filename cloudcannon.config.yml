@@ -113,18 +113,6 @@ collection_groups:
     collections:
       - data
 _inputs:
-  data.testimonials:
-    type: array
-    label: Testing this now
-  data.testimonials[*]:
-    type: object
-    options:
-      preview:
-        icon: palette
-        subtext:
-          - key: title
-        text:
-          - key: name
   uuid:
     type: text
     instance_value: UUID
