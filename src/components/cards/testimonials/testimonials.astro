@@ -1,7 +1,6 @@
 ---
 import MarkdownIt from 'markdown-it';
-import Card from "src/components/card/testimonial.astro";
-import Section from "src/components/layout/section.astro";
+import Testimonial from 'src/components/card/testimonial.astro';
 const { content, testimonials, section } = Astro.props;
 const md = new MarkdownIt({ html: true });
 ---
@@ -50,7 +49,7 @@ const md = new MarkdownIt({ html: true });
     <ul>
       { testimonials.map((item) => (
         <li>
-          <Card {...item} />
+          <Testimonial path={item} />
         </li>
       ))}
     </ul>

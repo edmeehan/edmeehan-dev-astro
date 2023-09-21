@@ -1,6 +1,6 @@
 ---
-_schema: page
-title: Testing Post
+_schema: post
+title: TCG Analytics
 hidden: false
 seo:
   no_index: false

@@ -4,7 +4,7 @@ title: Projects
 hidden: false
 seo:
   no_index: false
-  page_title:
+  page_title: Projects
   page_description: Projects on edmeehan.dev
   featured_image:
   featured_image_alt:

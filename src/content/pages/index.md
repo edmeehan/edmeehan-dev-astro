@@ -1,6 +1,6 @@
 ---
 _schema: page
-title: Freelance web developer in San Diego, California
+title: Homepage
 hidden: false
 seo:
   no_index: false

@@ -18,7 +18,6 @@ collections_config:
       - visual
       - data
       - source
-    # create: [relative_base_path]/{slug}.md
     _editables: {}
     _inputs:
       content_blocks:
@@ -35,19 +34,6 @@ collections_config:
         path: schemas/page.md
       paginated_posts:
         path: schemas/paginated_posts.md
-  testimonials:
-    path: src/content/testimonials
-    name: Testimonials
-    icon: 
-    singular_name: Testimonial
-    _enabled_editors:
-      - content
-      - data
-      - source
-    disable_add_folder: true
-    schemas:
-      testimonial:
-        path: schemas/testimonial.md
   blog:
     path: src/content/blog
     output: true
@@ -64,7 +50,7 @@ collections_config:
     _select_data: {}
     _structures: {}
     disable_add: false
-    disable_add_folder: false
+    disable_add_folder: true
     disable_file_actions: false
     schemas:
       post:
@@ -85,7 +71,7 @@ collections_config:
     _select_data: {}
     _structures: {}
     disable_add: false
-    disable_add_folder: false
+    disable_add_folder: true
     disable_file_actions: false
     schemas:
       post:
@@ -98,9 +84,6 @@ collection_groups:
     collections:
       - blog
       - projects
-  - heading: Other Models
-    collections:
-      - testimonials
   - heading: Site Settings
     collections:
       - data
@@ -128,6 +111,13 @@ _inputs:
       horizontalrule: true
       undo: true
       redo: true
+  testimonial:
+    type: markdown
+      options:
+        bold: true
+        format: p div
+        italic: true
+        link: true
   seo:
     comment: Set page title, description, canonical, share image, and no follow.
     type: object
@@ -160,8 +150,11 @@ _inputs:
   testimonials[*]:
     type: select
     options:
-      values: collections.testimonials
+      value_key: uuid
+      values: data.testimonials
       preview:
+        image:
+          - key: image
         text:
           - key: name
   content_blocks[*].section:
@@ -234,4 +227,6 @@ _structures:
   page_blocks:
     style: modal
 _editables: {}
+data_config:
+  testimonials: true
 timezone: America/Los_Angeles

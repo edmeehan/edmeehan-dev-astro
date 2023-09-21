@@ -1,10 +1,10 @@
 ---
 _schema: page
-title: Web development, custom JAMstack & Shopify theme development
+title: Web Development
 hidden: false
 seo:
   no_index: false
-  page_title:
+  page_title: Web development, custom JAMstack & Shopify theme development
   page_description: Freelance web developer in San Deigo, California. Services include Shopify theme development, JAMstack website development, and headless CMS integration.
   featured_image:
   featured_image_alt:

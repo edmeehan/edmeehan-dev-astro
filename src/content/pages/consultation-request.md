@@ -4,7 +4,7 @@ title: Consultation Request
 hidden: false
 seo:
   no_index: false
-  page_title:
+  page_title: Consultation Request
   page_description: Fill out this consultation request form to start a conversation with Ed Meehan.
   featured_image:
   featured_image_alt:

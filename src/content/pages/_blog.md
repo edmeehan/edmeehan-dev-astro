@@ -1,10 +1,10 @@
 ---
 _schema: paginated_posts
-title: Web development blog
+title: Blog
 hidden: false
 seo:
   no_index: false
-  page_title: 
+  page_title: Web development blog
   page_description: Web development, e-commerce, and online marketing insights by Ed Meehan.
   featured_image:
   featured_image_alt:

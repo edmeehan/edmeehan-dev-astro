@@ -1,6 +1,6 @@
 ---
-_schema: page
-title: Testing Post
+_schema: post
+title: 5 Reasons To Use Gasby
 hidden: false
 seo:
   no_index: false

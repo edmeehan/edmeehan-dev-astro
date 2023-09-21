@@ -1,6 +1,6 @@
 ---
-_schema: page
-title: Testing Post
+_schema: post
+title: Gym Attendance App
 hidden: false
 seo:
   no_index: false
