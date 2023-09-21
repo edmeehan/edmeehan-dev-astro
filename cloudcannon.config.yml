@@ -148,15 +148,16 @@ _inputs:
   testimonials:
     type: array
   testimonials[*]:
-    type: select
-    options:
-      value_key: uuid
-      values: data.testimonials
-      preview:
-        image:
-          - key: image
-        text:
-          - key: name
+    type: text
+    # type: select
+    # options:
+    #   value_key: uuid
+    #   values: data.testimonials
+    #   preview:
+    #     image:
+    #       - key: image
+    #     text:
+    #       - key: name
   content_blocks[*].section:
     label: Section Styles
     comment: Set the transition and background of section.
@@ -228,5 +229,5 @@ _structures:
     style: modal
 _editables: {}
 data_config:
-  testimonials: true
+  # testimonials: true
 timezone: America/Los_Angeles
