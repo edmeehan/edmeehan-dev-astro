@@ -197,7 +197,15 @@ _inputs:
     type: array
     cascade: true
   testimonials[*]:
-    type: text
+    type: select
+    options:
+      value_key: uuid
+      values: data.testimonials
+      preview:
+        image:
+          - key: image
+        text:
+          - key: name
     cascade: true
   content_blocks[*].section:
     type: object
