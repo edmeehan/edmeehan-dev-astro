@@ -113,11 +113,11 @@ _inputs:
       redo: true
   testimonial:
     type: markdown
-      options:
-        bold: true
-        format: p div
-        italic: true
-        link: true
+    options:
+      bold: true
+      format: p div
+      italic: true
+      link: true
   seo:
     comment: Set page title, description, canonical, share image, and no follow.
     type: object
