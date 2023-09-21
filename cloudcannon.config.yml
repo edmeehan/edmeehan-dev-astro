@@ -1,12 +1,15 @@
 paths:
-  data: data
-  static: public
   uploads: public/uploads/[collection]
+  static: public
+  data: data
 collections_config:
   data:
     path: data
+    output: false
+    icon: notes
     disable_add: true
     disable_add_folder: true
+    disable_file_actions: false
   pages:
     path: src/content/pages
     output: true
@@ -14,16 +17,18 @@ collections_config:
     name: Pages
     icon: web
     singular_name: Page
+    _editables: {}
     _enabled_editors:
       - visual
       - data
       - source
-    _editables: {}
     _inputs:
       content_blocks:
+        type: auto
         options:
           structures: _structures.page_blocks
-          empty_type: null
+          empty_type:
+        cascade: true
     _select_data: {}
     _structures: {}
     disable_add: false
@@ -32,8 +37,18 @@ collections_config:
     schemas:
       page:
         path: schemas/page.md
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: true
+        icon: notes
       paginated_posts:
         path: schemas/paginated_posts.md
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: true
+        icon: notes
   blog:
     path: src/content/blog
     output: true
@@ -41,11 +56,11 @@ collections_config:
     name: Blog
     icon: wysiwyg
     singular_name: Blog Post
+    _editables: {}
     _enabled_editors:
       - content
       - data
       - source
-    _editables: {}
     _inputs: {}
     _select_data: {}
     _structures: {}
@@ -55,6 +70,11 @@ collections_config:
     schemas:
       post:
         path: schemas/post.md
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: true
+        icon: notes
   projects:
     path: src/content/projects
     output: true
@@ -62,11 +82,11 @@ collections_config:
     name: Projects
     icon: work
     singular_name: Project
+    _editables: {}
     _enabled_editors:
       - content
       - data
       - source
-    _editables: {}
     _inputs: {}
     _select_data: {}
     _structures: {}
@@ -76,6 +96,11 @@ collections_config:
     schemas:
       post:
         path: schemas/post.md
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: true
+        icon: notes
 collection_groups:
   - heading: Pages
     collections:
@@ -94,112 +119,141 @@ _inputs:
     hidden: true
     cascade: false
   hidden:
-    comment: Enabling this will stop page from being built.
     type: checkbox
+    comment: Enabling this will stop page from being built.
+    cascade: true
   content:
     type: markdown
     options:
-      styles: /src/styles/cloudcannon_editor.css
+      allow_resize: true
+      initial_height: 320
       bold: true
-      format: p h1 h2 h3 h4
-      italic: true
-      strike: true
       bulletedlist: true
+      format: p h1 h2 h3 h4
+      horizontalrule: true
+      image_size_attributes: true
       indent: true
+      italic: true
       numberedlist: true
       outdent: true
-      horizontalrule: true
-      undo: true
       redo: true
+      strike: true
+      styles: /src/styles/cloudcannon_editor.css
+      undo: true
+    cascade: true
   testimonial:
     type: markdown
     options:
+      allow_resize: true
+      initial_height: 320
       bold: true
       format: p div
+      image_size_attributes: true
       italic: true
       link: true
+    cascade: true
   seo:
-    comment: Set page title, description, canonical, share image, and no follow.
     type: object
     options:
       preview:
         icon: travel_explore
         image:
           - key: featured_image
-        text:
-          - key: page_title
-          - No Title
         subtext:
           - key: page_description
           - No Description
+        text:
+          - key: page_title
+          - No Title
+    comment: Set page title, description, canonical, share image, and no follow.
+    cascade: true
   seo.page_title:
+    type: auto
     comment: Ideal length is 60-70 characters.
+    cascade: true
   seo.page_description:
+    type: auto
     comment: Ideal length is 150-160 characters.
+    cascade: true
   seo.canonical_url:
+    type: auto
     comment: Relative paths only.
+    cascade: true
   seo.featured_image:
+    type: auto
     comment: Open graph image used in social media.
+    cascade: true
   seo.featured_image_alt:
+    type: auto
     comment: Open graph image alternate text to descibe the image.
+    cascade: true
   seo.no_index:
     type: checkbox
-    comment: When selected this removes the page from your sitemap and adds the noindex robots meta tag
+    comment: >-
+      When selected this removes the page from your sitemap and adds the noindex
+      robots meta tag
+    cascade: true
   testimonials:
     type: array
+    cascade: true
   testimonials[*]:
     type: text
-    # type: select
-    # options:
-    #   value_key: uuid
-    #   values: data.testimonials
-    #   preview:
-    #     image:
-    #       - key: image
-    #     text:
-    #       - key: name
+    cascade: true
   content_blocks[*].section:
-    label: Section Styles
-    comment: Set the transition and background of section.
     type: object
     options:
       preview:
         icon: palette
-        text:
-          - key: transition
         subtext:
           - key: background
+        text:
+          - key: transition
+    label: Section Styles
+    comment: Set the transition and background of section.
+    cascade: true
   content_blocks[*].section.transition:
-    comment: Set the graphic that is displayed between blocks on a page.
     type: select
     options:
+      allow_empty: true
       values: _select_data.section_transition
+    comment: Set the graphic that is displayed between blocks on a page.
+    cascade: true
   content_blocks[*].section.background:
-    comment: Set the background of the block on the page.
     type: select
     options:
+      allow_empty: true
       values: _select_data.section_background
+    comment: Set the background of the block on the page.
+    cascade: true
   content_blocks[*].layout:
-    comment: Set some basic layout of section.
     type: object
+    comment: Set some basic layout of section.
+    cascade: true
   content_blocks[*].layout.image_align:
-    comment: Set the alignment of image.
     type: select
     options:
+      allow_empty: true
       values: _select_data.layout_image_align
+    comment: Set the alignment of image.
+    cascade: true
   content_blocks[*].layout.image_width:
-    comment: Set the width of image.
     type: select
     options:
+      allow_empty: true
       values: _select_data.layout_image_width
+    comment: Set the width of image.
+    cascade: true
   content_blocks[*].layout.text_align:
-    comment: Set the alignment of text.
     type: select
     options:
+      allow_empty: true
       values: _select_data.layout_text_align
+    comment: Set the alignment of text.
+    cascade: true
   content_blocks[*].layout.is_mini:
-    comment: Set the content width to small.
     type: checkbox
+    comment: Set the content width to small.
+    cascade: true
 _select_data:
   section_transition:
     none: None
@@ -229,5 +283,7 @@ _structures:
     style: modal
 _editables: {}
 data_config:
-  # testimonials: true
+  testimonials:
+    path: data/testimonials.json
+    parser: json
 timezone: America/Los_Angeles
