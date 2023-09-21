@@ -6,7 +6,6 @@ collections_config:
   data:
     path: data
     output: false
-    
     disable_add: true
     disable_add_folder: true
     disable_file_actions: false
@@ -113,6 +112,15 @@ collection_groups:
     collections:
       - data
 _inputs:
+  page_size:
+    type: range
+    label: Pagination
+    comment: How many pages to display in a pagination set.
+    options:
+      step: 1
+      min: 2
+      max: 10
+      empty_type: number
   uuid:
     type: text
     instance_value: UUID

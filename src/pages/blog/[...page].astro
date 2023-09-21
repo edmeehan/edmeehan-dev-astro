@@ -1,0 +1,34 @@
+---
+import PostLayout from "src/layouts/post.astro";
+import Collection from "src/components/posts/collection.astro";
+import { getCollection, getEntryBySlug } from "astro:content";
+
+const slug = "blog"; // simple edit of one param
+
+export async function getStaticPaths({paginate}: { paginate: Function }) {
+  const slug = "blog"
+  const posts = await getCollection(
+    slug,
+    ({ data }) => !data.hidden
+  );
+  const { data: { page_size: pageSize }} = await getEntryBySlug("pages", slug);
+  return paginate(posts, { pageSize });
+}
+
+const { data } = await getEntryBySlug("pages", slug);
+const { page, page: {data: collection} } = Astro.props;
+
+if (!data) {
+  throw new Error(`Failed to get page with slug: ${slug}`);
+}
+---
+<PostLayout frontmatter={data}>
+  <Collection slug={slug} pagination={page}>
+    { collection.map(item => {
+      // console.log(item)
+      return (
+        <li>This is an item</li>
+      )
+    })}
+  </Collection>
+</PostLayout>

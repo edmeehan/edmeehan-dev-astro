@@ -2,6 +2,7 @@
 _schema: paginated_posts
 title: Blog
 hidden: false
+page_size: 6
 seo:
   no_index: false
   page_title: Web development blog

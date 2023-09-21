@@ -1,0 +1,22 @@
+---
+import Pagination from "./pagination.astro";
+const { pagination, slug } = Astro.props;
+---
+<style lang="scss" is:global>
+  [data-posts-collection] {
+    @extend %primary-wrapper;
+    padding: $layout_gutter;
+    
+    > ul {
+      @extend %collection-wrapper;
+    }
+  }
+</style>
+<section data-posts-collection>
+  <ul>
+    <slot />
+  </ul>
+  { pagination.lastPage > 1 &&
+    <Pagination pagination={pagination} slug={slug} />
+  }
+</section>

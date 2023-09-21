@@ -4,7 +4,7 @@ import { getCollection, getEntryBySlug } from "astro:content";
 
 export async function getStaticPaths() {
   const posts = await getCollection(
-    "blog",
+    "projects",
     ({ data }) => !data.hidden  
   );
   return posts.map(({slug}) => ({ params: { slug } }));
@@ -16,7 +16,7 @@ if (!slug) {
   throw new Error(`Post slug is undefined`);
 }
 
-const post = await getEntryBySlug("blog", slug);
+const post = await getEntryBySlug("projects", slug);
 
 if (!post) {
   throw new Error(`Failed to get post with slug: ${slug}`);

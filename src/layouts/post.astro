@@ -9,8 +9,8 @@ import MasterLayout from "./master.astro";
 
 const { frontmatter, body } = Astro.props;
 
-if (!body && !frontmatter) {
-  throw new Error("Post body and frontmatter must be defined");
+if (!frontmatter) {
+  throw new Error("Frontmatter must be defined");
 }
 ---
 
