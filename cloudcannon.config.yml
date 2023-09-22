@@ -333,3 +333,7 @@ data_config:
     path: data/testimonials.json
     parser: json
 timezone: America/Los_Angeles
+_snippets_imports:
+  mdx: true
+_snippets:
+  

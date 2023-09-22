@@ -5,7 +5,7 @@ import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [bookshop(), react(), mdx()],
+  integrations: [mdx(), bookshop(), react()],
   trailingSlash: 'always',
   vite: {
     css: {
