@@ -1,0 +1,69 @@
+---
+const { stuff } = Astro.props;
+---
+<style lang="scss" is:global>
+  [data-posts-article] {
+    .meta {
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      width: 100%;
+      top: 1rem;
+
+      > div {
+        background-color: ($color_secondary)90;
+        padding: .25em .5em;
+      }
+
+      .date, .read-time {
+        border-radius: $radius_md;
+      }
+
+      .date {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        padding-right: .75em;
+      }
+
+      .read-time {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        padding-left: .75em;
+      }
+    }
+    .content {
+      .title {
+        text-decoration: none;
+      }
+    }
+  }
+</style>
+<article data-posts-article>
+  <a href={`/`}>
+    <!-- <GatsbyImage
+      alt={card.alt}
+      copyright={card.copyright}
+      image={getImage(card)}
+      className='image'
+    /> -->
+  </a>
+  <div class="meta">
+    <div class='date step-down'>
+      <!-- {dateFormatter.format(date)} -->
+    </div>
+    <div class='read-time step-down'>
+      <!-- {read_time} min read -->
+    </div>
+  </div>
+  <div class="content">
+    <!-- <a class='title' title={title.text}>
+      <h3 class='h2'>
+        {title.text}
+      </h3>
+    </a> -->
+    <!-- <PrismicRichText field={excerpt.richText} /> -->
+    <!-- <p><a title={title.text}>
+      Read More&hellip;
+    </a></p> -->
+  </div>
+</article>

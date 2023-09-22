@@ -1,7 +1,14 @@
 ---
-_schema: post
+_schema: project
+uuid: 2349d10e-dc4f-4b5a-9c90-0527fb6019e7
 title: Crimewire
-hidden: false
+excerpt:
+feature_image:
+published:
+read_time:
+category:
+project_url:
+tags:
 seo:
   no_index: false
   page_title:
@@ -10,6 +17,9 @@ seo:
   featured_image_alt:
   open_graph_type:
   canonical_url:
+hidden: true
+show_share:
+show_comments:
 ---
 
 # This is the blog title

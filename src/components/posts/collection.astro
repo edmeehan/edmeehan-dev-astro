@@ -1,21 +1,34 @@
 ---
 import Pagination from "./pagination.astro";
+import MiniPagination from "./mini-pagination.astro";
 const { pagination, slug } = Astro.props;
 ---
 <style lang="scss" is:global>
   [data-posts-collection] {
     @extend %primary-wrapper;
     padding: $layout_gutter;
+
+    > header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
     
-    > ul {
+    .articles {
       @extend %collection-wrapper;
     }
   }
 </style>
 <section data-posts-collection>
-  <ul>
+  <header>
+    <div>This is the headline</div>
+    { pagination.lastPage > 1 &&
+      <MiniPagination pagination={pagination}/>
+    }
+  </header>
+  <div class="articles">
     <slot />
-  </ul>
+  </div>
   { pagination.lastPage > 1 &&
     <Pagination pagination={pagination} slug={slug} />
   }

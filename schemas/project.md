@@ -1,7 +1,13 @@
 ---
-title:
-hidden: true
 uuid:
+title:
+excerpt:
+feature_image:
+published:
+read_time:
+category:
+project_url:
+tags:
 seo:
   no_index: false
   page_title:
@@ -10,4 +16,7 @@ seo:
   featured_image_alt:
   open_graph_type:
   canonical_url:
+hidden: true
+show_share: true
+show_comments: false
 ---

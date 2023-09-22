@@ -46,8 +46,7 @@ collections_config:
         reorder_inputs: true
         hide_extra_inputs: false
         remove_empty_inputs: false
-        remove_extra_inputs: true
-        
+        remove_extra_inputs: true    
   blog:
     path: src/content/blog
     output: true
@@ -60,20 +59,21 @@ collections_config:
       - content
       - data
       - source
-    _inputs: {}
+    _inputs:
+      published:
+        label: Published Date
     _select_data: {}
     _structures: {}
     disable_add: false
     disable_add_folder: true
     disable_file_actions: false
     schemas:
-      post:
-        path: schemas/post.md
+      blog:
+        path: schemas/blog.md
         reorder_inputs: true
         hide_extra_inputs: false
         remove_empty_inputs: false
-        remove_extra_inputs: true
-        
+        remove_extra_inputs: true    
   projects:
     path: src/content/projects
     output: true
@@ -86,20 +86,33 @@ collections_config:
       - content
       - data
       - source
-    _inputs: {}
-    _select_data: {}
+    _inputs:
+      published:
+        label: Project Date
+      tags:
+        type: array
+      tags[*]:
+        type: string
+      category:
+        type: select
+        options:
+          values: _select_data.category
+    _select_data:
+      category:
+        - Development
+        - Analytics
+        - Optimization
     _structures: {}
     disable_add: false
     disable_add_folder: true
     disable_file_actions: false
     schemas:
-      post:
-        path: schemas/post.md
+      project:
+        path: schemas/project.md
         reorder_inputs: true
         hide_extra_inputs: false
         remove_empty_inputs: false
-        remove_extra_inputs: true
-        
+        remove_extra_inputs: true   
 collection_groups:
   - heading: Pages
     collections:
@@ -112,6 +125,16 @@ collection_groups:
     collections:
       - data
 _inputs:
+  show_share:
+    type: switch
+  show_comments:
+    type: switch
+  excerpt:
+    type: markdown
+  published:
+    type: date
+  read_time:
+    type: number
   page_size:
     type: range
     label: Pagination
@@ -297,7 +320,6 @@ _select_data:
 _structures:
   page_blocks:
     style: modal
-_editables: {}
 data_config:
   testimonials:
     path: data/testimonials.json

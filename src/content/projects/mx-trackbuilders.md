@@ -1,7 +1,14 @@
 ---
-_schema: post
+_schema: project
+uuid: 4650d92e-b318-4c13-a437-ec79232e462e
 title: MX Trackbuilders
-hidden: false
+excerpt:
+feature_image:
+published:
+read_time:
+category:
+project_url:
+tags:
 seo:
   no_index: false
   page_title:
@@ -10,6 +17,9 @@ seo:
   featured_image_alt:
   open_graph_type:
   canonical_url:
+hidden: true
+show_share: true
+show_comments: false
 ---
 
 # This is the blog title

@@ -1,0 +1,20 @@
+---
+const { pagination: { url } } = Astro.props;
+const { prev, next } = url;
+---
+<style lang="scss" is:global>
+  [data-posts-collection] {
+    a {
+      margin-left: .25em;
+      margin-right: .25em;
+    }
+  }
+</style>
+<div data-posts-mini-pagination>
+  { prev &&
+    <a class='cta-simple' href={prev}>Prev</a>
+  }
+  { next &&
+    <a class='cta-simple' href={next}>Next</a>
+  }
+</div>

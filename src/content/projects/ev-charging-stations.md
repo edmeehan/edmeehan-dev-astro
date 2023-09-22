@@ -1,7 +1,14 @@
 ---
-_schema: post
+_schema: project
+uuid: b8f8dc9a-d055-46cc-a98d-cf9a3be7896c
 title: EV Charging Stations
-hidden: false
+excerpt:
+feature_image:
+published:
+read_time:
+category:
+project_url:
+tags:
 seo:
   no_index: false
   page_title:
@@ -10,6 +17,9 @@ seo:
   featured_image_alt:
   open_graph_type:
   canonical_url:
+hidden: true
+show_share: true
+show_comments: false
 ---
 
 # This is the blog title
