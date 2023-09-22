@@ -17,7 +17,7 @@ seo:
   featured_image_alt:
   open_graph_type:
   canonical_url:
-hidden: true
+hidden: false
 show_share:
 show_comments:
 ---

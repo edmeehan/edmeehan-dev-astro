@@ -1,6 +1,6 @@
 ---
 title:
-hidden: true
+hidden: false
 uuid:
 seo:
   no_index: false
