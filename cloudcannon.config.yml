@@ -54,7 +54,11 @@ collections_config:
     name: Blog
     icon: wysiwyg
     singular_name: Blog Post
-    _editables: {}
+    _editables:
+      block:
+        snippet: true
+      content:
+        snippet: true
     _enabled_editors:
       - content
       - data
@@ -69,7 +73,7 @@ collections_config:
     disable_file_actions: false
     schemas:
       blog:
-        path: schemas/blog.md
+        path: schemas/blog.mdx
         reorder_inputs: true
         hide_extra_inputs: false
         remove_empty_inputs: false
@@ -81,7 +85,11 @@ collections_config:
     name: Projects
     icon: work
     singular_name: Project
-    _editables: {}
+    _editables:
+      block:
+        snippet: true
+      content:
+        snippet: true
     _enabled_editors:
       - content
       - data
@@ -108,7 +116,7 @@ collections_config:
     disable_file_actions: false
     schemas:
       project:
-        path: schemas/project.md
+        path: schemas/project.mdx
         reorder_inputs: true
         hide_extra_inputs: false
         remove_empty_inputs: false
