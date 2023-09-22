@@ -336,4 +336,18 @@ timezone: America/Los_Angeles
 _snippets_imports:
   mdx: true
 _snippets:
+  link:
+    template: mdx_compnent
+    inline: true
+    preview:
+      text:
+        - key: label
+    definitions:
+      component_name: link
+      named_args:
+        - source_key: label
+          type: string
+      _inputs:
+        label:
+          type: string
   
