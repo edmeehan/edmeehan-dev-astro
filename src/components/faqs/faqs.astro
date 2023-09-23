@@ -1,0 +1,93 @@
+---
+import MarkdownIt from 'markdown-it';
+const { content, faqs, layout } = Astro.props;
+const md = new MarkdownIt({ html: true });
+---
+<style lang="scss" is:global>
+  [data-faqs] {
+    padding: 4.5rem 0;
+
+    @include media-tablet {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+
+      &.wrapper--left {
+        flex-direction: row;
+      }
+      &.wrapper--right {
+        flex-direction: row-reverse
+      }
+      &.wrapper--top {
+        flex-direction: top;
+        max-width: 34rem;
+        margin: 0 auto;
+      }
+    }
+
+    > dl {
+      margin: 0;
+
+      dt {
+        // border-bottom: solid 1px ${({theme}) => theme[`color_${theme.slice_style}_lite`]};
+        padding: .5em .5em .5em 1.3rem;
+        position: relative;
+        cursor: pointer;
+
+        &.active {
+          svg {
+            transform: rotate(90deg);
+          }
+        }
+
+        &:hover {
+          span {
+            padding-left: .5em;
+          }
+        }
+
+        span {
+          padding-left: 0;
+          transition: padding-left 400ms;
+        }
+
+        svg {
+          transition: transform 400ms;
+          transform: rotate(0deg);
+          // fill: ${({theme}) => theme.color_text_default};
+          width: 1.2rem;
+          height: 1.2rem;
+          position: absolute;
+          left: 0;
+          top: .6rem;
+        }
+      }
+      dd {
+        transition: max-height 800ms ease-in-out;
+        // background-color: ${({theme}) => theme[`color_${theme.slice_style}_transition`]};
+        margin: 0;
+        padding: 0 1.3rem;
+        max-height: 0;
+        overflow: hidden;
+
+        &.active {
+          max-height: 500px;
+        }
+      }
+    }
+  }
+</style>
+<div class:list={[`wrapper--${layout.orintation}`]} data-faqs>
+  <header>
+    { content && <div class="rt" set:html={md.render(content)}></div>}
+  </header>
+  <dl>
+    { faqs.map((item) => (
+      <dt role="button" aria-label="Show FAQ answer" class="h3">
+        <svg><use xlink-href='#caret-right'></use></svg>
+        <span>{ item.question }</span>
+      </dt>
+      <dd class="" set:html={md.render(item.answer)}></dd>
+    ))}
+  </dl>
+</div>

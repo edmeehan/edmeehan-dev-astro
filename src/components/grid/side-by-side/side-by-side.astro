@@ -1,0 +1,54 @@
+---
+import MarkdownIt from 'markdown-it';
+import Image from 'src/components/global/image/image.astro';
+import CTA from 'src/components/global/cta/cta.astro';
+const { content, image, cta, layout, grid_items } = Astro.props;
+const md = new MarkdownIt({ html: true });
+---
+<style lang="scss" is:global>
+  [data-grid-side-by-side] {
+    @extend %primary-wrapper;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-direction: column-reverse;
+
+    @include media-tablet-max {
+      .content {
+        text-align: center;
+        p.rt, .h1 {
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+    }
+
+    @include media-tablet {
+      flex-direction: row;
+      align-items: center;
+      gap: 1.5rem;
+
+      .image--small {
+        flex: 0 0 50%;
+      }
+      .image--large {
+        flex: 0 0 65%;
+      }
+
+      &.wrapper--left {}
+
+      &.wrapper--right {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+</style>
+<div class:list={[`wrapper--${layout.image_align}`]} data-grid-side-by-side>
+  <div class:list={[`image--${layout.image_width}`]}>
+    { image && <Image {...image} width="768" height="900" />}
+  </div>
+  <div class="content">
+    { content && <div class="rt" set:html={md.render(content)}></div>}
+    { cta && <CTA {...cta} />}
+  </div>
+</div>

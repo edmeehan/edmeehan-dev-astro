@@ -334,6 +334,11 @@ _inputs:
       values: _select_data.layout_text_align
     comment: Set the alignment of text.
     cascade: true
+  content_blocks[*].layout.orintation:
+    type: select
+    options:
+      values: _select_data.layout_orintation
+    comment: Set the orintation direction.
   content_blocks[*].layout.is_mini:
     type: checkbox
     comment: Set the content width to small.
@@ -357,6 +362,10 @@ _select_data:
   layout_text_align:
     left: Left
     center: Center
+    right: Right
+  layout_orintation:
+    left: Left
+    top: Top
     right: Right
   cta_style:
     primary: Primary

@@ -1,0 +1,36 @@
+spec:
+  structures:
+    - content_blocks
+    - page_blocks
+  label: FAQs
+  description:
+  icon: quiz
+  tags:
+
+blueprint:
+  content:
+  faqs:
+  section:
+    transition: curve
+    background: primary
+  layout:
+    orintation: left
+
+preview:
+
+_structures:
+  faqs:
+    values:
+      - value:
+          question: 
+          answer:
+
+_inputs:
+  faqs:
+    type: array
+    options:
+      structures: _structures.faqs
+  faqs[*].question:
+    type: text
+  faqs[*].answer:
+    type: markdown

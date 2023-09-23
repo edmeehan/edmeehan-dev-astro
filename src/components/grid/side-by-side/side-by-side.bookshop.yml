@@ -1,0 +1,24 @@
+spec:
+  structures:
+    - content_blocks
+    - page_blocks
+  label: Side By Side
+  description: Text and an image
+  icon: grid_view
+  tags:
+    - grid
+
+blueprint:
+  content:
+  cta: bookshop:global/cta
+  image: bookshop:global/image
+  section:
+    transition: curve
+    background: primary
+  layout:
+    image_align: right
+    image_width: small
+
+preview:
+
+_inputs:
