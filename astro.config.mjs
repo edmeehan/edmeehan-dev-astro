@@ -2,10 +2,15 @@ import { defineConfig } from 'astro/config';
 import bookshop from '@bookshop/astro-bookshop';
 import react from "@astrojs/react";
 import mdx from "@astrojs/mdx";
+import AutoImport from 'astro-auto-import';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [mdx(), bookshop(), react()],
+  integrations: [ AutoImport({
+    imports: [
+      {'src/components/global/link/link.astro':[['default','Link']]}
+    ]
+  }), mdx(), bookshop(), react()],
   trailingSlash: 'always',
   vite: {
     css: {
