@@ -375,7 +375,7 @@ _snippets_imports:
   mdx: true
 _snippets:
   link:
-    template: mdx_compnent
+    template: mdx_component
     inline: true
     preview:
       text: Link
