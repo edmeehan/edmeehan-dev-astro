@@ -55,6 +55,7 @@ collections_config:
     icon: wysiwyg
     singular_name: Blog Post
     _editables:
+      snippet: true
       block:
         snippet: true
       content:
@@ -340,14 +341,17 @@ _snippets:
     template: mdx_compnent
     inline: true
     preview:
-      text:
-        - key: label
+      text: Link
     definitions:
-      component_name: link
+      component_name: Link
       named_args:
-        - source_key: label
+        - editor_key: label
+          type: string
+        - editor_key: link
           type: string
       _inputs:
         label:
-          type: string
+          type: text
+        link:
+          type: url
   
