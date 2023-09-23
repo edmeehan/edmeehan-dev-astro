@@ -6,6 +6,7 @@ collections_config:
   data:
     path: data
     output: false
+    icon: notes
     disable_add: true
     disable_add_folder: true
     disable_file_actions: false
@@ -40,13 +41,14 @@ collections_config:
         hide_extra_inputs: false
         remove_empty_inputs: false
         remove_extra_inputs: true
-        
+        icon: notes
       paginated_posts:
         path: schemas/paginated_posts.md
         reorder_inputs: true
         hide_extra_inputs: false
         remove_empty_inputs: false
-        remove_extra_inputs: true    
+        remove_extra_inputs: true
+        icon: notes
   blog:
     path: src/content/blog
     output: true
@@ -55,18 +57,36 @@ collections_config:
     icon: wysiwyg
     singular_name: Blog Post
     _editables:
-      snippet: true
-      block:
-        snippet: true
       content:
+        blockquote: true
+        bold: true
+        bulletedlist: true
+        code: true
+        embed: true
+        format: p h1 h2 h3 h4 pre address div
+        horizontalrule: true
+        image_size_attributes: false
+        indent: true
+        italic: true
+        link: true
+        numberedlist: true
+        outdent: true
+        resize_style: contain
         snippet: true
+        strike: true
+        subscript: true
+        superscript: true
+        table: true
+        underline: true
     _enabled_editors:
       - content
       - data
       - source
     _inputs:
       published:
+        type: auto
         label: Published Date
+        cascade: true
     _select_data: {}
     _structures: {}
     disable_add: false
@@ -78,7 +98,8 @@ collections_config:
         reorder_inputs: true
         hide_extra_inputs: false
         remove_empty_inputs: false
-        remove_extra_inputs: true    
+        remove_extra_inputs: true
+        icon: notes
   projects:
     path: src/content/projects
     output: true
@@ -88,8 +109,10 @@ collections_config:
     singular_name: Project
     _editables:
       block:
+        image_size_attributes: true
         snippet: true
       content:
+        image_size_attributes: true
         snippet: true
     _enabled_editors:
       - content
@@ -97,15 +120,21 @@ collections_config:
       - source
     _inputs:
       published:
+        type: auto
         label: Project Date
+        cascade: true
       tags:
         type: array
+        cascade: true
       tags[*]:
         type: string
+        cascade: true
       category:
         type: select
         options:
+          allow_empty: true
           values: _select_data.category
+        cascade: true
     _select_data:
       category:
         - Development
@@ -121,7 +150,8 @@ collections_config:
         reorder_inputs: true
         hide_extra_inputs: false
         remove_empty_inputs: false
-        remove_extra_inputs: true   
+        remove_extra_inputs: true
+        icon: notes
 collection_groups:
   - heading: Pages
     collections:
@@ -136,23 +166,29 @@ collection_groups:
 _inputs:
   show_share:
     type: switch
+    cascade: true
   show_comments:
     type: switch
+    cascade: true
   excerpt:
     type: markdown
+    cascade: true
   published:
     type: date
+    cascade: true
   read_time:
     type: number
+    cascade: true
   page_size:
     type: range
-    label: Pagination
-    comment: How many pages to display in a pagination set.
     options:
-      step: 1
       min: 2
       max: 10
+      step: 1
       empty_type: number
+    label: Pagination
+    comment: How many pages to display in a pagination set.
+    cascade: true
   uuid:
     type: text
     instance_value: UUID
@@ -242,10 +278,10 @@ _inputs:
       value_key: uuid
       values: data.testimonials
       preview:
-        image:
-          - key: image
         text:
           - key: name
+        image:
+          - key: image
     cascade: true
   content_blocks[*].section:
     type: object
@@ -329,6 +365,7 @@ _select_data:
 _structures:
   page_blocks:
     style: modal
+_editables: {}
 data_config:
   testimonials:
     path: data/testimonials.json
@@ -352,6 +389,7 @@ _snippets:
       _inputs:
         label:
           type: text
+          cascade: true
         link:
           type: url
-  
+          cascade: true
