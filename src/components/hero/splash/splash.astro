@@ -2,8 +2,10 @@
 import MarkdownIt from 'markdown-it';
 import Image from 'src/components/global/image/image.astro';
 import CTA from 'src/components/global/cta/cta.astro';
-const { content, image, cta } = Astro.props;
+const { content, image, cta, image:[firstImage] } = Astro.props;
 const md = new MarkdownIt({ html: true });
+const { width, height } = firstImage;
+const imageWidth = `${width}px`;
 ---
 <style lang="scss" is:global>
   [data-hero-splash] {
@@ -18,28 +20,37 @@ const md = new MarkdownIt({ html: true });
     }
 
     > .content {
-      @include media-tablet {
-        flex: 0 1 auto;
-      }
       @include media-tablet-max {
         padding-bottom: 4rem;
+      }
+      @include media-tablet {
+        flex: 0 1 auto;
+        min-width: 400px;
+      }
+      @include media-laptop {
+        min-width: 550px;
       }
     }
     > .image {
       position: relative;
-      z-index: -1;
-      margin-bottom: -100px;
+      // z-index: -1;
+      // margin-bottom: -100px;
+
+      img {
+        width: 100%;
+      }
 
       @include media-tablet {
-        flex: 0 0 40%;
+        flex: 0 1 auto;
         margin-bottom: 0;
+        max-width: var(--imageWidth);
       }
     }
   }
 </style>
 
 <div data-hero-splash>
-  <div class="image">
+  <div class="image" style={{'--imageWidth': imageWidth}}>
   { image && <Image images={image} />}
   </div>
   <div class="content">

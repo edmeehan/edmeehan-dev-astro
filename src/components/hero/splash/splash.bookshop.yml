@@ -9,8 +9,33 @@ spec:
     - hero
 
 blueprint:
-  content:
-  image: [bookshop:global/image]
+  content: >-
+    <p class="eyebrow">Eyebrow</p>
+
+
+    <h1 class="h1">Headline with a <strong>strong tag</strong></h1>
+
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non tellus sapien. Duis id neque diam. Mauris commodo porta sapien vel viverra. Sed finibus.
+  image:
+    - path: /uploads/whale-background.jpeg
+      alt: whales and water
+      title:
+      width: 600
+      height: 710
+      srcset:
+      sizes:
+      media: '(min-width: 768px)'
+      lazyload: lazy
+    - path: /uploads/whale-background.jpeg
+      alt: whales and water
+      title:
+      width: 600
+      height: 710
+      srcset:
+      sizes:
+      media: '(max-width: 767px)'
+      lazyload: lazy
   cta: bookshop:global/cta
   section:
     transition: curve
@@ -19,3 +44,7 @@ blueprint:
 preview:
 
 _inputs:
+  image:
+    type: array
+    options:
+      structures: _structures.image

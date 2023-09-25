@@ -15,23 +15,29 @@ seo:
 content_blocks:
   - _bookshop_name: hero/splash
     image:
-      - path: /uploads/whale-background.jpeg
+      - path: /uploads/pages/splash-whale-background@2x.png
         alt: whales and water
         title:
-        width:
-        height:
+        width: 768
+        height: 900
         srcset:
-        sizes:
-        media:
+          - 400
+          - 600
+          - 768
+          - 900
+          - 1200
+          - 1536
+        sizes: '(max-width: 1023px) 50vw,(max-width: 1380px) calc(90vw - 550px), 768px'
+        media: '(min-width: 768px)'
         lazyload: lazy
-      - path: /uploads/whale-background.jpeg
+      - path: /uploads/pages/altgrid-rays-complete-wide@2x.png
         alt: whales and water
         title:
-        width:
-        height:
-        srcset:
+        width: 800
+        height: 875
+        srcset: []
         sizes:
-        media:
+        media: '(max-width: 767px)'
         lazyload: lazy
     content: >-
       <p class="eyebrow">Fast, Secure, Scalable</p>

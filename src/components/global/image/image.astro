@@ -1,26 +1,33 @@
 ---
+import imgix from 'src/shared/imgix.js'
 const { image, images } = Astro.props;
 const display_images = image ? [image] : images;
 const use_art_direction = display_images.length > 1;
-
-
+display_images.forEach(item => {
+  if (item.srcset && item.width) {
+    item._srcset = item.srcset.map(set => `${imgix(item.path, set, 1)} ${set}w`).toString();
+  }
+});
 ---
 {!use_art_direction && display_images.map(item => (
   <img src={item.path}
     alt={item.alt}
     width={item.width}
     height={item.height}
+    loading={item.lazyload}
   />
 ))}
 {use_art_direction && (
   <picture>
     {display_images.map(item => (
-      <source src={item.path}
-        srcset={item.srcset}
+      <source src={imgix(item.path, item.width, 1)}
+        srcset={item._srcset}
+        media={item.media}
       />
     ))}
     <img src={display_images[0].path}
       alt={display_images[0].alt}
+      loading={display_images[0].lazyload}
     />
   </picture>
 )}
