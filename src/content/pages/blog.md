@@ -8,7 +8,7 @@ seo:
   page_title: Web development blog
   page_description: Web development, e-commerce, and online marketing insights by Ed Meehan.
   featured_image:
-  featured_image_alt:
+  
   open_graph_type:
   canonical_url:
 content_blocks:

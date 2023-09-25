@@ -9,7 +9,7 @@ seo:
     Does your business need a better website? Amplify performance, and maximize
     online potential. Contact me today!
   featured_image:
-  featured_image_alt:
+  
   open_graph_type:
   canonical_url:
 content_blocks:

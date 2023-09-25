@@ -83,6 +83,10 @@ collections_config:
       - data
       - source
     _inputs:
+      feature_image:
+        type: object
+        options:
+          structures: _structures.image
       published:
         type: date
         label: Published Date
@@ -252,13 +256,10 @@ _inputs:
     comment: Relative paths only.
     cascade: true
   seo.featured_image:
-    type: auto
+    type: object
     comment: Open graph image used in social media.
-    cascade: true
-  seo.featured_image_alt:
-    type: auto
-    comment: Open graph image alternate text to descibe the image.
-    cascade: true
+    options:
+      structures: _structures.image
   seo.no_index:
     type: checkbox
     comment: >-
