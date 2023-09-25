@@ -10,7 +10,7 @@ spec:
 
 blueprint:
   content:
-  image:
+  image: [bookshop:global/image]
   cta: bookshop:global/cta
   section:
     transition: curve

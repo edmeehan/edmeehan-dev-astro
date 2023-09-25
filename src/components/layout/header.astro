@@ -2,7 +2,6 @@
 import Component from "src/shared/astro/component.astro"
 import data from "data/header.json"
 import Image from "src/components/global/image/image.astro"
-import type { Code } from "astro:components";
 const { logo, nav_primary, nav_secondary } = data;
 ---
 <style lang="scss" is:global>
@@ -63,7 +62,7 @@ const { logo, nav_primary, nav_secondary } = data;
         background-color: $color_secondary;
         overflow: hidden;
         transition: height 300ms;
-        // height: ${({menuToggled, theme}) => menuToggled ? `calc(100vh - ${theme.header_mobile_height})` : '0px'};
+        height: 0px;
 
         ul {
           flex-direction: column;
@@ -75,8 +74,8 @@ const { logo, nav_primary, nav_secondary } = data;
           > a {
             font-size: calc($text_mobile_cta * 2);
             transition: opacity 250ms 300ms, transform 200ms 300ms;
-            // opacity: ${({menuToggled}) => menuToggled ? '1' : '0'};
-            // transform: ${({menuToggled}) => menuToggled ? 'translateX(0)' : 'translateX(-50vw)'};
+            opacity: 0;
+            transform: translateX(-50vw);
           }
         }
       }
@@ -131,15 +130,41 @@ const { logo, nav_primary, nav_secondary } = data;
       }
 
       .bars {
-        // display: ${({menuToggled}) => menuToggled ? 'none' : ''};
+        display: inline;
       }
       .xmark {
-        // display: ${({menuToggled}) => menuToggled ? '' : 'none'};
+        display: none;
+      }
+    }
+    // JS Click Action
+    &.header--show-nav {
+      @include media-tablet-max {
+        .primary {
+          height: calc(100vh - $header_mobile_height);
+          li > a {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+      }
+      .menuBtn {
+        .bars {
+          display: none;
+        }
+        .xmark {
+          display: inline;
+        }
       }
     }
   }
 </style>
-
+<script>
+  const header = document.querySelector('[data-layout-header]');
+  header.querySelector('.menuBtn')
+    .addEventListener('click', (e) => {
+      header.classList.toggle("header--show-nav");
+    });
+</script>
 <header data-layout-header>
   <div class='brand flex'>
     <a href="/" title="homepage">
@@ -152,14 +177,14 @@ const { logo, nav_primary, nav_secondary } = data;
       />
     </a>
   </div>
-  <nav class='primary flex'>
+  <nav class='primary flex' aria-label="navigation link list">
     { nav_primary && (
       <ul>
         { nav_primary.map (item => <li><Component single={item} /></li>)}
       </ul>
     )}
   </nav>
-  <nav class='secondary flex'>
+  <nav class='secondary flex' aria-label="navigation link list">
     { nav_secondary && (
       <ul>
         { nav_secondary.map (item => <li><Component single={item} /></li>)}

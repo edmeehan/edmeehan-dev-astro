@@ -10,7 +10,7 @@ const set_prev = !is_first && prev.background !== 'loud';
   $transition_swoosh: 12.5%;
   $transition_curve: 6.6%;
 
-  .section[data-layout-section] {
+  [data-layout-section] {
     position: relative;
 
     &.section--primary {
@@ -38,7 +38,7 @@ const set_prev = !is_first && prev.background !== 'loud';
       margin-bottom: -($transition_curve);
     }
 
-    .content {
+    > .content {
       padding-left: $layout_gutter;
       padding-right: $layout_gutter;
       position: relative;
@@ -57,7 +57,7 @@ const set_prev = !is_first && prev.background !== 'loud';
       }
     }
 
-    .svg[data-svg-transition] {
+    > .svg[data-svg-transition] {
       width: 100%;
       height: 0;
       position: relative;
@@ -86,7 +86,7 @@ const set_prev = !is_first && prev.background !== 'loud';
 <section
   data-layout-section
   data-index={ index }
-  class:list={[`section`,`section--${background}`, {[`section--${transition}`]: set_transition}]}
+  class:list={[`section--${background}`, {[`section--${transition}`]: set_transition}]}
 >
   <div class={`content--prev-${set_prev ? prev.transition : 'none'}`}>
     <slot />

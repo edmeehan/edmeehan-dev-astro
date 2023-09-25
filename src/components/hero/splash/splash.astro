@@ -6,7 +6,7 @@ const { content, image, cta } = Astro.props;
 const md = new MarkdownIt({ html: true });
 ---
 <style lang="scss" is:global>
-  .wrapper[data-hero-splash] {
+  [data-hero-splash] {
     @extend %primary-wrapper;
     
     @include media-tablet {
@@ -17,7 +17,7 @@ const md = new MarkdownIt({ html: true });
       min-height: 80vh;
     }
 
-    .content {
+    > .content {
       @include media-tablet {
         flex: 0 1 auto;
       }
@@ -25,7 +25,7 @@ const md = new MarkdownIt({ html: true });
         padding-bottom: 4rem;
       }
     }
-    .image {
+    > .image {
       position: relative;
       z-index: -1;
       margin-bottom: -100px;
@@ -38,9 +38,9 @@ const md = new MarkdownIt({ html: true });
   }
 </style>
 
-<div class="wrapper" data-hero-splash>
+<div data-hero-splash>
   <div class="image">
-  { image && <Image {...image} width="768" height="900" />}
+  { image && <Image {...image} width="350" height="500" />}
   </div>
   <div class="content">
     { content && <div class="rt" set:html={md.render(content)}></div>}
