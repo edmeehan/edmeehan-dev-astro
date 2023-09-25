@@ -35,7 +35,7 @@ content_blocks:
         title:
         width: 800
         height: 875
-        srcset: []
+        srcset:
         sizes:
         media: '(max-width: 767px)'
         lazyload: lazy
