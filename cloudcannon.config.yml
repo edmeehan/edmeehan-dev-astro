@@ -84,9 +84,8 @@ collections_config:
       - source
     _inputs:
       published:
-        type: auto
+        type: date
         label: Published Date
-        cascade: true
     _select_data: {}
     _structures: {}
     disable_add: false
@@ -120,15 +119,12 @@ collections_config:
       - source
     _inputs:
       published:
-        type: auto
         label: Project Date
-        cascade: true
+        type: date
       tags:
         type: array
-        cascade: true
       tags[*]:
-        type: string
-        cascade: true
+        type: text
       category:
         type: select
         options:
