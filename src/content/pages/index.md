@@ -15,8 +15,24 @@ seo:
 content_blocks:
   - _bookshop_name: hero/splash
     image:
-      path: /uploads/whale-background.jpeg
-      alt: whales and water
+      - path: /uploads/whale-background.jpeg
+        alt: whales and water
+        title:
+        width:
+        height:
+        srcset:
+        sizes:
+        media:
+        lazyload: lazy
+      - path: /uploads/whale-background.jpeg
+        alt: whales and water
+        title:
+        width:
+        height:
+        srcset:
+        sizes:
+        media:
+        lazyload: lazy
     content: >-
       <p class="eyebrow">Fast, Secure, Scalable</p>
 

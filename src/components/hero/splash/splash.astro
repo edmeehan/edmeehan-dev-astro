@@ -40,7 +40,7 @@ const md = new MarkdownIt({ html: true });
 
 <div data-hero-splash>
   <div class="image">
-  { image && <Image {...image} width="350" height="500" />}
+  { image && <Image images={image} />}
   </div>
   <div class="content">
     { content && <div class="rt" set:html={md.render(content)}></div>}

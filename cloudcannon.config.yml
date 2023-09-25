@@ -189,6 +189,10 @@ _inputs:
     label: Pagination
     comment: How many pages to display in a pagination set.
     cascade: true
+  lazyload:
+    type: select
+    options:
+      values: _select_data.lazyload
   uuid:
     type: text
     instance_value: UUID
@@ -341,6 +345,9 @@ _inputs:
     comment: Set the content width to small.
     cascade: true
 _select_data:
+  lazyload:
+    lazy: Lazy
+    eager: Eager
   section_transition:
     none: None
     curve: Curve

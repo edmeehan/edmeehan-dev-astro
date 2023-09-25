@@ -1,5 +1,26 @@
 ---
-const { path, alt, height, width } = Astro.props;
----
+const { image, images } = Astro.props;
+const display_images = image ? [image] : images;
+const use_art_direction = display_images.length > 1;
 
-<img src={path} alt={alt} width={width} height={height}  />
+
+---
+{!use_art_direction && display_images.map(item => (
+  <img src={item.path}
+    alt={item.alt}
+    width={item.width}
+    height={item.height}
+  />
+))}
+{use_art_direction && (
+  <picture>
+    {display_images.map(item => (
+      <source src={item.path}
+        srcset={item.srcset}
+      />
+    ))}
+    <img src={display_images[0].path}
+      alt={display_images[0].alt}
+    />
+  </picture>
+)}
