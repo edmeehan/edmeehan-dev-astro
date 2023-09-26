@@ -4,9 +4,6 @@ import Image from 'src/components/global/image/image.astro';
 import CTA from 'src/components/global/cta/cta.astro';
 const { content, image, cta } = Astro.props;
 const md = new MarkdownIt({ html: true });
-// const [firstImage] = image || [];
-// const { width, height } = firstImage || {width:null,height:null};
-// const imageWidth = `${width}px`;
 ---
 <style lang="scss" is:global>
   [data-hero-splash] {
@@ -25,33 +22,22 @@ const md = new MarkdownIt({ html: true });
         padding-bottom: 4rem;
       }
       @include media-tablet {
-        flex: 0 1 auto;
-        min-width: 400px;
-      }
-      @include media-laptop {
-        min-width: 550px;
+        flex: 0 0 50%;
       }
     }
     > .image {
       position: relative;
-      // z-index: -1;
-      // margin-bottom: -100px;
-
-      img {
-        width: 100%;
-      }
+      width: 100%;
 
       @include media-tablet {
-        flex: 0 1 auto;
-        margin-bottom: 0;
-        max-width: var(--imageWidth);
+        flex: 0 0 50%;
       }
     }
   }
 </style>
 
 <div data-hero-splash>
-  <div class="image" style={{'--imageWidth': 'imageWidth'}}>
+  <div class="image">
   { image && <Image images={image} />}
   </div>
   <div class="content">

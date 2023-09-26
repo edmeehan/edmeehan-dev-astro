@@ -12,9 +12,7 @@ seo:
   canonical_url:
 content_blocks:
   - _bookshop_name: hero/splash
-    image:
-      path: /uploads/whale-background.jpeg
-      alt: whales and water
+    image: []
     content: >-
       <p class="eyebrow">Web Development</p>
 

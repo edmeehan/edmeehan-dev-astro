@@ -18,22 +18,27 @@ blueprint:
 
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non tellus sapien. Duis id neque diam. Mauris commodo porta sapien vel viverra. Sed finibus.
   image:
-    - path: /uploads/whale-background.jpeg
-      alt: whales and water
+    - path:
+      alt:
       title:
-      width: 600
-      height: 710
+      width:
+      height:
       srcset:
       sizes:
       media: '(min-width: 768px)'
       lazyload: lazy
-    - path: /uploads/whale-background.jpeg
-      alt: whales and water
+    - path:
+      alt:
       title:
-      width: 600
-      height: 710
+      width:
+      height:
       srcset:
-      sizes:
+        - 400
+        - 600
+        - 800
+        - 1000
+        - 1200
+      sizes: 90wv
       media: '(max-width: 767px)'
       lazyload: lazy
   cta: bookshop:global/cta

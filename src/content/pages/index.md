@@ -21,11 +21,9 @@ content_blocks:
         width: 768
         height: 900
         srcset:
-          - 400
           - 600
           - 768
           - 900
-          - 1200
           - 1536
         sizes: '(max-width: 1023px) 50vw,(max-width: 1380px) calc(90vw - 550px), 768px'
         media: '(min-width: 768px)'
@@ -36,7 +34,12 @@ content_blocks:
         width: 800
         height: 875
         srcset:
-        sizes:
+          - 400
+          - 600
+          - 800
+          - 1000
+          - 1200
+        sizes: 90vw
         media: '(max-width: 767px)'
         lazyload: lazy
     content: >-
@@ -62,6 +65,20 @@ content_blocks:
       transition: swoosh
       background: primary
   - _bookshop_name: grid/alternate
+    image:
+      - path: /uploads/pages/altgrid-edhead-complete@2x.png
+        alt: illustration of Ed Meehan
+        title:
+        width: 560
+        height: 560
+        srcset:
+          - 350
+          - 560
+          - 800
+          - 1120
+        sizes: '(max-width: 1023px) 50vw,(max-width: 1380px) calc(90vw - 550px), 768px'
+        media: '(min-width: 768px)'
+        lazyload: lazy
     content: >-
       <p class="eyebrow">About me</p>
 

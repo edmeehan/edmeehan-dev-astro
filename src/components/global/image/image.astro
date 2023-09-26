@@ -1,15 +1,45 @@
 ---
-// import imgix from 'src/shared/imgix.js'
+import imgix from 'src/shared/imgix.js'
 const { image, images } = Astro.props;
 const display_images = image ? [image] : images;
 const use_art_direction = display_images.length > 1;
-// display_images.forEach(item => {
-//   if (item.srcset && item.width) {
-//     item._srcset = item.srcset.map(set => `${imgix(item.path, set, 1)} ${set}w`).toString();
-//   }
-// });
+display_images.forEach(item => {
+  if (item.srcset && item.width) {
+    item._srcset = item.srcset.map(set => `${imgix(item.path, set, 1)} ${set}w`).toString();
+  }
+});
+let [desktop, mobile] = display_images;
+if (!mobile) mobile = desktop;
 ---
-<!-- {!use_art_direction && display_images.map(item => (
+<style lang="scss" is:global>
+  [data-global-image] {
+    position: relative;
+    width: 100%;
+    max-width: var(--mobile-max-width);
+    
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      aspect-ratio: var(--mobile-ratio);
+    }
+
+    @include media-tablet {
+      max-width: var(--desktop-max-width);
+      img {
+        aspect-ratio: var(--desktop-ratio);
+      }
+    }
+  }
+</style>
+<div data-global-image style={{
+  '--desktop-ratio': `${(desktop.width / desktop.height).toFixed(2)}`,
+  '--desktop-max-width': `${desktop.width}px`,
+  '--mobile-ratio': `${(mobile.width / mobile.height).toFixed(2)}`,
+  '--mobile-max-width': `${mobile.width}px`,
+}} >
+{!use_art_direction && display_images.map(item => (
   <img src={item.path}
     alt={item.alt}
     width={item.width}
@@ -21,8 +51,10 @@ const use_art_direction = display_images.length > 1;
   <picture>
     {display_images.map(item => (
       <source src={item.path}
-        // srcset={item._srcset}
+        srcset={item._srcset}
         media={item.media}
+        width={item.width}
+        height={item.height}
       />
     ))}
     <img src={display_images[0].path}
@@ -30,4 +62,5 @@ const use_art_direction = display_images.length > 1;
       loading={display_images[0].lazyload}
     />
   </picture>
-)} -->
+)}
+</div>

@@ -34,14 +34,14 @@ const md = new MarkdownIt({ html: true });
       }
     }
     .image {
-      margin-bottom: -50px;
+      // margin-bottom: -50px;
 
-      @include media-tablet-max {
-        z-index: -1;
-      }
+      // @include media-tablet-max {
+      //   z-index: -1;
+      // }
 
       @include media-tablet {
-        margin-bottom: 0;
+        // margin-bottom: 0;
         flex: 0 0 50%;
       }
 
@@ -59,7 +59,6 @@ const md = new MarkdownIt({ html: true });
     .items {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      // grid-template-rows: repeat(${({count}) => Math.ceil(count / 2)}, 1fr);
       gap: 1.5rem;
       padding-left: 0;
       margin: 0;
@@ -69,7 +68,6 @@ const md = new MarkdownIt({ html: true });
         @extend .items;
         @include media-tablet-sm {
           grid-template-columns: repeat(3, 1fr);
-          //grid-template-rows: repeat(${({count,imageWide}) => Math.ceil(count / (imageWide ? 2 : 3))}, 1fr);
         }
       }
 
@@ -82,7 +80,7 @@ const md = new MarkdownIt({ html: true });
 
 <div class:list={[`wrapper`,`wrapper--${layout.image_align}`]} data-grid-alternate>
   <div class:list={[`image--${layout.image_width}`]}>
-    { image && <Image image={image} width="768" height="900" />}
+    { image && <Image images={image} />}
   </div>
   <div class="content">
     { content && <div class="rt" set:html={md.render(content)}></div>}

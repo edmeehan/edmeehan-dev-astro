@@ -1,5 +1,5 @@
 export default function (image_path, width, dpr, height = null) {
-  let transformations = `auto=compress&auto=format&w=${width}&dpr=${dpr}`;
+  let transformations = `q=85&auto=format&w=${width}&dpr=${dpr}`;
   if (height !== null) {
     transformations += `&crop=faces&fit=crop&height=${height}`;
   }
