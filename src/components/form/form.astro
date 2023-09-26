@@ -1,0 +1,31 @@
+---
+import MarkdownIt from 'markdown-it';
+import Builder from './builder/builder.astro';
+const { content, form } = Astro.props;
+const md = new MarkdownIt({ html: true });
+---
+<style lang="scss" is:global>
+  [data-form] {
+    @extend %primary-wrapper;
+    @extend %content-grid;
+    align-items: start;
+    padding-top: 2em;
+    padding-bottom: 2em;
+
+    > .content {
+      @extend %content-grid-block;
+    }
+    > .form {
+      @extend %content-grid-block;
+    }
+  }
+</style>
+
+<div data-form>
+  <div class="content" style={{'--desktop-column':'1/4','--tablet-column':'1/5'}}>
+    { content && <div class="rt" set:html={md.render(content)}></div>}
+  </div>
+  <div class="form" style={{'--desktop-column':'5/9','--tablet-column':'6/11'}}>
+    <Builder form={form} />
+  </div>
+</div>

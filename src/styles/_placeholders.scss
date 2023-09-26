@@ -7,6 +7,9 @@
   &.mini {
     max-width: $layout_max_width_small;
   }
+  &.medium {
+    max-width: $layout_max_width_medium;
+  }
 }
 
 %collection-wrapper {
@@ -19,5 +22,35 @@
 
   @include media-tablet-sm {
     grid-template: auto / repeat(2, 1fr);
+  }
+}
+
+%content-grid {
+  display: grid;
+  grid-template-columns: 1rem repeat(var(--mobile-columns, 4), minmax(0, 1fr)) 1rem;
+  row-gap: 2em;
+
+  @include media-tablet {
+    grid-template-columns: repeat(var(--tablet-columns, 10), minmax(0, 1fr));
+  }
+  @include media-laptop {
+    grid-template-columns: repeat(var(--desktop-columns, 8), minmax(0, 1fr));
+  }
+}
+
+%content-grid-block {
+  grid-column: var(--mobile-column, 2/6);
+
+  @include media-tablet {
+    grid-column: var(--tablet-column, 3/9);
+    &.jumbo {
+      grid-column: 2/10;
+    }
+  }
+  @include media-laptop {
+    grid-column: var(--desktop-column, 3/7);
+    &.jumbo {
+      grid-column: 2/8;
+    }
   }
 }
