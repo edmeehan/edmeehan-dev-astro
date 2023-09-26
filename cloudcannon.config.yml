@@ -376,6 +376,11 @@ _select_data:
     secondary: Secondary
     loud: Loud
 _structures:
+  simple_item:
+    values:
+      - value:
+          content:
+          image:
   page_blocks:
     style: modal
 _editables: {}

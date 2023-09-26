@@ -91,7 +91,7 @@ const md = new MarkdownIt({ html: true });
       <ul class:list={[`items--${layout.image_width}`]}>
         { grid_items.map((item) => (
           <li>
-            <h5 class="h3">{ item.title }</h5>
+            { item.image && <Image images={item.image} />}
             <div set:html={md.render(item.content)}></div>
           </li>
         )) }

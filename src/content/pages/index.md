@@ -149,28 +149,46 @@ content_blocks:
       image_align: right
       image_width: large
     grid_items:
-      - content: >-
+      - image:
+        - path: /uploads/pages/altgrid-item-icon-webdev@2x.png
+          alt:
+          title:
+          width: 386
+          height: 203
+          srcset:
+          sizes:
+          media:
+          lazyload: lazy
+        content: >-
           <h5 class="h3"><strong>Web Development</strong></h5>
 
           
           Need someone to oversee the entire project lifecycle, from initial
           planning and scoping to execution and final delivery, or if you need
           support with specific phases of the project, I'm ready.
-        cta:
-          label: View Web Development Services
-          link: /test
-          style:
-      - content: >-
+
+
+          [View Web Development Services](/test)
+      - image:
+        - path: /uploads/pages/altgrid-item-icon-analytics@2x.png
+          alt:
+          title:
+          width: 386
+          height: 203
+          srcset:
+          sizes:
+          media:
+          lazyload: lazy
+        content: >-
           <h5 class="h3"><strong>Analytics</strong></h5>
           
           
           As an experienced marketing analytics strategist, I have a strong
           track record of planning, setting up, and managing Analytics for
           businesses and organizations of all sizes.
-        cta:
-          label: View Analytics Services
-          link: /test
-          style:
+
+
+          [View Analytics Services](/test)
   - _bookshop_name: grid/simple
     content: >-
       <p class="eyebrow">Millions have seen my work</p>
