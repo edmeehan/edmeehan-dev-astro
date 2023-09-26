@@ -11,6 +11,7 @@ display_images.forEach(item => {
 let [desktop, mobile] = display_images;
 if (!mobile) mobile = desktop;
 ---
+{ display_images.length > 0 && (
 <style lang="scss" is:global>
   [data-global-image] {
     position: relative;
@@ -64,3 +65,4 @@ if (!mobile) mobile = desktop;
   </picture>
 )}
 </div>
+)}
