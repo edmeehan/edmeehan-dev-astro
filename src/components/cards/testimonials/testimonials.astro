@@ -1,6 +1,8 @@
 ---
 import MarkdownIt from 'markdown-it';
+import testimonialsData from 'data/testimonials.json';
 import Testimonial from 'src/components/card/testimonial.astro';
+import type { Code, Debug } from 'astro:components';
 const { content, testimonials } = Astro.props;
 const md = new MarkdownIt({ html: true });
 ---
@@ -47,11 +49,14 @@ const md = new MarkdownIt({ html: true });
   </header>
   { testimonials && (
     <ul>
-      { testimonials.map((item) => (
-        <li>
-          <Testimonial path={item} />
-        </li>
-      ))}
+      { testimonials.map((item) => {
+        const testimonial = testimonialsData.find(({uuid}) => uuid === item);
+        return (
+          <li>
+            <Testimonial {...testimonial} />
+          </li>
+        )
+        })}
     </ul>
   )}
 </div>

@@ -1,7 +1,13 @@
 ---
+import imgix from 'src/shared/imgix.js';
 import MarkdownIt from 'markdown-it';
-const block = Astro.props;
+const { name, company, title, testimonial, headshot } = Astro.props;
 const md = new MarkdownIt({ html: true });
+let headshot_x1, headshot_x2;
+if (headshot) {
+  headshot_x1 = imgix(headshot,110,1);
+  headshot_x2 = imgix(headshot,110,2);
+}
 ---
 <style lang="scss" is:global>
   article[data-card-testimonial] {
@@ -74,15 +80,19 @@ const md = new MarkdownIt({ html: true });
 </style>
 
 <article data-card-testimonial>
-  <!-- <header>
+  <header>
     <div class='text'>
-      <h5 class='h3'>{ block.name }</h5>
-      <div class='step-down'>{ block.company } | { block.title }</div>
+      <h5 class='h3'>{ name }</h5>
+      <div class='step-down'>{ company } | { title }</div>
     </div>
-    <img src="" alt="">
+    { headshot && (
+    <img src={headshot_x1}
+      srcset={`${headshot_x1}, ${headshot_x2} 2x`}
+      alt={`photo of ${name}`} width="110" height="110">
+    )}
   </header>
   <div class="svg">
     <svg><use xlink:href='#card-wave'></use></svg>
   </div>
-  <div class='body step-down' set:html={md.render(block.testimonial)}></div> -->
+  <div class='body step-down' set:html={md.render(testimonial)}></div>
 </article>

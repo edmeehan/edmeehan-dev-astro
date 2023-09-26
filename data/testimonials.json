@@ -4,7 +4,7 @@
     "name": "Chris Oppewall",
     "company": "Cru Uncorked",
     "title": "President",
-    "headshot": null,
+    "headshot": "/uploads/testimonials/chris-oppewall.jpg",
     "testimonial": "Ed was a delight to work with. As a smaller company without an IT department, we needed an easy to update professional website. We have this now thanks to a content management system Ed trained us to use. Our website looks great and it is easy to update. I'm now confident that I can update our website, I also know I can reach out to Ed for assistance. Thanks again for being supportive and thorough."
   },
   {
@@ -12,7 +12,7 @@
     "name": "Cody Small",
     "company": "Caava Design",
     "title": "Founder / Creative Director",
-    "headshot": null,
+    "headshot": "/uploads/testimonials/cody-small.jpg",
     "testimonial": "Ed is perhaps the most detail-oriented, design attentive developer I have worked with. On the multiple projects we collaborated on, he always went the extra mile to lay a good foundation for his work, then made suggestions on how to improve or optimize the final product I was looking for. I've never seen a design I've created for a website executed with as much precision as Ed was able to achieve on our projects. This is something I consider extremely rare in the development world and highly recommend working with him."
   },
   {
@@ -20,7 +20,7 @@
     "name": "Jenn Goodrum",
     "company": "KidsLuv",
     "title": "Director of Sales & Marketing",
-    "headshot": null,
+    "headshot": "/uploads/testimonials/kidsluv.jpg",
     "testimonial": "Ed has been fantastic to work with! We have really appreciated his attention to detail and responsiveness to help launch KidsLuv. He is efficient, very knowledgeable, and has been an integral part of improving our customer’s experience online."
   },
   {
@@ -28,7 +28,7 @@
     "name": "John Steiner",
     "company": "MX Track Builders LLC.",
     "title": "Owner",
-    "headshot": null,
+    "headshot": "/uploads/testimonials/mx-trackbuilders.jpg",
     "testimonial": "When it comes to website development, Ed is a skilled professional with the network and experience to deliver top-notch sites."
   },
   {
@@ -36,7 +36,7 @@
     "name": "Megan Lowe",
     "company": "Sun Bum LLC",
     "title": "Director of Digital Design and Development",
-    "headshot": null,
+    "headshot": "/uploads/testimonials/megan-lowe.jpg",
     "testimonial": "It's been a great experience working with Ed! He has excellent attention to detail and I rarely have feedback when he delivers updates. I value his advice and feedback as we work through problems and I have full trust in his abilities to get work done efficiently and correctly."
   },
   {
@@ -44,7 +44,7 @@
     "name": "Ryan Garner",
     "company": "Clearhead",
     "title": "Co-Founder / Chief Product Officer",
-    "headshot": null,
+    "headshot": "/uploads/testimonials/ryan-garner.jpg",
     "testimonial": "Ed has been a reliable, long-term partner to Clearhead for several years while delivering high-quality code for a number of key projects. He’s meticulous when it comes to ensuring he understands the scope and requirements of the work, and he takes pride in ensuring his work is well tested and of high quality."
   },
   {
@@ -52,7 +52,7 @@
     "name": "Ziv Navoth",
     "company": "Touchcast",
     "title": "Chief Revenue Officer",
-    "headshot": null,
+    "headshot": "/uploads/testimonials/ziv-navoth.jpg",
     "testimonial": "Ed’s knowledge and experience with analytics and conversion tracking have been a great resource for our team. He is consistent, reliable, and a pleasure to work with."
   }
 ]

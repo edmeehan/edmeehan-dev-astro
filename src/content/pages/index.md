@@ -72,12 +72,8 @@ content_blocks:
         width: 560
         height: 560
         srcset:
-          - 350
-          - 560
-          - 800
-          - 1120
-        sizes: '(max-width: 1023px) 50vw,(max-width: 1380px) calc(90vw - 550px), 768px'
-        media: '(min-width: 768px)'
+        sizes:
+        media:
         lazyload: lazy
     content: >-
       <p class="eyebrow">About me</p>
@@ -121,7 +117,20 @@ content_blocks:
       transition: swoosh
       background: secondary
     testimonials:
+      - 6fddb451-a101-4371-ad54-113661b332f6
+      - a4709609-0778-4918-a7f9-44e5c7d36e1e
+      - 4d31cf68-4293-4669-b9d6-c93c6204f564
   - _bookshop_name: grid/alternate
+    image:
+      - path: /uploads/pages/altgrid-rays-complete-wide@2x.png
+        alt: whales and water
+        title:
+        width: 800
+        height: 875
+        srcset:
+        sizes: 
+        media: 
+        lazyload: lazy
     content: >-
       <p class="eyebrow">Services</p>
 
@@ -140,8 +149,10 @@ content_blocks:
       image_align: right
       image_width: large
     grid_items:
-      - title: Web Development
-        content: >-
+      - content: >-
+          <h5 class="h3"><strong>Web Development</strong></h5>
+
+          
           Need someone to oversee the entire project lifecycle, from initial
           planning and scoping to execution and final delivery, or if you need
           support with specific phases of the project, I'm ready.
@@ -149,8 +160,10 @@ content_blocks:
           label: View Web Development Services
           link: /test
           style:
-      - title: Analytics
-        content: >-
+      - content: >-
+          <h5 class="h3"><strong>Analytics</strong></h5>
+          
+          
           As an experienced marketing analytics strategist, I have a strong
           track record of planning, setting up, and managing Analytics for
           businesses and organizations of all sizes.

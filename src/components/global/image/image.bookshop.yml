@@ -1,7 +1,6 @@
 spec:
   structures:
     - image
-    - headshot
   label: Image
   description:
   icon: image
