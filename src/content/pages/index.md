@@ -206,13 +206,49 @@ content_blocks:
     layout:
       text_align: center
     grid_items:
-      - image: this/is/the/path.jpg
+      - image:
+        - path: /uploads/pages/simpgrid-item-icon-callaway.svg
+          alt:
+          title:
+          width: 386
+          height: 203
+          srcset:
+          sizes:
+          media:
+          lazyload: lazy
         content:
-      - image: this/is/the/path.jpg
+      - image:
+        - path: /uploads/pages/simpgrid-item-icon-sunbum.svg
+          alt:
+          title:
+          width: 386
+          height: 203
+          srcset:
+          sizes:
+          media:
+          lazyload: lazy
         content:
-      - image: this/is/the/path.jpg
+      - image:
+        - path: /uploads/pages/simpgrid-item-icon-intuit.svg
+          alt:
+          title:
+          width: 386
+          height: 203
+          srcset:
+          sizes:
+          media:
+          lazyload: lazy
         content:
-      - image: this/is/the/path.jpg
+      - image:
+        - path: /uploads/pages/simpgrid-item-icon-homedepot.svg
+          alt:
+          title:
+          width: 386
+          height: 203
+          srcset:
+          sizes:
+          media:
+          lazyload: lazy
         content:
   - _bookshop_name: text
     content: >-
