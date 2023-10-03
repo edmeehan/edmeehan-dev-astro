@@ -65,7 +65,7 @@ content_blocks:
         - _bookshop_name: form_fields/select
           label: What services are you interested in?
           type: checkbox
-          name: company
+          name: services
           required: true
           options:
             - label: Web Development
