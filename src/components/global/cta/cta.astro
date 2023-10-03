@@ -37,9 +37,9 @@ const { label, link, style, is_button = false, type = 'button' } = Astro.props;
     }
   }
 </style>
-{ !!is_button && (
+{ !is_button && (
   <a data-global-cta class={`cta--${style}`} href={ link }>{ label || (<slot/>) }</a>
 )}
-{ !is_button && (
+{ !!is_button && (
   <button data-global-cta class={`cta--${style}`} type={type}>{ label || (<slot/>) }</button>
 )}
