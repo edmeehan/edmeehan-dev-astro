@@ -1,5 +1,5 @@
 ---
-import imgix from 'src/shared/imgix.js';
+import {imgix} from 'src/shared/utilities.js'
 import MarkdownIt from 'markdown-it';
 const { name, company, title, testimonial, headshot } = Astro.props;
 const md = new MarkdownIt({ html: true });

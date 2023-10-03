@@ -1,5 +1,5 @@
 ---
-import imgix from 'src/shared/imgix.js'
+import {imgix} from 'src/shared/utilities.js'
 const { image, images } = Astro.props;
 const display_images = image ? [image] : images;
 const use_art_direction = display_images.length > 1;
