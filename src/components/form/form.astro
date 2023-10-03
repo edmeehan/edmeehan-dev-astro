@@ -21,12 +21,13 @@ const md = new MarkdownIt({ html: true });
     > .form {
       @extend %content-grid-block;
     }
-  }
-  form[data-netlify] {
-    > .hp {
-      height: 0;
-      overflow: hidden;
-      margin: 0;
+
+    form {
+      > .hp {
+        height: 0;
+        overflow: hidden;
+        margin: 0;
+      }
     }
   }
 </style>
