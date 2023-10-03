@@ -15,8 +15,14 @@ import Footer from "src/components/layout/footer.astro";
   </head>
   <body>
     <DefaultSVG />
-    <Header />
-    <slot />
-    <Footer />
+    <div class="layout">
+      <Header />
+      <div class="layout__body">
+        <div class="layout__content">
+          <slot />
+        </div>
+        <Footer />
+      </div>
+    </div>
   </body>
 </html>
