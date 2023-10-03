@@ -7,6 +7,7 @@ const { form: {fields} } = Astro.props;
     display: grid;
     row-gap: 1.25rem;
     column-gap: .75rem;
+    margin-bottom: 1.25rem;
     // grid-template-columns: repeat(${({mobileColumns = 2}) => mobileColumns}, minmax(0, 1fr));
 
     @include media-tablet {
@@ -17,9 +18,14 @@ const { form: {fields} } = Astro.props;
     }
 
     .form-input {
-      label {
+      > label {
         display: block;
         margin-bottom: .25em;
+      }
+      fieldset {
+        border: none;
+        margin: 0;
+        padding: 0;
       }
     }
     .required {

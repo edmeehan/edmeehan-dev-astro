@@ -3,8 +3,7 @@ const { label, type, placeholder, name, required } = Astro.props;
 ---
 <style lang="scss" is:global>
   [data-form-fields-text] {
-    input[type="text"],
-    input[type="email"] {
+    input {
       display: block;
       width: 100%;
       background: rgba($color_text_default, .07);

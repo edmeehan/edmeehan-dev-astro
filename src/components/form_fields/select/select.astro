@@ -1,4 +1,35 @@
 ---
-
+const { label, type, name, required, options } = Astro.props;
 ---
-Select input
+<style lang="scss" is:global>
+  [data-form-fields-select] {
+    .checkbox {
+      display: flex;
+      margin-left: .25rem;
+      input {
+        &:checked {
+          accent-color: $color_cta_loud;
+          + label {
+            font-weight: bold;
+          }
+        }
+      }
+      label {
+        padding-left: .45rem;
+      }
+    }
+  }
+</style>
+<div class="form-input" data-form-fields-select>
+  { type === 'checkbox' && (
+    <fieldset class="checkbox-group">
+      <legend>{ label }{ required && (<span class="required">*</span>)}</legend>
+      { options.map((item, index) => (
+        <div class="checkbox">
+          <input type="checkbox" id={`${name}_${index}`} name={name} value={item.value} />
+          <label for={`${name}_${index}`}>{item.label}</label>
+        </div>
+      ))}
+    </fieldset>
+  )}
+</div>

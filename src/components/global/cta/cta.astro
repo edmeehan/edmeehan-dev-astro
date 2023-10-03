@@ -1,5 +1,5 @@
 ---
-const { label, link, style } = Astro.props;
+const { label, link, style, is_button = false, type = 'button' } = Astro.props;
 ---
 <style lang="scss" is:global>
   [data-global-cta] {
@@ -25,6 +25,7 @@ const { label, link, style } = Astro.props;
 
     &:hover {
       background-color: $color_cta_hover;
+      cursor: pointer;
     }
 
     &.cta--primary {}
@@ -36,5 +37,9 @@ const { label, link, style } = Astro.props;
     }
   }
 </style>
-
-<a data-global-cta class={`cta--${style}`} href={ link }>{ label }</a>
+{ !!is_button && (
+  <a data-global-cta class={`cta--${style}`} href={ link }>{ label || (<slot/>) }</a>
+)}
+{ !is_button && (
+  <button data-global-cta class={`cta--${style}`} type={type}>{ label || (<slot/>) }</button>
+)}
