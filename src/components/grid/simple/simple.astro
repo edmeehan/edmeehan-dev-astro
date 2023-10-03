@@ -1,5 +1,6 @@
 ---
 import MarkdownIt from 'markdown-it';
+import Image from 'src/components/global/image/image.astro';
 const { content, cta, section, layout, grid_items } = Astro.props;
 const md = new MarkdownIt({ html: true });
 ---
@@ -52,7 +53,7 @@ const md = new MarkdownIt({ html: true });
     <ul class={`list--${layout.text_align}`}>
       { grid_items.map((item) => (
         <li>
-          <img src={item.image} />
+          { item.image && <Image images={item.image} />}
           { item.content && (
             <div
               class:list={[{ 'rt-center': layout.text_align === 'center'}]}

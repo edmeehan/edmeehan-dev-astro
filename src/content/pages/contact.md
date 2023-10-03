@@ -27,6 +27,8 @@ content_blocks:
 
       **Your information is safe with me.** I do not sell any information to third parties and will only share your information if you ask me to.
     form:
+      name: contact
+      action: /contact/
       fields:
         - _bookshop_name: form_fields/text
           label: Full Name
@@ -41,7 +43,7 @@ content_blocks:
           name: email
           required: true
         - _bookshop_name: form_fields/text
-          label: message
+          label: Message
           type: textarea
           placeholder: Hi Ed...
           name: message

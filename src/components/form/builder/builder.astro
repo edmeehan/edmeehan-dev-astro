@@ -1,4 +1,32 @@
 ---
-
+import Component from "src/shared/astro/component.astro"
+const { form: {fields} } = Astro.props;
 ---
-This is the form builder
+<style lang="scss" is:global>
+  [data-form-builder] {
+    display: grid;
+    row-gap: 1.25rem;
+    column-gap: .75rem;
+    // grid-template-columns: repeat(${({mobileColumns = 2}) => mobileColumns}, minmax(0, 1fr));
+
+    @include media-tablet {
+      // grid-template-columns: repeat(${({tabletColumns = 2}) => tabletColumns}, minmax(0, 1fr));
+    }
+    @include media-laptop {
+      // grid-template-columns: repeat(${({desktopColumns = 2}) => desktopColumns}, minmax(0, 1fr));
+    }
+
+    .form-input {
+      label {
+        display: block;
+        margin-bottom: .25em;
+      }
+    }
+    .required {
+      
+    }
+  }
+</style>
+<div data-form-builder>
+  <Component list={fields} />
+</div>

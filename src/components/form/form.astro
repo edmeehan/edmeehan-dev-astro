@@ -19,6 +19,13 @@ const md = new MarkdownIt({ html: true });
       @extend %content-grid-block;
     }
   }
+  form[data-netlify] {
+    > .hp {
+      height: 0;
+      overflow: hidden;
+      margin: 0;
+    }
+  }
 </style>
 
 <div data-form>
@@ -26,6 +33,19 @@ const md = new MarkdownIt({ html: true });
     { content && <div class="rt" set:html={md.render(content)}></div>}
   </div>
   <div class="form" style={{'--desktop-column':'5/9','--tablet-column':'6/11'}}>
-    <Builder form={form} />
+    <form
+      method="POST"
+      name={form.name}
+      data-netlify="true"
+      data-netlify-honeypot="subject"
+      autocomplete="false"
+      action={form.action}
+    >
+      <input type="hidden" name="form-name" value={form.name} />
+      <div class="hp">
+        <label for="subject">Subject</label>
+        <input id="subject" tabindex="-1" name="subject"/>
+      </div>
+      <Builder form={form} />
   </div>
 </div>
