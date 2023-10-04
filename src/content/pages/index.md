@@ -1,7 +1,7 @@
 ---
 _schema: page
+uuid: 62b830b7-0017-4fb6-b829-704a0a8ff85a
 title: Homepage
-hidden: false
 seo:
   no_index: false
   page_title: Ed Meehan, web developer for hire in San Diego, California
@@ -306,4 +306,5 @@ content_blocks:
           and I have full trust in his abilities to get work done efficiently
           and correctly.
         photo:
+hidden: false
 ---

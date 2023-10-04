@@ -1,13 +1,14 @@
 ---
-title:
-hidden: false
 uuid:
+title:
+headline:
+page_size: 6
 seo:
   no_index: false
   page_title:
   page_description: 
   featured_image:
-  
   open_graph_type:
   canonical_url:
+hidden: false
 ---

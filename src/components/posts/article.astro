@@ -1,9 +1,14 @@
 ---
 import MarkdownIt from 'markdown-it';
-import {dateFormatter} from 'src/shared/utilities.js';
+import {dateFormatter,imgix} from 'src/shared/utilities.js';
 const { short_date, post: {slug, collection, data: { excerpt, headline, read_time, published, post_image }} } = Astro.props;
 const md = new MarkdownIt({ html: true });
 const article_url = `/${collection}/${slug}/`;
+let srcset, sizes;
+if (post_image?.path) {
+  srcset = `${imgix(post_image?.path, 300)} 300w, 500w, 787w, 1000w, 1574w`;
+  sizes = '(max-width: 579px) calc(100vw - 3rem),(max-width: 1654px) calc(50vw - 2.25rem), 787px';
+}
 ---
 <style lang="scss" is:global>
   [data-posts-article] {
@@ -56,7 +61,9 @@ const article_url = `/${collection}/${slug}/`;
 <article data-posts-article>
   <a class="post-image-link" href={article_url}>
     { post_image.path && (
-      <img src={post_image.path} width="400" height="200" />
+      <img src={`https://edmeehan-dev.imgix.net${post_image.path}?q=85&ar=2:1&fit=crop&crop=top,left`} width="400" height="200"
+
+      />
     )}
   </a>
   <div class="meta">

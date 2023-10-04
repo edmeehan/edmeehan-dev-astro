@@ -24,7 +24,7 @@ if (!data) {
 }
 ---
 <PostLayout frontmatter={data}>
-  <Collection slug={slug} pagination={page}>
+  <Collection slug={slug} pagination={page} page={data}>
     { articles.map(item => <Article post={item} short_date={true} />)}
   </Collection>
 </PostLayout>

@@ -1,7 +1,8 @@
 ---
 _schema: paginated_posts
+uuid: da276877-333f-4aa7-9e5e-a46a4e3cdf07
 title: Projects
-hidden: false
+headline: Projects
 page_size: 6
 seo:
   no_index: false
@@ -12,4 +13,5 @@ seo:
   open_graph_type:
   canonical_url:
 content_blocks:
+hidden: false
 ---

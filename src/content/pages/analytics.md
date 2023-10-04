@@ -1,7 +1,7 @@
 ---
 _schema: page
+uuid: 1a012720-71a8-474c-8666-c50151559a9c
 title: Analytics
-hidden: false
 seo:
   no_index: false
   page_title: Google Analytics custom tracking and consulting
@@ -10,4 +10,5 @@ seo:
   open_graph_type:
   canonical_url:
 content_blocks:
+hidden: false
 ---

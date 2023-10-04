@@ -1,7 +1,7 @@
 ---
 _schema: page
+uuid: b9d8987f-0f98-43a4-8a52-5afbf9f40d91
 title: Contact
-hidden: false
 seo:
   no_index: false
   page_title: Contact freelance web developer in San Diego, California
@@ -48,4 +48,5 @@ content_blocks:
           name: message
           required: true
       submit: Send Message
+hidden: false
 ---
