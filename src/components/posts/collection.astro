@@ -21,7 +21,7 @@ const { pagination, slug } = Astro.props;
 </style>
 <section data-posts-collection>
   <header>
-    <div>This is the headline</div>
+    <h1 class="h1">{slug}</h1>
     { pagination.lastPage > 1 &&
       <MiniPagination pagination={pagination}/>
     }

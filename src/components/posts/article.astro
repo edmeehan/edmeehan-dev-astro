@@ -1,13 +1,25 @@
 ---
 import MarkdownIt from 'markdown-it';
 import {dateFormatter} from 'src/shared/utilities.js';
-const { short_date, post: {slug, collection, data: { excerpt, headline, read_time, published }} } = Astro.props;
+const { short_date, post: {slug, collection, data: { excerpt, headline, read_time, published, post_image }} } = Astro.props;
 const md = new MarkdownIt({ html: true });
 const article_url = `/${collection}/${slug}/`;
 ---
 <style lang="scss" is:global>
   [data-posts-article] {
     position: relative;
+
+    .post-image-link {
+      display: block;
+      aspect-ratio: 2 / 1;
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: $radius_lg;
+        object-fit: cover;
+      }
+    }
 
     .meta {
       display: flex;
@@ -16,12 +28,9 @@ const article_url = `/${collection}/${slug}/`;
       width: 100%;
       top: 1rem;
 
-      > div {
-        background-color: ($color_secondary)90;
-        padding: .25em .5em;
-      }
-
       .date, .read-time {
+        background-color: rgba($color_secondary, .5);
+        padding: .25em .5em;
         border-radius: $radius_md;
       }
 
@@ -45,13 +54,10 @@ const article_url = `/${collection}/${slug}/`;
   }
 </style>
 <article data-posts-article>
-  <a href={article_url}>
-    <!-- <GatsbyImage
-      alt={card.alt}
-      copyright={card.copyright}
-      image={getImage(card)}
-      className='image'
-    /> -->
+  <a class="post-image-link" href={article_url}>
+    { post_image.path && (
+      <img src={post_image.path} width="400" height="200" />
+    )}
   </a>
   <div class="meta">
     <div class='date step-down'>

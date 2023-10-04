@@ -83,10 +83,6 @@ collections_config:
       - data
       - source
     _inputs:
-      feature_image:
-        type: object
-        options:
-          structures: _structures.image
       published:
         type: date
         label: Published Date
