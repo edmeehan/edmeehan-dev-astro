@@ -28,6 +28,15 @@ if (post_image?.path) {
     padding-bottom: 4.5rem;
     margin-bottom: 3rem;
 
+    > * {
+      grid-column: content;
+    }
+    
+    > p,
+    > h2 {
+      margin: 0;
+    }
+
     .article-header {
       grid-column: content-start/content-end;
       margin-top: 3rem;
@@ -125,10 +134,6 @@ if (post_image?.path) {
       z-index: -1;
     }
 
-    .article-content {
-      grid-column: content;
-    }
-
     .meta {
       display: flex;
       flex-direction: column;
@@ -191,9 +196,7 @@ if (post_image?.path) {
     { project_url && <CTA style="default" link={project_url}>Visit Project</CTA>}
   </div>
   <div class="article-background"></div>
-  <div class="article-content">
-    <slot />
-  </div>
+  <slot />
   <div class="article-sidebar-right">
     { show_share && <SocialShare />}
   </div>

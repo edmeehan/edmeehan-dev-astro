@@ -40,20 +40,20 @@ show_comments: false
 ---
 The inbound marketing team at The Control Group was managing five blogs, three of which used Laravel, the other two on WordPress. Tony Lea, a senior developer at The Control Group, had written an admin package for Laravel called Voyager. I worked with Tony adding features to the Laravel + Voyager managed blogs. Because of the two different platforms (WordPress & Laravel), this made adding features to all five blogs a development chore. I got tasked with moving the Crimewire blog off of WordPress, and onto Laravel + Voyager.
 
-Laravel Migration & WordPress Schema
+## Laravel Migration & WordPress Schema
 
 The Crimewire blog had over 600 posts, and my first step was to write a script that populated the new Laravel app database with the Wordpress posts. I wrote a script in PHP that pulled the data from the WordPress database and then filled a blog post model and then saved it to the Laravel database. This simple script would prove to be valuable months later to migrate the second and final WordPress blog.
 
-Blog Posts & Categories
+## Blog Posts & Categories
 
 I built the blog features by making models for posts and categories. I also developed a feature that used data from the Google Analytics API to query popular posts by user behavior. I created all the views required such as the default homepage, categories, authors, blog posts, and pages.
 
 \-- image here --
 
-Responsive & Fast
+## Responsive & Fast
 
 I added the Glide package to the app to manage the image sizes and request images to match the layout. I also wrote a script in JavaScript to lazy load images. These features resulted in smaller and fewer file requests and faster load time on mobile devices.
 
-Conclusion
+## Conclusion
 
 Upon launch, the blog scored a 97 on Google PageSpeed Insights. The inbound marketing team was thrilled with the results, and it was one of my favorite projects while employed at The Control Group.
