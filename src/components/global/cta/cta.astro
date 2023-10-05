@@ -1,5 +1,5 @@
 ---
-const { label, link, style, is_button = false, type = 'button' } = Astro.props;
+const { label, link, style, title, is_button = false, type = 'button' } = Astro.props;
 const currentPath = Astro.url.pathname;
 const ariaProperties = currentPath === link ? {"aria-current":"page"} : {};
 ---
@@ -53,7 +53,7 @@ const ariaProperties = currentPath === link ? {"aria-current":"page"} : {};
   }
 </style>
 { !is_button && (
-  <a data-global-cta {...ariaProperties} class={`cta--${style}`} href={ link }>{ label || (<slot/>) }</a>
+  <a data-global-cta {...ariaProperties} class={`cta--${style}`} title={title} href={ link }>{ label || (<slot/>) }</a>
 )}
 { !!is_button && (
   <button data-global-cta class={`cta--${style}`} type={type}>{ label || (<slot/>) }</button>

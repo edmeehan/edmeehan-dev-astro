@@ -1,28 +1,181 @@
 ---
 import MarkdownIt from 'markdown-it';
-import {dateFormatter,imgix_post_image} from 'src/shared/utilities.js';
-const { slug, collection, data: { excerpt, headline, read_time, published, post_image } } = Astro.props;
+import CTA from 'src/components/global/cta/cta.astro';
+import {dateFormatter,imgix_article_default,imgix_article_mobile} from 'src/shared/utilities.js';
+const { slug, collection,
+  data: { excerpt, headline, read_time, published, post_image, category, tags, project_url }
+} = Astro.props;
 const md = new MarkdownIt({ html: true });
 const article_url = `/${collection}/${slug}/`;
+const short_date = collection === 'projects';
 let srcset, sizes;
 if (post_image?.path) {
-  srcset = `${imgix_post_image(post_image?.path, 300)} 300w,${imgix_post_image(post_image?.path, 500)} 500w,${imgix_post_image(post_image?.path, 787)} 787w,${imgix_post_image(post_image?.path, 1000)} 1000w,${imgix_post_image(post_image?.path, 1574)} 1574w`;
-  sizes = '(max-width: 579px) calc(100vw - 3rem),(max-width: 1654px) calc(50vw - 2.25rem), 787px';
+  srcset = [
+    `${imgix_article_mobile(post_image?.path, 300)} 300w,${imgix_article_mobile(post_image?.path, 500)} 500w,${imgix_article_mobile(post_image?.path, 653)} 653w,${imgix_article_mobile(post_image?.path, 1000)} 1000w,${imgix_article_mobile(post_image?.path, 1306)} 1306w`,
+    `${imgix_article_default(post_image?.path, 800)} 800w,${imgix_article_default(post_image?.path, 950)} 950w,${imgix_article_default(post_image?.path, 1106)} 1106w,${imgix_article_default(post_image?.path, 1172)} 1172w,${imgix_article_default(post_image?.path, 2212)} 2212w,${imgix_article_default(post_image?.path, 2344)} 2344w`
+  ]
+  sizes = [
+    '(max-width: 590px) 95vw, 653px',
+    '(max-width: 1600px) 73vw,(max-width: 2559px) 1106px, 1172px'
+  ]
 }
 ---
 <style lang="scss" is:global>
   [data-posts-article] {
+    @extend %article-grid;
+    position: relative;
+    padding-bottom: 4.5rem;
+    margin-bottom: 3rem;
 
+    .article-header {
+      grid-column: content-start/content-end;
+      margin-top: 3rem;
+
+      h1 {
+        margin: 0 0 .75rem;
+        max-width: none;
+      }
+
+      @include media-tablet {
+        grid-column: jumbo-start/content-end;
+      }
+    }
+
+    .article-image {
+      grid-column: banner;
+      border-right: solid 2px $color_text_primary_highlight;
+      background-color: $color_secondary;
+      aspect-ratio: 1.278;
+
+      @include media-tablet {
+        aspect-ratio: 2.66;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+        @media (min-width: $layout_max_width) {
+          border-radius: $radius_lg;
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+      }
+    }
+
+    .article-next {
+      grid-column: content;
+      text-align: right;
+
+      svg {
+        height: 1rem;
+        width: .5rem;
+        fill: $color_text_default;
+        vertical-align: sub;
+      }
+
+      @include media-tablet {
+        grid-column: content-end / jumbo-end;
+        margin-top: 3rem;
+        padding-right: 1rem;
+      }
+    }
+
+    .article-sidebar-left {
+      @include media-tablet-max {
+        grid-column: content;
+        text-align: center;
+      }
+      @include media-tablet {
+        position: sticky;
+        top: 120px;
+        grid-column: jumbo-start/content-start;
+        grid-row: 3;
+        text-align: left;
+        padding: 0 1rem;
+      }
+    }
+
+    .article-background {
+      background: linear-gradient(180deg, $color_primary_transition, transparent);
+      grid-column: bg;
+      grid-row: 2;
+      position: absolute;
+      top: 2rem;
+      width: 100%;
+      height: calc(100% - 2rem);
+      z-index: -1;
+    }
+
+    .article-content {
+      grid-column: content;
+    }
+
+    .meta {
+      display: flex;
+      flex-direction: column;
+
+      @include media-tablet {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .tags-list {
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+
+        li {
+          display: inline-block;
+          &::after {
+            content:', ';
+            white-space: pre;
+          }
+          &:last-child::after {
+            content: '';
+          }
+        }
+      }
+    }
   }
 </style>
-<article data-posts-article>
-  { post_image.path && (
-    <img src={imgix_post_image(post_image.path, 787)} width="400" height="200"
-      srcset={srcset}
-      sizes={sizes}
-      alt={post_image.alt}
-      title={post_image.title}
-    />
-  )}
-  <slot />
+<article data-posts-article itemscope itemtype="http://schema.org/Article">
+  <header class="article-header">
+    { category && <div class="eyebrow">{category} Project</div>}
+    <h1 class="h1">{ headline }</h1>
+    <div class="meta step-down">
+      <div><span>{dateFormatter(short_date).format(published)}</span> | <span>{read_time} min read</span></div>
+      { tags && (
+      <div class="highlight">
+        TECH: <ul class="tags-list">{tags.map(item => (<li>{item}</li>))}</ul>
+      </div>
+      )}
+    </div>
+  </header>
+  <div class="article-next step-down">
+    <CTA style="simple" link="/" title={`View post: ${'hi'}`}>
+      Next post <svg><use xlink-href="#caret-right"></use></svg>
+    </CTA>
+  </div>
+  <div class="article-image">
+    { post_image.path && (
+      <picture>
+        <source media="(max-width: 767px)" srcset={srcset[0]} sizes={sizes[0]} />
+        <source media="(min-width: 768px)" srcset={srcset[1]} sizes={sizes[1]} width="1172" height="440"/>
+        <img src={imgix_article_default(post_image.path, 1172)} width="1172" height="440"
+          alt={post_image.alt}
+          title={post_image.title}
+        />
+      </picture>
+    )}
+  </div>
+  <div class="article-sidebar-left">
+    { project_url && <CTA style="default" link={project_url}>Visit Project</CTA>}
+  </div>
+  <div class="article-background"></div>
+  <div class="article-content">
+    <slot />
+  </div>
 </article>

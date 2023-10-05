@@ -54,3 +54,33 @@
     }
   }
 }
+
+%article-grid {
+  display: grid;
+  row-gap: 1.5rem;
+  grid-template-columns:
+    [banner-start jumbo-start bg-start]
+    minmax($layout_gutter, 1fr)
+    [content-start]
+    minmax(0, 34rem)
+    [content-end banner-end]
+    minmax($layout_gutter,1fr)
+    [jumbo-end bg-end close]
+  ;
+
+  @include media-tablet {
+    grid-template-columns:
+      [banner-start]
+      1fr
+      [jumbo-start bg-start]
+      2fr
+      [content-start]
+      34rem
+      [content-end banner-end]
+      2fr
+      [jumbo-end bg-end]
+      1fr
+      [close]
+    ;
+  }
+}

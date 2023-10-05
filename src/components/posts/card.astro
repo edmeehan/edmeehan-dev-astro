@@ -1,12 +1,12 @@
 ---
 import MarkdownIt from 'markdown-it';
-import {dateFormatter,imgix_post_image} from 'src/shared/utilities.js';
+import {dateFormatter,imgix_article_card} from 'src/shared/utilities.js';
 const { short_date, post: {slug, collection, data: { excerpt, headline, read_time, published, post_image }} } = Astro.props;
 const md = new MarkdownIt({ html: true });
 const article_url = `/${collection}/${slug}/`;
 let srcset, sizes;
 if (post_image?.path) {
-  srcset = `${imgix_post_image(post_image?.path, 300)} 300w,${imgix_post_image(post_image?.path, 500)} 500w,${imgix_post_image(post_image?.path, 787)} 787w,${imgix_post_image(post_image?.path, 1000)} 1000w,${imgix_post_image(post_image?.path, 1574)} 1574w`;
+  srcset = `${imgix_article_card(post_image?.path, 300)} 300w,${imgix_article_card(post_image?.path, 500)} 500w,${imgix_article_card(post_image?.path, 787)} 787w,${imgix_article_card(post_image?.path, 1000)} 1000w,${imgix_article_card(post_image?.path, 1574)} 1574w`;
   sizes = '(max-width: 579px) calc(100vw - 3rem),(max-width: 1654px) calc(50vw - 2.25rem), 787px';
 }
 ---
@@ -61,7 +61,7 @@ if (post_image?.path) {
 <article data-posts-card>
   <a class="post-image-link" href={article_url}>
     { post_image.path && (
-      <img src={imgix_post_image(post_image.path, 787)} width="400" height="200"
+      <img src={imgix_article_card(post_image.path, 787)} width="400" height="200"
         srcset={srcset}
         sizes={sizes}
         alt={post_image.alt}
