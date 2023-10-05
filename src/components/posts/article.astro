@@ -1,9 +1,10 @@
 ---
 import MarkdownIt from 'markdown-it';
 import CTA from 'src/components/global/cta/cta.astro';
+import SocialShare from 'src/components/global/social-share/social-share.astro';
 import {dateFormatter,imgix_article_default,imgix_article_mobile} from 'src/shared/utilities.js';
 const { slug, collection,
-  data: { excerpt, headline, read_time, published, post_image, category, tags, project_url }
+  data: { headline, read_time, published, post_image, category, tags, project_url, show_share }
 } = Astro.props;
 const md = new MarkdownIt({ html: true });
 const article_url = `/${collection}/${slug}/`;
@@ -44,7 +45,6 @@ if (post_image?.path) {
     .article-image {
       grid-column: banner;
       border-right: solid 2px $color_text_primary_highlight;
-      background-color: $color_secondary;
       aspect-ratio: 1.278;
 
       @include media-tablet {
@@ -56,6 +56,7 @@ if (post_image?.path) {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        background-color: $color_secondary;
 
         @media (min-width: $layout_max_width) {
           border-radius: $radius_lg;
@@ -83,7 +84,8 @@ if (post_image?.path) {
       }
     }
 
-    .article-sidebar-left {
+    .article-sidebar-left,
+    .article-sidebar-right {
       @include media-tablet-max {
         grid-column: content;
         text-align: center;
@@ -91,10 +93,24 @@ if (post_image?.path) {
       @include media-tablet {
         position: sticky;
         top: 120px;
+        padding: 0 1rem;
+      }
+    }
+
+    .article-sidebar-left {
+      @include media-tablet {
         grid-column: jumbo-start/content-start;
         grid-row: 3;
         text-align: left;
-        padding: 0 1rem;
+      }
+    }
+
+    .article-sidebar-right {
+      @include media-tablet {
+        margin-top: 3rem;
+        grid-column: content-end/jumbo-end;
+        grid-row: 2;
+        text-align: right;
       }
     }
 
@@ -156,13 +172,13 @@ if (post_image?.path) {
   </header>
   <div class="article-next step-down">
     <CTA style="simple" link="/" title={`View post: ${'hi'}`}>
-      Next post <svg><use xlink-href="#caret-right"></use></svg>
+      Next post <svg><use xlink:href="#caret-right"></use></svg>
     </CTA>
   </div>
   <div class="article-image">
     { post_image.path && (
       <picture>
-        <source media="(max-width: 767px)" srcset={srcset[0]} sizes={sizes[0]} />
+        <source media="(max-width: 767px)" srcset={srcset[0]} sizes={sizes[0]} width="1000" height="782"/>
         <source media="(min-width: 768px)" srcset={srcset[1]} sizes={sizes[1]} width="1172" height="440"/>
         <img src={imgix_article_default(post_image.path, 1172)} width="1172" height="440"
           alt={post_image.alt}
@@ -177,5 +193,8 @@ if (post_image?.path) {
   <div class="article-background"></div>
   <div class="article-content">
     <slot />
+  </div>
+  <div class="article-sidebar-right">
+    { show_share && <SocialShare />}
   </div>
 </article>

@@ -84,7 +84,7 @@ const md = new MarkdownIt({ html: true });
   <dl>
     { faqs.map((item) => (
       <dt role="button" aria-label="Show FAQ answer" class="h3">
-        <svg><use xlink-href='#caret-right'></use></svg>
+        <svg><use xlink:href='#caret-right'></use></svg>
         <span>{ item.question }</span>
       </dt>
       <dd class="" set:html={md.render(item.answer)}></dd>

@@ -58,6 +58,9 @@
 %article-grid {
   display: grid;
   row-gap: 1.5rem;
+  max-width: $layout_max_width;
+  margin-left: auto;
+  margin-right: auto;
   grid-template-columns:
     [banner-start jumbo-start bg-start]
     minmax($layout_gutter, 1fr)
