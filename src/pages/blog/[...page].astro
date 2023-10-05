@@ -1,7 +1,7 @@
 ---
 import PostLayout from "src/layouts/post.astro";
 import Collection from "src/components/posts/collection.astro";
-import Article from "src/components/posts/article.astro";
+import Card from "src/components/posts/card.astro";
 import { getCollection, getEntryBySlug } from "astro:content";
 
 const slug = "blog"; // simple edit of one param
@@ -26,6 +26,6 @@ if (!data) {
 ---
 <PostLayout frontmatter={data}>
   <Collection slug={slug} pagination={page} page={data}>
-    { articles.map(item => <Article post={item} />)}
+    { articles.map(item => <Card post={item} />)}
   </Collection>
 </PostLayout>

@@ -1,7 +1,7 @@
 ---
 import MarkdownIt from 'markdown-it';
 import {dateFormatter,imgix_post_image} from 'src/shared/utilities.js';
-const { short_date, post: {slug, collection, data: { excerpt, headline, read_time, published, post_image }} } = Astro.props;
+const { slug, collection, data: { excerpt, headline, read_time, published, post_image } } = Astro.props;
 const md = new MarkdownIt({ html: true });
 const article_url = `/${collection}/${slug}/`;
 let srcset, sizes;
@@ -12,80 +12,17 @@ if (post_image?.path) {
 ---
 <style lang="scss" is:global>
   [data-posts-article] {
-    position: relative;
 
-    .post-image-link {
-      display: block;
-      aspect-ratio: 2 / 1;
-      img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        border-radius: $radius_lg;
-        object-fit: cover;
-      }
-    }
-
-    .meta {
-      display: flex;
-      justify-content: space-between;
-      position: absolute;
-      width: 100%;
-      top: 1rem;
-
-      .date, .read-time {
-        background-color: rgba($color_secondary, .5);
-        padding: .25em .5em;
-        border-radius: $radius_md;
-      }
-
-      .date {
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-        padding-right: .75em;
-      }
-
-      .read-time {
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-        padding-left: .75em;
-      }
-    }
-    .content {
-      .title {
-        text-decoration: none;
-      }
-    }
   }
 </style>
 <article data-posts-article>
-  <a class="post-image-link" href={article_url}>
-    { post_image.path && (
-      <img src={imgix_post_image(post_image.path, 787)} width="400" height="200"
-        srcset={srcset}
-        sizes={sizes}
-        alt={post_image.alt}
-        title={post_image.title}
-      />
-    )}
-  </a>
-  <div class="meta">
-    <div class='date step-down'>
-      {dateFormatter(short_date).format(published)}
-    </div>
-    <div class='read-time step-down'>
-      {read_time} min read
-    </div>
-  </div>
-  <div class="content">
-    <a class="title" title={headline} href={article_url}>
-      <h3 class="h2">
-        {headline}
-      </h3>
-    </a>
-    { excerpt && <div class="rt" set:html={md.render(excerpt)}></div>}
-    <p><a title={headline} href={article_url}>
-      Read More&hellip;
-    </a></p>
-  </div>
+  { post_image.path && (
+    <img src={imgix_post_image(post_image.path, 787)} width="400" height="200"
+      srcset={srcset}
+      sizes={sizes}
+      alt={post_image.alt}
+      title={post_image.title}
+    />
+  )}
+  <slot />
 </article>

@@ -1,5 +1,6 @@
 ---
 import PostLayout from "src/layouts/post.astro";
+import Article from "src/components/posts/article.astro";
 import { getCollection, getEntryBySlug } from "astro:content";
 
 export async function getStaticPaths() {
@@ -24,7 +25,8 @@ if (!post) {
 
 const { Content } = await post.render();
 ---
-
 <PostLayout frontmatter={post.data} body={post.body}>
-  <Content />
+  <Article {...post}>
+    <Content />
+  </Article>
 </PostLayout>
