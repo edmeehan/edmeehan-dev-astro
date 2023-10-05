@@ -1,5 +1,7 @@
 ---
 const { label, link, style, is_button = false, type = 'button' } = Astro.props;
+const currentPath = Astro.url.pathname;
+const ariaProperties = currentPath === link ? {"aria-current":"page"} : {};
 ---
 <style lang="scss" is:global>
   [data-global-cta] {
@@ -23,11 +25,6 @@ const { label, link, style, is_button = false, type = 'button' } = Astro.props;
       padding: .444em 1em;
     }
 
-    &:hover {
-      background-color: $color_cta_hover;
-      cursor: pointer;
-    }
-
     &.cta--primary {}
     &.cta--secondary {
       border-color: $color_cta_secondary;
@@ -35,10 +32,28 @@ const { label, link, style, is_button = false, type = 'button' } = Astro.props;
     &.cta--loud {
       border-color: $color_cta_loud;
     }
+    &.cta--simple {
+      display: inline-block;
+      background-color: rgba($color_text_default, .125);
+      text-decoration: none;
+      padding: 0 .5em;
+      border-radius: 8px;
+      border: none;
+
+      &[aria-current='page'] {
+        background-color: rgba($color_text_default, .376);
+        cursor: default;
+      }
+    }
+
+    &:hover {
+      background-color: $color_cta_hover;
+      cursor: pointer;
+    }
   }
 </style>
 { !is_button && (
-  <a data-global-cta class={`cta--${style}`} href={ link }>{ label || (<slot/>) }</a>
+  <a data-global-cta {...ariaProperties} class={`cta--${style}`} href={ link }>{ label || (<slot/>) }</a>
 )}
 { !!is_button && (
   <button data-global-cta class={`cta--${style}`} type={type}>{ label || (<slot/>) }</button>

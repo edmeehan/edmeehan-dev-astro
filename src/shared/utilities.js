@@ -14,3 +14,5 @@ export const imgix = (image_path, width, dpr, height = null) => {
   }
   return `https://edmeehan-dev.imgix.net${image_path}?${transformations}`;
 };
+
+export const imgix_post_image = (image_path, width) => `https://edmeehan-dev.imgix.net${image_path}?q=85&ar=2:1&fit=crop&crop=center,left&w=${width}`;

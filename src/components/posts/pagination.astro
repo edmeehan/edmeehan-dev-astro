@@ -1,4 +1,5 @@
 ---
+import CTA from "../global/cta/cta.astro";
 const { pagination, slug } = Astro.props;
 ---
 <style lang="scss" is:global>
@@ -19,7 +20,7 @@ const { pagination, slug } = Astro.props;
     .map((v,index) => {
       const pageIndex = index + 1;
       return (
-        <a class:list={[`cta-simple`, ]} href={`/${slug}${ pageIndex === 1 ? '/' : `/${pageIndex}/`}`}>{ pageIndex }</a>
+        <CTA style="simple" link={`/${slug}${ pageIndex === 1 ? '/' : `/${pageIndex}/`}`}>{ pageIndex }</CTA>
       )
     })
   }

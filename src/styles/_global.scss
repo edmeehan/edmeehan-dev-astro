@@ -193,23 +193,6 @@ p.eyebrow {
   }
 }
 
-// p[class*="txt-cta-"]:last-child {
-//   margin-bottom: 0;
-// }
-
-a.cta-simple {
-  display: inline-block;
-  background-color: ($color_text_default + '20');
-  text-decoration: none;
-  padding: 0 0.5em;
-  border-radius: 8px;
-  border: none;
-
-  &[aria-current='page'] {
-    background-color: ($color_text_default + '60');
-  }
-}
-
 .spacer {
   height: 1px;
 }

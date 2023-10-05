@@ -1,4 +1,5 @@
 ---
+import CTA from "../global/cta/cta.astro";
 const { pagination: { url } } = Astro.props;
 const { prev, next } = url;
 ---
@@ -11,10 +12,6 @@ const { prev, next } = url;
   }
 </style>
 <div data-posts-mini-pagination>
-  { prev &&
-    <a class='cta-simple' href={prev}>Prev</a>
-  }
-  { next &&
-    <a class='cta-simple' href={next}>Next</a>
-  }
+  { prev && <CTA style="simple" link={prev}>Prev</CTA>}
+  { next && <CTA style="simple" link={next}>Next</CTA>}
 </div>

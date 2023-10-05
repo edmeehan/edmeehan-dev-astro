@@ -12,6 +12,7 @@ export async function getStaticPaths({paginate}: { paginate: Function }) {
     slug,
     ({ data }) => !data.hidden
   );
+  posts.sort(({data:{published:apub}},{data:{published:bpub}}) => bpub - apub);
   const { data: { page_size: pageSize }} = await getEntryBySlug("pages", slug);
   return paginate(posts, { pageSize });
 }
