@@ -1,0 +1,14 @@
+spec:
+  structures:
+    - content_blocks
+    - form_block
+  label: Text Field
+  description: Input, Textarea
+  icon: font_download
+  tags:
+
+blueprint:
+
+preview:
+
+_inputs:

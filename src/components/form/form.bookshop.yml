@@ -1,0 +1,14 @@
+spec:
+  structures:
+    - content_blocks
+    - page_blocks
+  label: Form
+  description: Content area with form builder
+  icon: dynamic_form
+  tags:
+
+blueprint:
+
+preview:
+
+_inputs:

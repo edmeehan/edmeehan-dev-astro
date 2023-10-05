@@ -1,0 +1,14 @@
+spec:
+  structures:
+    - content_blocks
+    - form_block
+  label: Select Field
+  description: Checkbox, Radio, Combo
+  icon: check_box
+  tags:
+
+blueprint:
+
+preview:
+
+_inputs:
