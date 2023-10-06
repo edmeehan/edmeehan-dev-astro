@@ -393,16 +393,25 @@ _snippets:
     inline: false
     preview:
       text: Quote
+      icon: format_quote
+      subtext:
+        - key: blockquote
+        - No blockquote set yet.
+      metadata:
+        - icon: face
+        - text:
+          - key: cite
+          - No cite name set yet.
     definitions:
       component_name: Quote
       content_key: blockquote
       named_args:
         - editor_key: cite
           type: string
-      _inputs:
-        blockquote:
-          type: textarea
-          comment: What is the quote?
-        cite:
-          type: text
-          comment: Who said it?
+    _inputs:
+      blockquote:
+        type: textarea
+        comment: What is the quote?
+      cite:
+        type: text
+        comment: Who said it?
