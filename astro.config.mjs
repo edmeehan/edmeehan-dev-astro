@@ -8,7 +8,7 @@ import AutoImport from 'astro-auto-import';
 export default defineConfig({
   integrations: [ AutoImport({
     imports: [
-      {'src/components/global/link/link.astro':[['default','Link']]}
+      {'src/components/snippet/quote.astro':[['default','Quote']]}
     ]
   }), mdx(), bookshop(), react()],
   trailingSlash: 'always',

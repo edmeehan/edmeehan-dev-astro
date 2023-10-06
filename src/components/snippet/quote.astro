@@ -1,0 +1,26 @@
+---
+const { cite } = Astro.props;
+---
+<style lang="scss" is:global>
+  [ data-snippet-quote] {
+    font-style: italic;
+    margin: 0;
+    padding: 1.5rem;
+    border-left: solid 3px $color_primary_lite;
+
+    blockquote {
+      margin: 0;
+      text-shadow: 0 1px 1px $color_black_1;
+      font-size: 1.2em;
+      line-height: 1.45em;
+    }
+  }
+</style>
+<figure data-snippet-quote>
+  <blockquote>
+    &ldquo;<slot />&rdquo;
+  </blockquote>
+  <figcaption class="small">
+    <cite>- {cite}</cite>
+  </figcaption>
+</figure>

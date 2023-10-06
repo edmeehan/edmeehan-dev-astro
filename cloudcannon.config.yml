@@ -388,22 +388,21 @@ timezone: America/Los_Angeles
 _snippets_imports:
   mdx: true
 _snippets:
-  link:
-    template: mdx_component
-    inline: true
+  quote:
+    template: mdx_paired_component
+    inline: false
     preview:
-      text: Link
+      text: Quote
     definitions:
-      component_name: Link
+      component_name: Quote
+      content_key: blockquote
       named_args:
-        - editor_key: label
-          type: string
-        - editor_key: link
+        - editor_key: cite
           type: string
       _inputs:
-        label:
+        blockquote:
+          type: textarea
+          comment: What is the quote?
+        cite:
           type: text
-          cascade: true
-        link:
-          type: url
-          cascade: true
+          comment: Who said it?
