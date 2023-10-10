@@ -34,7 +34,7 @@ h6 {
   margin-bottom: $text_mobile_line_height_root;
   margin-top: $text_mobile_line_height_root;
 
-  @include media-desktop {
+  @include media-laptop {
     margin-bottom: $text_desktop_line_height_root;
     margin-top: $text_desktop_line_height_root;
   }
