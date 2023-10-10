@@ -1,6 +1,90 @@
 ---
+const { title } = Astro.props;
+const { pathname } = Astro.url;
 
+const twitter = () => {
+  const link = new URL('https://twitter.com/intent/tweet/')
+  link.searchParams.set('url', pathname)
+  link.searchParams.set('text', title)
+  return link.toString()
+}
+
+const linkedin = () => {
+  const link = new URL('https://www.linkedin.com/shareArticle')
+  link.searchParams.set('url', pathname)
+  link.searchParams.set('mini', 'true')
+  link.searchParams.set('title', title)
+  return link.toString()
+}
+
+const email = () => {
+  const link = new URL('mailto:')
+  link.searchParams.set('subject', title)
+  link.searchParams.set('body', pathname)
+  return link.toString()
+}
 ---
-<div>
-  Social Share Here
+<style lang="scss" is:global>
+  [data-global-social-share] {
+    h5 {
+      margin: 0 0 .5rem;
+      opacity: .7;
+      span {
+        font-weight: $text_weight_normal;
+      }
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      display: flex;
+      gap: .35em;
+      justify-content: center;
+
+      @include media-tablet {
+        justify-content: flex-end;
+      }
+
+      a {
+        display: block;
+        &:hover {
+          svg {
+            fill: $color_text_default;
+          }
+        }
+      }
+      svg {
+        transition: fill 400ms;
+        fill: $color_cta_secondary;
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+  }
+</style>
+<div data-global-social-share>
+  <h5><span>Love it?</span><br/><span>Hate it?</span><br/>Share it!</h5>
+  <ul>
+    <li>
+      <a
+        aria-label="Share on Twitter"
+        class="twitter"
+        href={twitter()}
+      >
+        <svg><use xlink:href='#twitter'></use></svg></a></li>
+    <li>
+      <a
+        aria-label="Share on LinkedIn"
+        class="linkedin"
+        href={linkedin()}
+      >
+        <svg><use xlink:href='#linkedin'></use></svg></a></li>
+    <li>
+      <a
+        aria-label="Share by Email"
+        class="email"
+        href={email()}
+      >
+        <svg><use xlink:href='#email'></use></svg></a></li>
+  </ul>
 </div>

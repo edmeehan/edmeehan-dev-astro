@@ -1,5 +1,6 @@
 ---
 import MasterLayout from "./master.astro";
+import PostSVG from "src/components/svg/post.astro";
 
 // type Props = {
 //   frontmatter: {
@@ -15,5 +16,6 @@ if (!frontmatter) {
 ---
 
 <MasterLayout {...frontmatter}>
+  <PostSVG/>
   <slot />
 </MasterLayout>
