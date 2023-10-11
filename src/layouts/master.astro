@@ -36,6 +36,11 @@ const thumbnails = {};
     { !!no_index && <meta name="robots" content="noindex,nofollow" /> }
     {/* Canonical */}
     <link rel="canonical" href={`${origin}${canonical_url || pathname}`}></link>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true"/>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400&display=block" rel="stylesheet"/>
+
+    <!-- Additional meta used - need to add -->
   </head>
   <body>
     <DefaultSVG />
