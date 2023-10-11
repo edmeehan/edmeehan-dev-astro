@@ -4,14 +4,38 @@ import "../styles/theme.scss";
 import DefaultSVG from "src/components/svg/default.astro";
 import Header from "src/components/layout/header.astro";
 import Footer from "src/components/layout/footer.astro";
+
+const props = Astro.props;
+const { origin, pathname } = Astro.url;
+console.log(props);
+const {seo:{no_index,canonical_url}} = Astro.props;
+const thumbnails = {};
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    {/* Standard */}
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
+    <title>{'title here'}</title>
+    <meta name="description" content={'stuff here'} />
+    {/* Open Graph */}
+    <meta property="og:title" content={ 'og title' } />
+    <meta property="og:description" content={ 'og description' } />
+    <meta property="og:url" content={ 'og url' } />
+    {/* Open Graph Images */}
+    {[].map(({url,width,height}) => (
+      <meta property="og:image" content={url} />
+      <meta property="og:image:width" content={width} />
+      <meta property="og:image:height" content={height} />
+    ))}
+    <!-- { !!thumbnails?.og?.url && <meta name="twitter:image" content={'twitter image url'} /> } -->
+    {/* No Index */}
+    { !!no_index && <meta name="robots" content="noindex,nofollow" /> }
+    {/* Canonical */}
+    <link rel="canonical" href={`${origin}${canonical_url || pathname}`}></link>
   </head>
   <body>
     <DefaultSVG />
