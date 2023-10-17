@@ -1,7 +1,7 @@
 ---
 import MediaCaption from "src/components/global/media-caption.astro";
 import {imgix} from 'src/shared/utilities.js';
-const { caption, path, ar, alt, jumbo, loading = 'lazy'} = Astro.props;
+const { caption, path = '', ar = '1/1', alt, jumbo, loading = 'lazy'} = Astro.props;
 const [width,height] = ar.split('/');
 const sizes = !jumbo
   ? '(max-width: 590px) 92vw,(max-width: 1023px) 544px,(max-width: 2559px) 612px, 748px'
@@ -47,7 +47,7 @@ const srcset = !jumbo
     }
   }
 </style>
-<figure data-snippet-image class:list={[{jumbo}]} style={{'--ar': ar || '1/1'}}>
+<figure data-snippet-image class:list={[{jumbo}]} style={{'--ar': ar}}>
   <img width={width} height={height} src={path} alt={alt || caption} title={caption} loading={loading} srcset={srcset} sizes={sizes} />
   { !!caption && (
   <figcaption>

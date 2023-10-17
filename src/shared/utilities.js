@@ -7,7 +7,7 @@ export const dateFormatter = (short = false) => new Intl.DateTimeFormat("en-US",
   year: "numeric",
 });
 
-export const imgix = (image_path, width, dpr, height = null) => {
+export const imgix = (image_path, width, dpr = 1, height = null) => {
   let transformations = `q=85&auto=format&w=${width}&dpr=${dpr}`;
   if (height !== null) {
     transformations += `&crop=faces&fit=crop&height=${height}`;
