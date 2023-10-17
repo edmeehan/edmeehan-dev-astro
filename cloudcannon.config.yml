@@ -266,6 +266,24 @@ _inputs:
       When selected this removes the page from your sitemap and adds the noindex
       robots meta tag
     cascade: true
+  post_image:
+    type: object
+    options:
+      preview:
+        icon: false
+        image:
+          - key: path
+        text:
+          - key: title
+        subtext:
+          - key: alt
+  post_image.path:
+    type: image
+    comment: Use image with aspect ratio of 333:125 or 2664x1000 with a logo or graphic on the left.
+  post_image.alt:
+    type: text
+  post_image.title:
+    type: text
   testimonials:
     type: array
     cascade: true

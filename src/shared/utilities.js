@@ -16,5 +16,5 @@ export const imgix = (image_path, width, dpr, height = null) => {
 };
 
 export const imgix_article_card = (image_path, width) => `https://edmeehan-dev.imgix.net${image_path}?q=85&ar=2:1&fit=crop&crop=center,left&w=${width}`;
-export const imgix_article_default = (image_path, width) => `https://edmeehan-dev.imgix.net${image_path}?q=85&&w=${width}`;
+export const imgix_article_default = (image_path, width) => `https://edmeehan-dev.imgix.net${image_path}?q=85&ar=333:125&fit=crop&crop=center,center&w=${width}`;
 export const imgix_article_mobile = (image_path, width) => `https://edmeehan-dev.imgix.net${image_path}?q=85&ar=639:500&fit=crop&crop=center,left&w=${width}`;
