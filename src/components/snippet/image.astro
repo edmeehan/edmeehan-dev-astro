@@ -1,18 +1,57 @@
 ---
-const { caption, image, size} = Astro.props;
+import MediaCaption from "src/components/global/media-caption.astro";
+import {imgix} from 'src/shared/utilities.js';
+const { caption, path, ar, alt, jumbo, loading = 'lazy'} = Astro.props;
+const [width,height] = ar.split('/');
+const sizes = !jumbo
+  ? '(max-width: 590px) 92vw,(max-width: 1023px) 544px,(max-width: 2559px) 612px, 748px'
+  : '(max-width: 767px) 100vw,(max-width: 1023px) 90vw, (max-width: 1600px) 85vw, (max-width: 2559px) 1270px, 1316px';
+const srcset = !jumbo
+  ? `${imgix(path, 300)} 300w, ${imgix(path, 400)} 400w, ${imgix(path, 544)} 544w, ${imgix(path, 612)} 612w, ${imgix(path, 748)} 748w, ${imgix(path, 1088)} 1088w, ${imgix(path, 1224)} 1224w, ${imgix(path, 1496)} 1496w`
+  : `${imgix(path, 400)} 400w, ${imgix(path, 500)} 500w, ${imgix(path, 600)} 600w, ${imgix(path, 700)} 700w, ${imgix(path, 800)} 800w, ${imgix(path, 900)} 900w, ${imgix(path, 1270)} 1270w, ${imgix(path, 1316)} 1316w, ${imgix(path, 2540)} 2540w, ${imgix(path, 2632)} 2632w,`;
 ---
 <style lang="scss" is:global>
   [data-snippet-image] {
+    margin: 0;
+    aspect-ratio: var(--ar);
+    position: relative;
+
+    &.jumbo {
+      grid-column: jumbo;
+
+      @include media-tablet {
+        transform: translateX(-2rem);
+      }
+    }
+
     img {
       width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    figcaption {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+
+      > div {
+        padding: .3em 1em;
+        background-color: rgba($color_black_1, .5);
+        color: $color_white;
+        svg {
+          fill: $color_white;
+        }
+      }
     }
   }
 </style>
-<figure data-snippet-image>
-  <img src={image} width="" height="" alt="" />
+<figure data-snippet-image class:list={[{jumbo}]} style={{'--ar': ar || '1/1'}}>
+  <img width={width} height={height} src={path} alt={alt || caption} title={caption} loading={loading} srcset={srcset} sizes={sizes} />
   { !!caption && (
   <figcaption>
-    { caption }
+    <MediaCaption caption={caption} />
   </figcaption>
   )}
 </figure>

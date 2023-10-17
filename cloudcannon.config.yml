@@ -406,6 +406,54 @@ timezone: America/Los_Angeles
 _snippets_imports:
   mdx: true
 _snippets:
+  image:
+    template: mdx_component
+    inline: false
+    preview:
+      text: Image
+      icon: image
+      image:
+        - key: path
+        - false
+      subtext:
+        - key: caption
+        - No caption set yet.
+      metadata:
+        - icon: aspect_ratio
+          text:
+            - key: ar
+            - No aspect ratio set yet.
+        - icon: description
+          text:
+            - key: alt
+            - No alt text set yet.
+        - icon: settings_overscan
+          text:
+            - key: jumbo
+    definitions:
+      component_name: Image
+      named_args:
+        - editor_key: caption
+          type: string
+        - editor_key: path
+          type: string
+        - editor_key: ar
+          type: string
+        - editor_key: alt
+          type: string
+        - editor_key: jumbo
+          type: boolean
+    _inputs:
+      path:
+        type: image
+      caption:
+        type: text
+      alt:
+        type: text
+      ar:
+        type: text
+      jumbo:
+        type: switch
   quote:
     template: mdx_paired_component
     inline: false
