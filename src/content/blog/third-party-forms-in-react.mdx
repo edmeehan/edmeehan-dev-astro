@@ -23,6 +23,47 @@ show_share: true
 show_comments: false
 ---
 
-# This is the blog title
+There are a ton of third-party web form providers on the market today. In addition, most CRM tools come with the feature to add a form to your website. These instructions assume your website is standard HTML. But you're using React on your site, and the "copy and paste" instructions won't work.
 
-## this is the next sub stitle
+Here are a few common patterns and examples of how to solve them on your React site.
+
+## Example One: Script and a DOM element
+
+A widespread pattern is the form provider will ask you to embed a script and a DOM element. If you look closely at these elements, you can easily spot the ID that is unique to your form.
+
+Below is an example of this pattern from **ActiveCampaign**.
+
+```
+<div class="_form_22"></div>
+<script src="https://myaccount.activehosted.com/f/embed.php?id=22" type="text/javascript" charset="utf-8"></script>
+```
+
+You can see that the form ID is 22 in the example above. So no matter what form we embed, the only difference between them is the associated ID. Now that we see this pattern writing a React component that can take an ID as a prop to be used across our app is easy.
+
+Code
+
+Assuming you have exported this component into your React app, we would use this component like so.
+
+Code
+
+## Example Two: Scripts only
+
+Another typical pattern is loading a script and then calling a method to build the form based on a config option.
+
+Code
+
+In the example above from HubSpot, you see a script is loaded, then a method from that script is called with a config object. Of course, the expectation is to embed this script at the location you wish the form to appear. But because we are using React, we can't do that. Lucky for us, the config object has a property that can help you identify the target location.
+
+Code
+
+We can complete the React component with the target property on the config object. We can also add an additional param for the HubSpot portal ID.
+
+Code
+
+And finally, to add this form to our app, we need to use the component.
+
+Code
+
+### HubSpot NPM Package
+
+Also if you want to use an NPM package for HubSpot forms, there is package solution here - https://www.npmjs.com/package/react-hubspot-form

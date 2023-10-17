@@ -1,0 +1,18 @@
+---
+const { caption, image, size} = Astro.props;
+---
+<style lang="scss" is:global>
+  [data-snippet-image] {
+    img {
+      width: 100%;
+    }
+  }
+</style>
+<figure data-snippet-image>
+  <img src={image} width="" height="" alt="" />
+  { !!caption && (
+  <figcaption>
+    { caption }
+  </figcaption>
+  )}
+</figure>

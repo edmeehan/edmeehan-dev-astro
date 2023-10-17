@@ -8,7 +8,8 @@ import AutoImport from 'astro-auto-import';
 export default defineConfig({
   integrations: [ AutoImport({
     imports: [
-      {'src/components/snippet/quote.astro':[['default','Quote']]}
+      {'src/components/snippet/quote.astro':[['default','Quote']]},
+      {'src/components/snippet/image.astro':[['default','Image']]}
     ]
   }), mdx(), bookshop(), react()],
   trailingSlash: 'always',
@@ -24,5 +25,24 @@ export default defineConfig({
         }
       }
     }
+  },
+  markdown: {
+    // syntaxHighlight: 'prism'
+    // shikiConfig: {
+    //   theme: 'github-dark',
+    //   // langs: [],
+    //   wrap: true
+    // }
+    render: [
+      '@astrojs/markdown-remark',
+      {
+        syntaxHighlight: 'shiki',
+        shikiConfig: {
+          theme: 'monokai',
+          langs: ['js', 'html', 'css', 'astro'],
+          wrap: true,
+        },
+      },
+    ],
   }
 });
