@@ -27,22 +27,8 @@ export default defineConfig({
     }
   },
   markdown: {
-    // syntaxHighlight: 'prism'
-    // shikiConfig: {
-    //   theme: 'github-dark',
-    //   // langs: [],
-    //   wrap: true
-    // }
-    render: [
-      '@astrojs/markdown-remark',
-      {
-        syntaxHighlight: 'shiki',
-        shikiConfig: {
-          theme: 'monokai',
-          langs: ['js', 'html', 'css', 'astro'],
-          wrap: true,
-        },
-      },
-    ],
+    shikiConfig: {
+      theme: 'github-dark'
+    }
   }
 });

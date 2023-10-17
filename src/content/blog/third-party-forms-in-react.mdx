@@ -22,7 +22,6 @@ hidden: false
 show_share: true
 show_comments: false
 ---
-
 There are a ton of third-party web form providers on the market today. In addition, most CRM tools come with the feature to add a form to your website. These instructions assume your website is standard HTML. But you're using React on your site, and the "copy and paste" instructions won't work.
 
 Here are a few common patterns and examples of how to solve them on your React site.
@@ -33,36 +32,115 @@ A widespread pattern is the form provider will ask you to embed a script and a D
 
 Below is an example of this pattern from **ActiveCampaign**.
 
-```
+```html
 <div class="_form_22"></div>
 <script src="https://myaccount.activehosted.com/f/embed.php?id=22" type="text/javascript" charset="utf-8"></script>
 ```
 
 You can see that the form ID is 22 in the example above. So no matter what form we embed, the only difference between them is the associated ID. Now that we see this pattern writing a React component that can take an ID as a prop to be used across our app is easy.
 
-Code
+```js
+import React, { useEffect } from 'react'
+// fid = Form ID
+const ActiveCampaignForm = ({ fid }) => {
+  useEffect(() => {
+    const script = document.createElement('script')
+    script.src = `https://myaccount.activehosted.com/f/embed.php?id=${fid}`
+    // script.onload = onScriptLoad // optional
+    document.body.appendChild(script)
+
+    return () => {
+      document.body.removeChild(script)
+    }
+  }, [])
+
+  const onScriptLoad = () => {
+    // if you need to do something upon script onload
+  }
+
+  return (
+    <div className={`_form_${fid}`}></div>
+  )
+}
+
+export default ActiveCampaign
+```
 
 Assuming you have exported this component into your React app, we would use this component like so.
 
-Code
+```html
+<ReactApp>
+  <h1>This is my embedded form below</h1>
+  <ActiveCampaign fid="22" />
+</ReactApp>
+```
 
 ## Example Two: Scripts only
 
 Another typical pattern is loading a script and then calling a method to build the form based on a config option.
 
-Code
+```html
+<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+<script>
+  hbspt.forms.create({
+    portalId: "00000000",
+    formId: "00000000-0000-0000-0000-000000000000"
+  });
+</script>
+```
 
 In the example above from HubSpot, you see a script is loaded, then a method from that script is called with a config object. Of course, the expectation is to embed this script at the location you wish the form to appear. But because we are using React, we can't do that. Lucky for us, the config object has a property that can help you identify the target location.
 
-Code
+```js
+const hbsptConfig = {
+  portalId: "00000000",
+  formId: "00000000-0000-0000-0000-000000000000",
+  // new config param below
+  target: QuerySelectorStringHere
+}
+```
 
 We can complete the React component with the target property on the config object. We can also add an additional param for the HubSpot portal ID.
 
-Code
+```js
+import React, { useEffect } from 'react'
+
+const HubSpotForm = ({ fid, pid }) => {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = '//js.hsforms.net/forms/v2.js';
+    script.onload = onScriptLoad
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    }
+  }, [])
+
+  const onScriptLoad = () => {
+    hbspt.forms.create({
+      portalId: pid,
+      formId: fid,
+      target: '#hubspotForm'
+    });
+  }
+
+  return (
+    <div id="hubspotForm"></div>
+  )
+}
+
+export default HubSpotForm
+```
 
 And finally, to add this form to our app, we need to use the component.
 
-Code
+```html
+<ReactApp>
+  <h1>This is my embedded form below</h1>
+  <HubSpotForm fid="00000000-0000-0000-0000-000000000000" pid="00000000" />
+</ReactApp>
+```
 
 ### HubSpot NPM Package
 
