@@ -37,6 +37,22 @@ hidden: false
 show_share: true
 show_comments: false
 ---
-# This is the blog title
+A local web agency approached me to review a project with their EV charging station client. The client recently built a [JAMstack website](https://jamstack.org/what-is-jamstack/), and the agency wanted me to check the codebase before they agreed to take on the website. The website was built with React using the [Next.js](https://nextjs.org/) framework and a headless CMS called [Storyblok](https://www.storyblok.com/).
 
-## this is the next sub stitle
+## Discovery
+
+Upon investigating the site built with NextJS, I found it hit the Storyblok API multiple times on each page request on the server and client side. During peak traffic to the site, these requests would exceed the limits set by Storyblok. This would be a problem for the client.
+
+Unfortunately for the client, their DevOps team had no resources to allocate to this project, limiting our solutions. I suggested exploring alternatives that fit better, for example, using a framework like Gatsby with static site generation (at the time, this feature was not available on NextJS). The development team liked this idea since they had already adopted Gatsby on other various projects and had hosting options already in place for us to use.
+
+## Migration
+
+The client's team did not have resources and could only assist in the hosting and deployment of the project. The agency asked me if I would be interested in migrating the site. I have done a few migrations ([WordPress to Voyager on Crimewire](/projects/crimewire/)) and was eager to dig deeper into this Storyblok CMS. Along with the migration, some outstanding features and minor details still needed to be addressed before launch.
+
+## Launch
+
+The client had a big announcement to publish a few days after launch, and the site had to work perfectly. The launch day went off without a hitch, and I worked with the client's development team to ensure all the required pieces were in place. Then came the big announcement day, and of course, the static pages over CDN worked like a charm.
+
+## Conclusion
+
+This project reinforced that you must pick the right tool for the job. In this client's case, they needed a framework to handle high-traffic events without burdening the company network. Gatsby was the better choice at the time because of the static site generation, and the internal team had already adopted it. In addition, I got an opportunity to see how an agency builds JAMstack sites using React and a headless CMS. And on a final note, this migration increased my love for the JAMstack and reminded me that I enjoy working with tools that match my vision of the web.
