@@ -14,8 +14,6 @@ const srcset = (!jumbo
 <style lang="scss" is:global>
   [data-snippet-image] {
     margin: 0;
-    aspect-ratio: var(--ar);
-    position: relative;
 
     &.jumbo {
       grid-column: jumbo;
@@ -23,6 +21,11 @@ const srcset = (!jumbo
       @include media-tablet {
         transform: translateX(-2rem);
       }
+    }
+
+    > div {
+      aspect-ratio: var(--ar);
+      position: relative;
     }
 
     img {
@@ -33,23 +36,17 @@ const srcset = (!jumbo
     }
 
     figcaption {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-
       > div {
         padding: .3em 1em;
         background-color: rgba($color_black_1, .5);
         color: $color_white;
-        svg {
-          fill: $color_white;
-        }
+        border-radius: 0 0 $radius_sm $radius_sm;
       }
     }
   }
 </style>
 <figure data-snippet-image class:list={[{jumbo}]} style={{'--ar': `${width}/${height}`}}>
-  <img {...imageProps} srcset={srcset} sizes={sizes} />
+  <div><img {...imageProps} srcset={srcset} sizes={sizes} /></div>
   { !!caption && (
   <figcaption>
     <MediaCaption caption={caption} />

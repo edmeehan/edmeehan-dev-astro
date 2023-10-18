@@ -9,6 +9,7 @@ export default defineConfig({
   integrations: [ AutoImport({
     imports: [
       {'src/components/snippet/quote.astro':[['default','SnipQuote']]},
+      {'src/components/snippet/media.astro':[['default','SnipMedia']]},
       {'src/components/snippet/image.astro':[['default','SnipImage']]}
     ]
   }), mdx(), bookshop(), react()],
