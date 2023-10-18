@@ -24,7 +24,7 @@ blueprint:
   srcset:
   sizes:
   media:
-  lazyload: lazy
+  loading: lazy
 
 preview:
 

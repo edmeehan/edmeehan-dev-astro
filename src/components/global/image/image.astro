@@ -45,7 +45,7 @@ if (!mobile) mobile = desktop;
     alt={item.alt}
     width={item.width}
     height={item.height}
-    loading={item.lazyload}
+    loading={item.loading}
   />
 ))}
 {use_art_direction && (
@@ -60,7 +60,7 @@ if (!mobile) mobile = desktop;
     ))}
     <img src={display_images[0].path}
       alt={display_images[0].alt}
-      loading={display_images[0].lazyload}
+      loading={display_images[0].loading}
     />
   </picture>
 )}

@@ -1,14 +1,15 @@
 ---
 import MediaCaption from "src/components/global/media-caption.astro";
-import {imgix} from 'src/shared/utilities.js';
-const { caption, path = '', ar = '1/1', alt, jumbo, loading = 'lazy'} = Astro.props;
-const [width,height] = ar.split('/');
+import { imgix } from 'src/shared/utilities.js';
+const { caption, src, alt, jumbo = false, loading = 'lazy', width = 100, height = 100} = Astro.props;
+const imageProps = { src, alt: alt || caption, loading, title: caption, width, height };
 const sizes = !jumbo
   ? '(max-width: 590px) 92vw,(max-width: 1023px) 544px,(max-width: 2559px) 612px, 748px'
   : '(max-width: 767px) 100vw,(max-width: 1023px) 90vw, (max-width: 1600px) 85vw, (max-width: 2559px) 1270px, 1316px';
-const srcset = !jumbo
-  ? `${imgix(path, 300)} 300w, ${imgix(path, 400)} 400w, ${imgix(path, 544)} 544w, ${imgix(path, 612)} 612w, ${imgix(path, 748)} 748w, ${imgix(path, 1088)} 1088w, ${imgix(path, 1224)} 1224w, ${imgix(path, 1496)} 1496w`
-  : `${imgix(path, 400)} 400w, ${imgix(path, 500)} 500w, ${imgix(path, 600)} 600w, ${imgix(path, 700)} 700w, ${imgix(path, 800)} 800w, ${imgix(path, 900)} 900w, ${imgix(path, 1270)} 1270w, ${imgix(path, 1316)} 1316w, ${imgix(path, 2540)} 2540w, ${imgix(path, 2632)} 2632w,`;
+const srcset = (!jumbo
+  ? [300,400,544,612,748,1088,1224,1496]
+  : [400,500,600,700,800,900,1270,1316,2540,2632]
+).map(item => `${imgix(src, item)} ${item}w`).join(',');
 ---
 <style lang="scss" is:global>
   [data-snippet-image] {
@@ -47,8 +48,8 @@ const srcset = !jumbo
     }
   }
 </style>
-<figure data-snippet-image class:list={[{jumbo}]} style={{'--ar': ar}}>
-  <img width={width} height={height} src={path} alt={alt || caption} title={caption} loading={loading} srcset={srcset} sizes={sizes} />
+<figure data-snippet-image class:list={[{jumbo}]} style={{'--ar': `${width}/${height}`}}>
+  <img {...imageProps} srcset={srcset} sizes={sizes} />
   { !!caption && (
   <figcaption>
     <MediaCaption caption={caption} />

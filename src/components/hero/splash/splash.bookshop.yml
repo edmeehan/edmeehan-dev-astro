@@ -26,7 +26,7 @@ blueprint:
       srcset:
       sizes:
       media: '(min-width: 768px)'
-      lazyload: lazy
+      loading: lazy
     - path:
       alt:
       title:
@@ -40,7 +40,7 @@ blueprint:
         - 1200
       sizes: 90wv
       media: '(max-width: 767px)'
-      lazyload: lazy
+      loading: lazy
   cta: bookshop:global/cta
   section:
     transition: curve

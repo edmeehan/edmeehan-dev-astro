@@ -185,10 +185,10 @@ _inputs:
     label: Pagination
     comment: How many pages to display in a pagination set.
     cascade: true
-  lazyload:
+  loading:
     type: select
     options:
-      values: _select_data.lazyload
+      values: _select_data.loading
   uuid:
     type: text
     instance_value: UUID
@@ -359,7 +359,7 @@ _inputs:
     comment: Set the content width to small.
     cascade: true
 _select_data:
-  lazyload:
+  loading:
     lazy: Lazy
     eager: Eager
   section_transition:
@@ -431,27 +431,33 @@ _snippets:
           text:
             - key: jumbo
     definitions:
-      component_name: Image
+      component_name: SnipImage
       named_args:
         - editor_key: caption
           type: string
-        - editor_key: path
+        - editor_key: src
           type: string
-        - editor_key: ar
-          type: string
+        - editor_key: width
+          type: number
+        - editor_key: height
+          type: number
         - editor_key: alt
           type: string
         - editor_key: jumbo
           type: boolean
+        - editor_key: loading
+          type: string
     _inputs:
-      path:
+      src:
         type: image
       caption:
         type: text
       alt:
         type: text
-      ar:
-        type: text
+      width:
+        type: number
+      height:
+        type: number
       jumbo:
         type: switch
   quote:
@@ -469,7 +475,7 @@ _snippets:
             - key: cite
             - No cite name set yet.
     definitions:
-      component_name: Quote
+      component_name: SnipQuote
       content_key: blockquote
       named_args:
         - editor_key: cite

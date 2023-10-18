@@ -8,8 +8,8 @@ import AutoImport from 'astro-auto-import';
 export default defineConfig({
   integrations: [ AutoImport({
     imports: [
-      {'src/components/snippet/quote.astro':[['default','Quote']]},
-      {'src/components/snippet/image.astro':[['default','ArticleImage']]}
+      {'src/components/snippet/quote.astro':[['default','SnipQuote']]},
+      {'src/components/snippet/image.astro':[['default','SnipImage']]}
     ]
   }), mdx(), bookshop(), react()],
   trailingSlash: 'always',

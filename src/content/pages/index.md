@@ -27,7 +27,7 @@ content_blocks:
           - 1536
         sizes: '(max-width: 1023px) 50vw,(max-width: 1380px) calc(90vw - 550px), 768px'
         media: '(min-width: 768px)'
-        lazyload: lazy
+        loading: lazy
       - path: /uploads/pages/altgrid-rays-complete-wide@2x.png
         alt: whales and water
         title:
@@ -41,7 +41,7 @@ content_blocks:
           - 1200
         sizes: 90vw
         media: '(max-width: 767px)'
-        lazyload: lazy
+        loading: lazy
     content: >-
       <p class="eyebrow">Fast, Secure, Scalable</p>
 
@@ -74,7 +74,7 @@ content_blocks:
         srcset:
         sizes:
         media:
-        lazyload: lazy
+        loading: lazy
     content: >-
       <p class="eyebrow">About me</p>
 
@@ -130,7 +130,7 @@ content_blocks:
         srcset:
         sizes: 
         media: 
-        lazyload: lazy
+        loading: lazy
     content: >-
       <p class="eyebrow">Services</p>
 
@@ -158,7 +158,7 @@ content_blocks:
           srcset:
           sizes:
           media:
-          lazyload: lazy
+          loading: lazy
         content: >-
           <h5 class="h3"><strong>Web Development</strong></h5>
 
@@ -178,7 +178,7 @@ content_blocks:
           srcset:
           sizes:
           media:
-          lazyload: lazy
+          loading: lazy
         content: >-
           <h5 class="h3"><strong>Analytics</strong></h5>
           
@@ -215,7 +215,7 @@ content_blocks:
           srcset:
           sizes:
           media:
-          lazyload: lazy
+          loading: lazy
         content:
       - image:
         - path: /uploads/pages/simpgrid-item-icon-sunbum.svg
@@ -226,7 +226,7 @@ content_blocks:
           srcset:
           sizes:
           media:
-          lazyload: lazy
+          loading: lazy
         content:
       - image:
         - path: /uploads/pages/simpgrid-item-icon-intuit.svg
@@ -237,7 +237,7 @@ content_blocks:
           srcset:
           sizes:
           media:
-          lazyload: lazy
+          loading: lazy
         content:
       - image:
         - path: /uploads/pages/simpgrid-item-icon-homedepot.svg
@@ -248,7 +248,7 @@ content_blocks:
           srcset:
           sizes:
           media:
-          lazyload: lazy
+          loading: lazy
         content:
   - _bookshop_name: text
     content: >-
