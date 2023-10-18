@@ -406,6 +406,28 @@ timezone: America/Los_Angeles
 _snippets_imports:
   mdx: true
 _snippets:
+  media:
+    template: mdx_component
+    inline: false
+    preview:
+      text: Media
+      icon: image
+    definitions:
+      component_name: SnipMedia
+      named_args:
+        - editor_key: caption
+          type: string
+        - editor_key: src
+          type: string
+        - editor_key: jumbo
+          type: boolean
+    _inputs:
+      src:
+        type: text
+      caption:
+        type: text
+      jumbo:
+        type: switch
   image:
     template: mdx_component
     inline: false
