@@ -8,13 +8,23 @@ const md = new MarkdownIt({ html: true });
 <style lang="scss" is:global>
   [data-hero-splash] {
     @extend %primary-wrapper;
+    margin-left: 2rem;
+    margin-right: 2rem;
     
     @include media-tablet {
-      display: flex;
-      flex-direction: row-reverse;
+      display: grid;
       align-items: center;
       justify-content: center;
       min-height: 80vh;
+      grid-template-columns:
+        [content-start]
+        45%
+        [image-start]
+        10%
+        [content-end]
+        45%
+        [image-end]
+      ;
     }
 
     > .content {
@@ -23,7 +33,8 @@ const md = new MarkdownIt({ html: true });
         padding-bottom: 4rem;
       }
       @include media-tablet {
-        flex: 0 0 50%;
+        grid-column: content;
+        grid-row: 1 / span 1;
       }
     }
     > .image {
@@ -33,7 +44,8 @@ const md = new MarkdownIt({ html: true });
       margin-bottom: -100px;
 
       @include media-tablet {
-        flex: 0 0 50%;
+        grid-column: image;
+        grid-row: 1 / span 1;
         margin-bottom: 0;
       }
     }

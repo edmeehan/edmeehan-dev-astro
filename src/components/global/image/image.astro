@@ -11,58 +11,55 @@ display_images.forEach(item => {
 let [desktop, mobile] = display_images;
 if (!mobile) mobile = desktop;
 ---
-{ display_images.length > 0 && (
 <style lang="scss" is:global>
   [data-global-image] {
     position: relative;
-    width: 100%;
+    aspect-ratio: var(--mobile-ratio);
     max-width: var(--mobile-max-width);
     
     img {
       width: 100%;
-      height: auto;
+      height: 100%;
       display: block;
       object-fit: contain;
-      aspect-ratio: var(--mobile-ratio);
     }
 
     @include media-tablet {
+      aspect-ratio: var(--desktop-ratio);
       max-width: var(--desktop-max-width);
-      img {
-        aspect-ratio: var(--desktop-ratio);
-      }
     }
   }
 </style>
-<div data-global-image style={{
-  '--desktop-ratio': `${(desktop.width / desktop.height).toFixed(2)}`,
-  '--desktop-max-width': `${desktop.width}px`,
-  '--mobile-ratio': `${(mobile.width / mobile.height).toFixed(2)}`,
-  '--mobile-max-width': `${mobile.width}px`,
-}} >
-{!use_art_direction && display_images.map(item => (
-  <img src={item.path}
-    alt={item.alt}
-    width={item.width}
-    height={item.height}
-    loading={item.loading}
-  />
-))}
-{use_art_direction && (
-  <picture>
-    {display_images.map(item => (
-      <source src={item.path}
-        srcset={item._srcset}
-        media={item.media}
-        width={item.width}
-        height={item.height}
-      />
-    ))}
-    <img src={display_images[0].path}
-      alt={display_images[0].alt}
-      loading={display_images[0].loading}
+{ display_images.length > 0 && (
+  <div data-global-image style={{
+    '--desktop-ratio': `${desktop.width}/${desktop.height}`,
+    '--desktop-max-width': `${desktop.width}px`,
+    '--mobile-ratio': `${mobile.width}/${mobile.height}`,
+    '--mobile-max-width': `${mobile.width}px`,
+  }} >
+  {!use_art_direction && display_images.map(item => (
+    <img src={item.path}
+      alt={item.alt}
+      width={item.width}
+      height={item.height}
+      loading={item.loading}
     />
-  </picture>
-)}
-</div>
+  ))}
+  {use_art_direction && (
+    <picture>
+      {display_images.map(item => (
+        <source src={item.path}
+          srcset={item._srcset}
+          media={item.media}
+          width={item.width}
+          height={item.height}
+        />
+      ))}
+      <img src={display_images[0].path}
+        alt={display_images[0].alt}
+        loading={display_images[0].loading}
+      />
+    </picture>
+  )}
+  </div>
 )}

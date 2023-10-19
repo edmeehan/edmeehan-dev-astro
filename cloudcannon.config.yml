@@ -277,7 +277,7 @@ _inputs:
           - key: title
         subtext:
           - key: alt
-  post_image.path:
+  post_image.src:
     type: image
     comment: Use image with aspect ratio of 333:125 or 2664x1000 with a logo or graphic on the left.
   post_image.alt:

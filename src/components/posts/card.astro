@@ -5,8 +5,8 @@ const { short_date, post: {slug, collection, data: { excerpt, headline, read_tim
 const md = new MarkdownIt({ html: true });
 const article_url = `/${collection}/${slug}/`;
 let srcset, sizes;
-if (post_image?.path) {
-  srcset = `${imgix_article_card(post_image?.path, 300)} 300w,${imgix_article_card(post_image?.path, 500)} 500w,${imgix_article_card(post_image?.path, 787)} 787w,${imgix_article_card(post_image?.path, 1000)} 1000w,${imgix_article_card(post_image?.path, 1574)} 1574w`;
+if (post_image?.src) {
+  srcset = [300,500,787,1000,1574].map(item => `${imgix_article_card(post_image.src, item)} ${item}w`).join(',');
   sizes = '(max-width: 579px) calc(100vw - 3rem),(max-width: 1654px) calc(50vw - 2.25rem), 787px';
 }
 ---
@@ -61,8 +61,8 @@ if (post_image?.path) {
 </style>
 <article data-posts-card>
   <a class="post-image-link" href={article_url}>
-    { post_image.path && (
-      <img src={imgix_article_card(post_image.path, 787)} width="400" height="200"
+    { !!post_image.src && (
+      <img src={imgix_article_card(post_image.src, 787)} width="400" height="200"
         srcset={srcset}
         sizes={sizes}
         alt={post_image.alt}
