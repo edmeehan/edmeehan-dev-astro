@@ -1,15 +1,17 @@
 ---
 import {imgix} from 'src/shared/utilities.js'
-const { image, images } = Astro.props;
+const { image, images, desktop:dspec, mobile:mspec } = Astro.props;
 const display_images = image ? [image] : images;
 const use_art_direction = display_images.length > 1;
-display_images.forEach(item => {
-  if (item.srcset && item.width) {
-    item._srcset = item.srcset.map(set => `${imgix(item.path, set, 1)} ${set}w`).toString();
-  }
-});
+// display_images.forEach(item => {
+//   if (item.srcset && item.width) {
+//     item._srcset = item.srcset.map(set => `${imgix(item.src, set, 1)} ${set}w`).toString();
+//   }
+// });
 let [desktop, mobile] = display_images;
 if (!mobile) mobile = desktop;
+// '(min-width: 768px)'
+// '(max-width: 767px)'
 ---
 <style lang="scss" is:global>
   [data-global-image] {
@@ -38,7 +40,7 @@ if (!mobile) mobile = desktop;
     '--mobile-max-width': `${mobile.width}px`,
   }} >
   {!use_art_direction && display_images.map(item => (
-    <img src={item.path}
+    <img src={item.src}
       alt={item.alt}
       width={item.width}
       height={item.height}
@@ -48,7 +50,7 @@ if (!mobile) mobile = desktop;
   {use_art_direction && (
     <picture>
       {display_images.map(item => (
-        <source src={item.path}
+        <source src={item.src}
           srcset={item._srcset}
           media={item.media}
           width={item.width}

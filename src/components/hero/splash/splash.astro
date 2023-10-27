@@ -8,8 +8,11 @@ const md = new MarkdownIt({ html: true });
 <style lang="scss" is:global>
   [data-hero-splash] {
     @extend %primary-wrapper;
-    margin-left: 2rem;
-    margin-right: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    max-width: 75rem;
     
     @include media-tablet {
       display: grid;
@@ -54,7 +57,10 @@ const md = new MarkdownIt({ html: true });
 
 <div data-hero-splash>
   <div class="image">
-  { image && <Image images={image} />}
+  { image && <Image images={image}
+    desktop={{srcset:[600,768,900,1536],sizes:'(max-width: 1023px) 50vw,(max-width: 1380px) calc(90vw - 550px), 768px'}}
+    mobile={{srcset:[400,600,800,1000,1200],sizes:'90vw'}}
+  />}
   </div>
   <div class="content">
     { content && <div class="rt" set:html={md.render(content)}></div>}

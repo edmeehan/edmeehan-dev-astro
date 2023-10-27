@@ -18,7 +18,7 @@ blueprint:
 
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non tellus sapien. Duis id neque diam. Mauris commodo porta sapien vel viverra. Sed finibus.
   image:
-    - path:
+    - src:
       alt:
       title:
       width:
@@ -27,7 +27,7 @@ blueprint:
       sizes:
       media: '(min-width: 768px)'
       loading: lazy
-    - path:
+    - src:
       alt:
       title:
       width:
