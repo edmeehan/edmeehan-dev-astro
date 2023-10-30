@@ -14,6 +14,7 @@ const md = new MarkdownIt({ html: true });
       display: flex;
       flex-direction: row;
       align-items: center;
+      justify-content: space-evenly;
     }
 
     &.wrapper--left {}
@@ -82,7 +83,10 @@ const md = new MarkdownIt({ html: true });
 
 <div class:list={[`wrapper`,`wrapper--${layout.image_align}`]} data-grid-alternate>
   <div class:list={[`image--${layout.image_width}`]}>
-    { image && <Image images={image} />}
+    { image && <Image image={image}
+      srcset={[600,768,900,1536]}
+      sizes='(max-width: 1023px) 50vw,(max-width: 1380px) calc(90vw - 550px), 768px'
+    />}
   </div>
   <div class="content">
     { content && <div class="rt" set:html={md.render(content)}></div>}
@@ -91,7 +95,10 @@ const md = new MarkdownIt({ html: true });
       <ul class:list={[`items--${layout.image_width}`]}>
         { grid_items.map((item) => (
           <li>
-            { item.image && <Image images={item.image} />}
+            { item.image && <Image image={item.image}
+              srcset={[600,768,900,1536]}
+              sizes='(max-width: 1023px) 50vw,(max-width: 1380px) calc(90vw - 550px), 768px'
+            />}
             <div set:html={md.render(item.content)}></div>
           </li>
         )) }

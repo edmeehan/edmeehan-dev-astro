@@ -53,7 +53,10 @@ const md = new MarkdownIt({ html: true });
     <ul class={`list--${layout.text_align}`}>
       { grid_items.map((item) => (
         <li>
-          { item.image && <Image images={item.image} />}
+          { item.image && <Image image={item.image}
+            srcset={[600,768,900,1536]}
+            sizes='(max-width: 1023px) 50vw,(max-width: 1380px) calc(90vw - 550px), 768px'
+          />}
           { item.content && (
             <div
               class:list={[{ 'rt-center': layout.text_align === 'center'}]}

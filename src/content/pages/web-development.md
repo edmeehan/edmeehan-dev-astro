@@ -11,7 +11,7 @@ seo:
   canonical_url:
 content_blocks:
   - _bookshop_name: hero/splash
-    image: []
+    image:
     content: >-
       <p class="eyebrow">Web Development</p>
 
@@ -43,7 +43,7 @@ content_blocks:
     layout:
       text_align: left
     grid_items:
-      - image: []
+      - image:
         content: >-
           <h4 class="h2"><strong>WebsiteBuild</strong></h4>
 
@@ -59,7 +59,7 @@ content_blocks:
           * Your current website is slow and obsolete.
 
           * Your current website is difficult to update or has security issues.
-      - image: []
+      - image:
         content: >-
           <h4 class="h2"><strong>eCommerce<br>Build</sptrong></h4>
 
@@ -75,7 +75,7 @@ content_blocks:
           * Your current store is sluggish and stale.
 
           * Your current store is not converting or meeting business goals.
-      - image: []
+      - image:
         content: >-
           <h4 class="h2"><strong>White Label<br>Freelance</strong></h4>
 

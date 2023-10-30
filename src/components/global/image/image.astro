@@ -1,17 +1,27 @@
 ---
 import {imgix} from 'src/shared/utilities.js'
-const { image, images, desktop:dspec, mobile:mspec } = Astro.props;
-const display_images = image ? [image] : images;
-const use_art_direction = display_images.length > 1;
-// display_images.forEach(item => {
-//   if (item.srcset && item.width) {
-//     item._srcset = item.srcset.map(set => `${imgix(item.src, set, 1)} ${set}w`).toString();
-//   }
-// });
-let [desktop, mobile] = display_images;
-if (!mobile) mobile = desktop;
-// '(min-width: 768px)'
-// '(max-width: 767px)'
+const { image, images, srcset = [100], sizes, sm_srcset = [100], sm_sizes } = Astro.props;
+const use_art_direction = !image && Array.isArray(images) && images.length === 2;
+let display_images = [], mobile, desktop;
+
+if (use_art_direction) {
+  display_images = images.map((item,index) => {
+    return {
+      ...item,
+      sizes: !index ? sizes : sm_sizes,
+      srcset: (!index ? srcset : sm_srcset).map(size => `${imgix(item?.src, size)} ${size}w`).join(',')
+    }
+  })
+  mobile = images[1];
+  desktop = images[0];
+} else {
+  display_images.push({
+    ...image, sizes,
+    srcset: srcset.map(size => `${imgix(image?.src, size)} ${size}w`).join(',')
+  })
+  mobile = image;
+  desktop = image;
+}
 ---
 <style lang="scss" is:global>
   [data-global-image] {
@@ -34,32 +44,24 @@ if (!mobile) mobile = desktop;
 </style>
 { display_images.length > 0 && (
   <div data-global-image style={{
-    '--desktop-ratio': `${desktop.width}/${desktop.height}`,
-    '--desktop-max-width': `${desktop.width}px`,
-    '--mobile-ratio': `${mobile.width}/${mobile.height}`,
-    '--mobile-max-width': `${mobile.width}px`,
+    '--desktop-ratio': `${desktop?.width}/${desktop?.height}`,
+    '--desktop-max-width': `${desktop?.width}px`,
+    '--mobile-ratio': `${mobile?.width}/${mobile?.height}`,
+    '--mobile-max-width': `${mobile?.width}px`,
   }} >
   {!use_art_direction && display_images.map(item => (
-    <img src={item.src}
-      alt={item.alt}
-      width={item.width}
-      height={item.height}
-      loading={item.loading}
-    />
+    <img {...item} />
   ))}
   {use_art_direction && (
     <picture>
-      {display_images.map(item => (
-        <source src={item.src}
-          srcset={item._srcset}
-          media={item.media}
-          width={item.width}
-          height={item.height}
+      {display_images.map((item, index) => (
+        <source {...item}
+          media={!index ? '(min-width: 768px)' : '(max-width: 767px)'}
         />
       ))}
-      <img src={display_images[0].path}
-        alt={display_images[0].alt}
-        loading={display_images[0].loading}
+      <img src={display_images[0]?.src}
+        alt={display_images[0]?.alt}
+        loading={display_images[0]?.loading}
       />
     </picture>
   )}

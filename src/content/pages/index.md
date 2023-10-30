@@ -51,12 +51,12 @@ content_blocks:
       background: primary
   - _bookshop_name: grid/alternate
     image:
-      - src: /uploads/pages/altgrid-edhead-complete@2x.png
-        alt: illustration of Ed Meehan
-        title:
-        width: 560
-        height: 560
-        loading: lazy
+      src: /uploads/pages/altgrid-edhead-complete@2x.png
+      alt: illustration of Ed Meehan
+      title:
+      width: 560
+      height: 560
+      loading: lazy
     content: >-
       <p class="eyebrow">About me</p>
 
@@ -104,15 +104,12 @@ content_blocks:
       - 4d31cf68-4293-4669-b9d6-c93c6204f564
   - _bookshop_name: grid/alternate
     image:
-      - src: /uploads/pages/altgrid-rays-complete-wide@2x.png
-        alt: whales and water
-        title:
-        width: 800
-        height: 875
-        srcset:
-        sizes: 
-        media: 
-        loading: lazy
+      src: /uploads/pages/altgrid-rays-complete-wide@2x.png
+      alt: whales and water
+      title:
+      width: 800
+      height: 875
+      loading: lazy
     content: >-
       <p class="eyebrow">Services</p>
 
@@ -132,14 +129,11 @@ content_blocks:
       image_width: large
     grid_items:
       - image:
-        - src: /uploads/pages/altgrid-item-icon-webdev@2x.png
+          src: /uploads/pages/altgrid-item-icon-webdev@2x.png
           alt:
           title:
           width: 386
           height: 203
-          srcset:
-          sizes:
-          media:
           loading: lazy
         content: >-
           <h5 class="h3"><strong>Web Development</strong></h5>
@@ -152,14 +146,11 @@ content_blocks:
 
           [View Web Development Services](/test)
       - image:
-        - src: /uploads/pages/altgrid-item-icon-analytics@2x.png
+          src: /uploads/pages/altgrid-item-icon-analytics@2x.png
           alt:
           title:
           width: 386
           height: 203
-          srcset:
-          sizes:
-          media:
           loading: lazy
         content: >-
           <h5 class="h3"><strong>Analytics</strong></h5>
@@ -189,47 +180,35 @@ content_blocks:
       text_align: center
     grid_items:
       - image:
-        - src: /uploads/pages/simpgrid-item-icon-callaway.svg
+          src: /uploads/pages/simpgrid-item-icon-callaway.svg
           alt:
           title:
           width: 386
           height: 203
-          srcset:
-          sizes:
-          media:
           loading: lazy
         content:
       - image:
-        - src: /uploads/pages/simpgrid-item-icon-sunbum.svg
+          src: /uploads/pages/simpgrid-item-icon-sunbum.svg
           alt:
           title:
           width: 386
           height: 203
-          srcset:
-          sizes:
-          media:
           loading: lazy
         content:
       - image:
-        - src: /uploads/pages/simpgrid-item-icon-intuit.svg
+          src: /uploads/pages/simpgrid-item-icon-intuit.svg
           alt:
           title:
           width: 386
           height: 203
-          srcset:
-          sizes:
-          media:
           loading: lazy
         content:
       - image:
-        - src: /uploads/pages/simpgrid-item-icon-homedepot.svg
+          src: /uploads/pages/simpgrid-item-icon-homedepot.svg
           alt:
           title:
           width: 386
           height: 203
-          srcset:
-          sizes:
-          media:
           loading: lazy
         content:
   - _bookshop_name: text
