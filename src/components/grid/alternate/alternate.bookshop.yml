@@ -18,6 +18,7 @@ blueprint:
     background: primary
   layout:
     image_align: right
+    image_vert: center
     image_width: small
 
 preview:

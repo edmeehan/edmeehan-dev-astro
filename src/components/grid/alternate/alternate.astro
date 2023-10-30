@@ -6,15 +6,20 @@ const { content, image, cta, layout, grid_items } = Astro.props;
 const md = new MarkdownIt({ html: true });
 ---
 <style lang="scss" is:global>
-  .wrapper[data-grid-alternate] {
+  [data-grid-alternate] {
     @extend %primary-wrapper;
     padding: 4.5rem 0;
+
+    @include media-mobile-lg {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
 
     @include media-tablet {
       display: flex;
       flex-direction: row;
-      align-items: center;
       justify-content: space-evenly;
+      align-items: var(--align-items, center);
     }
 
     &.wrapper--left {}
@@ -81,11 +86,16 @@ const md = new MarkdownIt({ html: true });
   }
 </style>
 
-<div class:list={[`wrapper`,`wrapper--${layout.image_align}`]} data-grid-alternate>
+<div class:list={[`wrapper`,`wrapper--${layout.image_align}`]} data-grid-alternate
+  style={{'--align-items': layout.image_vert }}
+>
   <div class:list={[`image--${layout.image_width}`]}>
     { image && <Image image={image}
-      srcset={[600,768,900,1536]}
-      sizes='(max-width: 1023px) 50vw,(max-width: 1380px) calc(90vw - 550px), 768px'
+      srcset={[400,500,600,700,800,1000,1200,1400,1600]}
+      sizes={ layout.image_width === 'small'
+        ? '(max-width: 767px) 90vw,(max-width: 1650px) calc(35vw - 45px), 560px'
+        : '(max-width: 767px) 90vw,(max-width: 1650px) calc(50vw - 45px), 800px'
+      }
     />}
   </div>
   <div class="content">
@@ -96,8 +106,11 @@ const md = new MarkdownIt({ html: true });
         { grid_items.map((item) => (
           <li>
             { item.image && <Image image={item.image}
-              srcset={[600,768,900,1536]}
-              sizes='(max-width: 1023px) 50vw,(max-width: 1380px) calc(90vw - 550px), 768px'
+              srcset={[200,300,400,500,600,660,780]}
+              sizes={ layout.image_width === 'small'
+                ? '(max-width: 579px) 50vw,(max-width: 767px) 33vw,(max-width: 1650px) 20vw, 328px'
+                : '(max-width: 767px) 50vw,(max-width: 1650px) 24vw, 386px'
+              }
             />}
             <div set:html={md.render(item.content)}></div>
           </li>

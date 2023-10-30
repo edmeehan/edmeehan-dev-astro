@@ -87,6 +87,7 @@ content_blocks:
     layout:
       image_align: left
       image_width: small
+      image_vert: flex-start
     grid_items:
   - _bookshop_name: cards/testimonials
     content: >-
@@ -127,6 +128,7 @@ content_blocks:
     layout:
       image_align: right
       image_width: large
+      image_vert: center
     grid_items:
       - image:
           src: /uploads/pages/altgrid-item-icon-webdev@2x.png
@@ -181,7 +183,7 @@ content_blocks:
     grid_items:
       - image:
           src: /uploads/pages/simpgrid-item-icon-callaway.svg
-          alt:
+          alt: Callaway Golf logo
           title:
           width: 386
           height: 203
@@ -189,7 +191,7 @@ content_blocks:
         content:
       - image:
           src: /uploads/pages/simpgrid-item-icon-sunbum.svg
-          alt:
+          alt: Sun Bum logo
           title:
           width: 386
           height: 203
@@ -197,7 +199,7 @@ content_blocks:
         content:
       - image:
           src: /uploads/pages/simpgrid-item-icon-intuit.svg
-          alt:
+          alt: Intuit logo
           title:
           width: 386
           height: 203
@@ -205,7 +207,7 @@ content_blocks:
         content:
       - image:
           src: /uploads/pages/simpgrid-item-icon-homedepot.svg
-          alt:
+          alt: The Home Depot logo
           title:
           width: 386
           height: 203

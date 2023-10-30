@@ -23,23 +23,12 @@ blueprint:
       title:
       width:
       height:
-      srcset:
-      sizes:
-      media: '(min-width: 768px)'
       loading: lazy
     - src:
       alt:
       title:
       width:
       height:
-      srcset:
-        - 400
-        - 600
-        - 800
-        - 1000
-        - 1200
-      sizes: 90wv
-      media: '(max-width: 767px)'
       loading: lazy
   cta: bookshop:global/cta
   section:

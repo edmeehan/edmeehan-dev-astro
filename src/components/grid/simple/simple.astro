@@ -54,8 +54,8 @@ const md = new MarkdownIt({ html: true });
       { grid_items.map((item) => (
         <li>
           { item.image && <Image image={item.image}
-            srcset={[600,768,900,1536]}
-            sizes='(max-width: 1023px) 50vw,(max-width: 1380px) calc(90vw - 550px), 768px'
+            srcset={[200,300,400,448,896]}
+            sizes='(max-width: 909px) 45vw,(max-width: 1650px) 30vw, 448px'
           />}
           { item.content && (
             <div

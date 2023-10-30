@@ -10,15 +10,20 @@ const md = new MarkdownIt({ html: true });
     @extend %primary-wrapper;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 2rem;
-    padding-right: 2rem;
     max-width: 75rem;
+
+    @include media-mobile-lg {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
     
     @include media-tablet {
       display: grid;
       align-items: center;
       justify-content: center;
       min-height: 80vh;
+      padding-left: 2rem;
+      padding-right: 2rem;
       grid-template-columns:
         [content-start]
         45%

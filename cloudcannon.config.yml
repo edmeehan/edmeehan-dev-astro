@@ -335,6 +335,12 @@ _inputs:
       values: _select_data.layout_image_align
     comment: Set the alignment of image.
     cascade: true
+  content_blocks[*].layout.image_vert:
+    type: select
+    options:
+      allow_empty: true
+      values: _select_data.layout_image_vert
+    comment: Set the vertical alignment of image.
   content_blocks[*].layout.image_width:
     type: select
     options:
@@ -374,6 +380,10 @@ _select_data:
     left: Left
     center: Center
     right: Right
+  layout_image_vert:
+    flex-start: Top
+    center: Center
+    flex-end: Bottom
   layout_image_width:
     small: Small
     large: Large
