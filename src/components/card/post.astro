@@ -1,16 +1,36 @@
 ---
 import MarkdownIt from 'markdown-it';
-const block = Astro.props;
+import {dateFormatter,imgix_article_card} from 'src/shared/utilities.js';
+const { post_image } = Astro.props;
 const md = new MarkdownIt({ html: true });
+let srcset, sizes;
+if (post_image?.src) {
+  srcset = [300,500,787,1000,1574].map(item => `${imgix_article_card(post_image.src, item)} ${item}w`).join(',');
+  sizes = '(max-width: 579px) calc(100vw - 3rem),(max-width: 1654px) calc(50vw - 2.25rem), 787px';
+}
 ---
 <style lang="scss" is:global>
   article[data-card-post] {
+    height: 100%;
+    background-color: $color_text_default;
+    color: $color_text_dark_alt;
     border-radius: $radius_md;
     overflow: hidden;
-    background-color: $color_text_default;
+    min-width: 300px;
+    max-width: 500px;
     position: relative;
-    max-width: 600px;
-    min-width: 340px;
+
+    .img {
+      aspect-ratio: 2/1;
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        background-color: $color_secondary;
+      }
+    }
 
     header {
       background: linear-gradient(180deg, $color_grad_1B, $color_grad_1A);
@@ -25,22 +45,13 @@ const md = new MarkdownIt({ html: true });
         padding: $text_desktop_line_height;
       }
     }
-    img {
-      width: 110px;
-      height: 110px;
-      border-radius: $radius_circle;
-      flex: 0 0 auto;
-      // transition: transform 500ms ${({offset}) => offset * 300 + 200}ms;
-      // transform: translateY(${({transition}) => transition ? '10%' : '100%'}); // translateY(10%);
-      transform: translateY(10%);
-      background-color: $color_white;
-    }
     .svg {
       width: 100%;
       height: 0;
       position: absolute;
-      padding-bottom: 8.33%;
-      transform: translateY(-95%);
+      z-index: $zindex_background;
+      padding-bottom: 6.6%;
+      transform: translate(0, -98%) rotate(180deg);
 
       svg {
         position: absolute; 
@@ -74,17 +85,38 @@ const md = new MarkdownIt({ html: true });
 </style>
 
 <article data-card-post>
-  <header>
-    <div class='text'>
-      <h5 class='h3'>{ block.name }</h5>
-      <div class='step-down'>{ block.company } | { block.title }</div>
+  { !!post_image.src && (
+    <div class="img">
+      <img src={imgix_article_card(post_image.src, 787)} width="400" height="200"
+        srcset={srcset}
+        sizes={sizes}
+        alt={post_image.alt}
+        title={post_image.title}
+      />
     </div>
-    <img src="" alt="">
-  </header>
+  )}
   <div class="svg">
     <svg>
-      <use xlink:href='#card-wave'></use>
+      <use xlink:href='#card-curve'></use>
     </svg>
   </div>
-  <div class='body step-down' set:html={md.render(block.testimonial)}></div>
+  <div class="content">
+    <div class="date step-down">
+      
+    </div>
+    <div class="read-time step-down">
+       min read
+    </div>
+    <a class="title" title={''}>
+      <h3 style={{margin:0}} class="h3">
+        
+      </h3>
+    </a>
+    {/* showExcerpt &&
+      <PrismicRichText field={excerpt.richText} />
+    */ }
+    <a title={''}>
+      Read More&hellip;
+    </a>
+  </div>
 </article>
