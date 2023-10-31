@@ -2,8 +2,9 @@
 import data from "data/footer.json"
 import CTA from "src/components/global/cta/cta.astro"
 import Link from "src/components/global/link/link.astro"
-
-const { content, small_print, links_list } = data;
+import MarkdownIt from 'markdown-it';
+const md = new MarkdownIt({ html: true });
+const { story, small_print, links_list } = data;
 ---
 <style lang="scss" is:global>
   footer[data-layout-footer] {
@@ -94,7 +95,7 @@ const { content, small_print, links_list } = data;
 
 <footer data-layout-footer>
   <div class='content'>
-    <!-- <PrismicRichText field={settings.footer_content.richText} /> -->
+    <div class="rt" set:html={md.render(story)}></div>
   </div>
   <nav class='links'>
     { links_list?.map(item => (
@@ -107,7 +108,7 @@ const { content, small_print, links_list } = data;
     ))}
   </nav>
   <div class='step-down rt-center'>
-    <!-- <PrismicRichText field={settings.footer_smallprint.richText} /> -->
+    <div class="rt" set:html={md.render(small_print)}></div>
     <div>&copy; {new Date().getFullYear()}. All rights reserved.</div>
   </div>
 </footer>
