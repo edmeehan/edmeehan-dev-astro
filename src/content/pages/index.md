@@ -9,7 +9,6 @@ seo:
     Does your business need a better website? Amplify performance, and maximize
     online potential. Contact me today!
   featured_image:
-  
   open_graph_type:
   canonical_url:
 content_blocks:
@@ -180,6 +179,7 @@ content_blocks:
       background: primary
     layout:
       text_align: center
+      is_mini: true
     grid_items:
       - image:
           src: /uploads/pages/simpgrid-item-icon-callaway.svg

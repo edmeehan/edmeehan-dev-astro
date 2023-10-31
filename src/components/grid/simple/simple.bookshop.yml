@@ -16,6 +16,7 @@ blueprint:
     background: primary
   layout:
     text_align: left
+    is_mini: true
 preview:
 
 _inputs:

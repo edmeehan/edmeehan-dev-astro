@@ -6,7 +6,7 @@ const { content, image, cta, layout, grid_items } = Astro.props;
 const md = new MarkdownIt({ html: true });
 ---
 <style lang="scss" is:global>
-  [data-grid-side-by-side] {
+  .wrapper[data-grid-side-by-side] {
     @extend %primary-wrapper;
     display: flex;
     justify-content: center;
@@ -43,7 +43,7 @@ const md = new MarkdownIt({ html: true });
     }
   }
 </style>
-<div class:list={[`wrapper--${layout.image_align}`]} data-grid-side-by-side>
+<div class:list={['wrapper',`wrapper--${layout.image_align}`, { mini: layout.is_mini }]} data-grid-side-by-side>
   <div class:list={[`image--${layout.image_width}`]}>
     { image && <Image image={image} />}
   </div>
