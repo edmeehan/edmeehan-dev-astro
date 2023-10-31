@@ -7,7 +7,7 @@ const { slug, collection,
   data: { headline, read_time, published, post_image, category, tags, project_url, show_share }
 } = Astro.props;
 // const md = new MarkdownIt({ html: true });
-const short_date = collection === 'projects';
+const show_short_date = collection === 'projects';
 let srcset, sizes;
 if (post_image?.src) {
   srcset = [
@@ -173,7 +173,7 @@ if (post_image?.src) {
     { category && <div class="eyebrow">{category} Project</div>}
     <h1 class="h1">{ headline }</h1>
     <div class="meta step-down">
-      <div><span>{dateFormatter(short_date).format(published)}</span> | <span>{read_time} min read</span></div>
+      <div><span>{dateFormatter(show_short_date).format(published)}</span> | <span>{read_time} min read</span></div>
       { tags && (
       <div class="highlight">
         TECH: <ul class="tags-list">{tags.map(item => (<li>{item}</li>))}</ul>

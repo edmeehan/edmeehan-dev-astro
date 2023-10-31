@@ -9,8 +9,6 @@ const projectPosts = await getCollection('projects', ({ data }) => posts.include
 const allPostsData = [].concat(blogPosts,projectPosts);
 const postsData = posts.map(id => allPostsData.find(({data}) => data.uuid === id));
 const md = new MarkdownIt({ html: true });
-
-console.log(postsData)
 ---
 <style lang="scss" is:global>
   [data-cards-posts] {
@@ -55,9 +53,9 @@ console.log(postsData)
   </header>
   { postsData && (
     <ul>
-      { postsData.map(({data}) => (
+      { postsData.map((post) => (
         <li>
-          <Card post_image={data.post_image} />
+          <Card show_excerpt={true} post={post}/>
         </li>
       ))}
     </ul>

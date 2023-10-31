@@ -1,7 +1,7 @@
 ---
 import MarkdownIt from 'markdown-it';
 import {dateFormatter,imgix_article_card} from 'src/shared/utilities.js';
-const { short_date, post: {slug, collection, data: { excerpt, headline, read_time, published, post_image }} } = Astro.props;
+const { show_short_date, post: {slug, collection, data: { excerpt, headline, read_time, published, post_image }} } = Astro.props;
 const md = new MarkdownIt({ html: true });
 const article_url = `/${collection}/${slug}/`;
 let srcset, sizes;
@@ -72,7 +72,7 @@ if (post_image?.src) {
   </a>
   <div class="meta">
     <div class='date step-down'>
-      {dateFormatter(short_date).format(published)}
+      {dateFormatter(show_short_date).format(published)}
     </div>
     <div class='read-time step-down'>
       {read_time} min read

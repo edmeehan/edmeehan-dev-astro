@@ -26,6 +26,6 @@ if (!data) {
 ---
 <PostLayout frontmatter={data}>
   <Collection slug={slug} pagination={page} page={data}>
-    { articles.map(item => <Card post={item} short_date={true} />)}
+    { articles?.map(item => <Card post={item} show_short_date={true} />)}
   </Collection>
 </PostLayout>
