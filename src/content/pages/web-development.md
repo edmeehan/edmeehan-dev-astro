@@ -141,46 +141,64 @@ content_blocks:
     cta:
     section:
       transition: curve
-      background: primary
+      background: secondary
     layout:
       image_align: left
       image_width: large
       image_vert: center
     grid_items:
       - image:
-          src: /uploads/pages/altgrid-item-icon-webdev@2x.png
-          alt:
-          title:
-          width: 386
-          height: 203
-          loading: lazy
         content: >-
-          <h5 class="h3"><strong>Web Development</strong></h5>
+          <h5 class="h3"><strong>1. Planning</strong></h5>
 
           
-          Need someone to oversee the entire project lifecycle, from initial
-          planning and scoping to execution and final delivery, or if you need
-          support with specific phases of the project, I'm ready.
+          Discover your needs and project goals. Before a single line of code is written, we discuss the project in great detail and outline the scope.
 
 
-          [View Web Development Services](/test)
+          * Review designs and interactions.
+
+          * Select framework, CMS, and hosting.
+
+          * Define milestones and schedule.
       - image:
-          src: /uploads/pages/altgrid-item-icon-analytics@2x.png
-          alt:
-          title:
-          width: 386
-          height: 203
-          loading: lazy
         content: >-
-          <h5 class="h3"><strong>Analytics</strong></h5>
+          <h5 class="h3"><strong>2. Development</strong></h5>
           
           
-          As an experienced marketing analytics strategist, I have a strong
-          track record of planning, setting up, and managing Analytics for
-          businesses and organizations of all sizes.
+          The part that I love best is building the project. I report progress regularly and make sure the project is moving as scheduled.
 
 
-          [View Analytics Services](/test)
+          * Set up service provider accounts.
+
+          * Integrate with service APIs.
+
+          * Demo progress on the staging environment.
+      - image:
+        content: >-
+          <h5 class="h3"><strong>3. Launch</strong></h5>
+          
+          
+          Before launching a new project, I collaborate with your team to ensure that everyone is trained on the process and any issues are addressed.
+
+
+          * Document features and publishing process.
+
+          * Team training sessions.
+
+          * Test DevOps and deployment.
+      - image: 
+        content: >-
+          <h5 class="h3"><strong>4. Maintenance</strong></h5>
+          
+          
+          I keep your website running like a well-oiled machine while hitting goals quarter after quarter.
+
+
+          * Bug fixes, feature additions, and website improvements.
+
+          * Analytics tracking and audits.
+
+          * Personalization and optimization.
   - _bookshop_name: grid/side-by-side
     content: >-
       <p class="eyebrow">What is in the toolbox?</p>
@@ -206,7 +224,7 @@ content_blocks:
       <h4 class="h2"><strong>Frequently Asked Questions</strong></h4>
 
 
-      Have a question? I have answered some common questions here. Don't see an answer to your question? Ask me here.
+      Have a question? I have answered some common questions here. Don't see an answer to your question? [Ask me here](/contact/).
     faqs:
       - question: Do you build Shopify eCommerce stores?
         answer: >-

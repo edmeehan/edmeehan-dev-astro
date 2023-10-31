@@ -13,29 +13,29 @@ content_blocks:
   - _bookshop_name: hero/splash
     image:
     content: >-
-      <p class="eyebrow">Web Development</p>
+      <p class="eyebrow">Analytics</p>
 
 
-      <h1 class="h1">Solutions for businesses looking to <strong>optimize</strong> website <strong>performance</strong> and user experience</h1>
+      <h1 class="h1"><strong>Data-driven</strong> insights through custom tracking in Google Analytics to inform your <strong>marketing strategy</strong></h1>
 
 
-      Do you need to improve the speed and performance of your website? Are you looking for options to fix your broken publishing workflow?
+      Marketing without data to support your efforts is like shooting in the dark. Without the ability to understand and analyze the data, you may be throwing your resources away. Data-driven insights are essential for informed and effective marketing.
 
 
-      As a web developer specializing in <strong>Jamstack</strong>, I build modern, fast, and scalable websites that are easy to maintain with improved publishing workflows. Let's discuss your project and see how I can help you achieve your goals.
+      With my strong background in marketing analytics strategy, I have a demonstrated ability to effectively plan, set up, and manage Analytics for businesses and organizations of all sizes.
     cta:
       label: Request a free consultation
       link: /consultation-request/
       style: secondary
     section:
-      transition: curve
+      transition: swoosh
       background: primary
   - _bookshop_name: grid/simple
     content: >-
       <p class="eyebrow">Service Options</p>
 
 
-      <h2 class="h1">How can I help you improve your website performance and user experience?</h2>
+      <h2 class="h1">How can I help you improve your data-driven marketing strategy?</h2>
     cta:
     section:
       transition: curve
@@ -46,50 +46,48 @@ content_blocks:
     grid_items:
       - image:
         content: >-
-          <h4 class="h2"><strong>Website<br/>Build</strong></h4>
+          <h4 class="h2"><strong>Website<br/>Tracking</strong></h4>
 
 
-          <p><span class="step-down">Starting price:</span> <strong><span class="sup">$</span>6,000</strong> <span class="step-down">USD</span></p>
+          <p><span class="step-down">Starting price:</span> <strong><span class="sup">$</span>2,500</strong> <span class="step-down">USD</span></p>
 
 
-          From brochure websites to content blogs and everything in between.
+          Set up pageview tracking and custom events for conversion and goal tracking.
 
 
-          * The current website is not fulfilling the needs of your business.
+          * The current website is not set up with GA4 tracking.
 
-          * Your current website is slow and obsolete.
-
-          * Your current website is difficult to update or has security issues.
+          * You are launching a new website that needs tracking.
       - image:
         content: >-
-          <h4 class="h2"><strong>eCommerce<br>Build</strong></h4>
+          <h4 class="h2"><strong>eCommerce<br>Tracking</strong></h4>
 
 
-          <p><span class="step-down">Starting price:</span> <strong><span class="sup">$</span>12,000</strong> <span class="step-down">USD</span></p>
+          <p><span class="step-down">Starting price:</span> <strong><span class="sup">$</span>5,000</strong> <span class="step-down">USD</span></p>
 
 
-          I specialize in Shopify eCommerce store development.
+          Website custom tracking plus product, cart, and checkout tracking.
 
 
-          * Your new product launch needs a store for customers.
+          * You need to improve campaign, channel, and attribution reports.
 
-          * Your current store is sluggish and stale.
-
-          * Your current store is not converting or meeting business goals.
+          * You are launching a new store that needs tracking.
       - image:
         content: >-
-          <h4 class="h2"><strong>White Label<br>Freelance</strong></h4>
+          <h4 class="h2"><strong>Project<br>Consulting</strong></h4>
 
 
-          <p><strong><span class="sup">$</span>110</strong> <span class="step-down">USD per hour.</span></p>
+          <p><strong><span class="sup">$</span>125</strong> <span class="step-down">USD per hour.</span></p>
 
 
-          I offer white label freelance as a 1099 contractor. 
+          Already have Google Analytics setup and need some assistance?
 
           
-          * You're an agency or company that requires time tracking.
+          * Tracking strategy.
 
-          * You will be reselling my services as your own.
+          * Tracking setup review and recommendations.
+
+          * Team training.
   - _bookshop_name: cards/testimonials
     content: >-
       <h3 class="h2">Client stories</h3>
@@ -123,20 +121,20 @@ content_blocks:
       <h4 class="h2"><strong>Frequently Asked Questions</strong></h4>
 
 
-      Have a question? I have answered some common questions here. Don't see an answer to your question? Ask me here.
+      Have a question? I have answered some common questions here. Don't see an answer to your question? [Ask me here](/contact/).
     faqs:
-      - question: Do you build Shopify eCommerce stores?
+      - question: Do you use Google Tag Manager?
         answer: >-
-          Yes! Shopify is my preferred eCommerce platform. I have experience building Shopify hosted stores using their internal CMS and Liquid templating language, as well as building JamStack eCommerce stores using a 3rd party headless CMS and the Shopify APIs.
-      - question: Do you offer design services?
+          Yes. I have extensive knowledge and expertise in setting up tracking on websites of all sizes, including high-traffic sites, with GTM. I am highly proficient in using GTM and utilizing the data layer in websites and apps to implement custom tracking solutions.
+      - question: Do you set up GA4 tracking?
         answer: >-
-          Though I have experience as a graphic and UI designer, I do not offer any design services to my clients. However, I can bring a designer onto the project or work with your internal designers.
-      - question: Do you build WordPress sites?
+          Yes. I can setup new tracking based on your older UA setup, or I can start from scratch by building a new tracking strategy.
+      - question: Are you a data analyst?
         answer: >-
-          I have built many WordPress projects in the past, but I decided in 2019 to no longer support or develop themes or plugins for WordPress. As a platform it does not offer the speed, security, and publishing features I require for my services. If you are looking for WordPress development and need help finding a developer I can point you in the right direction.
-      - question: Can I edit or publish changes to my site if you build it?
+          Yes, and No. I am a marketing analytics strategist, my expertise is in tracking strategies and implementing them. As a data analyst, my skills are primarily focused on conversion metrics, attribution, and traffic channels. For more in-depth analysis of data sets outside of Google Analytics, I refer to my network of Business Intelligence experts and data scientists.
+      - question: Do you use Tableau?
         answer: >-
-          Yes, it is one of the main features of the websites I build. I will select a Headless CMS that works best for your needs and build a site that will allow you to edit pages and layouts, publish new pages, and manage users and permissions. I have years of experience working with marketing and content teams, so I understand the need for a pain-free publishing process.
+          No. That is a tool I personally don't have much experience with, but refer to my network of Business Intelligence experts and data scientists.
     section:
       transition: curve
       background: primary
