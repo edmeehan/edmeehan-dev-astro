@@ -2,7 +2,6 @@
 import MarkdownIt from 'markdown-it';
 import testimonialsData from 'data/testimonials.json';
 import Testimonial from 'src/components/card/testimonial.astro';
-import type { Code, Debug } from 'astro:components';
 const { content, testimonials } = Astro.props;
 const md = new MarkdownIt({ html: true });
 ---

@@ -1,7 +1,13 @@
 ---
 import MarkdownIt from 'markdown-it';
 import Card from "src/components/card/post.astro";
+import { getCollection } from "astro:content";
 const { content, posts, section } = Astro.props;
+
+const blogPosts = await getCollection('blog', ({ data }) => posts.includes(data.uuid));
+const projectPosts = await getCollection('projects', ({ data }) => posts.includes(data.uuid));
+const allPostsData = [].concat(blogPosts,projectPosts);
+const postsData = posts.map(id => allPostsData.find(({data}) => data.uuid === id));
 const md = new MarkdownIt({ html: true });
 ---
 <style lang="scss" is:global>
@@ -45,11 +51,11 @@ const md = new MarkdownIt({ html: true });
   <header>
     { content && <div class="rt" set:html={md.render(content)}></div>}
   </header>
-  { posts && (
+  { postsData && (
     <ul>
-      { posts.map((item) => (
+      { postsData.map((item) => (
         <li>
-          <Card {...item} />
+          {/* <Card {...item} /> */}
         </li>
       ))}
     </ul>

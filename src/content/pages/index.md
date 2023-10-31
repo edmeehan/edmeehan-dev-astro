@@ -236,38 +236,8 @@ content_blocks:
       transition: swoosh
       background: primary
     posts:
-      - name: Ryan Garner
-        company: Clearhead
-        title: Co-Founder / Chief Product Officer
-        testimonial: >-
-          Ed has been a reliable, long-term partner to Clearhead for several
-          years while delivering high-quality code for a number of key projects.
-          He’s meticulous when it comes to ensuring he understands the scope and
-          requirements of the work, and he takes pride in ensuring his work is
-          well tested and of high quality.
-        photo:
-      - name: Cody Small
-        company: Caava Design
-        title: Founder / Creative Director
-        testimonial: >-
-          Ed is perhaps the most detail-oriented, design attentive developer I
-          have worked with. On the multiple projects we collaborated on, he
-          always went the extra mile to lay a good foundation for his work, then
-          made suggestions on how to improve or optimize the final product I was
-          looking for. I've never seen a design I've created for a website
-          executed with as much precision as Ed was able to achieve on our
-          projects. This is something I consider extremely rare in the
-          development world and highly recommend working with him.
-        photo:
-      - name: Megan Lowe
-        company: Sun Bum LLC
-        title: Director of Digital Design and Development
-        testimonial: >-
-          It's been a great experience working with Ed! He has excellent
-          attention to detail and I rarely have feedback when he delivers
-          updates. I value his advice and feedback as we work through problems
-          and I have full trust in his abilities to get work done efficiently
-          and correctly.
-        photo:
+      - 6882f2d6-8acc-43b1-8fa2-85f013db2b81
+      - b8f8dc9a-d055-46cc-a98d-cf9a3be7896c
+      - 4650d92e-b318-4c13-a437-ec79232e462e
 hidden: false
 ---
