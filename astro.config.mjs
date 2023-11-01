@@ -1,6 +1,5 @@
 import { defineConfig } from 'astro/config';
 import bookshop from '@bookshop/astro-bookshop';
-import react from "@astrojs/react";
 import mdx from "@astrojs/mdx";
 import AutoImport from 'astro-auto-import';
 
@@ -12,7 +11,7 @@ export default defineConfig({
       {'src/components/snippet/media.astro':[['default','SnipMedia']]},
       {'src/components/snippet/image.astro':[['default','SnipImage']]}
     ]
-  }), mdx(), bookshop(), react()],
+  }), mdx(), bookshop()],
   trailingSlash: 'always',
   vite: {
     css: {

@@ -1,5 +1,5 @@
 ---
-import Bubbles from 'src/components/bubbles.jsx';
+import Bubbles from 'src/components/bubbles.astro';
 
 const { transition, is_first, is_last, index, background, prev, next} = Astro.props;
 const svg_id = `#${transition}-${background}${background === 'loud' ? `-${next?.background}` : ''}`;
@@ -92,7 +92,7 @@ const set_prev = !is_first && prev.background !== 'loud';
     <slot />
   </div>
   { background === 'loud' && !ENV_BOOKSHOP_LIVE &&(
-    <Bubbles client:visible />
+    <Bubbles />
   )}
   { set_transition && (
     <div class:list={[`svg`,`svg--${transition}`]} data-svg-transition>
