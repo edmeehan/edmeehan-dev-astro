@@ -34,16 +34,20 @@ collections_config:
     preview:
       icon: web
       metadata:
-        - text:
+        - icon: visibility_off
+          text:
             - key: hidden
-          icon: visibility_off
     schemas:
       page:
         path: schemas/page.md
       paginated_posts:
         path: schemas/paginated_posts.md
         preview:
-          icon: format_list_numbered
+          icon: apps
+          metadata:
+            - icon: visibility_off 
+              text:
+                - key: hidden
     sort_options:
       - key: title
         order: asc
