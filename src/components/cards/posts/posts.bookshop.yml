@@ -18,3 +18,10 @@ blueprint:
 preview:
 
 _inputs:
+  posts:
+    type: array
+  posts[*]:
+    type: select
+    options:
+      values: collections.blog
+      value_key: uuid
