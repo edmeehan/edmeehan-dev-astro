@@ -121,6 +121,15 @@ collections_config:
     name: Projects
     icon: work
     singular_name: Project
+    preview:
+      text:
+        - key: headline
+      subtext:
+        - key: slug
+      metadata:
+        - text:
+            - key: hidden
+          icon: visibility_off
     _editables:
       content:
         blockquote: true
@@ -172,10 +181,6 @@ collections_config:
     schemas:
       project:
         path: schemas/project.mdx
-        reorder_inputs: true
-        hide_extra_inputs: false
-        remove_empty_inputs: false
-        remove_extra_inputs: true
         icon: work
 collection_groups:
   - heading: Pages
