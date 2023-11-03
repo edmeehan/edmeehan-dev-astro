@@ -34,7 +34,7 @@ collections_config:
     schemas:
       page:
         path: schemas/page.md
-        new_preview_url: /index.html
+        new_preview_url: /404/
         preview:
           icon: web
           metadata:
