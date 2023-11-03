@@ -31,26 +31,19 @@ collections_config:
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
+    preview:
+      icon: web
+      metadata:
+        - text:
+            - key: hidden
+          icon: visibility_off
     schemas:
       page:
         path: schemas/page.md
-        preview:
-          icon: web
-          metadata:
-            - text:
-                - key: hidden
-              icon: visibility_off
       paginated_posts:
         path: schemas/paginated_posts.md
         preview:
           icon: format_list_numbered
-          metadata:
-            - text:
-                - testing
-              icon: numbers
-            - text:
-                - key: hidden
-              icon: visibility_off
     sort_options:
       - key: title
         order: asc
