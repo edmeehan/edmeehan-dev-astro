@@ -64,23 +64,14 @@ collections_config:
     icon: wysiwyg
     singular_name: Blog Post
     preview:
-      gallery:
-        image:
-          - key: post_image.src
       text:
-        - key: title
-      subtext:
         - key: headline
+      subtext:
+        - key: slug
       metadata:
         - text:
             - key: hidden
           icon: visibility_off
-        - text:
-            - key: read_time
-          icon: hourglass_bottom
-        - text:
-            - key: published
-          icon: event
     _editables:
       content:
         blockquote: true
