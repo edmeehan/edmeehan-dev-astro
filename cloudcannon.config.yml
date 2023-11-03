@@ -67,6 +67,7 @@ collections_config:
         order: desc
         label: Title Desc
   blog:
+    parser: front-matter
     path: src/content/blog
     output: true
     url: /blog/[slug]/index.html
@@ -133,6 +134,7 @@ collections_config:
         remove_extra_inputs: true
         icon: wysiwyg
   projects:
+    parser: front-matter
     path: src/content/projects
     output: true
     url: /projects/[slug]/index.html
