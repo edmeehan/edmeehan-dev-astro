@@ -46,7 +46,7 @@ collections_config:
           icon: format_list_numbered
           metadata:
             - text:
-                - key: page_size
+                - testing
               icon: numbers
             - text:
                 - key: hidden
