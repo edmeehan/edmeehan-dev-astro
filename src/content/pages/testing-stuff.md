@@ -10,5 +10,5 @@ seo:
   featured_image:
   open_graph_type: website
   canonical_url:
-hidden: false
+hidden: true
 ---
