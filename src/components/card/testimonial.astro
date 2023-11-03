@@ -1,7 +1,7 @@
 ---
 import {imgix} from 'src/shared/utilities.js'
 import MarkdownIt from 'markdown-it';
-const { name, company, title, testimonial, headshot } = Astro.props;
+const { name, company, title, testimonial_textarea: testimonial, headshot_image: headshot } = Astro.props;
 const md = new MarkdownIt({ html: true });
 let headshot_x1, headshot_x2;
 if (headshot) {

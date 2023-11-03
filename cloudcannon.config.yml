@@ -6,7 +6,7 @@ collections_config:
   data:
     path: data
     output: false
-    icon: notes
+    icon: settings
     disable_add: true
     disable_add_folder: true
     disable_file_actions: false
@@ -34,24 +34,16 @@ collections_config:
     schemas:
       page:
         path: schemas/page.md
-        reorder_inputs: true
-        hide_extra_inputs: false
-        remove_empty_inputs: false
-        remove_extra_inputs: true
-        icon: web
         preview:
+          icon: web
           metadata:
             - text:
                 - key: hidden
               icon: visibility_off
       paginated_posts:
         path: schemas/paginated_posts.md
-        reorder_inputs: true
-        hide_extra_inputs: false
-        remove_empty_inputs: false
-        remove_extra_inputs: true
-        icon: format_list_numbered
         preview:
+          icon: format_list_numbered
           metadata:
             - text:
                 - key: page_size
@@ -469,19 +461,19 @@ data_config:
     path: data/testimonials.json
     parser: json
 timezone: America/Los_Angeles
-file_config:
-  - path: data/testimonials.json
-    _inputs:
-      name:
-        type: text
-      company:
-        type: text
-      title:
-        type: text
-      headshot:
-        type: image
-      testimonial:
-        type: textarea
+# file_config:
+#   - path: data/testimonials.json
+#     _inputs:
+#       name:
+#         type: text
+#       company:
+#         type: text
+#       title:
+#         type: text
+#       headshot_image:
+#         type: image
+#       testimonial_textarea:
+#         type: textarea
 _snippets_imports:
   mdx: true
 _snippets:
