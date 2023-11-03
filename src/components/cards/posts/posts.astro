@@ -3,10 +3,13 @@ import { getCollection } from "astro:content";
 import MarkdownIt from 'markdown-it';
 import Card from "src/components/card/post.astro";
 const { content, posts, section } = Astro.props;
+let allPostsData = [];
 
-const blogPosts = await getCollection('blog', ({ data }) => posts.includes(data.uuid));
-const projectPosts = await getCollection('projects', ({ data }) => posts.includes(data.uuid));
-const allPostsData = [].concat(blogPosts,projectPosts);
+if (!ENV_BOOKSHOP_LIVE) {
+  const blogPosts = await getCollection('blog', ({ data }) => posts.includes(data.uuid));
+  const projectPosts = await getCollection('projects', ({ data }) => posts.includes(data.uuid));
+  allPostsData = [].concat(blogPosts,projectPosts);
+}
 const postsData = posts.map(id => allPostsData.find(({data}) => data.uuid === id));
 const md = new MarkdownIt({ html: true });
 ---
@@ -54,7 +57,7 @@ const md = new MarkdownIt({ html: true });
   { postsData && (
     <ul>
       { postsData.map((post) => (
-        <li>
+        <li> 
           <Card show_excerpt={true} post={post}/>
         </li>
       ))}
