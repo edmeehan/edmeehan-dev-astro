@@ -31,15 +31,15 @@ collections_config:
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
-    preview:
-      icon: web
-      metadata:
-        - icon: visibility_off
-          text:
-            - key: hidden
     schemas:
       page:
         path: schemas/page.md
+        preview:
+          icon: web
+          metadata:
+            - icon: visibility_off
+              text:
+                - key: hidden
       paginated_posts:
         path: schemas/paginated_posts.md
         preview:
