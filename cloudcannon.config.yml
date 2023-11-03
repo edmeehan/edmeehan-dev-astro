@@ -17,7 +17,6 @@ collections_config:
     name: Pages
     icon: web
     singular_name: Page
-    _editables: {}
     _enabled_editors:
       - visual
       - data
@@ -29,8 +28,6 @@ collections_config:
           structures: _structures.page_blocks
           empty_type:
         cascade: true
-    _select_data: {}
-    _structures: {}
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
@@ -106,8 +103,6 @@ collections_config:
       published:
         type: date
         label: Published Date
-    _select_data: {}
-    _structures: {}
     disable_add: false
     disable_add_folder: true
     disable_file_actions: false
@@ -118,7 +113,7 @@ collections_config:
         hide_extra_inputs: false
         remove_empty_inputs: false
         remove_extra_inputs: true
-        icon: notes
+        icon: wysiwyg
   projects:
     path: src/content/projects
     output: true
