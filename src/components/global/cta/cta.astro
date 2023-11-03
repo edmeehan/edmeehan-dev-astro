@@ -1,7 +1,7 @@
 ---
 const { label, link, style, title, is_button = false, type = 'button' } = Astro.props;
-const { pathname: currentPath } = Astro.url;
-const ariaProperties = currentPath === link ? {"aria-current":"page"} : {};
+const { pathname = '' } = Astro?.url;
+const ariaProperties = pathname === link ? {"aria-current":"page"} : {};
 ---
 <style lang="scss" is:global>
   [data-global-cta] {

@@ -1,6 +1,6 @@
 ---
 const { title } = Astro.props;
-const { pathname } = Astro.url;
+const { pathname = '' } = Astro?.url;
 
 const twitter = () => {
   const link = new URL('https://twitter.com/intent/tweet/')
