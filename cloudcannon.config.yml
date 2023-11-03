@@ -469,6 +469,19 @@ data_config:
     path: data/testimonials.json
     parser: json
 timezone: America/Los_Angeles
+file_config:
+  - path: data/testimonials.json
+    _inputs:
+      name:
+        type: text
+      company:
+        type: text
+      title:
+        type: text
+      headshot:
+        type: image
+      testimonial:
+        type: textarea
 _snippets_imports:
   mdx: true
 _snippets:
