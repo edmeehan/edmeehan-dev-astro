@@ -215,8 +215,8 @@ _inputs:
     hidden: true
     cascade: false
   hidden:
-    type: checkbox
-    comment: Enabling this will stop page from being built.
+    type: switch
+    label: Draft Mode
     cascade: true
   content:
     type: markdown
@@ -286,6 +286,13 @@ _inputs:
       When selected this removes the page from your sitemap and adds the noindex
       robots meta tag
     cascade: true
+  seo.open_graph_type:
+    type: select
+    options:
+      values:
+        - website
+        - article
+        - video
   post_image:
     type: object
     options:
