@@ -58,6 +58,8 @@ collections_config:
         label: Title Desc
     filter:
       base: all
+      include:
+        - 404.md
   blog:
     parser: front-matter
     path: src/content/blog
