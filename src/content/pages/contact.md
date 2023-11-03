@@ -2,13 +2,6 @@
 _schema: page
 uuid: b9d8987f-0f98-43a4-8a52-5afbf9f40d91
 title: Contact
-seo:
-  no_index: false
-  page_title: Contact freelance web developer in San Diego, California
-  page_description: You can contact me by phone or email by filling out the form on this page.
-  featured_image:
-  open_graph_type:
-  canonical_url:
 content_blocks:
   - _bookshop_name: form
     content: >-
@@ -48,5 +41,12 @@ content_blocks:
           name: message
           required: true
       submit: Send Message
+seo:
+  no_index: false
+  page_title: Contact freelance web developer in San Diego, California
+  page_description: You can contact me by phone or email by filling out the form on this page.
+  featured_image:
+  open_graph_type:
+  canonical_url:
 hidden: false
 ---

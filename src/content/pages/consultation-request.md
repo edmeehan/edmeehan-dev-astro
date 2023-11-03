@@ -2,13 +2,6 @@
 _schema: page
 uuid: f1058387-9ea0-4007-9369-1781413d73e6
 title: Consultation Request
-seo:
-  no_index: false
-  page_title: Consultation Request
-  page_description: Fill out this consultation request form to start a conversation with Ed Meehan.
-  featured_image:
-  open_graph_type:
-  canonical_url:
 content_blocks:
   - _bookshop_name: form
     content: >-
@@ -81,5 +74,12 @@ content_blocks:
           name: message
           required: true
       submit: Submit Request
+seo:
+  no_index: false
+  page_title: Consultation Request
+  page_description: Fill out this consultation request form to start a conversation with Ed Meehan.
+  featured_image:
+  open_graph_type:
+  canonical_url:
 hidden: false
 ---

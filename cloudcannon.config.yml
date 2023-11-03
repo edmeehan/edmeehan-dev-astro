@@ -14,6 +14,17 @@ collections_config:
     path: src/content/pages
     output: true
     url: /[slug]/index.html
+    new_preview_url: /index.html
+    preview:
+      metadata:
+        - text:
+            - key: uuid
+            - Missing UUID
+          icon: pin
+        - text:
+            - key: hidden
+            - true
+          icon: visibility_off
     name: Pages
     icon: web
     singular_name: Page
@@ -41,14 +52,21 @@ collections_config:
         hide_extra_inputs: false
         remove_empty_inputs: false
         remove_extra_inputs: true
-        icon: notes
+        icon: web
       paginated_posts:
         path: schemas/paginated_posts.md
         reorder_inputs: true
         hide_extra_inputs: false
         remove_empty_inputs: false
         remove_extra_inputs: true
-        icon: notes
+        icon: format_list_numbered
+    sort_options:
+      - key: title
+        order: asc
+        label: Title Asc
+      - key: title
+        order: desc
+        label: Title Desc
   blog:
     path: src/content/blog
     output: true

@@ -1,6 +1,7 @@
 ---
 uuid:
 title:
+content_blocks:
 seo:
   no_index: false
   page_title:
@@ -8,6 +9,5 @@ seo:
   featured_image:
   open_graph_type:
   canonical_url:
-content_blocks:
 hidden: false
 ---

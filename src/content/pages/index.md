@@ -2,15 +2,6 @@
 _schema: page
 uuid: 62b830b7-0017-4fb6-b829-704a0a8ff85a
 title: Homepage
-seo:
-  no_index: false
-  page_title: Ed Meehan, web developer for hire in San Diego, California
-  page_description: >-
-    Does your business need a better website? Amplify performance, and maximize
-    online potential. Contact me today!
-  featured_image:
-  open_graph_type:
-  canonical_url:
 content_blocks:
   - _bookshop_name: hero/splash
     image:
@@ -239,5 +230,14 @@ content_blocks:
       - 6882f2d6-8acc-43b1-8fa2-85f013db2b81
       - b8f8dc9a-d055-46cc-a98d-cf9a3be7896c
       - 4650d92e-b318-4c13-a437-ec79232e462e
+seo:
+  no_index: false
+  page_title: Ed Meehan, web developer for hire in San Diego, California
+  page_description: >-
+    Does your business need a better website? Amplify performance, and maximize
+    online potential. Contact me today!
+  featured_image:
+  open_graph_type:
+  canonical_url:
 hidden: false
 ---

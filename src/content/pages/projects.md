@@ -9,7 +9,6 @@ seo:
   page_title: Projects
   page_description: Projects on edmeehan.dev
   featured_image:
-  
   open_graph_type:
   canonical_url:
 content_blocks:
