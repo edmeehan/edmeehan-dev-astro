@@ -22,13 +22,6 @@ content_blocks:
         width:
         height:
         loading: lazy
-      - _bookshop_name: global/image
-        src: /uploads/pages/splash-whale-background@2x.png
-        alt:
-        title:
-        width:
-        height:
-        loading: lazy
     cta:
     section:
       transition: curve

@@ -1,9 +1,17 @@
 ---
 import {imgix} from 'src/shared/utilities.js'
-const { image, images, srcset = [100], sizes, sm_srcset = [100], sm_sizes } = Astro.props;
+const {
+  image, // single image only - won't use sm_srcset or sm_sizes
+  images, // 2 images max - uses art direction - uses sm_srcset and sm_sizes
+  srcset = [100],
+  sizes = '250px',
+  sm_srcset = [100],
+  sm_sizes = '(max-width: 767px) 90vw'
+} = Astro.props;
 const use_art_direction = !image && Array.isArray(images) && images.length === 2;
 let display_images = [], mobile, desktop;
 
+// has two images - uses art direction
 if (use_art_direction) {
   display_images = images.map((item,index) => {
     return {
@@ -14,7 +22,20 @@ if (use_art_direction) {
   })
   mobile = images[1];
   desktop = images[0];
-} else {
+}
+
+// has one image in images array - uses the sm_srcset & sm_sizes
+if (!use_art_direction && Array.isArray(images) && images.length === 1) {
+  display_images.push({
+    ...images[0], sizes: `${sm_sizes},${sizes}`,
+    srcset: sm_srcset.concat(srcset).map(size => `${imgix(images[0]?.src, size)} ${size}w`).join(',')
+  })
+  mobile = images[0];
+  desktop = images[0];
+}
+
+// has one image
+if (!use_art_direction && image) {
   display_images.push({
     ...image, sizes,
     srcset: srcset.map(size => `${imgix(image?.src, size)} ${size}w`).join(',')
