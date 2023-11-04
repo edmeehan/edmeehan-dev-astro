@@ -349,10 +349,15 @@ _inputs:
     options:
       preview:
         icon: palette
-        subtext:
-          - key: background
-        text:
-          - key: transition
+        subtext: false
+        text: false
+        metadata:
+          - icon: format_paint
+            text:
+              - key: background
+          - icon: gradient
+            text:
+              - key: transition
     label: Section Styles
     comment: Set the transition and background of section.
     cascade: true

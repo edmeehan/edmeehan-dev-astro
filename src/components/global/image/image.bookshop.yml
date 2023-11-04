@@ -11,10 +11,11 @@ spec:
     image:
       - key: src
     text:
-      - key: src
+      - key: title
+      - No image title set
     subtext:
       - key: alt
-      - No alt text
+      - No image alt set
 
 blueprint:
   src:
