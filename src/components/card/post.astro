@@ -1,33 +1,35 @@
 ---
-import { getCollection } from "astro:content";
 import MarkdownIt from 'markdown-it';
 import {dateFormatter,imgix_article_card} from 'src/shared/utilities.js';
 const { show_excerpt, blog_uuid, project_uuid } = Astro.props;
+const test = await import('src/content/blog/5-reasons-to-use-gatsby.mdx');
 const post_type = !!blog_uuid ? 'blog' : !!project_uuid ? 'project' : null;
 const uuid = post_type === 'blog' ? blog_uuid : post_type === 'project' ? project_uuid : null;
 let post = [];
 
-if (!post_type || !uuid) return;
+console.log(test.frontmatter)
 
-switch (post_type) {
-  case 'blog':
-  post = await getCollection('blog', ({ data }) => data.uuid === uuid);
-    break;
-  case 'project':
-  post = await getCollection('projects', ({ data }) => data.uuid === uuid);
-    break;
-  default:
-    break;
-}
+// if (!post_type || !uuid) return;
 
-const {slug, collection, data: { excerpt, headline, read_time, published, post_image }} = post[0];
-const md = new MarkdownIt({ html: true });
-const article_url = `/${collection}/${slug}/`;
-let srcset, sizes;
-if (post_image?.src) {
-  srcset = [300,500,787,1000,1574].map(item => `${imgix_article_card(post_image.src, item)} ${item}w`).join(',');
-  sizes = '(max-width: 579px) calc(100vw - 3rem),(max-width: 1654px) calc(50vw - 2.25rem), 787px';
-}
+// switch (post_type) {
+//   case 'blog':
+//   post = await getCollection('blog', ({ data }) => data.uuid === uuid);
+//     break;
+//   case 'project':
+//   post = await getCollection('projects', ({ data }) => data.uuid === uuid);
+//     break;
+//   default:
+//     break;
+// }
+
+// const {slug, collection, data: { excerpt, headline, read_time, published, post_image }} = post[0];
+// const md = new MarkdownIt({ html: true });
+// const article_url = `/${collection}/${slug}/`;
+// let srcset, sizes;
+// if (post_image?.src) {
+//   srcset = [300,500,787,1000,1574].map(item => `${imgix_article_card(post_image.src, item)} ${item}w`).join(',');
+//   sizes = '(max-width: 579px) calc(100vw - 3rem),(max-width: 1654px) calc(50vw - 2.25rem), 787px';
+// }
 ---
 <style lang="scss" is:global>
   article[data-card-post] {
@@ -104,7 +106,7 @@ if (post_image?.src) {
     }
   }
 </style>
-{ !!post_type && !!uuid && (
+{ !!post_type && !!uuid && false &&(
   <article data-card-post>
     { !!post_image.src && (
       <div class="img">

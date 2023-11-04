@@ -37,4 +37,8 @@ _inputs:
     type: select
     options:
       values: collections.projects
-      value_key: uuid
+      value_key:
+        - path
+        - title
+        - slug
+        - id

@@ -91,7 +91,7 @@ const set_prev = !is_first && prev.background !== 'loud';
   <div class={`content--prev-${set_prev ? prev.transition : 'none'}`}>
     <slot />
   </div>
-  { background === 'loud' && !ENV_BOOKSHOP_LIVE &&(
+  { background === 'loud' && (
     <Bubbles />
   )}
   { set_transition && (

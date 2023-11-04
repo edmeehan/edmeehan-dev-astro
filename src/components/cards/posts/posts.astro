@@ -49,10 +49,7 @@ const md = new MarkdownIt({ html: true });
     <ul>
       { cards.map((item) => (
         <li>
-          { ENV_BOOKSHOP_LIVE
-            ? <div>Card Place Holder</div>
-            : <Card show_excerpt={true} blog_uuid={item?.blog} project_uuid={item?.project}/>
-          }
+          <Card show_excerpt={true} blog_uuid={item?.blog} project_uuid={item?.project}/>
         </li>
       ))}
     </ul>
