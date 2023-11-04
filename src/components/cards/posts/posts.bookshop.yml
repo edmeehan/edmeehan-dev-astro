@@ -42,7 +42,9 @@ _structures:
         - key: project
         - Nothing selected
     values:
-      - label: Card
+      - label: Project Post
+        value:
+          project:
+      - label: Blog Post
         value:
           blog:
-          project:
