@@ -40,9 +40,9 @@ _structures:
         icon: work
         value:
           _type: project
-          blog:
+          project:
       - label: Blog Post
         icon: wysiwyg
         value:
           _type: blog
-          project:
+          blog:
