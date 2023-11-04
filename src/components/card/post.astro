@@ -2,12 +2,12 @@
 import MarkdownIt from 'markdown-it';
 import {dateFormatter,imgix_article_card} from 'src/shared/utilities.js';
 const { show_excerpt, blog_uuid, project_uuid } = Astro.props;
-const test = await import('src/content/blog/5-reasons-to-use-gatsby.mdx');
+// const test = await import('src/content/blog/5-reasons-to-use-gatsby.mdx');
 const post_type = !!blog_uuid ? 'blog' : !!project_uuid ? 'project' : null;
 const uuid = post_type === 'blog' ? blog_uuid : post_type === 'project' ? project_uuid : null;
 let post = [];
 
-console.log(test.frontmatter)
+// console.log(test.frontmatter)-->
 
 // if (!post_type || !uuid) return;
 
