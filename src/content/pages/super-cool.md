@@ -8,7 +8,7 @@ content_blocks:
       <p class="eyebrow">Eyebrow</p>
 
 
-      # Headline with a strong tag
+      <h2 class="h1">Headline with a strong tag</h2>
 
 
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non tellus
