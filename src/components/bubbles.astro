@@ -16,7 +16,7 @@
     let animationFrame
     const bubbleCount = 14
     // check if getContext is avalible
-    if (!canvas.getContext) return
+    if (!canvas?.getContext) return
 
     const ctx = canvas.getContext('2d')
     canvas.width = canvas.offsetWidth
