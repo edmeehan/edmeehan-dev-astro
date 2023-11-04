@@ -267,6 +267,16 @@ _inputs:
       italic: true
       link: true
     cascade: true
+  blog_uuid:
+    type: select
+    options:
+      values: collections.blog
+      value_key: uuid
+  project_uuid:
+    type: select
+    options:
+      values: collections.projects
+      value_key: uuid
   seo:
     type: object
     options:

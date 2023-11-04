@@ -22,17 +22,7 @@ _inputs:
     type: array
     options:
       structures: _structures.collection_card
-  cards[*].blog_uuid:
-    type: select
-    options:
-      values: collections.blog
-      value_key: uuid
-  cards[*].project_uuid:
-    type: select
-    options:
-      values: collections.projects
-      value_key: uuid
-
+      
 _structures:
   collection_card:
     values:
