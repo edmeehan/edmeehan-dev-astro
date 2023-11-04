@@ -31,16 +31,12 @@ _inputs:
     type: select
     options:
       values: collections.projects
-      value_key:
-        - path
-        - title
-        - slug
-        - id
+      value_key: uuid
 
 _structures:
   collection_card:
     preview:
-      text: Card entry
+      icon: false
       subtext:
         - key: blog
         - key: project
