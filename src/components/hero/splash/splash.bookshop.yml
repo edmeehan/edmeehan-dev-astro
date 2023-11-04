@@ -8,15 +8,7 @@ spec:
   tags:
     - hero
   preview:
-    image: false
     subtext: false
-    metadata:
-      - icon: format_paint
-        text:
-          - key: section.background
-      - icon: gradient
-        text:
-          - key: section.transition
 
 blueprint:
   content: >-
