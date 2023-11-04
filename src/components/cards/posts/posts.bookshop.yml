@@ -20,14 +20,8 @@ preview:
 _inputs:
   cards:
     type: array
-    preview:
-      text: Card entry
-      subtext:
-        - key: blog
-        - key: project
-        - Nothing selected
-  cards[*]:
-    type: object
+    options:
+      structures: _structures.collection_card
   cards[*].blog:
     type: select
     options:
@@ -42,3 +36,17 @@ _inputs:
         - title
         - slug
         - id
+
+_structures:
+  collection_card:
+    preview:
+      text: Card entry
+      subtext:
+        - key: blog
+        - key: project
+        - Nothing selected
+    values:
+      - label: Card
+        value:
+          blog:
+          project:
