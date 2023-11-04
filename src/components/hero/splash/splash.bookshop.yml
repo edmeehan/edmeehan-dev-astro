@@ -7,8 +7,6 @@ spec:
   icon: image
   tags:
     - hero
-  preview:
-    subtext: false
 
 blueprint:
   content: >-
@@ -20,17 +18,17 @@ blueprint:
 
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non tellus sapien. Duis id neque diam. Mauris commodo porta sapien vel viverra. Sed finibus.
   image:
-    - src:
-      alt:
+    - src: /uploads/pages/splash-whale-background@2x.png
+      alt: whales and water
       title:
-      width:
-      height:
+      width: 768
+      height: 900
       loading: lazy
-    - src:
-      alt:
+    - src: /uploads/pages/altgrid-rays-complete-wide@2x.png
+      alt: rays of the sea
       title:
-      width:
-      height:
+      width: 800
+      height: 875
       loading: lazy
   cta: bookshop:global/cta
   section:
