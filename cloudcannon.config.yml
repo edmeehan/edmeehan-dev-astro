@@ -268,11 +268,13 @@ _inputs:
       link: true
     cascade: true
   blog_uuid:
+    label: Blog Post
     type: select
     options:
       values: collections.blog
       value_key: uuid
   project_uuid:
+    label: Project Post
     type: select
     options:
       values: collections.projects
@@ -388,6 +390,30 @@ _inputs:
   content_blocks[*].layout:
     type: object
     comment: Set some basic layout of section.
+    options:
+      preview:
+        icon: false
+        subtext: false
+        text: false
+        metadata:
+          - icon: image
+            text:
+              - key: image_align
+          - icon: image
+            text:
+              - key: image_vert
+          - icon: aspect_ratio
+            text:
+              - key: image_width
+          - icon: text_format
+            text:
+              - key: text_align
+          - icon: flip
+            text:
+              - key: orintation
+          - icon: photo_size_select_small
+            text:
+              - key: is_mini
     cascade: true
   content_blocks[*].layout.image_align:
     type: select
@@ -461,6 +487,18 @@ _select_data:
     secondary: Secondary
     loud: Loud
 _structures:
+  collection_card:
+    values:
+      - label: Project Post
+        icon: work
+        value:
+          _type: project
+          project_uuid:
+      - label: Blog Post
+        icon: wysiwyg
+        value:
+          _type: blog
+          blog_uuid:
   simple_item:
     values:
       - value:

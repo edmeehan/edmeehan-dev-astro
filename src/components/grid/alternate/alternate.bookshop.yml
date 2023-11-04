@@ -9,10 +9,10 @@ spec:
     - grid
 
 blueprint:
-  image:
   content:
+  image: bookshop:global/image
   cta: bookshop:global/cta
-  grid_items:
+  grid_items: []
   section:
     transition: curve
     background: primary
@@ -26,11 +26,6 @@ preview:
 _inputs:
   grid_items:
     type: array
-  grid_items[*]:
-    type: object
     options:
+      empty_type: array
       structures: _structures.simple_item
-  image:
-    type: array
-    options:
-      structures: _structures.image

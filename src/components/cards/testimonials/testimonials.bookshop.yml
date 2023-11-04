@@ -10,10 +10,10 @@ spec:
 
 blueprint:
   content:
+  testimonials:
   section:
     transition: curve
     background: primary
-  testimonials:
 
 preview:
 

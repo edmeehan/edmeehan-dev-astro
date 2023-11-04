@@ -10,7 +10,7 @@ spec:
 
 blueprint:
   content:
-  cards:
+  cards: []
   section:
     transition: curve
     background: primary
@@ -21,18 +21,5 @@ _inputs:
   cards:
     type: array
     options:
+      empty_type: array
       structures: _structures.collection_card
-      
-_structures:
-  collection_card:
-    values:
-      - label: Project Post
-        icon: work
-        value:
-          _type: project
-          project_uuid:
-      - label: Blog Post
-        icon: wysiwyg
-        value:
-          _type: blog
-          blog_uuid:
