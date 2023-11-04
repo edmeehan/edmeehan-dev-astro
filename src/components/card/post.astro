@@ -1,7 +1,26 @@
 ---
+import { getCollection } from "astro:content";
 import MarkdownIt from 'markdown-it';
 import {dateFormatter,imgix_article_card} from 'src/shared/utilities.js';
-const { show_excerpt, post: {slug, collection, data: { excerpt, headline, read_time, published, post_image }} } = Astro.props;
+const { show_excerpt, blog_uuid, project_uuid } = Astro.props;
+const post_type = !!blog_uuid ? 'blog' : !!project_uuid ? 'project' : null;
+const uuid = post_type === 'blog' ? blog_uuid : post_type === 'project' ? project_uuid : null;
+let post = [];
+
+if (!post_type || !uuid) return;
+
+switch (post_type) {
+  case 'blog':
+  post = await getCollection('blog', ({ data }) => data.uuid === uuid);
+    break;
+  case 'project':
+  post = await getCollection('projects', ({ data }) => data.uuid === uuid);
+    break;
+  default:
+    break;
+}
+
+const {slug, collection, data: { excerpt, headline, read_time, published, post_image }} = post[0];
 const md = new MarkdownIt({ html: true });
 const article_url = `/${collection}/${slug}/`;
 let srcset, sizes;
@@ -85,40 +104,41 @@ if (post_image?.src) {
     }
   }
 </style>
-
-<article data-card-post>
-  { !!post_image.src && (
-    <div class="img">
-      <img src={imgix_article_card(post_image.src, 787)} width="400" height="200"
-        srcset={srcset}
-        sizes={sizes}
-        alt={post_image.alt}
-        title={post_image.title}
-      />
-      <div class="svg">
-        <svg>
-          <use xlink:href='#card-curve'></use>
-        </svg>
+{ !!post_type && !!uuid && (
+  <article data-card-post>
+    { !!post_image.src && (
+      <div class="img">
+        <img src={imgix_article_card(post_image.src, 787)} width="400" height="200"
+          srcset={srcset}
+          sizes={sizes}
+          alt={post_image.alt}
+          title={post_image.title}
+        />
+        <div class="svg">
+          <svg>
+            <use xlink:href='#card-curve'></use>
+          </svg>
+        </div>
       </div>
-    </div>
-  )}
-  <div class="content">
-    <div class="date step-down">
-      {dateFormatter(true).format(published)}
-    </div>
-    <div class="read-time step-down">
-      {read_time} min read
-    </div>
-    <a href={article_url} class="title" title={headline}>
-      <h3 style={{margin:0}} class="h3">
-        {headline}
-      </h3>
-    </a>
-    { show_excerpt && excerpt && (
-      <div class="rt" set:html={md.render(excerpt)}></div>
     )}
-  </div>
-  <a class="link" href={article_url} title={headline}>
-    Read More&hellip;
-  </a>
-</article>
+    <div class="content">
+      <div class="date step-down">
+        {dateFormatter(true).format(published)}
+      </div>
+      <div class="read-time step-down">
+        {read_time} min read
+      </div>
+      <a href={article_url} class="title" title={headline}>
+        <h3 style={{margin:0}} class="h3">
+          {headline}
+        </h3>
+      </a>
+      { show_excerpt && excerpt && (
+        <div class="rt" set:html={md.render(excerpt)}></div>
+      )}
+    </div>
+    <a class="link" href={article_url} title={headline}>
+      Read More&hellip;
+    </a>
+  </article>
+)}
