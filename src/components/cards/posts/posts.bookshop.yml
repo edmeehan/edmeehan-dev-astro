@@ -22,29 +22,27 @@ _inputs:
     type: array
     options:
       structures: _structures.collection_card
-  cards[*].blog:
-    type: select
-    options:
-      values: collections.blog
-      value_key: uuid
-  cards[*].project:
-    type: select
-    options:
-      values: collections.projects
-      value_key: uuid
+  # cards[*].blog:
+  #   type: select
+  #   options:
+  #     values: collections.blog
+  #     value_key: uuid
+  # cards[*].project:
+  #   type: select
+  #   options:
+  #     values: collections.projects
+  #     value_key: uuid
 
 _structures:
   collection_card:
-    preview:
-      icon: false
-      subtext:
-        - key: blog
-        - key: project
-        - Nothing selected
     values:
       - label: Project Post
+        icon: work
         value:
-          project:
+          _type: project
+          uuid:
       - label: Blog Post
+        icon: wysiwyg
         value:
-          blog:
+          _type: blog
+          uuid:
