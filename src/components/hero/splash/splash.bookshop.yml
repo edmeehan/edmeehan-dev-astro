@@ -38,7 +38,30 @@ blueprint:
 preview:
 
 _inputs:
+  content:
+    type: markdown
+    options:
+      format: p h1 h2 h3 h4 div
+      bold: true
+      italic: true
+      redo: true
+      undo: true
+      strike: true
+      subscript: true
+      superscript: true
+      underline: true
+      link: true
+      styles: /src/styles/cloudcannon_editor.css
   image:
     type: array
+    comment: If using two images, first is desktop, secound is mobile.
     options:
       structures: _structures.image
+      preview:
+        icon: false
+        image:
+          - key: src
+        text:
+          - key: src
+        subtext:
+          - key: alt
