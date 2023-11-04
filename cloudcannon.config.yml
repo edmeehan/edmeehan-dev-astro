@@ -348,7 +348,7 @@ _inputs:
     type: object
     options:
       preview:
-        icon: palette
+        icon: false
         subtext: false
         text: false
         metadata:
