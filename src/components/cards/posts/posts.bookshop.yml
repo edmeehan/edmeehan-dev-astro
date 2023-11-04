@@ -38,11 +38,21 @@ _structures:
     values:
       - label: Project Post
         icon: work
+        _inputs:
+          uuid:
+            type: select
+            options:
+              values: collections.projects
         value:
           _type: project
           uuid:
       - label: Blog Post
         icon: wysiwyg
+        _inputs:
+          uuid:
+            type: select
+            options:
+              values: collections.blog
         value:
           _type: blog
           uuid:
