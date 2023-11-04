@@ -22,12 +22,12 @@ _inputs:
     type: array
     options:
       structures: _structures.collection_card
-  cards[*].blog:
+  cards[*].blog_uuid:
     type: select
     options:
       values: collections.blog
       value_key: uuid
-  cards[*].project:
+  cards[*].project_uuid:
     type: select
     options:
       values: collections.projects
@@ -40,9 +40,9 @@ _structures:
         icon: work
         value:
           _type: project
-          project:
+          project_uuid:
       - label: Blog Post
         icon: wysiwyg
         value:
           _type: blog
-          blog:
+          blog_uuid:
