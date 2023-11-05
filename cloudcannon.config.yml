@@ -503,7 +503,7 @@ _structures:
     values:
       - value:
           content:
-          image:
+          image: bookshop:global/image
   page_blocks:
     style: modal
 _editables: {}

@@ -18,18 +18,20 @@ blueprint:
 
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non tellus sapien. Duis id neque diam. Mauris commodo porta sapien vel viverra. Sed finibus.
   image:
-    - src: /uploads/pages/splash-whale-background@2x.png
-      alt: whales and water
-      title:
+    - _bookshop_name: global/image
+      src: /uploads/placeholders/splash_lg.png
+      alt: placeholder image
+      title: This is the placeholder image
       width: 768
-      height: 900
-      loading: lazy
-    - src: /uploads/pages/altgrid-rays-complete-wide@2x.png
-      alt: rays of the sea
-      title:
+      height: 800
+      loading: eager
+    - _bookshop_name: global/image
+      src: /uploads/placeholders/splash_sm.png
+      alt: placeholder image
+      title: This is the placeholder image
       width: 800
-      height: 875
-      loading: lazy
+      height: 600
+      loading: eager
   cta: bookshop:global/cta
   section:
     transition: curve
