@@ -45,7 +45,13 @@ const md = new MarkdownIt({ html: true });
 </style>
 <div class:list={['wrapper',`wrapper--${layout.image_align}`, { mini: layout.is_mini }]} data-grid-side-by-side>
   <div class:list={[`image--${layout.image_width}`]}>
-    { image && <Image image={image} />}
+    { image && <Image image={image}
+      srcset={[400,500,600,700,800,1000,1200,1400,1600]}
+      sizes={ layout.image_width === 'small'
+        ? '(max-width: 767px) 90vw,(max-width: 1650px) calc(35vw - 45px), 560px'
+        : '(max-width: 767px) 90vw,(max-width: 1650px) calc(50vw - 45px), 800px'
+      }
+    />}
   </div>
   <div class="content">
     { content && <div class="rt" set:html={md.render(content)}></div>}
