@@ -1,6 +1,7 @@
 ---
 import MarkdownIt from 'markdown-it';
 import Image from 'src/components/global/image/image.astro';
+import CTA from 'src/components/global/cta/cta.astro';
 const { content, cta, section, layout, grid_items } = Astro.props;
 const md = new MarkdownIt({ html: true });
 ---
@@ -22,12 +23,17 @@ const md = new MarkdownIt({ html: true });
       row-gap: 1.7rem;
       column-gap: 8%;
 
-      &--left {
+      &-left {
         @extend .list;
         justify-content: flex-start;
       }
 
-      &--center {
+      &-right {
+        @extend .list;
+        justify-content: flex-end;
+      }
+
+      &-center {
         @extend .list;
         justify-content: center;
       }
@@ -46,11 +52,12 @@ const md = new MarkdownIt({ html: true });
 </style>
 
 <div class:list={['wrapper', { mini: layout.is_mini }]} data-grid-simple>
-  <div class:list={['content', { 'rt-center': layout.text_align === 'center'}]}>
+  <div class:list={['content', `text-${layout.text_align}`]}>
     { content && <div class="rt" set:html={md.render(content)}></div>}
+    { cta && <CTA {...cta} />}
   </div>
   { grid_items && (
-    <ul class={`list--${layout.text_align}`}>
+    <ul class={`list-${layout.text_align}`}>
       { grid_items.map((item) => (
         <li>
           { item.image && <Image image={item.image}
@@ -59,7 +66,7 @@ const md = new MarkdownIt({ html: true });
           />}
           { item.content && (
             <div
-              class:list={['rt',{ 'rt-center': layout.text_align === 'center'}]}
+              class:list={['rt']}
               set:html={md.render(item.content)}
             ></div>
           )}

@@ -9,7 +9,16 @@ spec:
     - grid
 
 blueprint:
-  content:
+  content: >-
+      <p class="eyebrow">Alternate Grid</p>
+
+
+      <h1 class="h1">Headline with a <strong>strong tag</strong></h1>
+
+
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non tellus
+      sapien. Duis id neque diam. Mauris commodo porta sapien vel viverra. Sed
+      finibus.
   image: bookshop:global/image
   cta: bookshop:global/cta
   grid_items: []

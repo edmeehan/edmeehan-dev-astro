@@ -9,8 +9,18 @@ spec:
     - grid
 
 blueprint:
-  content:
+  content: >-
+      <p class="eyebrow">Simple Grid</p>
+
+
+      <h1 class="h1">Headline with a <strong>strong tag</strong></h1>
+
+
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non tellus
+      sapien. Duis id neque diam. Mauris commodo porta sapien vel viverra. Sed
+      finibus.
   cta: bookshop:global/cta
+  grid_items: []
   section:
     transition: curve
     background: primary
@@ -20,3 +30,8 @@ blueprint:
 preview:
 
 _inputs:
+  grid_items:
+    type: array
+    options:
+      empty_type: array
+      structures: _structures.simple_item

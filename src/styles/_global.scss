@@ -62,16 +62,13 @@ a {
   padding-left: 1rem;
 }
 
-%highlight {
+.highlight {
   color: $color_text_primary_highlight;
   font-weight: inherit;
 
   .style-secondary & {
     color: $color_text_secondary_highlight;
   }
-}
-.highlight {
-  @extend %highlight;
 }
 
 span.sup {
@@ -92,7 +89,7 @@ span.sup {
   }
 }
 
-%h1 {
+.h1 {
   // mobile default
   font-size: $text_mobile_hero_headline;
   line-height: $text_mobile_hero_headline_line_height;
@@ -102,11 +99,8 @@ span.sup {
     line-height: $text_desktop_hero_headline_line_height;
   }
 }
-.h1 {
-  @extend %h1;
-}
 
-%h2 {
+.h2 {
   // mobile default
   font-size: $text_mobile_section_headline;
   line-height: $text_mobile_section_headline_line_height;
@@ -116,11 +110,8 @@ span.sup {
     line-height: $text_desktop_section_headline_line_height;
   }
 }
-.h2 {
-  @extend %h2;
-}
 
-%h3 {
+.h3 {
   // mobile default
   font-size: $text_mobile_mini_headline;
   line-height: $text_mobile_mini_headline_line_height;
@@ -130,15 +121,32 @@ span.sup {
     line-height: $text_desktop_mini_headline_line_height;
   }
 }
-.h3 {
-  @extend %h3;
-}
 
 .h1,
 .h2,
 .h3 {
   margin-top: 0;
   font-weight: $text_weight_bold;
+}
+
+.text-center {
+  text-align: center;
+  .rt > * {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.text-left {
+  text-align: left;
+  .rt > * {
+    margin-right: auto;
+  }
+}
+.text-right {
+  text-align: right;
+  .rt > * {
+    margin-left: auto;
+  }
 }
 
 .rt {
@@ -152,17 +160,17 @@ span.sup {
   }
 
   h1 {
-    @extend %h1;
+    @extend .h1;
   }
   h2 {
-    @extend %h2;
+    @extend .h2;
   }
   h3 {
-    @extend %h3;
+    @extend .h3;
   }
   h1,.h1,h2,.h2,h3,.h3 {
     strong {
-      @extend %highlight;
+      @extend .highlight;
     }
   }
 
@@ -176,10 +184,10 @@ span.sup {
   }
 
   /* rich text wrapper - center text */
-  &-center  {text-align: center;}
-  &-left    {text-align: left;}
-  &-right   {text-align: right;}
-  &-justify { text-align: justify;}
+  .rt-center  {text-align: center;}
+  .rt-left    {text-align: left;}
+  .rt-right   {text-align: right;}
+  .rt-justify {text-align: justify;}
 }
 
 .step-down {

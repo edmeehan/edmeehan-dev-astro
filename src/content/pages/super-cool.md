@@ -50,6 +50,11 @@ content_blocks:
       sapien. Duis id neque diam. Mauris commodo porta sapien vel viverra. Sed
       finibus.
     cta:
+      _bookshop_name: global/cta
+      label: Click Me
+      link:
+      style: primary
+      new_tab: false
     section:
       transition: curve
       background: primary
@@ -58,7 +63,7 @@ content_blocks:
       is_mini: true
   - _bookshop_name: grid/simple
     content: >-
-      <p class="eyebrow">Eyebrow</p>
+      <p class="eyebrow">Simple Grid</p>
 
 
       <h1 class="h1">Headline with a <strong>strong tag</strong></h1>
@@ -73,11 +78,46 @@ content_blocks:
       link:
       style: primary
       new_tab: false
+    grid_items:
+      - image:
+          src: /uploads/pages/altgrid-item-icon-analytics@2x.png
+          alt:
+          title:
+          width: 386
+          height: 203
+          loading: lazy
+        content: >-
+          <h5 class="h3"><strong>Analytics</strong></h5>
+          
+          
+          As an experienced marketing analytics strategist, I have a strong
+          track record of planning, setting up, and managing Analytics for
+          businesses and organizations of all sizes.
+
+
+          [View Analytics Services](/test)
+      - image:
+          src: /uploads/pages/altgrid-item-icon-analytics@2x.png
+          alt:
+          title:
+          width: 386
+          height: 203
+          loading: lazy
+        content: >-
+          <h5 class="h3"><strong>Analytics</strong></h5>
+          
+          
+          As an experienced marketing analytics strategist, I have a strong
+          track record of planning, setting up, and managing Analytics for
+          businesses and organizations of all sizes.
+
+
+          [View Analytics Services](/test)
     section:
       transition: curve
       background: primary
     layout:
-      text_align: left
+      text_align: center
       is_mini: true
   - _bookshop_name: grid/side-by-side
     content: >-
