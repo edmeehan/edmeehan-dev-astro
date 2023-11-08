@@ -254,6 +254,10 @@ _inputs:
       redo: true
       strike: true
       styles: /src/styles/cloudcannon_editor.css
+      left: rt-left
+      right: rt-right
+      center: rt-center
+      justify: rt-justify
       undo: true
     cascade: true
   testimonial:

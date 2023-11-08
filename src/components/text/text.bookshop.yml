@@ -9,7 +9,16 @@ spec:
     - text
 
 blueprint:
-  content:
+  content: >-
+      <p class="eyebrow">Simple Text</p>
+
+
+      <h1>Headline with a <strong>strong tag</strong></h1>
+
+
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non tellus
+      sapien. Duis id neque diam. Mauris commodo porta sapien vel viverra. Sed
+      finibus.
   cta: bookshop:global/cta
   section:
     transition: curve

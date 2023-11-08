@@ -5,10 +5,10 @@ title: super cool
 content_blocks:
   - _bookshop_name: hero/splash
     content: >-
-      <p class="eyebrow">Eyebrow</p>
+      <p class="eyebrow">Splash Hero</p>
 
 
-      <h1 class="h1">Headline with a <strong>strong</strong> tag</h1>
+      <h1 class="h1">Headline with a <strong>strong tag</strong></h1>
 
 
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non tellus
@@ -16,34 +16,81 @@ content_blocks:
       finibus.
     image:
       - _bookshop_name: global/image
-        src: /uploads/placeholders/splash_lg.png
-        alt: placeholder image
-        title: This is the placeholder image
+        src: /uploads/pages/splash-whale-background@2x.png
+        alt: whales and water
+        title:
         width: 768
-        height: 800
-        loading: eager
+        height: 900
+        loading: lazy
       - _bookshop_name: global/image
-        src: /uploads/placeholders/splash_sm.png
-        alt: placeholder image
-        title: This is the placeholder image
+        src: /uploads/pages/altgrid-rays-complete-wide@2x.png
+        alt: rays of the sea
+        title:
         width: 800
-        height: 600
-        loading: eager
+        height: 875
+        loading: lazy
     cta:
+      _bookshop_name: global/cta
+      label: Stuff
+      link:
+      style: primary
+      new_tab: false
     section:
       transition: curve
       background: primary
-  - _bookshop_name: grid/alternate
+  - _bookshop_name: text
     content: >-
-      <p class="eyebrow">Eyebrow</p>
+      <p class="eyebrow">Simple Text</p>
 
 
-      <h2 class="h1">Headline with a strong tag</h2>
+      <h1>Headline with a <strong>strong tag</strong></h1>
 
 
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non tellus
       sapien. Duis id neque diam. Mauris commodo porta sapien vel viverra. Sed
       finibus.
+    cta:
+    section:
+      transition: curve
+      background: primary
+    layout:
+      text_align: center
+      is_mini: true
+  - _bookshop_name: grid/simple
+    content: >-
+      <p class="eyebrow">Eyebrow</p>
+
+
+      <h1 class="h1">Headline with a <strong>strong tag</strong></h1>
+
+
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non tellus
+      sapien. Duis id neque diam. Mauris commodo porta sapien vel viverra. Sed
+      finibus.
+    cta:
+      _bookshop_name: global/cta
+      label: Click Me
+      link:
+      style: primary
+      new_tab: false
+    section:
+      transition: curve
+      background: primary
+    layout:
+      text_align: left
+      is_mini: true
+  - _bookshop_name: grid/side-by-side
+    content: >-
+      <p class="eyebrow">Eyebrow</p>
+
+
+      <h1 class="h1">Headline with a <strong>strong tag</strong></h1>
+
+
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non tellus
+      sapien. Duis id neque diam. Mauris commodo porta sapien vel viverra. Sed
+      finibus.
+    cta:
     image:
       _bookshop_name: global/image
       src: /uploads/pages/altgrid-rays-complete-wide@2x.png
@@ -52,25 +99,11 @@ content_blocks:
       width:
       height:
       loading: lazy
-    cta:
-    grid_items:
-      - content: test
-        image:
-          _bookshop_name: global/image
-          src: /uploads/pages/simpgrid-item-icon-homedepot.svg
-          alt:
-          title:
-          width:
-          height:
-          loading: lazy
-      - content: ''
-        image:
     section:
       transition: curve
       background: primary
     layout:
       image_align: right
-      image_vert: center
       image_width: small
 seo:
   no_index: false
