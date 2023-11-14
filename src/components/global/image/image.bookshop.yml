@@ -16,6 +16,10 @@ spec:
     subtext:
       - key: alt
       - No image alt set
+    metadata:
+      - icon: downloading
+        text:
+          - key: loading
 
 blueprint:
   src:
