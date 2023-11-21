@@ -21,12 +21,12 @@ blueprint:
 
 preview:
 
-_structures:
-  faqs:
-    values:
-      - value:
-          question:
-          answer:
+# _structures:
+#   faqs:
+#     values:
+#       - value:
+#           question:
+#           answer:
 _inputs:
   faqs:
     type: array
