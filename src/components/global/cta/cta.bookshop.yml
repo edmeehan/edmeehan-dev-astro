@@ -15,13 +15,6 @@ spec:
     subtext:
       - key: link
       - No URL
-    metadata:
-      - icon: tab
-        text:
-          - key: new_tab
-      - icon: format_paint
-        text:
-          - key: style
 
 blueprint:
   label: Click Me

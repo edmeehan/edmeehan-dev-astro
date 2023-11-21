@@ -1,6 +1,5 @@
 spec:
   structures:
-    - content_blocks
     - form_block
   label: Select Field
   description: Checkbox, Radio, Combo

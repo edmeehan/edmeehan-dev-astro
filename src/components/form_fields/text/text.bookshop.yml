@@ -1,6 +1,5 @@
 spec:
   structures:
-    - content_blocks
     - form_block
   label: Text Field
   description: Input, Textarea

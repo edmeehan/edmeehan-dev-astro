@@ -1,7 +1,6 @@
 spec:
   structures:
     - content_blocks
-    - page_blocks
   label: Testimonial Cards
   description: Display multiple testimonials in cards
   icon: record_voice_over

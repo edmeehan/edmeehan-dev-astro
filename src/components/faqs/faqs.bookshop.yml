@@ -1,7 +1,6 @@
 spec:
   structures:
     - content_blocks
-    - page_blocks
   label: FAQs
   description:
   icon: quiz

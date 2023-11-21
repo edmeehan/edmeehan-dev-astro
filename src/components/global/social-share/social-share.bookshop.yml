@@ -1,6 +1,5 @@
 spec:
   structures:
-    - content_blocks
   label: Social Share
   description: Common social media share links
   icon: share

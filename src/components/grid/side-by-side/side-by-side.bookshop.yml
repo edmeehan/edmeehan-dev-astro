@@ -1,7 +1,6 @@
 spec:
   structures:
     - content_blocks
-    - page_blocks
   label: Side By Side
   description: Text and an image
   icon: grid_view

@@ -14,7 +14,7 @@ const md = new MarkdownIt({ html: true });
   }
 </style>
 
-<div class:list={['wrapper','mini']} data-text>
+<div class:list={['wrapper',{'mini': layout.is_mini }]} data-text>
   <div class:list={['content', `text-${layout.text_align}`]}>
     { content && <div class="rt" set:html={md.render(content)}></div>}
     { cta && <CTA {...cta} />}

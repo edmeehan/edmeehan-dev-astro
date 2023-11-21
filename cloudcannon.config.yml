@@ -26,8 +26,6 @@ collections_config:
         type: auto
         options:
           structures: _structures.page_blocks
-          empty_type:
-        cascade: true
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
@@ -174,7 +172,6 @@ collections_config:
         options:
           allow_empty: true
           values: _select_data.category
-        cascade: true
     _select_data:
       category:
         - Development
@@ -201,19 +198,14 @@ collection_groups:
 _inputs:
   show_share:
     type: switch
-    cascade: true
   show_comments:
     type: switch
-    cascade: true
   excerpt:
     type: markdown
-    cascade: true
   published:
     type: date
-    cascade: true
   read_time:
     type: number
-    cascade: true
   page_size:
     type: range
     options:
@@ -223,7 +215,6 @@ _inputs:
       empty_type: number
     label: Pagination
     comment: How many pages to display in a pagination set.
-    cascade: true
   loading:
     type: select
     options:
@@ -236,7 +227,6 @@ _inputs:
   hidden:
     type: switch
     label: Draft Mode
-    cascade: true
   content:
     type: markdown
     options:
@@ -259,7 +249,6 @@ _inputs:
       # center: rt-center
       # justify: rt-justify
       undo: true
-    cascade: true
   testimonial:
     type: markdown
     options:
@@ -270,7 +259,6 @@ _inputs:
       image_size_attributes: true
       italic: true
       link: true
-    cascade: true
   blog_uuid:
     label: Blog Post
     type: select
@@ -297,19 +285,15 @@ _inputs:
           - key: page_title
           - No Title
     comment: Set page title, description, canonical, share image, and no follow.
-    cascade: true
   seo.page_title:
     type: auto
     comment: Ideal length is 60-70 characters.
-    cascade: true
   seo.page_description:
     type: auto
     comment: Ideal length is 150-160 characters.
-    cascade: true
   seo.canonical_url:
     type: auto
     comment: Relative paths only.
-    cascade: true
   seo.featured_image:
     type: object
     comment: Open graph image used in social media.
@@ -320,7 +304,6 @@ _inputs:
     comment: >-
       When selected this removes the page from your sitemap and adds the noindex
       robots meta tag
-    cascade: true
   seo.open_graph_type:
     type: select
     options:
@@ -348,7 +331,6 @@ _inputs:
     type: text
   testimonials:
     type: array
-    cascade: true
   testimonials[*]:
     type: select
     options:
@@ -359,7 +341,6 @@ _inputs:
           - key: name
         image:
           - key: image
-    cascade: true
   content_blocks[*].section:
     type: object
     options:
@@ -376,21 +357,18 @@ _inputs:
               - key: transition
     label: Section Styles
     comment: Set the transition and background of section.
-    cascade: true
   content_blocks[*].section.transition:
     type: select
     options:
       allow_empty: true
       values: _select_data.section_transition
     comment: Set the graphic that is displayed between blocks on a page.
-    cascade: true
   content_blocks[*].section.background:
     type: select
     options:
       allow_empty: true
       values: _select_data.section_background
     comment: Set the background of the block on the page.
-    cascade: true
   content_blocks[*].layout:
     type: object
     comment: Set some basic layout of section.
@@ -418,14 +396,12 @@ _inputs:
           - icon: photo_size_select_small
             text:
               - key: is_mini
-    cascade: true
   content_blocks[*].layout.image_align:
     type: select
     options:
       allow_empty: true
       values: _select_data.layout_image_align
     comment: Set the alignment of image.
-    cascade: true
   content_blocks[*].layout.image_vert:
     type: select
     options:
@@ -438,14 +414,12 @@ _inputs:
       allow_empty: true
       values: _select_data.layout_image_width
     comment: Set the width of image.
-    cascade: true
   content_blocks[*].layout.text_align:
     type: select
     options:
       allow_empty: true
       values: _select_data.layout_text_align
     comment: Set the alignment of text.
-    cascade: true
   content_blocks[*].layout.orintation:
     type: select
     options:
@@ -454,7 +428,6 @@ _inputs:
   content_blocks[*].layout.is_mini:
     type: checkbox
     comment: Set the content width to small.
-    cascade: true
 _select_data:
   loading:
     lazy: Lazy

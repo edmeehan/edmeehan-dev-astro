@@ -1,6 +1,5 @@
 spec:
   structures:
-    - content_blocks
   label: Form Builder
   description: Build form with a option of inputs
   icon: dynamic_form

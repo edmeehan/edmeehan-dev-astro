@@ -1,7 +1,6 @@
 spec:
   structures:
     - content_blocks
-    - page_blocks
   label: Alternate Grid
   description: Primary content area with list of secondary items
   icon: grid_view
