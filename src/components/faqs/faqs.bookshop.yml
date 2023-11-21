@@ -33,8 +33,6 @@ _inputs:
     label: Questions & Answers
     options:
       empty_type: array
-  faqs[*]:
-    type: object
   faqs[*].question:
     type: text
   faqs[*].answer:
