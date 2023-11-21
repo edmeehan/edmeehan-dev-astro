@@ -105,7 +105,7 @@ const md = new MarkdownIt({ html: true });
       { content && <div class="rt" set:html={md.render(content)}></div>}
     </header>
     <dl class="faqs">
-      { faqs?.map((item, index) => (
+      { faqs.map((item, index) => (
         <dt role="button" aria-label="Show FAQ answer" class:list={['h3', {active: index === 0}]}>
           <svg><use xlink:href='#caret-right'></use></svg>
           <span>{ item.question }</span>

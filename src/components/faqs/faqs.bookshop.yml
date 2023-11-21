@@ -27,8 +27,12 @@ _structures:
 _inputs:
   faqs:
     type: array
+    label: Questions & Answers
     options:
       structures: _structures.faqs
+      empty_type: array
+  faqs[*]:
+    type: object
   faqs[*].question:
     type: text
   faqs[*].answer:
