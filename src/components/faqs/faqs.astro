@@ -110,7 +110,7 @@ const md = new MarkdownIt({ html: true });
           <svg><use xlink:href='#caret-right'></use></svg>
           <span>{ item.question }</span>
         </dt>
-        <dd class:list={['rt', {active: index === 0}]} set:html={md.render(item.answer)}></dd>
+        <dd class:list={['rt', {active: index === 0}]} set:html={md.render(item?.answer || '')}></dd>
       ))}
     </dl>
   </div>
