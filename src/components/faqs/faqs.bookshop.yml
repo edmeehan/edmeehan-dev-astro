@@ -8,7 +8,11 @@ spec:
 
 blueprint:
   content:
-  faqs: []
+  faqs:
+    - question: Donec tempor turpis id egestas vestibulum.
+      answer: >-
+        *Quisque facilisis, enim non interdum auctor,* felis nibh pellentesque diam, eget dictum massa tellus ut mi.
+        Morbi rutrum luctus orci vel interdum. Donec tempor turpis id egestas vestibulum. Pellentesque dictum elit a diam mollis tempus. Etiam tempor fringilla nunc nec egestas.
   section:
     transition: curve
     background: primary
@@ -21,9 +25,8 @@ _structures:
   faqs:
     values:
       - value:
-          question: 
+          question:
           answer:
-
 _inputs:
   faqs:
     type: array
