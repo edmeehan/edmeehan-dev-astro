@@ -8,7 +8,7 @@ spec:
 
 blueprint:
   content:
-  faqs:
+  faqs: []
   section:
     transition: curve
     background: primary
@@ -37,3 +37,11 @@ _inputs:
     type: text
   faqs[*].answer:
     type: markdown
+    options:
+      bold: true
+      italic: true
+      strike: true
+      bulletedlist: true
+      numberedlist: true
+      undo: true
+      redu: true
