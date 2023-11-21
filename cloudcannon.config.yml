@@ -21,11 +21,6 @@ collections_config:
       - visual
       - data
       - source
-    _inputs:
-      content_blocks:
-        type: auto
-        options:
-          structures: _structures.page_blocks
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
