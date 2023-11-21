@@ -32,7 +32,6 @@ _inputs:
     type: array
     label: Questions & Answers
     options:
-      structures: _structures.faqs
       empty_type: array
   faqs[*]:
     type: object
