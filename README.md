@@ -13,6 +13,8 @@
 - [ ] faqs
 
 ## Content Blocks
+Primary layout components similar to Shopify sections. These blocks stack vertically to make up a page.
+
 | Name | Path | Details | BS |
 | --- | --- | --- | --- |
 | [Splash Hero](src/components/hero/splash/) | hero/splash | Above the fold content with a text area and an image. | ✔ |
@@ -26,18 +28,19 @@
 | [FAQs](src/components/faqs/) | faqs | Frequently Ask Questions with toggle to show answer. | ✔ |
 
 ## Components
+Various components used in content blocks or stand alone.
 
 | Name | Path | Details | BS |
 | --- | --- | --- | --- |
 | [Post Card](src/components/card/post.astro) | card/post | A single Blog or Project entry | |
 | [Testimonial Card](src/components/card/testimonial.astro) | card/testimonial | A single testimonial |
-| [Select Field](src/components/form_fields/select/) | form_fields/select | When one or many options can be selected from a list, used in select, checkbox, and radio inputs. | ✔ |
+| [Select Field](src/components/form_fields/select/) | form_fields/select | Options can be selected from a list, used in select, checkbox, and radio inputs. | ✔ |
 | [Text Field](src/components/form_fields/text/) | form_fields/text | Used to display a text input or textarea. | ✔ |
 | [CTA](src/components/global/cta/) | global/cta | Call to action, or just a fancy button. | ✔ |
 | [Image](src/components/global/image/) | global/image | Used by content sections to display image. | ✔ |
 | [Link](src/components/global/link/) | global/link | Basic link | ✔ |
 | [Social Share](src/components/global/social-share/) | global/social-share | Share this URL actions for twitter, facebook, etc. | ✔ |
-| [Media Caption](src/components/global/media-caption.astro) | global/media-caption | styled caption text for media | |
+| [Media Caption](src/components/global/media-caption.astro) | global/media-caption | Styled caption text for media | |
 | [Layout Footer](src/components/layout/footer.astro) | layout/footer | Global site footer | |
 | [Layout Section](src/components/layout/section.astro) | layout/section | Wraps content blocks | |
 | [Layout Header](src/components/layout/header.astro) | layout/header | Global site header | |
