@@ -24,7 +24,6 @@ blueprint:
     background: primary
   layout:
     text_align: center
-    is_mini: true
 
 preview:
 

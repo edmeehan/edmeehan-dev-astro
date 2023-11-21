@@ -220,7 +220,6 @@ content_blocks:
       background: loud
     layout:
       text_align: center
-      is_mini: true
   - _bookshop_name: cards/posts
     content: <h5 class="h3">Explore some of the projects and posts I've published</h5>
     section:

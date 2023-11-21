@@ -476,7 +476,7 @@ _structures:
       - value:
           content:
           image: bookshop:global/image
-  page_blocks:
+  content_blocks:
     style: modal
 _editables: {}
 data_config:

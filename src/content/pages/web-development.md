@@ -112,7 +112,6 @@ content_blocks:
       background: loud
     layout:
       text_align: center
-      is_mini: true
   - _bookshop_name: grid/alternate
     image:
       src: /uploads/pages/altgrid-rays-complete-wide@2x.png
@@ -248,7 +247,6 @@ content_blocks:
       background: primary
     layout:
       text_align: center
-      is_mini: true
 seo:
   no_index: false
   page_title: Web development, custom JAMstack & Shopify theme development

@@ -5,31 +5,37 @@ const md = new MarkdownIt({ html: true });
 ---
 <style lang="scss" is:global>
   [data-faqs] {
-    padding: 4.5rem 0;
+    @extend %primary-wrapper;
+
+    .wrapper {
+      padding: 4.5rem 0;
+    }
 
     @include media-tablet {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
+      .wrapper {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
 
-      &.wrapper--left {
-        flex-direction: row;
-      }
-      &.wrapper--right {
-        flex-direction: row-reverse
-      }
-      &.wrapper--top {
-        flex-direction: top;
-        max-width: 34rem;
-        margin: 0 auto;
+        &.wrapper--left {
+          flex-direction: row;
+        }
+        &.wrapper--right {
+          flex-direction: row-reverse
+        }
+        &.wrapper--top {
+          flex-direction: top;
+          max-width: 34rem;
+          margin: 0 auto;
+        }
       }
     }
 
-    > dl {
+    .faqs {
       margin: 0;
 
       dt {
-        // border-bottom: solid 1px ${({theme}) => theme[`color_${theme.slice_style}_lite`]};
+        border-bottom: solid 1px transparent;
         padding: .5em .5em .5em 1.3rem;
         position: relative;
         cursor: pointer;
@@ -48,13 +54,13 @@ const md = new MarkdownIt({ html: true });
 
         span {
           padding-left: 0;
-          transition: padding-left 400ms;
+          transition: padding-left 200ms;
         }
 
         svg {
-          transition: transform 400ms;
+          transition: transform 200ms;
           transform: rotate(0deg);
-          // fill: ${({theme}) => theme.color_text_default};
+          fill: $color_text_default;
           width: 1.2rem;
           height: 1.2rem;
           position: absolute;
@@ -63,8 +69,7 @@ const md = new MarkdownIt({ html: true });
         }
       }
       dd {
-        transition: max-height 800ms ease-in-out;
-        // background-color: ${({theme}) => theme[`color_${theme.slice_style}_transition`]};
+        transition: max-height 500ms ease-in-out;
         margin: 0;
         padding: 0 1.3rem;
         max-height: 0;
@@ -76,18 +81,48 @@ const md = new MarkdownIt({ html: true });
       }
     }
   }
+
+  [data-layout-section].section--primary [data-faqs] .faqs{
+    dt {
+      border-bottom-color: $color_primary_lite;
+    }
+    dd {
+      background-color: $color_primary_transition;
+    }
+  }
+  [data-layout-section].section--secondary [data-faqs] .faqs{
+    dt {
+      border-bottom-color: $color_secondary_lite;
+    }
+    dd {
+      background-color: $color_secondary_transition;
+    }
+  }
 </style>
-<div class:list={[`wrapper--${layout.orintation}`]} data-faqs>
-  <header>
-    { content && <div class="rt" set:html={md.render(content)}></div>}
-  </header>
-  <dl>
-    { faqs.map((item) => (
-      <dt role="button" aria-label="Show FAQ answer" class="h3">
-        <svg><use xlink:href='#caret-right'></use></svg>
-        <span>{ item.question }</span>
-      </dt>
-      <dd class="" set:html={md.render(item.answer)}></dd>
-    ))}
-  </dl>
+<div data-faqs>
+  <div class:list={['wrapper',`wrapper--${layout.orintation}`]}>
+    <header>
+      { content && <div class="rt" set:html={md.render(content)}></div>}
+    </header>
+    <dl class="faqs">
+      { faqs?.map((item, index) => (
+        <dt role="button" aria-label="Show FAQ answer" class:list={['h3', {active: index === 0}]}>
+          <svg><use xlink:href='#caret-right'></use></svg>
+          <span>{ item.question }</span>
+        </dt>
+        <dd class:list={['rt', {active: index === 0}]} set:html={md.render(item.answer)}></dd>
+      ))}
+    </dl>
+  </div>
 </div>
+<script>
+  const faqs = document.querySelector('[data-faqs]');
+  faqs.addEventListener('click', (e) => {
+    const dt = e.target?.closest('dt');
+    if (dt) {
+      const dd = dt.nextElementSibling;
+      dt.classList.toggle('active');
+      dd.classList.toggle('active');
+    }
+  });
+</script>

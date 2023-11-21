@@ -108,7 +108,6 @@ content_blocks:
       background: loud
     layout:
       text_align: center
-      is_mini: true
   - _bookshop_name: faqs
     content: >-
       <h4 class="h2"><strong>Frequently Asked Questions</strong></h4>
@@ -145,7 +144,6 @@ content_blocks:
       background: primary
     layout:
       text_align: center
-      is_mini: true
 seo:
   no_index: false
   page_title: Google Analytics custom tracking and consulting
