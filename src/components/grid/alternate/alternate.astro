@@ -112,7 +112,12 @@ const md = new MarkdownIt({ html: true });
                 : '(max-width: 767px) 50vw,(max-width: 1650px) 24vw, 386px'
               }
             />}
-            <div class="rt" set:html={md.render(item.content)}></div>
+            { item.content && (
+              <div
+                class:list={['rt']}
+                set:html={md.render(item.content)}
+              ></div>
+            )}
           </li>
         )) }
       </ul>
