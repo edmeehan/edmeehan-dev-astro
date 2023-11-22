@@ -28,7 +28,6 @@ preview:
 _inputs:
   faqs:
     type: array
-    label: Questions & Answers
     options:
       preview:
         icon: quiz
