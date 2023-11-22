@@ -1,11 +1,9 @@
 spec:
   structures:
     - grid_item_default
-  label: Default Grid Item
+  label: Grid Item
   description: Image and text
   icon: grid_view
-  tags:
-    - grid
 
 blueprint:
   content: >-
@@ -18,6 +16,3 @@ blueprint:
 preview:
 
 _inputs:
-  content:
-    options:
-      initial_height: 180
