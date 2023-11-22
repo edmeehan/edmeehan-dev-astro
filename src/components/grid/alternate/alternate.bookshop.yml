@@ -39,6 +39,8 @@ _inputs:
       structures: _structures.simple_item
   grid_items[*].image:
     type: object
+    options:
+      structures: _structures.image
   grid_items[*].content:
     options:
       initial_height: 180
