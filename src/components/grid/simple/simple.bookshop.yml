@@ -33,9 +33,4 @@ _inputs:
     type: array
     options:
       empty_type: array
-      structures: _structures.simple_item
-  grid_items[*].image:
-    type: object
-  grid_items[*].content:
-    options:
-      initial_height: 180
+      structures: _structures.grid_item_default

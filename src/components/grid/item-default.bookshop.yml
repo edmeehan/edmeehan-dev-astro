@@ -1,0 +1,23 @@
+spec:
+  structures:
+    - grid_item_default
+  label: Default Grid Item
+  description: Image and text
+  icon: grid_view
+  tags:
+    - grid
+
+blueprint:
+  content: >-
+      ### Headline with a strong tag
+
+
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  image: bookshop:global/image
+
+preview:
+
+_inputs:
+  content:
+    options:
+      initial_height: 180

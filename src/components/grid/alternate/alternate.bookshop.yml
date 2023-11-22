@@ -20,13 +20,7 @@ blueprint:
       finibus.
   image: bookshop:global/image
   cta: bookshop:global/cta
-  grid_items:
-    - image: bookshop:global/image
-      content: >-
-          ### Headline
-
-
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  grid_items: []
   section:
     transition: curve
     background: primary
@@ -40,8 +34,6 @@ preview:
 _inputs:
   grid_items:
     type: array
-  grid_items[*].image:
-    type: object
-  grid_items[*].content:
     options:
-      initial_height: 180
+      empty_type: array
+      structures: _structures.grid_item_default

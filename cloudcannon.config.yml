@@ -471,11 +471,6 @@ _structures:
         value:
           _type: blog
           blog_uuid:
-  simple_item:
-    values:
-      - value:
-          content:
-          image:
   content_blocks:
     style: modal
 _editables: {}
