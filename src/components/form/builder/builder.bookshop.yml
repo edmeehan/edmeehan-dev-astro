@@ -10,15 +10,19 @@ blueprint:
   name:
   action:
   submit: Submit Form
-  fields: [bookshop:structure:form_block]
+  fields: [bookshop:structure:form_block]!(form_fields/text)
 
 preview:
 
 _inputs:
   name:
     type: text
+    comment: 'Name of the form - Netlify Forms'
   action:
     type: url
+    label: Success URL
+    comment: 'Redirect location upon success - Netlify Forms'
   submit:
     type: text
+    label: Submit Button Text
   

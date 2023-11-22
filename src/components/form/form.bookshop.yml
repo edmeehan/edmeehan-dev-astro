@@ -15,7 +15,7 @@ blueprint:
 
 
       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  form: bookshop:form/builder
+  form: bookshop:form/builder!
 preview:
 
 _inputs:
