@@ -475,7 +475,7 @@ _structures:
     values:
       - value:
           content:
-          image: bookshop:global/image
+          image:
   content_blocks:
     style: modal
 _editables: {}

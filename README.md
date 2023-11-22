@@ -10,7 +10,7 @@
 - [ ] cards/testimonials
 - [ ] cards/posts
 - [ ] form
-- [ ] faqs
+- [x] faqs
 
 ## Content Blocks
 Primary layout components similar to Shopify sections. These blocks stack vertically to make up a page.
