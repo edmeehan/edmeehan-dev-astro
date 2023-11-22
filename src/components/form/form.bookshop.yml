@@ -7,7 +7,15 @@ spec:
   tags:
 
 blueprint:
+  content: >-
+      <p class="eyebrow">Form</p>
 
+
+      ### Headline
+
+
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  form: bookshop:form/builder
 preview:
 
 _inputs:

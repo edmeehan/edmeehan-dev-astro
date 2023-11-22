@@ -5,7 +5,7 @@
 - [x] hero/splash
 - [x] grid/alternate
 - [x] grid/simple
-- [ ] grid/side-by-side
+- [x] grid/side-by-side
 - [x] text
 - [ ] cards/testimonials
 - [ ] cards/posts

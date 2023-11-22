@@ -1,12 +1,24 @@
 spec:
   structures:
+    - form_builder
   label: Form Builder
   description: Build form with a option of inputs
   icon: dynamic_form
   tags:
 
 blueprint:
+  name:
+  action:
+  submit: Submit Form
+  fields: [bookshop:structure:form_block]
 
 preview:
 
 _inputs:
+  name:
+    type: text
+  action:
+    type: url
+  submit:
+    type: text
+  
