@@ -30,13 +30,7 @@ _inputs:
     type: array
     options:
       preview:
-        icon: quiz
-        text:
-          - key: question
-          - No question set yet
-        subtext:
-          - key: answer
-          - No answer set yet
+        icon: false
   faqs[*].question:
     type: text
   faqs[*].answer:
