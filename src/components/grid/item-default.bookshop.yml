@@ -7,7 +7,7 @@ spec:
 
 blueprint:
   content: >-
-      ### Headline with a strong tag
+      ### Headline
 
 
       Lorem ipsum dolor sit amet, consectetur adipiscing elit.

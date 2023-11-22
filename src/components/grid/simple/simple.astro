@@ -20,22 +20,17 @@ const md = new MarkdownIt({ html: true });
       padding-left: 0;
       margin: 0;
       list-style: none;
-      row-gap: 1.7rem;
-      column-gap: 8%;
+      gap: 8%;
 
       &-left {
         @extend .list;
-        justify-content: flex-start;
+        text-align: left;
       }
 
+      &-center,
       &-right {
         @extend .list;
-        justify-content: flex-end;
-      }
-
-      &-center {
-        @extend .list;
-        justify-content: center;
+        text-align: center;
       }
     }
     li {

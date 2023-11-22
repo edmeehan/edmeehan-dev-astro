@@ -439,6 +439,9 @@ _select_data:
     left: Left
     center: Center
     right: Right
+  layout_image:
+    left: Left
+    right: Right
   layout_image_vert:
     flex-start: Top
     center: Center
