@@ -4,7 +4,7 @@
 
 - [x] hero/splash
 - [x] grid/alternate
-- [ ] grid/simple
+- [x] grid/simple
 - [ ] grid/side-by-side
 - [x] text
 - [ ] cards/testimonials

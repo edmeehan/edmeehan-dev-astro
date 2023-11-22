@@ -437,10 +437,6 @@ _select_data:
     loud: Loud
   layout_image_align:
     left: Left
-    center: Center
-    right: Right
-  layout_image:
-    left: Left
     right: Right
   layout_image_vert:
     flex-start: Top

@@ -76,15 +76,15 @@ content_blocks:
       transition: curve
       background: primary
     layout:
-      image_align: left
+      image_align: center
       image_vert: flex-end
       image_width: small
-  - _bookshop_name: grid/simple
+  - _bookshop_name: grid/side-by-side
     content: >-
-      <p class="eyebrow">Simple Grid</p>
+      <p class="eyebrow">Side by Side</p>
 
 
-      <h1 class="h1">Headline with a <strong>strong tag</strong></h1>
+      # Headline with a **strong tag**
 
 
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non tellus
@@ -96,52 +96,20 @@ content_blocks:
       link:
       style: primary
       new_tab: false
-    grid_items:
-      - _bookshop_name: grid/item-default
-        content: |-
-          ### Headline with a strong tag
-
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        image:
-          _bookshop_name: global/image
-          src: /uploads/pages/altgrid-edhead-complete@2x.png
-          alt:
-          title:
-          width:
-          height:
-          loading: lazy
-      - _bookshop_name: grid/item-default
-        content: |-
-          ### Headline with a strong tag
-
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        image:
-          _bookshop_name: global/image
-          src: /uploads/pages/altgrid-edhead-complete@2x.png
-          alt:
-          title:
-          width:
-          height:
-          loading: lazy
-      - _bookshop_name: grid/item-default
-        content: |-
-          ### Headline with a strong tag
-
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        image:
-          _bookshop_name: global/image
-          src: /uploads/pages/altgrid-edhead-complete@2x.png
-          alt:
-          title:
-          width:
-          height:
-          loading: lazy
+    image:
+      _bookshop_name: global/image
+      src: /uploads/pages/altgrid-rays-complete-wide@2x.png
+      alt:
+      title:
+      width:
+      height:
+      loading: lazy
     section:
       transition: curve
       background: primary
     layout:
-      text_align: right
-      is_mini: true
+      image_align: left
+      image_width: small
 seo:
   no_index: false
   page_title:
