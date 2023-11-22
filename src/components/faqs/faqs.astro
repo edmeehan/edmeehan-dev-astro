@@ -106,11 +106,11 @@ const md = new MarkdownIt({ html: true });
     </header>
     <dl class="faqs">
       { faqs.map((item, index) => (
-        <dt role="button" aria-label="Show FAQ answer" class:list={['h3', {active: index === 0}]}>
+        <dt role="button" aria-label="Show FAQ answer" class:list={['h3', {active: index === 0 || ENV_BOOKSHOP_LIVE}]}>
           <svg><use xlink:href='#caret-right'></use></svg>
           <span>{ item.question || 'This is an empty answer' }</span>
         </dt>
-        <dd class:list={['rt', {active: index === 0}]} set:html={md.render(item?.answer || 'This is a empty question')}></dd>
+        <dd class:list={['rt', {active: index === 0 || ENV_BOOKSHOP_LIVE}]} set:html={md.render(item?.answer || 'This is a empty question')}></dd>
       ))}
     </dl>
   </div>

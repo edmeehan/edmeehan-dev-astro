@@ -29,14 +29,15 @@ _inputs:
   faqs:
     type: array
     label: Questions & Answers
-    preview:
-      icon: quiz
-      text:
-        - key: question
-        - No question set yet
-      subtext:
-        - key: answer
-        - No answer set yet
+    options:
+      preview:
+        icon: quiz
+        text:
+          - key: question
+          - No question set yet
+        subtext:
+          - key: answer
+          - No answer set yet
   faqs[*].question:
     type: text
   faqs[*].answer:
