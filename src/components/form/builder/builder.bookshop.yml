@@ -10,7 +10,7 @@ blueprint:
   name:
   action:
   submit: Submit Form
-  fields: [bookshop:structure:form_block]!(form_fields/text)
+  fields: [bookshop:structure:form_block]
 
 preview:
 

@@ -7,6 +7,11 @@ spec:
   tags:
 
 blueprint:
+  label:
+  type:
+  name:
+  required:
+  options:
 
 preview:
 
