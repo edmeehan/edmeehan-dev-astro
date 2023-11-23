@@ -25,91 +25,35 @@ content_blocks:
       background: primary
     layout:
       text_align: center
-  - _bookshop_name: grid/alternate
-    content: >-
-      <p class="eyebrow">Alternate Grid</p>
+  - _bookshop_name: form
+    content: |-
+      <p class="eyebrow">Form</p>
 
+      ### Headline
 
-      <h1 class="h1">Headline with a <strong>strong tag</strong></h1>
-
-
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non tellus
-      sapien. Duis id neque diam. Mauris commodo porta sapien vel viverra. Sed
-      finibus.
-    image:
-      _bookshop_name: global/image
-      src: /uploads/placeholders/splash_lg.png
-      alt:
-      title:
-      width:
-      height:
-      loading: lazy
-    cta:
-    grid_items:
-      - _bookshop_name: grid/item-default
-        content: |-
-          ### Headline with a **strong tag**
-
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        image:
-          _bookshop_name: global/image
-          src: /uploads/pages/altgrid-edhead-complete@2x.png
-          alt:
-          title:
-          width:
-          height:
-          loading: lazy
-      - _bookshop_name: grid/item-default
-        content: |-
-          ### Headline with a strong tag
-
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        image:
-          _bookshop_name: global/image
-          src: /uploads/pages/altgrid-edhead-complete@2x.png
-          alt:
-          title:
-          width:
-          height:
-          loading: lazy
-    section:
-      transition: curve
-      background: primary
-    layout:
-      image_align: center
-      image_vert: flex-end
-      image_width: small
-  - _bookshop_name: grid/side-by-side
-    content: >-
-      <p class="eyebrow">Side by Side</p>
-
-
-      # Headline with a **strong tag**
-
-
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non tellus
-      sapien. Duis id neque diam. Mauris commodo porta sapien vel viverra. Sed
-      finibus.
-    cta:
-      _bookshop_name: global/cta
-      label: Click Me
-      link:
-      style: primary
-      new_tab: false
-    image:
-      _bookshop_name: global/image
-      src: /uploads/pages/altgrid-rays-complete-wide@2x.png
-      alt:
-      title:
-      width:
-      height:
-      loading: lazy
-    section:
-      transition: curve
-      background: primary
-    layout:
-      image_align: left
-      image_width: small
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    form:
+      _bookshop_name: form/builder
+      name:
+      action:
+      submit: Ready to get started!
+      fields:
+        - _bookshop_name: form_fields/text
+          label: This is the label
+          type: week
+          placeholder: Placeholder text
+          name:
+          required: true
+        - _bookshop_name: form_fields/select
+          label: This is the label
+          type: select
+          name: test
+          required: false
+          options:
+            - label: Option 1
+              value: option-1
+            - label: Option 2
+              value: option-2
 seo:
   no_index: false
   page_title:

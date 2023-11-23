@@ -1,5 +1,21 @@
 @import "mixins";
 
+%default-input {
+  display: block;
+  width: 100%;
+  background: rgba($color_text_default, .07);
+  border-bottom-color: $color_text_default;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  padding: 0 .5em;
+  line-height: 2em;
+  height: 2em;
+  color: $color_text_form_input;
+  font-weight: $text_weight_bold;
+  box-sizing: border-box;
+}
+
 %primary-wrapper {
   max-width: $layout_max_width;
   margin: 0 auto;

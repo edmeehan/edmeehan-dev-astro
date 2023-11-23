@@ -3,7 +3,7 @@ const { label, type, name, required, options } = Astro.props;
 ---
 <style lang="scss" is:global>
   [data-form-fields-select] {
-    .checkbox {
+    .radio-check {
       display: flex;
       margin-left: .25rem;
       input {
@@ -18,18 +18,30 @@ const { label, type, name, required, options } = Astro.props;
         padding-left: .45rem;
       }
     }
+    select {
+      @extend %default-input;
+    }
   }
 </style>
 <div class="form-input" data-form-fields-select>
-  { type === 'checkbox' && (
-    <fieldset class="checkbox-group">
+  { type === 'checkbox' || type === 'radio' && (
+    <fieldset>
       <legend>{ label }{ required && (<span class="required">*</span>)}</legend>
       { options.map((item, index) => (
-        <div class="checkbox">
-          <input type="checkbox" id={`${name}_${index}`} name={name} value={item.value} />
+        <div class="radio-check">
+          <input type={type} id={`${name}_${index}`} name={name} value={item.value} />
           <label for={`${name}_${index}`}>{item.label}</label>
         </div>
       ))}
     </fieldset>
+  )}
+  { type === 'select' && (
+    <label for={name}>{ label }{ required && (<span class="required">*</span>)}</label>
+    <select id={name} name={name}>
+      <option value="">Please choose an option</option>
+      { options.map((item, index) => (
+        <option value={item.value}>{item.label}</option>
+      ))}
+    </select>
   )}
 </div>

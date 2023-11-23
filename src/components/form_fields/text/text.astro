@@ -4,21 +4,12 @@ const { label, type, placeholder, name, required } = Astro.props;
 <style lang="scss" is:global>
   [data-form-fields-text] {
     input {
-      display: block;
-      width: 100%;
-      background: rgba($color_text_default, .07);
-      border-bottom-color: $color_text_default;
-      border-left: none;
-      border-right: none;
-      border-top: none;
-      padding: 0 .5em;
-      line-height: 2em;
-      height: 2em;
-      color: $color_text_form_input;
-      font-weight: $text_weight_bold;
-      box-sizing: border-box;
+      @extend %default-input;
 
       &::placeholder {
+        color: rgba($color_text_form_placeholder, .5);
+      }
+      &::-webkit-calendar-picker-indicator {
         color: rgba($color_text_form_placeholder, .5);
       }
     }
