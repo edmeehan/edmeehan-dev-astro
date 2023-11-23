@@ -46,7 +46,7 @@ content_blocks:
           required: true
         - _bookshop_name: form_fields/select
           label: This is the label
-          type: select
+          type: checkbox
           name: test
           required: false
           options:

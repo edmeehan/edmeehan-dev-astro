@@ -24,7 +24,7 @@ const { label, type, name, required, options } = Astro.props;
   }
 </style>
 <div class="form-input" data-form-fields-select>
-  { type === 'checkbox' || type === 'radio' && (
+  { (type === 'checkbox' || type === 'radio') && (
     <fieldset>
       <legend>{ label }{ required && (<span class="required">*</span>)}</legend>
       { options.map((item, index) => (
