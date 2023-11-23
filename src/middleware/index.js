@@ -1,4 +1,15 @@
 import { sequence } from 'astro:middleware';
+import { getCollection } from "astro:content";
+
+async function collections(_, next) {
+  const blog = await getCollection('blog');
+  const project = await getCollection('projects');
+  _.locals.collections = {
+    blog,
+    project
+  };
+  return next();
+}
 
 // async function imgix(_, next) {
 //   const response = await next();
@@ -10,4 +21,4 @@ import { sequence } from 'astro:middleware';
 //   });
 // }
 
-// export const onRequest = sequence(imgix);
+export const onRequest = sequence(collections);
