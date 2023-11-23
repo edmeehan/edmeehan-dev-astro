@@ -32,8 +32,8 @@ Various components used in content blocks or stand alone.
 
 | Name | Path | Details | BS |
 | --- | --- | --- | --- |
-| [Post Card](src/components/card/post.astro) | card/post | A single Blog or Project entry | |
-| [Testimonial Card](src/components/card/testimonial.astro) | card/testimonial | A single testimonial |
+| [Post Card](src/components/cards/post.astro) | cards/post | A single Blog or Project entry | |
+| [Testimonial Card](src/components/cards/testimonial.astro) | cards/testimonial | A single testimonial |
 | [Select Field](src/components/form_fields/select/) | form_fields/select | Options can be selected from a list, used in select, checkbox, and radio inputs. | ✔ |
 | [Text Field](src/components/form_fields/text/) | form_fields/text | Used to display a text input or textarea. | ✔ |
 | [CTA](src/components/global/cta/) | global/cta | Call to action, or just a fancy button. | ✔ |

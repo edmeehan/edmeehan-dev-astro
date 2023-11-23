@@ -1,7 +1,7 @@
 ---
 import MarkdownIt from 'markdown-it';
 import testimonialsData from 'data/testimonials.json';
-import Testimonial from 'src/components/card/testimonial.astro';
+import Testimonial from 'src/components/cards/testimonial.astro';
 const { content, testimonials } = Astro.props;
 const md = new MarkdownIt({ html: true });
 ---
@@ -28,10 +28,10 @@ const md = new MarkdownIt({ html: true });
       justify-content: center;
       gap: 2em;
 
-      @include media-tablet {
-        column-gap: 5%;
-        row-gap: 2em;
-      }
+      // @include media-tablet {
+      //   column-gap: 5%;
+      //   row-gap: 2em;
+      // }
 
       > li {
         @include media-tablet {

@@ -2,7 +2,7 @@
 import MarkdownIt from 'markdown-it';
 import Image from 'src/components/global/image/image.astro';
 import CTA from 'src/components/global/cta/cta.astro';
-const { content, cta, section, layout, grid_items } = Astro.props;
+const { content, cta, layout, grid_items } = Astro.props;
 const md = new MarkdownIt({ html: true });
 ---
 <style lang="scss" is:global>
@@ -25,12 +25,19 @@ const md = new MarkdownIt({ html: true });
       &-left {
         @extend .list;
         text-align: left;
+        justify-content: flex-start
       }
 
-      &-center,
-      &-right {
+      &-center {
         @extend .list;
         text-align: center;
+        justify-content: center;
+      }
+
+      &-right {
+        @extend .list;
+        text-align: right;
+        justify-content: flex-end;
       }
     }
     li {

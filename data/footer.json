@@ -45,19 +45,20 @@
     }
   ],
   "_inputs": {
-    "story_image": {
-      "type": "object",
-      "options": {
-        "structures": "_structures.image"
-      }
-    },
     "story": {
       "type": "markdown",
       "options": {
         "bold": true,
-        "format": "p div",
+        "format": "p div h4 h5 h6",
         "italic": true,
-        "link": true
+        "link": true,
+        "strike": true,
+        "subscript": true,
+        "superscript": true,
+        "image": true,
+        "image_size_attributes": true,
+        "undo": true,
+        "redo": true
       }
     },
     "small_print": {

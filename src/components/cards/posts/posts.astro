@@ -1,6 +1,6 @@
 ---
 import MarkdownIt from 'markdown-it';
-import Card from "src/components/card/post.astro";
+import Card from "src/components/cards/post.astro";
 const { content, cards, section } = Astro.props;
 const md = new MarkdownIt({ html: true });
 ---
@@ -27,10 +27,10 @@ const md = new MarkdownIt({ html: true });
       justify-content: center;
       gap: 2em;
 
-      @include media-tablet {
-        column-gap: 5%;
-        row-gap: 2em;
-      }
+      // @include media-tablet {
+      //   column-gap: 5%;
+      //   row-gap: 2em;
+      // }
 
       > li {
         @include media-tablet {
