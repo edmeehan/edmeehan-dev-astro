@@ -18,7 +18,7 @@ const {
     published,
     post_image
   } = {}
-} = post;
+} = post || {};
 const { src: post_image_src = '/uploads/blog/5-reasons-for-gatsby.jpg'} = post_image || {};
 const article_url = `/${collection}/${slug}/`;
 const srcset = [300,500,787,1000,1574].map(item => `${imgix_article_card(post_image_src, item)} ${item}w`).join(',');
