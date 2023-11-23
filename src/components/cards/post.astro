@@ -2,12 +2,12 @@
 import MarkdownIt from 'markdown-it';
 import {dateFormatter,imgix_article_card} from 'src/shared/utilities.js';
 const {show_excerpt,blog_uuid,project_uuid} = Astro.props;
-const {collections} = Astro.locals || {collections: {blog: [], project: []}};
+const {collections} = Astro.locals || {collections: {}};
 const md = new MarkdownIt({ html: true });
 
 const post_type = !!blog_uuid ? 'blog' : !!project_uuid ? 'project' : null;
 const uuid = post_type === 'blog' ? blog_uuid : post_type === 'project' ? project_uuid : null;
-const post = collections[post_type].find(({ data }) => data.uuid === uuid) || {};
+const post = (collections[post_type] || []).find(({ data }) => data.uuid === uuid);
 const {
   slug = '',
   collection = '',
@@ -18,7 +18,7 @@ const {
     published,
     post_image
   } = {}
-} = {}; //post;
+} = post;
 const { src: post_image_src = '/uploads/blog/5-reasons-for-gatsby.jpg'} = post_image || {};
 const article_url = `/${collection}/${slug}/`;
 const srcset = [300,500,787,1000,1574].map(item => `${imgix_article_card(post_image_src, item)} ${item}w`).join(',');
