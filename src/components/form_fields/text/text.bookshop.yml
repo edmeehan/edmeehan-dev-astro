@@ -21,22 +21,23 @@ _inputs:
   type:
     select:
       options:
-        - text
-        - textarea
-        - email
-        - tel
-        - url
-        - date
-        - time
-        - datetime-local
-        - month
-        - week
-        - color
-        - password
+        values:
+          - text
+          - textarea
+          - email
+          - tel
+          - url
+          - date
+          - time
+          - datetime-local
+          - month
+          - week
+          - color
+          - password
   placeholder:
     type: text
   name:
     type: text
-    comment: 'Name of the field - Netlify Forms'
+    comment: Name of the field - Netlify Forms
   required:
-    type: checkbox'
+    type: switch

@@ -12,7 +12,31 @@ blueprint:
   name:
   required:
   options:
+    - label: Option 1
+      value: option-1
+    - label: Option 2
+      value: option-2
 
 preview:
 
 _inputs:
+  label:
+    type: text
+  type:
+    select:
+      options:
+        values:
+          - radio
+          - checkbox
+          - select
+  name:
+    type: text
+    comment: Name of the field - Netlify Forms
+  required:
+    type: switch
+  options:
+    type: array
+  options[*].label:
+    type: text
+  options[*].value:
+    type: text
