@@ -8,7 +8,10 @@ spec:
     - cards
 
 blueprint:
-  content:
+  content: >-
+      <p class="eyebrow">Posts</p>
+      <h4 class="h3">Headline here</h4>
+
   cards: []
   section:
     transition: curve

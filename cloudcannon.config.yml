@@ -324,18 +324,6 @@ _inputs:
     type: text
   post_image.title:
     type: text
-  testimonials:
-    type: array
-  testimonials[*]:
-    type: select
-    options:
-      value_key: uuid
-      values: data.testimonials
-      preview:
-        text:
-          - key: name
-        image:
-          - key: image
   content_blocks[*].section:
     type: object
     options:

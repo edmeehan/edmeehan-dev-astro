@@ -8,8 +8,17 @@ spec:
     - cards
 
 blueprint:
-  content:
-  testimonials:
+  content: >-
+      <p class="eyebrow">Testimonials</p>
+
+
+      <h2 class="h1">Headline here</h2>
+
+
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non tellus
+      sapien. Duis id neque diam. Mauris commodo porta sapien vel viverra. Sed
+      finibus.
+  testimonials: []
   section:
     transition: curve
     background: primary
@@ -17,3 +26,15 @@ blueprint:
 preview:
 
 _inputs:
+  testimonials:
+    type: array
+  testimonials[*]:
+    type: select
+    options:
+      value_key: uuid
+      values: data.testimonials
+      preview:
+        text:
+          - key: name
+        image:
+          - key: image
