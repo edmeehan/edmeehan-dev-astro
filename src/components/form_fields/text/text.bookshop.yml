@@ -19,21 +19,21 @@ _inputs:
   label:
     type: text
   type:
-    select:
-      options:
-        values:
-          - text
-          - textarea
-          - email
-          - tel
-          - url
-          - date
-          - time
-          - datetime-local
-          - month
-          - week
-          - color
-          - password
+    type: select
+    options:
+      values:
+        - text
+        - textarea
+        - email
+        - tel
+        - url
+        - date
+        - time
+        - datetime-local
+        - month
+        - week
+        - color
+        - password
   placeholder:
     type: text
   name:

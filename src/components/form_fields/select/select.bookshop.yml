@@ -23,12 +23,12 @@ _inputs:
   label:
     type: text
   type:
-    select:
-      options:
-        values:
-          - radio
-          - checkbox
-          - select
+    type: select
+    options:
+      values:
+        - radio
+        - checkbox
+        - select
   name:
     type: text
     comment: Name of the field - Netlify Forms
