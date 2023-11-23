@@ -9,7 +9,7 @@
 - [x] text
 - [ ] cards/testimonials
 - [ ] cards/posts
-- [ ] form
+- [x] form
 - [x] faqs
 
 ## Content Blocks
