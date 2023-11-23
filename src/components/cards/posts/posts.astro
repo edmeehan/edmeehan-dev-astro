@@ -1,7 +1,7 @@
 ---
 import MarkdownIt from 'markdown-it';
 import Card from "src/components/cards/post.astro";
-const { content, cards, section } = Astro.props;
+const { content, cards } = Astro.props;
 const md = new MarkdownIt({ html: true });
 ---
 <style lang="scss" is:global>
@@ -49,7 +49,7 @@ const md = new MarkdownIt({ html: true });
     <ul>
       { cards.map((item) => (
         <li>
-          <Card show_excerpt={true} blog_uuid={item?.blog} project_uuid={item?.project}/>
+          <Card show_excerpt={true} {...item}/>
         </li>
       ))}
     </ul>

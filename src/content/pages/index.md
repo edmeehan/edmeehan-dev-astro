@@ -226,12 +226,12 @@ content_blocks:
       transition: swoosh
       background: primary
     cards:
-      - project: 6882f2d6-8acc-43b1-8fa2-85f013db2b81
-        blog:
-      - project: b8f8dc9a-d055-46cc-a98d-cf9a3be7896c
-        blog:
-      - project: 4650d92e-b318-4c13-a437-ec79232e462e
-        blog:
+      - _type: project
+        project_uuid: 6882f2d6-8acc-43b1-8fa2-85f013db2b81
+      - _type: project
+        project_uuid: b8f8dc9a-d055-46cc-a98d-cf9a3be7896c
+      - _type: project
+        project_uuid: 4650d92e-b318-4c13-a437-ec79232e462e
 seo:
   no_index: false
   page_title: Ed Meehan, web developer for hire in San Diego, California
