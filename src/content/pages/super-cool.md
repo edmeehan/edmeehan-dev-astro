@@ -25,35 +25,21 @@ content_blocks:
       background: primary
     layout:
       text_align: center
-  - _bookshop_name: form
+  - _bookshop_name: cards/posts
     content: |-
-      <p class="eyebrow">Form</p>
+      <p class="eyebrow">Posts</p>
 
-      ### Headline
-
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    form:
-      _bookshop_name: form/builder
-      name:
-      action:
-      submit: Ready to get started!
-      fields:
-        - _bookshop_name: form_fields/text
-          label: This is the label
-          type: week
-          placeholder: Placeholder text
-          name:
-          required: true
-        - _bookshop_name: form_fields/select
-          label: This is the label
-          type: checkbox
-          name: test
-          required: false
-          options:
-            - label: Option 1
-              value: option-1
-            - label: Option 2
-              value: option-2
+      <h4 class="h1">Headline here</h4>
+    cards:
+      - _type: project
+        project_uuid: b8f8dc9a-d055-46cc-a98d-cf9a3be7896c
+      - _type: blog
+        blog_uuid: 98929c4c-1a99-42a0-8a51-ea6d12085ae9
+      - _type: blog
+        blog_uuid: 1471c8df-c92e-4803-a3d7-9f3b0bc3cb19
+    section:
+      transition: curve
+      background: primary
 seo:
   no_index: false
   page_title:
