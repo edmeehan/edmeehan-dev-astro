@@ -117,7 +117,7 @@ const md = new MarkdownIt({ html: true });
 </div>
 <script>
   const faqs = document.querySelector('[data-faqs]');
-  faqs?.addEventListener('click', (e) => {
+  if (faqs) faqs.addEventListener('click', (e) => {
     const dt = e.target?.closest('dt');
     if (dt) {
       const dd = dt.nextElementSibling;

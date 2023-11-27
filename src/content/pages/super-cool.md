@@ -40,6 +40,7 @@ content_blocks:
     section:
       transition: curve
       background: primary
+      animation: true
 seo:
   no_index: false
   page_title:

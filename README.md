@@ -2,15 +2,7 @@
 
 ## Task List
 
-- [x] hero/splash
-- [x] grid/alternate
-- [x] grid/simple
-- [x] grid/side-by-side
-- [x] text
-- [ ] cards/testimonials
-- [ ] cards/posts
-- [x] form
-- [x] faqs
+- [ ] hit a publishing milestone!
 
 ## Content Blocks
 Primary layout components similar to Shopify sections. These blocks stack vertically to make up a page.

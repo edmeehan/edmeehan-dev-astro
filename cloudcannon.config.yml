@@ -352,6 +352,10 @@ _inputs:
       allow_empty: true
       values: _select_data.section_background
     comment: Set the background of the block on the page.
+  content_blocks[*].section.animation:
+    type: switch
+    label: Animate Upon Entry
+    comment: Animate section upon entry into viewport. First time only.
   content_blocks[*].layout:
     type: object
     comment: Set some basic layout of section.

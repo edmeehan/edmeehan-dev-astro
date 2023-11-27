@@ -1,7 +1,7 @@
 ---
 import Bubbles from 'src/components/bubbles.astro';
 
-const { transition, is_first, is_last, index, background, prev, next} = Astro.props;
+const { transition, is_first, is_last, index, background, prev, next, animation} = Astro.props;
 const svg_id = `#${transition}-${background}${background === 'loud' ? `-${next?.background}` : ''}`;
 const set_transition = transition && !is_last;
 const set_prev = !is_first && prev.background !== 'loud';
@@ -86,7 +86,12 @@ const set_prev = !is_first && prev.background !== 'loud';
 <section
   data-layout-section
   data-index={ index }
-  class:list={[`section--${background}`, {[`section--${transition}`]: set_transition}]}
+  data-animate={ animation }
+  class:list={[
+    `section--${background}`,
+    {[`section--${transition}`]: set_transition},
+    {[`section--animate`]: animation}
+  ]}
 >
   <div class={`content--prev-${set_prev ? prev.transition : 'none'}`}>
     <slot />
@@ -102,3 +107,20 @@ const set_prev = !is_first && prev.background !== 'loud';
     </div>
   )}
 </section>
+
+<script>
+  const sectionAnimation = document.querySelectorAll('[data-animate]');
+  const hasObserverSupport = !!window.IntersectionObserver
+  if (sectionAnimation && hasObserverSupport) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        console.log(entry);
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0, root: null, rootMargin: '-5% 0% -5% 0%' });
+    [...sectionAnimation].forEach(section => observer.observe(section));
+  }
+</script>

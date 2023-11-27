@@ -89,6 +89,7 @@ content_blocks:
     section:
       transition: swoosh
       background: secondary
+      animation: true
     testimonials:
       - 6fddb451-a101-4371-ad54-113661b332f6
       - a4709609-0778-4918-a7f9-44e5c7d36e1e
@@ -225,6 +226,7 @@ content_blocks:
     section:
       transition: swoosh
       background: primary
+      animation: true
     cards:
       - _type: project
         project_uuid: 6882f2d6-8acc-43b1-8fa2-85f013db2b81

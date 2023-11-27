@@ -164,7 +164,7 @@ const { logo, nav_primary, nav_secondary } = data;
 </style>
 <script>
   const header = document.querySelector('[data-layout-header]');
-  header.querySelector('.menuBtn')
+  if (header) header.querySelector('.menuBtn')
     .addEventListener('click', (e) => {
       header.classList.toggle("header--show-nav");
     });
