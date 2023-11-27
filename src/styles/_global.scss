@@ -64,10 +64,13 @@ a {
 
 .highlight {
   color: $color_text_primary_highlight;
-  font-weight: inherit;
 
-  .style-secondary & {
+  .section--secondary & {
     color: $color_text_secondary_highlight;
+  }
+
+  .section--loud & {
+    color: $color_text_loud_highlight;
   }
 }
 
@@ -163,6 +166,7 @@ h3,.h3 {
   h3,.h3 {
     strong {
       @extend .highlight;
+      font-weight: inherit;
     }
   }
 
@@ -240,23 +244,23 @@ h3,.h3 {
 //   }
 // }
 
-@keyframes scrolling {
-  0% {
-    transform: translate(-50%, -80px);
-    opacity: 1;
-  }
+// @keyframes scrolling {
+//   0% {
+//     transform: translate(-50%, -80px);
+//     opacity: 1;
+//   }
 
-  40% {
-    transform: translate(-50%, -50px);
-    opacity: 0;
-  }
+//   40% {
+//     transform: translate(-50%, -50px);
+//     opacity: 0;
+//   }
 
-  41% {
-    transform: translate(-50%, -80px);
-    opacity: 0;
-  }
-  100% {
-    transform: translate(-50%, -80px);
-    opacity: 0;
-  }
-}
+//   41% {
+//     transform: translate(-50%, -80px);
+//     opacity: 0;
+//   }
+//   100% {
+//     transform: translate(-50%, -80px);
+//     opacity: 0;
+//   }
+// }
