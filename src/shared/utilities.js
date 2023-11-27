@@ -1,7 +1,5 @@
 const is_dev = import.meta?.env?.DEV || false;
 
-console.log("env", import.meta.env.DEV);
-
 export const dateFormatter = (short = false) => new Intl.DateTimeFormat("en-US", short ? {
   month: "long",
   year: "numeric",
