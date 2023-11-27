@@ -74,10 +74,11 @@ content_blocks:
     section:
       transition: curve
       background: primary
+      animation: true
     layout:
       image_align: left
       image_width: small
-      image_vert: flex-start
+      image_vert: center
     grid_items:
   - _bookshop_name: cards/testimonials
     content: >-

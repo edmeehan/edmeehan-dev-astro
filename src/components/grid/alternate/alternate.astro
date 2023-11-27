@@ -6,7 +6,7 @@ const { content, image, cta, layout, grid_items } = Astro.props;
 const md = new MarkdownIt({ html: true });
 ---
 <style lang="scss" is:global>
-  [data-grid-alternate] {
+  .grid-alternate {
     @extend %primary-wrapper;
     padding: 4.5rem 0;
 
@@ -22,9 +22,9 @@ const md = new MarkdownIt({ html: true });
       align-items: var(--align-items, center);
     }
 
-    &.wrapper--left {}
+    // &.grid-alternate--left {}
 
-    &.wrapper--right {
+    &.grid-alternate--right {
       @include media-tablet {
         flex-direction: row-reverse;
       }
@@ -84,9 +84,41 @@ const md = new MarkdownIt({ html: true });
       }
     }
   }
+
+  .section--animate {
+    .grid-alternate {
+      > * {
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+      }
+      > *:first-child {
+        transform: translateX(10vw);
+      }
+      > *:last-child {
+        transform: translateX(-10vw);
+      }
+      &.grid-alternate--left {
+        > *:first-child {
+          transform: translateX(-10vw);
+        }
+        > *:last-child {
+          transform: translateX(10vw);
+        }
+      }
+    }
+    &.animate {
+      .grid-alternate,
+      .grid-alternate.grid-alternate--left {
+        > * {
+          opacity: 1;
+          transform: translateX(0vw);
+        }
+      }  
+    }
+  }
 </style>
 
-<div class:list={[`wrapper`,`wrapper--${layout.image_align}`]} data-grid-alternate
+<div class:list={[`grid-alternate`,`grid-alternate--${layout.image_align}`]} data-grid-alternate
   style={{'--align-items': layout.image_vert }}
 >
   <div class:list={[`image--${layout.image_width}`]}>
