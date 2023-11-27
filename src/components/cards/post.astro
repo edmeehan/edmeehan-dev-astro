@@ -1,7 +1,7 @@
 ---
 import MarkdownIt from 'markdown-it';
 import {dateFormatter,imgix_article_card} from 'src/shared/utilities.js';
-const {show_excerpt,blog_uuid,project_uuid} = Astro.props;
+const {show_excerpt,blog_uuid,project_uuid,index} = Astro.props;
 const {collections} = Astro.locals || {collections: {}};
 const md = new MarkdownIt({ html: true });
 
@@ -26,7 +26,7 @@ const sizes = '(max-width: 579px) calc(100vw - 3rem),(max-width: 1654px) calc(50
 
 ---
 <style lang="scss" is:global>
-  article[data-card-post] {
+  .card-post {
     height: 100%;
     background-color: $color_text_default;
     color: $color_text_dark_alt;
@@ -99,9 +99,27 @@ const sizes = '(max-width: 579px) calc(100vw - 3rem),(max-width: 1654px) calc(50
       margin: 1rem 1.2rem 1.2rem;
     }
   }
+
+  // uses a intersection observer to animate the testimonial
+  .section--animate {
+    .card-post {
+      transition: transform 500ms var(--offset, 100ms),
+        opacity 500ms var(--offset, 100ms);
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    &.animate {
+      .card-post {
+        transform: scale(1) translateY(0%);
+        opacity: 1;
+      }
+    }
+  }
 </style>
 { !!post_type && !!uuid && (
-  <article data-card-post>
+  <article class="card-post" data-card-post
+    style={{'--offset': `${index * 275}ms`}}
+  >
     <div class="img">
       <img src={imgix_article_card(post_image_src, 787)} width="400" height="200"
         srcset={srcset}

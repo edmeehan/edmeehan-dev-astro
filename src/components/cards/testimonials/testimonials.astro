@@ -28,11 +28,6 @@ const md = new MarkdownIt({ html: true });
       justify-content: center;
       gap: 2em;
 
-      // @include media-tablet {
-      //   column-gap: 5%;
-      //   row-gap: 2em;
-      // }
-
       > li {
         @include media-tablet {
           flex: 0 0 30%;
@@ -48,11 +43,11 @@ const md = new MarkdownIt({ html: true });
   </header>
   { testimonials && (
     <ul>
-      { testimonials.map((item) => {
+      { testimonials.map((item, index) => {
         const testimonial = testimonialsData.find(({uuid}) => uuid === item);
         return (
           <li>
-            <Testimonial {...testimonial} />
+            <Testimonial {...testimonial} index={index} />
           </li>
         )
         })}

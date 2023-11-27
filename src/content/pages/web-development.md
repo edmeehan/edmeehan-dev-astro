@@ -92,6 +92,7 @@ content_blocks:
     section:
       transition: swoosh
       background: secondary
+      animation: true
     testimonials:
       - fd85beb5-b1ea-4e46-aae9-4766bc18487e
       - a4709609-0778-4918-a7f9-44e5c7d36e1e
@@ -204,13 +205,19 @@ content_blocks:
       achieve your goals.
     cta:
     image:
+      src: /uploads/pages/web-dev-logos.svg
+      alt: whales and water
+      title:
+      width: 812
+      height: 349
+      loading: lazy
     section:
       transition: swoosh
       background: primary
+      animation: true
     layout:
       image_align: right
       image_width: large
-      is_mini: true
   - _bookshop_name: faqs
     content: >-
       <h4 class="h2"><strong>Frequently Asked Questions</strong></h4>

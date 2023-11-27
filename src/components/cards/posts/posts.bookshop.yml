@@ -17,6 +17,7 @@ blueprint:
     transition: curve
     background: primary
     animation: false
+    
 preview:
 
 _inputs:

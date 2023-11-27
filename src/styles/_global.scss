@@ -89,7 +89,7 @@ span.sup {
   }
 }
 
-.h1 {
+h1,.h1 {
   // mobile default
   font-size: $text_mobile_hero_headline;
   line-height: $text_mobile_hero_headline_line_height;
@@ -100,7 +100,7 @@ span.sup {
   }
 }
 
-.h2 {
+h2,.h2 {
   // mobile default
   font-size: $text_mobile_section_headline;
   line-height: $text_mobile_section_headline_line_height;
@@ -111,7 +111,7 @@ span.sup {
   }
 }
 
-.h3 {
+h3,.h3 {
   // mobile default
   font-size: $text_mobile_mini_headline;
   line-height: $text_mobile_mini_headline_line_height;
@@ -122,9 +122,9 @@ span.sup {
   }
 }
 
-.h1,
-.h2,
-.h3 {
+h1,.h1,
+h2,.h2,
+h3,.h3 {
   margin-top: 0;
   font-weight: $text_weight_bold;
 }
@@ -154,21 +154,13 @@ span.sup {
     max-width: 34.5em;
   }
 
-  h1,
-  .h1 {
+  h1,.h1 {
     max-width: 12.5em;
   }
 
-  h1 {
-    @extend .h1;
-  }
-  h2 {
-    @extend .h2;
-  }
-  h3 {
-    @extend .h3;
-  }
-  h1,.h1,h2,.h2,h3,.h3 {
+  h1,.h1,
+  h2,.h2,
+  h3,.h3 {
     strong {
       @extend .highlight;
     }

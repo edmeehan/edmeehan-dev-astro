@@ -38,9 +38,9 @@ const md = new MarkdownIt({ html: true });
   </header>
   { cards && (
     <ul>
-      { cards.map((item) => (
+      { cards.map((item, index) => (
         <li>
-          <Card show_excerpt={true} {...item}/>
+          <Card show_excerpt={true} index={index} {...item}/>
         </li>
       ))}
     </ul>

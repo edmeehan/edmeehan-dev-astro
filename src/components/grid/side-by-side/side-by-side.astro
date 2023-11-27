@@ -2,16 +2,18 @@
 import MarkdownIt from 'markdown-it';
 import Image from 'src/components/global/image/image.astro';
 import CTA from 'src/components/global/cta/cta.astro';
-const { content, image, cta, layout } = Astro.props;
+const { content, image, cta, layout, section } = Astro.props;
 const md = new MarkdownIt({ html: true });
 ---
 <style lang="scss" is:global>
-  .wrapper[data-grid-side-by-side] {
+  .grid-sbs {
     @extend %primary-wrapper;
     display: flex;
     justify-content: center;
     gap: 3rem;
     flex-direction: column-reverse;
+    padding: 3.5rem 0;
+
 
     @include media-tablet-max {
       .content {
@@ -35,15 +37,44 @@ const md = new MarkdownIt({ html: true });
         flex: 0 0 65%;
       }
 
-      &.wrapper--left {}
+      &.grid-sbs--left {}
 
-      &.wrapper--right {
+      &.grid-sbs--right {
         flex-direction: row-reverse;
       }
     }
   }
+
+  [data-index="0"] {
+    .grid-sbs {
+      padding: 0 0 1rem;
+    }
+  }
+
+  .section--animate {
+    .grid-sbs {
+      > * {
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+      }
+      > *:first-child {
+        transform: translateX(10vw);
+      }
+      > *:last-child {
+        transform: translateX(-10vw);
+      }
+    }
+    &.animate {
+      .grid-sbs {
+        > * {
+          opacity: 1;
+          transform: translateX(0vw);
+        }
+      }  
+    }
+  }
 </style>
-<div class:list={['wrapper',`wrapper--${layout.image_align}`]} data-grid-side-by-side>
+<div class:list={['grid-sbs','mini',`grid-sbs--${layout.image_align}`]} data-grid-side-by-side>
   <div class:list={[`image--${layout.image_width}`]}>
     { image && <Image image={image}
       srcset={[400,500,600,700,800,1000,1200,1400,1600]}

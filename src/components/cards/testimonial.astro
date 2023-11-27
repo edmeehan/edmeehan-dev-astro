@@ -1,7 +1,7 @@
 ---
 import {imgix} from 'src/shared/utilities.js'
 import MarkdownIt from 'markdown-it';
-const { name, company, title, testimonial_textarea: testimonial, headshot_image: headshot } = Astro.props;
+const { name, company, title, testimonial_textarea: testimonial, headshot_image: headshot, index } = Astro.props;
 const md = new MarkdownIt({ html: true });
 let headshot_x1, headshot_x2;
 if (headshot) {
@@ -10,7 +10,7 @@ if (headshot) {
 }
 ---
 <style lang="scss" is:global>
-  article[data-card-testimonial] {
+  .card-testimonial {
     border-radius: $radius_md;
     overflow: hidden;
     background-color: $color_text_default;
@@ -36,8 +36,6 @@ if (headshot) {
       height: 110px;
       border-radius: $radius_circle;
       flex: 0 0 auto;
-      // transition: transform 500ms ${({offset}) => offset * 300 + 200}ms;
-      // transform: translateY(${({transition}) => transition ? '10%' : '100%'}); // translateY(10%);
       transform: translateY(10%);
       background-color: $color_white;
     }
@@ -77,9 +75,34 @@ if (headshot) {
       }
     }
   }
+  // uses a intersection observer to animate the testimonial
+  .section--animate {
+    .card-testimonial {
+      transition: transform 500ms var(--offset, 100ms),
+        opacity 500ms var(--offset, 100ms);
+      transform: translateY(100px);
+      opacity: 0;
+      img {
+        transition: transform 500ms calc(var(--offset, 100ms) + 250ms);
+        transform: translateY(100%);
+      }
+    }
+    // animation is active
+    &.animate {
+      .card-testimonial {
+        transform: scale(1) translateY(0%);
+        opacity: 1;
+        img {
+          transform: translateY(10%);
+        }
+      }
+    }
+  }
 </style>
 
-<article data-card-testimonial>
+<article class="card-testimonial" data-card-testimonial
+  style={{'--offset': `${index * 275}ms`}}
+>
   <header>
     <div class='text'>
       <h5 class='h3'>{ name }</h5>
