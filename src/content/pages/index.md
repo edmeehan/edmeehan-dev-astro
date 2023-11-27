@@ -170,6 +170,7 @@ content_blocks:
     section:
       transition: swoosh
       background: primary
+      animation: true
     layout:
       text_align: center
       is_mini: true
