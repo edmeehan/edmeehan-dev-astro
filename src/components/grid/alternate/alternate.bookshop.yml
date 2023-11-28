@@ -24,6 +24,7 @@ blueprint:
   section:
     transition: curve
     background: primary
+    animation: false
   layout:
     image_align: right
     image_vert: center

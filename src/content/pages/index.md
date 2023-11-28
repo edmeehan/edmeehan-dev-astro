@@ -10,13 +10,7 @@ content_blocks:
         title:
         width: 768
         height: 900
-        loading: lazy
-      - src: /uploads/pages/altgrid-rays-complete-wide@2x.png
-        alt: whales and water
-        title:
-        width: 800
-        height: 875
-        loading: lazy
+        loading: eager
     content: >-
       <p class="eyebrow">Fast, Secure, Scalable</p>
 
@@ -74,10 +68,11 @@ content_blocks:
     section:
       transition: curve
       background: primary
+      animation: true
     layout:
       image_align: left
       image_width: small
-      image_vert: flex-start
+      image_vert: center
     grid_items:
   - _bookshop_name: cards/testimonials
     content: >-
@@ -169,6 +164,7 @@ content_blocks:
     section:
       transition: swoosh
       background: primary
+      animation: true
     layout:
       text_align: center
       is_mini: true

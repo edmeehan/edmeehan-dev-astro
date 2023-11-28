@@ -6,7 +6,7 @@ const { content, cta, layout, grid_items } = Astro.props;
 const md = new MarkdownIt({ html: true });
 ---
 <style lang="scss" is:global>
-  .wrapper[data-grid-simple] {
+  .grid-simple {
     @extend %primary-wrapper;
 
     .content {
@@ -51,17 +51,32 @@ const md = new MarkdownIt({ html: true });
       }
     }
   }
+
+  .section--animate {
+    .grid-simple .item {
+      transition: transform 500ms var(--offset, 100ms),
+        opacity 500ms var(--offset, 100ms);
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    &.animate {
+      .grid-simple .item {
+        transform: scale(1) translateY(0%);
+        opacity: 1;
+      }
+    }
+  }
 </style>
 
-<div class:list={['wrapper', { mini: layout.is_mini }]} data-grid-simple>
+<div class:list={['grid-simple', { mini: layout.is_mini }]} data-grid-simple>
   <div class:list={['content', `text-${layout.text_align}`]}>
     { content && <div class="rt" set:html={md.render(content)}></div>}
     { cta && <CTA {...cta} />}
   </div>
   { grid_items && (
     <ul class={`list-${layout.text_align}`}>
-      { grid_items.map((item) => (
-        <li>
+      { grid_items.map((item, index) => (
+        <li class="item" style={{'--offset': `${index * 275}ms`}}>
           { item.image && <Image image={item.image}
             srcset={[200,300,350,400,600,700]}
             sizes='(max-width: 909px) 45vw,(max-width: 1650px) 30vw, 350px'

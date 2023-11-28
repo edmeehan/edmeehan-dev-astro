@@ -13,6 +13,7 @@
   "dependencies": {
     "@astrojs/check": "^0.3.0",
     "@astrojs/mdx": "^1.0.3",
+    "@astrojs/sitemap": "^3.0.3",
     "@bookshop/astro-bookshop": "^3.6.5",
     "@bookshop/astro-engine": "^3.6.5",
     "@bookshop/generate": "^3.6.5",

@@ -114,7 +114,6 @@ const set_prev = !is_first && prev.background !== 'loud';
   if (sectionAnimation && hasObserverSupport) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        console.log(entry);
         if (entry.isIntersecting) {
           entry.target.classList.add('animate');
           observer.unobserve(entry.target);

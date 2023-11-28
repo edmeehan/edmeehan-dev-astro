@@ -23,6 +23,7 @@ blueprint:
   section:
     transition: curve
     background: primary
+    animation: false
   layout:
     text_align: left
     is_mini: true

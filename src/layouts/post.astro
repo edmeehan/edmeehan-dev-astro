@@ -8,7 +8,7 @@ import PostSVG from "src/components/svg/post.astro";
 //   };
 // };
 
-const { frontmatter, body } = Astro.props;
+const { frontmatter } = Astro.props;
 
 if (!frontmatter) {
   throw new Error("Frontmatter must be defined");

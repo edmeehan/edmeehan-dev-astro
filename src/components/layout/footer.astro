@@ -1,10 +1,11 @@
 ---
-import data from "data/footer.json"
-import CTA from "src/components/global/cta/cta.astro"
-import Link from "src/components/global/link/link.astro"
-import MarkdownIt from 'markdown-it';
+import data from "data/footer.json";
+import CTA from "src/components/global/cta/cta.astro";
+import Link from "src/components/global/link/link.astro";
+import MarkdownIt from "markdown-it";
+import {imgix} from "src/shared/utilities.js";
 const md = new MarkdownIt({ html: true });
-const { story, small_print, links_list } = data;
+const { story, small_print, links_list, story_image, story_image_alt } = data;
 ---
 <style lang="scss" is:global>
   footer[data-layout-footer] {
@@ -95,6 +96,17 @@ const { story, small_print, links_list } = data;
 
 <footer data-layout-footer>
   <div class='content'>
+    { !!story_image && (
+      <div class="block-img">
+        <img
+          srcset={`${imgix(story_image, 160, 1, 160)}, ${imgix(story_image, 160, 2, 160)} 2x`}
+          src={imgix(story_image, 160, 1, 160)}
+          width="160"
+          height="160"
+          alt={story_image_alt || ""}
+        />
+      </div>
+    )}
     <div class="rt" set:html={md.render(story)}></div>
   </div>
   <nav class='links'>

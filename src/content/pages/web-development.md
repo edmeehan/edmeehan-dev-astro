@@ -5,6 +5,12 @@ title: Web Development
 content_blocks:
   - _bookshop_name: hero/splash
     image:
+      - src: /uploads/pages/web-dev.jpeg
+        alt: shark on the reef
+        title:
+        width: 768
+        height: 900
+        loading: eager
     content: >-
       <p class="eyebrow">Web Development</p>
 
@@ -115,8 +121,8 @@ content_blocks:
       text_align: center
   - _bookshop_name: grid/alternate
     image:
-      src: /uploads/pages/altgrid-rays-complete-wide@2x.png
-      alt: whales and water
+      src: /uploads/pages/web-dev-shark.jpeg
+      alt: shark on the reef
       title:
       width: 800
       height: 875
@@ -257,7 +263,8 @@ content_blocks:
 seo:
   no_index: false
   page_title: Web development, custom JAMstack & Shopify theme development
-  page_description: Freelance web developer in San Deigo, California. Services include Shopify theme development, JAMstack website development, and headless CMS integration.
+  page_description: >-
+    Freelance web developer in San Deigo, California. Services include Shopify theme development, JAMstack website development, and headless CMS integration.
   featured_image:
   open_graph_type:
   canonical_url:
