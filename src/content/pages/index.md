@@ -10,13 +10,7 @@ content_blocks:
         title:
         width: 768
         height: 900
-        loading: lazy
-      - src: /uploads/pages/altgrid-rays-complete-wide@2x.png
-        alt: whales and water
-        title:
-        width: 800
-        height: 875
-        loading: lazy
+        loading: eager
     content: >-
       <p class="eyebrow">Fast, Secure, Scalable</p>
 

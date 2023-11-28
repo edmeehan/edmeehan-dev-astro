@@ -4,11 +4,12 @@ import CTA from 'src/components/global/cta/cta.astro';
 import SocialShare from 'src/components/global/social-share/social-share.astro';
 import {dateFormatter,imgix_article_default,imgix_article_mobile} from 'src/shared/utilities.js';
 const { slug, collection,
-  data: { headline, read_time, published, post_image, category, tags, project_url, show_share }
+  data: { headline, read_time, published, post_image, category, tags, project_url, show_share, uuid, _schema }
 } = Astro.props;
-// const md = new MarkdownIt({ html: true });
+const collections = Astro.locals?.collections || {};
 const show_short_date = collection === 'projects';
-let srcset, sizes;
+let srcset, sizes, next_post = false;
+
 if (post_image?.src) {
   srcset = [
     [300,500,653,1000,1306].map(item => `${imgix_article_mobile(post_image.src, item)} ${item}w`).join(','),
@@ -18,6 +19,16 @@ if (post_image?.src) {
     '(max-width: 590px) 95vw, 653px',
     '(max-width: 1600px) 73vw,(max-width: 2559px) 1106px, 1172px'
   ]
+}
+
+if (collections[_schema]) {
+  const current_collection = collections[_schema];
+  const current_index = current_collection.findIndex(({data}) => data.uuid === uuid);
+  if (current_collection.length === current_index + 1) {
+    next_post = current_collection[0];
+  } else {
+    next_post = current_collection[current_index + 1];
+  }
 }
 ---
 <style lang="scss" is:global>
@@ -181,13 +192,15 @@ if (post_image?.src) {
       )}
     </div>
   </header>
-  {/*
-  <div class="article-next step-down">
-    <CTA style="simple" link="/" title={`View post: ${'hi'}`}>
-      Next post <svg><use xlink:href="#caret-right"></use></svg>
-    </CTA>
-  </div>
-  */}
+
+  { !!next_post && (
+    <div class="article-next step-down">
+      <CTA style="simple" link={`/${collection}/${next_post?.slug}/`} title={`View post: ${next_post?.data?.headline}`}>
+        Next <svg><use xlink:href="#caret-right"></use></svg>
+      </CTA>
+    </div>
+  )}
+
   <div class="article-image">
     { !!post_image.src && (
       <picture>

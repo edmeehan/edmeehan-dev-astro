@@ -5,6 +5,12 @@ title: Analytics
 content_blocks:
   - _bookshop_name: hero/splash
     image:
+      - src: /uploads/pages/analytics.jpeg
+        alt: turtle on the water
+        title:
+        width: 768
+        height: 900
+        loading: eager
     content: >-
       <p class="eyebrow">Analytics</p>
 
