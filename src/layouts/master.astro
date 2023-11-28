@@ -1,53 +1,69 @@
 ---
 import 'normalize.css';
 import "../styles/theme.scss";
+import { image_og } from "data/settings.json";
+import { imgix_og } from 'src/shared/utilities.js';
 import DefaultSVG from "src/components/svg/default.astro";
 import Header from "src/components/layout/header.astro";
 import Footer from "src/components/layout/footer.astro";
 
-const props = Astro.props;
 const { origin, pathname } = Astro.url;
-const {seo:{no_index,canonical_url,page_title,page_description,open_graph_type}} = Astro.props;
-const thumbnails = {};
+const {
+  seo: {
+    no_index,
+    canonical_url,
+    page_title,
+    page_description,
+    open_graph_type,
+    featured_image
+  },
+  _schema,
+  published,
+  category,
+  tags
+} = Astro.props;
 const title = `${page_title} | Ed Meehan`;
+const image = featured_image || image_og;
+const image_sizes = [
+  {width:1400,height:700,type:'default'},
+  {width:1200,height:630,type:'facebook'},
+  {width:180,height:110,type:'linkedIn'},
+];
 ---
 <!DOCTYPE html>
 <html lang="en">
   <head>
     {/* Standard */}
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="generator" content={Astro.generator} />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="generator" content={Astro.generator}/>
     <title>{title}</title>
-    <meta name="description" content={page_description} />
+    <meta name="description" content={page_description}/>
     {/* Open Graph */}
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={page_description} />
-    <meta property="og:url" content={`${origin}${pathname}`} />
+    <meta property="og:title" content={title}/>
+    <meta property="og:description" content={page_description}/>
+    <meta property="og:url" content={`${origin}${pathname}`}/>
     <meta property="og:type" content={`${open_graph_type || 'website'}`}/>
-    <!-- POST -->
-    <!-- 
-    <meta property="article:published_time" content={data.data.prismicBlog.first_publication_date} />
-    <meta property="article:modified_time" content={data.data.prismicBlog.last_publication_date} />
-    <meta property="article:author" content="https://edwardmeehan.com/about" />
-    <meta property="article:section" content="Blog" /> -->
-    <!-- PROJECT -->
-    <!-- <meta property="og:type" content="article"/>
-    <meta property="article:published_time" content={data.data.prismicProject.first_publication_date}/>
-    <meta property="article:modified_time" content={data.data.prismicProject.last_publication_date}/>
-    <meta property="article:author" content="https://edwardmeehan.com/about"/>
-    <meta property="article:section" content={data.data.prismicProject.data.category}/>
-    { data.data.prismicProject.data.tags_list.richText.map(({text}) => (
-      <meta key={text} property="article:tag" content={text} />
-    ))} -->
-
+    {/* Blog Post */}
+    { _schema === 'blog' && (
+      <meta property="article:published_time" content={published.toISOString()}/>
+      <meta property="article:author" content="https://edwardmeehan.com/about"/>
+      <meta property="article:section" content="Blog"/>
+    )}
+    {/* Project */}
+    { _schema === 'project' && (
+      <meta property="article:published_time" content={published.toISOString()}/>
+      <meta property="article:author" content="https://edwardmeehan.com/about"/>
+      <meta property="article:section" content={category}/>
+      <>{ tags?.map(tag => <meta property="article:tag" content={tag}/>) }</>
+    )}
     {/* Open Graph Images */}
-    {[].map(({url,width,height}) => (
-      <meta property="og:image" content={url} />
-      <meta property="og:image:width" content={width} />
-      <meta property="og:image:height" content={height} />
+    {image_sizes.map(({width,height}) => (
+      <meta property="og:image" content={imgix_og(image.src,width,height)} />
+      <>{ image.alt && <meta property="og:image:alt" content={image.alt} /></>
+      <meta property="og:image:width" content={width.toString()}/>
+      <meta property="og:image:height" content={height.toString()}/>
     ))}
-    <!-- { !!thumbnails?.og?.url && <meta name="twitter:image" content={'twitter image url'} /> } -->
     {/* No Index */}
     { !!no_index && <meta name="robots" content="noindex,nofollow"/> }
     {/* Canonical */}

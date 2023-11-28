@@ -1,9 +1,10 @@
 {
   "site_name": "edmeehan.dev",
   "phone": "1-858-876-8088",
-  "image_default": null,
-  "image_og": null,
-  "image_linkedIn": null,
+  "image_og": {
+    "src": "/uploads/blog/logo-post.jpg",
+    "alt": "Ed Meehan web developer logo on blue background."
+  },
   "_inputs": {
     "site_name": {
       "type": "text"
@@ -11,19 +12,7 @@
     "phone": {
       "type": "text"
     },
-    "image_default": {
-      "type": "object",
-      "options": {
-        "structures": "_structures.image"
-      }
-    },
     "image_og": {
-      "type": "object",
-      "options": {
-        "structures": "_structures.image"
-      }
-    },
-    "image_linkedIn": {
       "type": "object",
       "options": {
         "structures": "_structures.image"
