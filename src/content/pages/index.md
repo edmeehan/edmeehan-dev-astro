@@ -118,7 +118,7 @@ content_blocks:
     grid_items:
       - image:
           src: /uploads/pages/altgrid-item-icon-webdev@2x.png
-          alt:
+          alt: illustration of a computer
           title:
           width: 386
           height: 203
@@ -135,7 +135,7 @@ content_blocks:
           [View Web Development Services](/test)
       - image:
           src: /uploads/pages/altgrid-item-icon-analytics@2x.png
-          alt:
+          alt: illustration of a computer with a graph
           title:
           width: 386
           height: 203

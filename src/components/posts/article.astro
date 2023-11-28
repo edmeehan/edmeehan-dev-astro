@@ -2,23 +2,23 @@
 // import MarkdownIt from 'markdown-it';
 import CTA from 'src/components/global/cta/cta.astro';
 import SocialShare from 'src/components/global/social-share/social-share.astro';
-import {dateFormatter,imgix_article_default,imgix_article_mobile} from 'src/shared/utilities.js';
+import {dateFormatter,create_post_image,imgix_article_default} from 'src/shared/utilities.js';
 const { slug, collection,
   data: { headline, read_time, published, post_image, category, tags, project_url, show_share, uuid, _schema }
 } = Astro.props;
 const collections = Astro.locals?.collections || {};
 const show_short_date = collection === 'projects';
-let srcset, sizes, next_post = false;
+const [srcset, sizes] = create_post_image(post_image?.src);
+let next_post = false;
 
-if (post_image?.src) {
-  srcset = [
-    [300,500,653,1000,1306].map(item => `${imgix_article_mobile(post_image.src, item)} ${item}w`).join(','),
-    [800,950,1106,1172,2212,2344].map(item => `${imgix_article_default(post_image.src, item)} ${item}w`).join(',')
-  ]
-  sizes = [
-    '(max-width: 590px) 95vw, 653px',
-    '(max-width: 1600px) 73vw,(max-width: 2559px) 1106px, 1172px'
-  ]
+if (collections[_schema]) {
+  const current_collection = collections[_schema];
+  const current_index = current_collection.findIndex(({data}) => data.uuid === uuid);
+  if (current_collection.length === current_index + 1) {
+    next_post = current_collection[0];
+  } else {
+    next_post = current_collection[current_index + 1];
+  }
 }
 
 if (collections[_schema]) {
@@ -202,7 +202,7 @@ if (collections[_schema]) {
   )}
 
   <div class="article-image">
-    { !!post_image.src && (
+    { !!srcset && !!sizes && (
       <picture>
         <source media="(max-width: 767px)" srcset={srcset[0]} sizes={sizes[0]} width="1000" height="782"/>
         <source media="(min-width: 768px)" srcset={srcset[1]} sizes={sizes[1]} width="1172" height="440"/>

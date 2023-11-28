@@ -2,7 +2,7 @@
 import 'normalize.css';
 import "../styles/theme.scss";
 import { image_og } from "data/settings.json";
-import { imgix_og } from 'src/shared/utilities.js';
+import { imgix_og, create_post_image } from 'src/shared/utilities.js';
 import DefaultSVG from "src/components/svg/default.astro";
 import Header from "src/components/layout/header.astro";
 import Footer from "src/components/layout/footer.astro";
@@ -20,7 +20,8 @@ const {
   _schema,
   published,
   category,
-  tags
+  tags,
+  post_image
 } = Astro.props;
 const title = `${page_title} | Ed Meehan`;
 const image = featured_image || image_og;
@@ -29,6 +30,8 @@ const image_sizes = [
   {width:1200,height:630,type:'facebook'},
   {width:180,height:110,type:'linkedIn'},
 ];
+// Preload Images
+const [srcset, sizes] = create_post_image(post_image?.src);
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -39,6 +42,11 @@ const image_sizes = [
     <meta name="generator" content={Astro.generator}/>
     <title>{title}</title>
     <meta name="description" content={page_description}/>
+    { !!srcset && !!sizes && (
+      <link rel="preload" as="image" media="(max-width: 767px)" imagesrcset={srcset[0]} imagesizes={sizes[0]}/>
+      <link rel="preload" as="image" media="(min-width: 768px)" imagesrcset={srcset[1]} imagesizes={sizes[1]}/>
+    )}
+    {/* Twitter */}
     {/* Open Graph */}
     <meta property="og:title" content={title}/>
     <meta property="og:description" content={page_description}/>
