@@ -1,4 +1,4 @@
-const is_dev = import.meta.env.DEV || false;
+const is_dev = import.meta?.env?.DEV || false;
 
 // console.log("is_dev", is_dev);
 
