@@ -20,16 +20,19 @@ content_blocks:
       * Are there any third-party services that require integration?
 
       * Are you an agency working with a client?
-      
+
       * What is your budget and timeline for the project?
-      
+
       * How did you hear about me?
 
 
-      **Your information is safe with me.** I do not sell any information to third parties and will only share your information if you ask me to.
+      **Your information is safe with me.** I do not sell any information to
+      third parties and will only share your information if you ask me to.
     form:
+      _bookshop_name: form/builder
       name: consultation-request
-      action: /consultation-request/
+      action: /thank-you/
+      submit: Submit Request
       fields:
         - _bookshop_name: form_fields/text
           label: Full Name
@@ -73,11 +76,12 @@ content_blocks:
           placeholder: Your message should include info like timeline, budget, etc.
           name: message
           required: true
-      submit: Submit Request
 seo:
   no_index: false
   page_title: Consultation Request
-  page_description: Fill out this consultation request form to start a conversation with Ed Meehan.
+  page_description: >-
+    Fill out this consultation request form to start a conversation with Ed
+    Meehan.
   featured_image:
   open_graph_type:
   canonical_url:
