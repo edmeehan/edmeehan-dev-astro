@@ -4,17 +4,18 @@ uuid: 2630d5af-af14-4599-b870-125d0b42735f
 title: Thank You
 content_blocks:
   - _bookshop_name: text
-    content: >-
-      <p class="eyebrow">Message recieved</p>
-
+    content: |-
+      <p class="eyebrow">Message sent</p>
 
       # Thank You!
 
-
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non tellus
-      sapien. Duis id neque diam. Mauris commodo porta sapien vel viverra. Sed
-      finibus.
+      I will respond as soon as I can.
     cta:
+      _bookshop_name: global/cta
+      label: Back Home
+      link: /
+      style: primary
+      new_tab: false
     section:
       transition: curve
       background: primary
