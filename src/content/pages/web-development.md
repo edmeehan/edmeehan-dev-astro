@@ -112,7 +112,7 @@ content_blocks:
       remarkable</h5>
     cta:
       label: Request a free consultation
-      link: /test
+      link: /consultation-request/
       style: loud
     section:
       transition: swoosh
@@ -253,7 +253,7 @@ content_blocks:
       <h5 class="h1">Are you ready to get started?</h5>
     cta:
       label: Request a free consultation
-      link: /test
+      link: /consultation-request/
       style: loud
     section:
       transition: swoosh

@@ -28,7 +28,7 @@ content_blocks:
       security, and the ability to handle high demand through scalability.
     cta:
       label: Request a free consultation
-      link: /test
+      link: /consultation-request/
       style: secondary
     section:
       transition: swoosh
@@ -132,7 +132,7 @@ content_blocks:
           support with specific phases of the project, I'm ready.
 
 
-          [View Web Development Services](/test)
+          [View Web Development Services](/web-development/)
       - image:
           src: /uploads/pages/altgrid-item-icon-analytics@2x.png
           alt: illustration of a computer with a graph
@@ -149,7 +149,7 @@ content_blocks:
           businesses and organizations of all sizes.
 
 
-          [View Analytics Services](/test)
+          [View Analytics Services](/analytics/)
   - _bookshop_name: grid/simple
     content: >-
       <p class="eyebrow">Millions have seen my work</p>
@@ -210,7 +210,7 @@ content_blocks:
       remarkable</h5>
     cta:
       label: Request a free consultation
-      link: /test
+      link: /consultation-request/
       style: loud
     section:
       transition: swoosh
