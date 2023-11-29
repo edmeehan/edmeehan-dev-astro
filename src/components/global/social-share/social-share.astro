@@ -56,8 +56,13 @@ const email = () => {
       svg {
         transition: fill 400ms;
         fill: $color_cta_secondary;
-        width: 1.5rem;
-        height: 1.5rem;
+        width: 40px;
+        height: 40px;
+
+        @include media-tablet {
+          width: 1.5rem;
+          height: 1.5rem;
+        }
       }
     }
   }
