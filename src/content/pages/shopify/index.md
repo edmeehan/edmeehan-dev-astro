@@ -49,7 +49,7 @@ content_blocks:
     cta:
     section:
       transition: swoosh
-      background: secondary
+      background: loud
     layout:
       text_align: center
   - _bookshop_name: grid/alternate
@@ -74,32 +74,25 @@ content_blocks:
     cta:
     grid_items:
       - _bookshop_name: grid/item-default
-        content: |-
-          ### Headline
+        content: >-
+          ## Customization
 
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+          Custom Shopify themes elevate brand identity, enhance user experience,
+          and boost engagement for lasting impact.
+        image:
+      - _bookshop_name: grid/item-default
+        content: >-
+          ## App Integration
+
+
+          I specialize in evaluating and recommending the best apps, customizing
+          and integrating them seamlessly into your store. This approach is
+          designed to help your store achieve its specific goals effectively.
         image:
       - _bookshop_name: grid/item-default
         content: |-
-          ### Headline
-
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        image:
-      - _bookshop_name: grid/item-default
-        content: |-
-          ### Headline
-
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        image:
-      - _bookshop_name: grid/item-default
-        content: |-
-          ### Headline
-
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        image:
-      - _bookshop_name: grid/item-default
-        content: |-
-          ### Headline
+          ## Automation
 
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         image:
