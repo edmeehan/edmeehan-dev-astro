@@ -106,8 +106,11 @@ content_blocks:
       image_width: small
 seo:
   no_index: false
-  page_title:
-  page_description:
+  page_title: Expert Shopify Plus Development Services
+  page_description: >-
+    Discover top-tier Shopify Plus development services tailored to upscale your
+    e-commerce business. Elevate your Shopify Plus store today and drive growth,
+    engagement, and sales.
   featured_image:
   open_graph_type: website
   canonical_url:
