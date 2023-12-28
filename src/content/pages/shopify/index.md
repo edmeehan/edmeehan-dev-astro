@@ -8,17 +8,12 @@ content_blocks:
       <p class="eyebrow">Frustrated with Your Shopify Agency?</p>
 
 
-      # I'm Ed, Your **Personal Shopify Expert**
+      # I'm Ed, Your Personal<br>**Shopify Plus Expert**
 
 
-      Embark on a journey with me, where every step in your Shopify theme
-      creation is a blend of understanding, creativity, and a personal touch.
-      Leave behind agency frustrations and dive into a story of collaboration
+      Leave behind agency frustrations and join me in a story of collaboration
       and success, where every detail of your theme is crafted with care and
       expertise, turning your e-commerce goals into a captivating reality.
-
-
-      **Keep scrolling to learn more!**
     image:
       - _bookshop_name: global/image
         src: /uploads/pages/2024-headshot.png
@@ -28,43 +23,94 @@ content_blocks:
         height: 800
         loading: eager
     cta:
+      _bookshop_name: global/cta
+      label: Ready to ditch the agency?
+      link:
+      style: secondary
+      new_tab: false
     section:
       transition: swoosh
       background: primary
   - _bookshop_name: text
     content: >-
-      <p class="eyebrow">Simple Text</p>
+      <p class="eyebrow">About Me</p>
 
 
-      # Headline with a **strong tag**
+      # Experienced Web Developer
 
 
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non tellus
-      sapien. Duis id neque diam. Mauris commodo porta sapien vel viverra. Sed
-      finibus.
+      **I bring a comprehensive background in e-commerce, content, and
+      marketing.**
+
+
+      My journey in the digital realm has equipped me with a unique set of
+      skills, enabling me to craft Shopify solutions that are not only visually
+      stunning but also strategically effective.
     cta:
     section:
-      transition: curve
+      transition: swoosh
       background: secondary
     layout:
       text_align: center
-  - _bookshop_name: text
+  - _bookshop_name: grid/alternate
     content: >-
-      <p class="eyebrow">Simple Text</p>
+      <p class="eyebrow">Alternate Grid</p>
 
 
-      # Headline with a **strong tag**
+      <h1 class="h1">Headline with a <strong>strong tag</strong></h1>
 
 
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non tellus
       sapien. Duis id neque diam. Mauris commodo porta sapien vel viverra. Sed
       finibus.
+    image:
+      _bookshop_name: global/image
+      src: /uploads/placeholders/splash_sm.png
+      alt: test
+      title: test
+      width: 400
+      height: 500
+      loading: lazy
     cta:
+    grid_items:
+      - _bookshop_name: grid/item-default
+        content: |-
+          ### Headline
+
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        image:
+      - _bookshop_name: grid/item-default
+        content: |-
+          ### Headline
+
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        image:
+      - _bookshop_name: grid/item-default
+        content: |-
+          ### Headline
+
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        image:
+      - _bookshop_name: grid/item-default
+        content: |-
+          ### Headline
+
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        image:
+      - _bookshop_name: grid/item-default
+        content: |-
+          ### Headline
+
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        image:
     section:
       transition: curve
       background: primary
+      animation: false
     layout:
-      text_align: center
+      image_align: left
+      image_vert: center
+      image_width: small
 seo:
   no_index: false
   page_title:
