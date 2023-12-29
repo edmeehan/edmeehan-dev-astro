@@ -5,15 +5,20 @@ title: index
 content_blocks:
   - _bookshop_name: hero/splash
     content: >-
-      <p class="eyebrow">Frustrated with Your Shopify Agency?</p>
+      <p class="eyebrow">Shopify Expert</p>
 
 
-      # I'm Ed, Your Personal<br>**Shopify Plus Expert**
+      # **I'm Ed**&nbsp;🤙🏼 Your Shopify<br>Theme & App Integration
+      Expert&nbsp;
 
 
-      Leave behind agency frustrations and join me in a story of collaboration
-      and success, where every detail of your theme is crafted with care and
-      expertise, turning your e-commerce goals into a captivating reality.
+      While Shopify offers a solid foundation, achieving your unique goals and
+      maintaining brand integrity often requires an expert. Fortunately, you've
+      discovered a specialist ready to tailor your theme and seamlessly
+      integrate your apps.
+
+
+      **Your next step?**
     image:
       - _bookshop_name: global/image
         src: /uploads/pages/2024-headshot.png
@@ -24,7 +29,7 @@ content_blocks:
         loading: eager
     cta:
       _bookshop_name: global/cta
-      label: Ready to ditch the agency?
+      label: Reach out and introduce yourself
       link:
       style: secondary
       new_tab: false
