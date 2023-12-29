@@ -37,20 +37,7 @@ content_blocks:
       transition: swoosh
       background: primary
   - _bookshop_name: text
-    content: >-
-      <p class="eyebrow">About Me</p>
-
-
-      # Experienced Web Developer
-
-
-      **I bring a comprehensive background in e-commerce, content, and
-      marketing.**
-
-
-      My journey in the digital realm has equipped me with a unique set of
-      skills, enabling me to craft Shopify solutions that are not only visually
-      stunning but also strategically effective.
+    content: ''
     cta:
     section:
       transition: swoosh
@@ -59,7 +46,7 @@ content_blocks:
       text_align: center
   - _bookshop_name: grid/alternate
     content: >-
-      <p class="eyebrow">Alternate Grid</p>
+      <p class="eyebrow">Shopify Solutions</p>
 
 
       <h1 class="h1">Headline with a <strong>strong tag</strong></h1>
@@ -79,31 +66,38 @@ content_blocks:
     cta:
     grid_items:
       - _bookshop_name: grid/item-default
-        content: >-
-          ## Customization
+        content: |-
+          ### Theme Development
 
-
-          Custom Shopify themes elevate brand identity, enhance user experience,
-          and boost engagement for lasting impact.
-        image:
-      - _bookshop_name: grid/item-default
-        content: >-
-          ## App Integration
-
-
-          I specialize in evaluating and recommending the best apps, customizing
-          and integrating them seamlessly into your store. This approach is
-          designed to help your store achieve its specific goals effectively.
+          * Custom design and development
+          * Page Speed Optimization
         image:
       - _bookshop_name: grid/item-default
         content: |-
-          ## Automation
+          ### App Integration
 
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          * consultation & evaluation
+          * theme integration
+          * customization
+        image:
+      - _bookshop_name: grid/item-default
+        content: |-
+          ### Analytics & Reporting
+
+          * consultation
+          * customization & integration
+          * Google Analytics
+        image:
+      - _bookshop_name: grid/item-default
+        content: |-
+          ### Headless Integration
+
+          * consultation
+          * CMS integration
         image:
     section:
       transition: curve
-      background: primary
+      background: secondary
       animation: false
     layout:
       image_align: left
