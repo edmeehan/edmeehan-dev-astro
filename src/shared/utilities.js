@@ -1,5 +1,12 @@
-const is_dev = import.meta?.env?.DEV || true; // true by default so it works in CloudCannon
+let is_dev = true;
+try { // fix for CloudCannon
+  is_dev = import.meta.env.DEV
+} catch (e) {
+  console.error('error: ', e);
+}
 const quality = 92;
+
+console.log('env.DEV =', is_dev);
 
 export const dateFormatter = (short = false) => new Intl.DateTimeFormat("en-US", short ? {
   month: "long",
