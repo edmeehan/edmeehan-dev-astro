@@ -26,15 +26,38 @@ blueprint:
     background: primary
     animation: false
   layout:
-    image_align: right
-    image_vert: center
-    image_width: small
+    format: top_hat
+    items: list
+    is_mini: false
 
 preview:
 
 _inputs:
+  layout.format:
+    type: select
+    comment: Set the layout foundation
+    options:
+      allow_empty: false
+      values: _select_data.layout_format
+  layout.items:
+    type: select
+    comment: Set the layout of grid items
+    options:
+      allow_empty: false
+      values: _select_data.layout_items
+    
   grid_items:
     type: array
     options:
       empty_type: array
       structures: _structures.grid_item_default
+
+_select_data:
+  layout_format:
+    top_hat: Primary Top, Media Left, Items Right
+    media_left: Media Left, Primary Right, Items Right
+    media_right: Primary Left, Media Right, Items Left
+  layout_items:
+    list: Vertical List
+    grid_2: 2 Column Grid
+    grid_3: 3 Column Grid

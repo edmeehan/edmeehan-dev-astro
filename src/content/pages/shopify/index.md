@@ -37,7 +37,8 @@ content_blocks:
       transition: swoosh
       background: primary
   - _bookshop_name: text
-    content: ''
+    content: >-
+      Nulla lacinia nisl eget dictum posuere. Praesent suscipit faucibus risus, id fringilla lectus scelerisque tincidunt. Aenean quis turpis in velit congue tempus. Donec at nunc finibus, euismod enim in, convallis lacus.
     cta:
     section:
       transition: swoosh
@@ -60,7 +61,7 @@ content_blocks:
       src: /uploads/placeholders/splash_sm.png
       alt: test
       title: test
-      width: 400
+      width: 575
       height: 500
       loading: lazy
     cta:
@@ -69,12 +70,16 @@ content_blocks:
         content: |-
           ### Theme Development
 
+          Nulla lacinia nisl eget dictum posuere. Praesent suscipit faucibus risus, id fringilla lectus scelerisque tincidunt. Aenean quis turpis in velit congue tempus. Donec at nunc finibus, euismod enim in, convallis lacus.
+
           * Custom design and development
           * Page Speed Optimization
         image:
       - _bookshop_name: grid/item-default
         content: |-
           ### App Integration
+
+          Nulla lacinia nisl eget dictum posuere. Praesent suscipit faucibus risus, id fringilla lectus scelerisque tincidunt. Aenean quis turpis in velit congue tempus. Donec at nunc finibus, euismod enim in, convallis lacus.
 
           * consultation & evaluation
           * theme integration
@@ -84,6 +89,8 @@ content_blocks:
         content: |-
           ### Analytics & Reporting
 
+          Nulla lacinia nisl eget dictum posuere. Praesent suscipit faucibus risus, id fringilla lectus scelerisque tincidunt. Aenean quis turpis in velit congue tempus. Donec at nunc finibus, euismod enim in, convallis lacus.
+
           * consultation
           * customization & integration
           * Google Analytics
@@ -92,17 +99,27 @@ content_blocks:
         content: |-
           ### Headless Integration
 
+          Nulla lacinia nisl eget dictum posuere. Praesent suscipit faucibus risus, id fringilla lectus scelerisque tincidunt. Aenean quis turpis in velit congue tempus. Donec at nunc finibus, euismod enim in, convallis lacus.
+
           * consultation
           * CMS integration
         image:
     section:
-      transition: curve
+      transition: swoosh
       background: secondary
       animation: false
     layout:
-      image_align: left
-      image_vert: center
-      image_width: small
+      format: top_hat
+      items: grid_2
+      is_mini: true
+  - _bookshop_name: text
+    content: ''
+    cta:
+    section:
+      transition: swoosh
+      background: primary
+    layout:
+      text_align: center
 seo:
   no_index: false
   page_title: Expert Shopify Plus Development Services

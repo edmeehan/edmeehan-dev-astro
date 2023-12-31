@@ -8,39 +8,93 @@ const md = new MarkdownIt({ html: true });
 <style lang="scss" is:global>
   .grid-alternate {
     @extend %primary-wrapper;
-    padding: 4.5rem 0;
+    display: grid;
+    grid-template-areas: "content" "media" "items";
+    grid-template-rows: min-content;
+    row-gap: 3.5rem;
+    padding: 4rem 0;
+    
+    .rt > :last-child {
+      margin-bottom: 0;
+    }
 
     @include media-mobile-lg {
       padding-left: 1rem;
       padding-right: 1rem;
     }
 
-    @include media-tablet {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-evenly;
-      align-items: var(--align-items, center);
+    @include media-tablet-sm {
+      padding-top: 9rem;
+      padding-bottom: 9rem;
+
+      &:not(.mini) {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+      }
     }
 
-    // &.grid-alternate--left {}
+    @include media-tablet {
+      grid-template-columns: 40% 60%;
+    }
 
-    &.grid-alternate--right {
+    @include media-laptop {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    &.grid-alternate--top_hat {
       @include media-tablet {
-        flex-direction: row-reverse;
+        grid-template-areas:
+          "content content"
+          "media items"
+      }
+    }
+
+    &.grid-alternate--media_left {
+      @include media-tablet {
+        grid-template-areas:
+          "media content"
+          "media items"
+      }
+    }
+
+    &.grid-alternate--media_right {
+      @include media-tablet {
+        grid-template-areas:
+          "content media"
+          "items media"
       }
     }
 
     .content {
+      grid-area: content;
       position: relative;
-      
-      @include media-tablet {
-        flex: 0 1 auto;
+    }
+    .media {
+      grid-area: media;
+    }
+    .items {
+      grid-area: items;
+      display: grid;
+      grid-template-rows: min-content;
+      gap: 2rem;
+      padding-left: 0;
+      margin: 0;
+      list-style: none;
+
+      @include media-tablet-sm {
+        &.items--grid_2,
+        &.items--grid_3 {
+          grid-template-columns: repeat(2, 1fr);
+        }
       }
 
-      @include media-tablet-max {
-        padding-bottom: 4rem;
+      @include media-tablet {
+        &.items--grid_3 {
+          grid-template-columns: repeat(3, 1fr);
+        }
       }
     }
+
     .image {
       margin-bottom: -50px;
 
@@ -62,25 +116,6 @@ const md = new MarkdownIt({ html: true });
 
       &--large {
         @extend .image;
-      }
-    }
-    .items {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-      padding-left: 0;
-      margin: 0;
-      list-style: none;
-
-      &--small {
-        @extend .items;
-        @include media-tablet-sm {
-          grid-template-columns: repeat(3, 1fr);
-        }
-      }
-
-      &--large {
-        @extend .items;
       }
     }
   }
@@ -118,10 +153,11 @@ const md = new MarkdownIt({ html: true });
   }
 </style>
 
-<div class:list={[`grid-alternate`,`grid-alternate--${layout.image_align}`]} data-grid-alternate
-  style={{'--align-items': layout.image_vert }}
+<div class:list={[`grid-alternate`,`grid-alternate--${layout.format}`, { mini: layout.is_mini }]}
+  data-grid-alternate
+  style={{}}
 >
-  <div class:list={[`image--${layout.image_width}`]}>
+  <div class="media">
     { image && <Image image={image}
       srcset={[400,500,600,700,800,1000,1200,1400,1600]}
       sizes={ layout.image_width === 'small'
@@ -133,26 +169,23 @@ const md = new MarkdownIt({ html: true });
   <div class="content">
     { content && <div class="rt" set:html={md.render(content)}></div>}
     { cta && <CTA {...cta} />}
-    { grid_items && (
-      <ul class:list={[`items--${layout.image_width}`]}>
-        { grid_items.map((item) => (
-          <li>
-            { item.image && <Image image={item.image}
-              srcset={[200,300,400,500,600,660,780]}
-              sizes={ layout.image_width === 'small'
-                ? '(max-width: 579px) 50vw,(max-width: 767px) 33vw,(max-width: 1650px) 20vw, 328px'
-                : '(max-width: 767px) 50vw,(max-width: 1650px) 24vw, 386px'
-              }
-            />}
-            { item.content && (
-              <div
-                class:list={['rt']}
-                set:html={md.render(item.content)}
-              ></div>
-            )}
-          </li>
-        )) }
-      </ul>
-    )}
   </div>
+  { grid_items && (
+    <ul class:list={[`items`,`items--${layout.items}`]}>
+      { grid_items.map((item) => (
+        <li>
+          { item.image && <Image image={item.image}
+            srcset={[200,300,400,500,600,660,780]}
+            sizes={ layout.image_width === 'small'
+              ? '(max-width: 579px) 50vw,(max-width: 767px) 33vw,(max-width: 1650px) 20vw, 328px'
+              : '(max-width: 767px) 50vw,(max-width: 1650px) 24vw, 386px'
+            }
+          />}
+          { item.content && (
+            <div class="rt" set:html={md.render(item.content)}></div>
+          )}
+        </li>
+      )) }
+    </ul>
+  )}
 </div>
