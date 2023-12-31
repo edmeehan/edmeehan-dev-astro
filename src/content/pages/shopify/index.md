@@ -38,7 +38,9 @@ content_blocks:
       background: primary
   - _bookshop_name: text
     content: >-
-      Nulla lacinia nisl eget dictum posuere. Praesent suscipit faucibus risus, id fringilla lectus scelerisque tincidunt. Aenean quis turpis in velit congue tempus. Donec at nunc finibus, euismod enim in, convallis lacus.
+      Nulla lacinia nisl eget dictum posuere. Praesent suscipit faucibus risus,
+      id fringilla lectus scelerisque tincidunt. Aenean quis turpis in velit
+      congue tempus. Donec at nunc finibus, euismod enim in, convallis lacus.
     cta:
     section:
       transition: swoosh
@@ -50,12 +52,15 @@ content_blocks:
       <p class="eyebrow">Shopify Solutions</p>
 
 
-      <h1 class="h1">Headline with a <strong>strong tag</strong></h1>
+      <h1 class="h1">I'm Your Partner in Crafting the<br /><strong>Ultimate
+      Shopify Experience</strong></h1>
 
 
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non tellus
-      sapien. Duis id neque diam. Mauris commodo porta sapien vel viverra. Sed
-      finibus.
+      Transform your e-commerce platform with my expert Shopify services.
+      Committed to driving business growth and enhancing customer engagement, I
+      utilize a blend of proven strategies and cutting-edge solutions. My
+      approach is tailored to your unique needs, ensuring results that
+      significantly elevate your online market presence.
     image:
       _bookshop_name: global/image
       src: /uploads/placeholders/splash_sm.png
@@ -67,42 +72,31 @@ content_blocks:
     cta:
     grid_items:
       - _bookshop_name: grid/item-default
-        content: |-
-          ### Theme Development
+        content: >-
+          ### 🪚 Theme Development
 
-          Nulla lacinia nisl eget dictum posuere. Praesent suscipit faucibus risus, id fringilla lectus scelerisque tincidunt. Aenean quis turpis in velit congue tempus. Donec at nunc finibus, euismod enim in, convallis lacus.
 
-          * Custom design and development
-          * Page Speed Optimization
+          Transform your e-commerce vision into reality with bespoke Shopify
+          theme development. Enjoy beautifully crafted designs with optimized
+          performance for lightning-fast page speeds.
         image:
       - _bookshop_name: grid/item-default
-        content: |-
-          ### App Integration
+        content: >-
+          ### 🔌 App Integration
 
-          Nulla lacinia nisl eget dictum posuere. Praesent suscipit faucibus risus, id fringilla lectus scelerisque tincidunt. Aenean quis turpis in velit congue tempus. Donec at nunc finibus, euismod enim in, convallis lacus.
 
-          * consultation & evaluation
-          * theme integration
-          * customization
+          Providing comprehensive consultation and app evaluation, seamless
+          theme integration, and bespoke customization for a fully integrated,
+          tailored Shopify app experience that elevates your online store.
         image:
       - _bookshop_name: grid/item-default
-        content: |-
-          ### Analytics & Reporting
+        content: >-
+          ### 📊 Analytics & Reporting
 
-          Nulla lacinia nisl eget dictum posuere. Praesent suscipit faucibus risus, id fringilla lectus scelerisque tincidunt. Aenean quis turpis in velit congue tempus. Donec at nunc finibus, euismod enim in, convallis lacus.
 
-          * consultation
-          * customization & integration
-          * Google Analytics
-        image:
-      - _bookshop_name: grid/item-default
-        content: |-
-          ### Headless Integration
-
-          Nulla lacinia nisl eget dictum posuere. Praesent suscipit faucibus risus, id fringilla lectus scelerisque tincidunt. Aenean quis turpis in velit congue tempus. Donec at nunc finibus, euismod enim in, convallis lacus.
-
-          * consultation
-          * CMS integration
+          Offering expert consultation, tailored analytics customization, and
+          seamless integration. As a Google Analytics specialist, I enhance your
+          Shopify store with insightful, data-driven reporting solutions.
         image:
     section:
       transition: swoosh
@@ -110,7 +104,7 @@ content_blocks:
       animation: false
     layout:
       format: top_hat
-      items: grid_2
+      items: list
       is_mini: true
   - _bookshop_name: text
     content: ''
