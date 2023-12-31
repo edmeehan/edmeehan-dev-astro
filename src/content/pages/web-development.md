@@ -142,9 +142,9 @@ content_blocks:
       transition: curve
       background: secondary
     layout:
-      image_align: left
-      image_width: large
-      image_vert: center
+      format: top_hat
+      items: grid_2
+      is_mini: true
     grid_items:
       - image:
         content: >-

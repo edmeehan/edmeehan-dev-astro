@@ -107,7 +107,7 @@ const md = new MarkdownIt({ html: true });
     <dl class="faqs">
       { faqs.map((item, index) => (
         <div>
-          <dt class:list={['h3', {active: index === 0 || ENV_BOOKSHOP_LIVE}]}>
+          <dt class:list={['mini_headline', {active: index === 0 || ENV_BOOKSHOP_LIVE}]}>
             <svg><use xlink:href='#caret-right'></use></svg>
             <span>{ item.question || 'This is an empty answer' }</span>
           </dt>
