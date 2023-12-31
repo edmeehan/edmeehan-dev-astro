@@ -38,8 +38,8 @@ content_blocks:
       src: /uploads/pages/altgrid-edhead-complete@2x.png
       alt: illustration of Ed Meehan
       title:
-      width: 560
-      height: 560
+      width: 480
+      height: 480
       loading: lazy
     content: >-
       <p class="eyebrow">About me</p>
@@ -70,9 +70,9 @@ content_blocks:
       background: primary
       animation: true
     layout:
-      image_align: left
-      image_width: small
-      image_vert: center
+      format: media_left
+      items: list
+      is_mini: true
     grid_items:
   - _bookshop_name: cards/testimonials
     content: >-
@@ -112,9 +112,9 @@ content_blocks:
       transition: curve
       background: primary
     layout:
-      image_align: right
-      image_width: large
-      image_vert: center
+      format: media_right
+      items: grid_2
+      is_mini: true
     grid_items:
       - image:
           src: /uploads/pages/altgrid-item-icon-webdev@2x.png

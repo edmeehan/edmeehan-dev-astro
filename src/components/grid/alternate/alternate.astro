@@ -10,7 +10,6 @@ const md = new MarkdownIt({ html: true });
     @extend %primary-wrapper;
     display: grid;
     grid-template-areas: "content" "media" "items";
-    grid-template-rows: min-content;
     row-gap: 3.5rem;
     padding: 4rem 0;
     
@@ -35,10 +34,11 @@ const md = new MarkdownIt({ html: true });
 
     @include media-tablet {
       grid-template-columns: 40% 60%;
+      grid-template-rows: auto 1fr;
     }
 
     @include media-laptop {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, 1fr);
     }
 
     &.grid-alternate--top_hat {
