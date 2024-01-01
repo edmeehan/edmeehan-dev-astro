@@ -41,7 +41,7 @@ content_blocks:
     cta:
     section:
       transition: swoosh
-      background: secondary
+      background: loud
     layout:
       text_align: center
   - _bookshop_name: grid/alternate
@@ -97,55 +97,29 @@ content_blocks:
         image:
     section:
       transition: curve
-      background: primary
-      animation: false
+      background: secondary
+      animation: true
     layout:
       format: top_hat
       items: list
       media_align: start
       is_mini: true
   - _bookshop_name: text
-    content: >-
-      <p class="eyebrow">Simple Text</p>
+    content: |-
+      <p class="eyebrow">Get Started</p>
 
-
-      # Headline with a **strong tag**
-
-
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non tellus
-      sapien. Duis id neque diam. Mauris commodo porta sapien vel viverra. Sed
-      finibus.
+      # Ready for<br>Shopify Success?
     cta:
       _bookshop_name: global/cta
-      label: Click Me
+      label: Contact Me Now
       link:
-      style: primary
+      style: loud
       new_tab: false
     section:
       transition: curve
-      background: loud
+      background: primary
     layout:
       text_align: center
-  - _bookshop_name: grid/simple
-    content: >-
-      <p class="eyebrow">Simple Grid</p>
-
-
-      <h1 class="h1">Headline with a <strong>strong tag</strong></h1>
-
-
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non tellus
-      sapien. Duis id neque diam. Mauris commodo porta sapien vel viverra. Sed
-      finibus.
-    cta:
-    grid_items: []
-    section:
-      transition: curve
-      background: primary
-      animation: false
-    layout:
-      text_align: left
-      is_mini: true
 seo:
   no_index: false
   page_title: Expert Shopify Plus Development Services
