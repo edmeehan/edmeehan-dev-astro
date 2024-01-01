@@ -35,7 +35,7 @@ preview:
 _inputs:
   layout.format:
     type: select
-    comment: Set the layout foundation
+    comment: Set the layout
     options:
       allow_empty: false
       values: _select_data.layout_format
@@ -54,9 +54,9 @@ _inputs:
 
 _select_data:
   layout_format:
-    top_hat: Primary Top, Media Left, Items Right
-    media_left: Media Left, Primary Right, Items Right
-    media_right: Primary Left, Media Right, Items Left
+    top_hat: Top Hat
+    media_left: Split Media Left
+    media_right: Split Media Right
   layout_items:
     list: Vertical List
     grid_2: 2 Column Grid

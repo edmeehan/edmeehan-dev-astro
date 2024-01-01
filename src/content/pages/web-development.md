@@ -214,16 +214,19 @@ content_blocks:
       src: /uploads/pages/web-dev-logos.svg
       alt: whales and water
       title:
-      width: 812
-      height: 349
+      width: 900
+      height: 
       loading: lazy
     section:
       transition: swoosh
       background: primary
       animation: true
     layout:
-      image_align: right
-      image_width: large
+      format: left
+      content_align: center
+      media_align: center
+      media_expand: true
+      is_mini: true
   - _bookshop_name: faqs
     content: >-
       <h4 class="h2"><strong>Frequently Asked Questions</strong></h4>

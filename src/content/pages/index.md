@@ -65,49 +65,10 @@ content_blocks:
       background: primary
       animation: false
     layout:
-      image_align: left
-      image_width: small
-  - _bookshop_name: grid/alternate
-    content: >-
-      <p class="eyebrow">About me</p>
-
-
-      <h2 class="h1">Hello, I'm Ed</h2>
-
-
-      I am a web developer based out of San Diego, California.
-
-
-      As a skilled web developer with experience building responsive,
-      high-performance websites, eCommerce stores, and Progressive Web Apps, I
-      am passionate about creating innovative and effective online solutions for
-      my clients.
-
-
-      Whether you need a simple brochure website or a complex eCommerce store, I
-      have the skills and expertise to bring your vision to life. If you are
-      looking for a reliable and experienced web developer, I would love the
-      opportunity to work with you on your next great project.
-
-
-      *\- Ed Meehan*
-    image:
-      _bookshop_name: global/image
-      src: /uploads/pages/altgrid-edhead-complete@2x.png
-      alt: illustration of Ed Meehan
-      title:
-      width: 480
-      height: 480
-      loading: lazy
-    cta:
-    grid_items:
-    section:
-      transition: curve
-      background: primary
-      animation: true
-    layout:
-      format: media_left
-      items: list
+      format: left
+      content_align: center
+      media_align: center
+      media_expand: false
       is_mini: true
   - _bookshop_name: cards/testimonials
     content: >-

@@ -25,9 +25,40 @@ blueprint:
     background: primary
     animation: false
   layout:
-    image_align: right
-    image_width: small
+    format: left
+    content_align: center
+    media_align: center
+    media_expand: false
+    is_mini: false
 
 preview:
 
 _inputs:
+  layout.format:
+    type: select
+    comment: Set the layout
+    options:
+      allow_empty: false
+      values: _select_data.layout_format
+  layout.content_align:
+    type: select
+    options:
+      allow_empty: false
+      values: _select_data.content_align
+  layout.media_align:
+    type: select
+    options:
+      allow_empty: false
+      values: _select_data.content_align
+  layout.media_expand:
+    type: switch
+    comment: Grow media cell to fill remaining space.
+
+_select_data:
+  layout_format:
+    left: Media Left
+    right: Media Right
+  content_align:
+    flex-start: Top
+    center: Center
+    flex-end: Bottom
