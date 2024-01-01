@@ -16,9 +16,6 @@ content_blocks:
       maintaining brand integrity often requires an expert. Fortunately, you've
       discovered a specialist ready to tailor your theme and seamlessly
       integrate your apps.
-
-
-      **Your next step?**
     image:
       - _bookshop_name: global/image
         src: /uploads/pages/2024-headshot.png
@@ -44,7 +41,7 @@ content_blocks:
     cta:
     section:
       transition: swoosh
-      background: loud
+      background: secondary
     layout:
       text_align: center
   - _bookshop_name: grid/alternate
@@ -52,15 +49,15 @@ content_blocks:
       <p class="eyebrow">Shopify Solutions</p>
 
 
-      <h1 class="h1">I'm Your Partner in Crafting the<br /><strong>Ultimate
-      Shopify Experience</strong></h1>
+      <h1 class="h1">Your Partner in Crafting the<br /><strong>Ultimate Shopify
+      Experience</strong></h1>
 
 
-      Transform your e-commerce platform with my expert Shopify services.
-      Committed to driving business growth and enhancing customer engagement, I
-      utilize a blend of proven strategies and cutting-edge solutions. My
-      approach is tailored to your unique needs, ensuring results that
-      significantly elevate your online market presence.
+      Transform your e-commerce platform with my Shopify expert services. I
+      blend proven strategies and cutting-edge solutions to drive business
+      growth and enhance customer engagement. My approach is tailored to your
+      unique needs, ensuring results significantly elevate your online market
+      presence.
     image:
       _bookshop_name: global/image
       src: /uploads/placeholders/splash_sm.png
@@ -76,8 +73,8 @@ content_blocks:
           ### 🚀 Theme Development
 
 
-          Transform your e-commerce vision into reality with bespoke Shopify
-          theme development. Enjoy beautifully crafted designs with optimized
+          Your e-commerce vision into reality with my tailored Shopify theme
+          development. Enjoy beautifully crafted designs with optimized
           performance for lightning-fast page speeds.
         image:
       - _bookshop_name: grid/item-default
@@ -85,22 +82,22 @@ content_blocks:
           ### 🔌 App Integration
 
 
-          Providing comprehensive consultation and app evaluation, seamless
-          theme integration, and bespoke customization for a fully integrated,
-          tailored Shopify app experience that elevates your online store.
+          I provide comprehensive consultation and app evaluation, seamless
+          theme integration, and bespoke customization for a fully integrated
+          Shopify app experience that elevates your online store.
         image:
       - _bookshop_name: grid/item-default
         content: >-
           ### 🏆 Analytics & Reporting
 
 
-          Offering expert consultation, tailored analytics customization, and
-          seamless integration. As a Google Analytics specialist, I enhance your
-          Shopify store with insightful, data-driven reporting solutions.
+          I offer expert consultation, analytics customization, and seamless
+          integration. As a Google Analytics specialist, I enhance your Shopify
+          store with insightful, data-driven reporting solutions.
         image:
     section:
-      transition: swoosh
-      background: secondary
+      transition: curve
+      background: primary
       animation: false
     layout:
       format: top_hat
@@ -108,13 +105,47 @@ content_blocks:
       media_align: start
       is_mini: true
   - _bookshop_name: text
-    content: ''
+    content: >-
+      <p class="eyebrow">Simple Text</p>
+
+
+      # Headline with a **strong tag**
+
+
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non tellus
+      sapien. Duis id neque diam. Mauris commodo porta sapien vel viverra. Sed
+      finibus.
     cta:
+      _bookshop_name: global/cta
+      label: Click Me
+      link:
+      style: primary
+      new_tab: false
     section:
-      transition: swoosh
-      background: primary
+      transition: curve
+      background: loud
     layout:
       text_align: center
+  - _bookshop_name: grid/simple
+    content: >-
+      <p class="eyebrow">Simple Grid</p>
+
+
+      <h1 class="h1">Headline with a <strong>strong tag</strong></h1>
+
+
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non tellus
+      sapien. Duis id neque diam. Mauris commodo porta sapien vel viverra. Sed
+      finibus.
+    cta:
+    grid_items: []
+    section:
+      transition: curve
+      background: primary
+      animation: false
+    layout:
+      text_align: left
+      is_mini: true
 seo:
   no_index: false
   page_title: Expert Shopify Plus Development Services
