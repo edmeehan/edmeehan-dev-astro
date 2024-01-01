@@ -156,26 +156,30 @@ h4,.h4 {
 
 .text-center {
   text-align: center;
-  .rt > * {
+  > .rt {
     margin-left: auto;
     margin-right: auto;
   }
 }
 .text-left {
   text-align: left;
-  .rt > * {
+  > .rt {
     margin-right: auto;
   }
 }
 .text-right {
   text-align: right;
-  .rt > * {
+  > .rt {
     margin-left: auto;
   }
 }
 
 .rt {
   max-width: 35rem;
+
+  &--wide {
+    max-width: 45rem;
+  }
 
   ul {
     padding-left: 1rem;
@@ -187,10 +191,10 @@ h4,.h4 {
   }
 
   /* rich text wrapper - center text */
-  .rt-center  {text-align: center;}
-  .rt-left    {text-align: left;}
-  .rt-right   {text-align: right;}
-  .rt-justify {text-align: justify;}
+  // .rt-center  {text-align: center;}
+  // .rt-left    {text-align: left;}
+  // .rt-right   {text-align: right;}
+  // .rt-justify {text-align: justify;}
 }
 
 .step-down {
@@ -220,13 +224,13 @@ h4,.h4 {
 }
 
 /* ------------ ENGAGEMENT MARKER STYLES ------------ */
-#gatsby-focus-wrapper {
-  position: relative;
-}
-.engagmentMarker {
-  position: absolute;
-  opacity: 0;
-}
+// #gatsby-focus-wrapper {
+//   position: relative;
+// }
+// .engagmentMarker {
+//   position: absolute;
+//   opacity: 0;
+// }
 
 // .keepscrolling {
 //   @include media-tablet {

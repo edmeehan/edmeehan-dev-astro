@@ -10,13 +10,8 @@ const md = new MarkdownIt({ html: true });
     @extend %primary-wrapper;
   
     > header {
-      text-align: center;
       padding-top: 4.5rem;
       padding-bottom: 3rem;
-    }
-    .rt > * {
-      margin-left: auto;
-      margin-right: auto;
     }
     > ul {
       margin-top: 0;
@@ -38,7 +33,7 @@ const md = new MarkdownIt({ html: true });
 </style>
 
 <div data-cards-testimonials>
-  <header>
+  <header class="text-center">
     { content && <div class="rt" set:html={md.render(content)}></div>}
   </header>
   { testimonials && (

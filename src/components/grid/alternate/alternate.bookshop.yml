@@ -28,6 +28,7 @@ blueprint:
   layout:
     format: top_hat
     items: list
+    media_align: start
     is_mini: false
 
 preview:
@@ -45,7 +46,11 @@ _inputs:
     options:
       allow_empty: false
       values: _select_data.layout_items
-    
+  layout.media_align:
+    type: select
+    options:
+      allow_empty: false
+      values: _select_data.grid_align
   grid_items:
     type: array
     options:

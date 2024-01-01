@@ -144,6 +144,7 @@ content_blocks:
     layout:
       format: top_hat
       items: grid_2
+      media_align: start
       is_mini: true
     grid_items:
       - image:

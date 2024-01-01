@@ -105,6 +105,7 @@ content_blocks:
     layout:
       format: top_hat
       items: list
+      media_align: start
       is_mini: true
   - _bookshop_name: text
     content: ''

@@ -151,6 +151,7 @@ content_blocks:
     layout:
       format: media_right
       items: grid_2
+      media_align: center
       is_mini: true
   - _bookshop_name: grid/simple
     content: >-
