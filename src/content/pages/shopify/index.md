@@ -73,7 +73,7 @@ content_blocks:
     grid_items:
       - _bookshop_name: grid/item-default
         content: >-
-          ### 🪚 Theme Development
+          ### 🚀 Theme Development
 
 
           Transform your e-commerce vision into reality with bespoke Shopify
@@ -91,7 +91,7 @@ content_blocks:
         image:
       - _bookshop_name: grid/item-default
         content: >-
-          ### 📊 Analytics & Reporting
+          ### 🏆 Analytics & Reporting
 
 
           Offering expert consultation, tailored analytics customization, and
