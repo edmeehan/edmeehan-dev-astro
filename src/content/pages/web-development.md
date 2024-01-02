@@ -89,7 +89,7 @@ content_blocks:
           * You're an agency or company that requires time tracking.
 
           * You will be reselling my services as your own.
-  - _bookshop_name: cards/testimonials
+  - _bookshop_name: testimonial/cards
     content: >-
       <h3 class="h2">Client stories</h3>
 

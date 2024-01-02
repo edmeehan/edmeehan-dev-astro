@@ -1,7 +1,7 @@
 ---
 _schema: page
 uuid: 63ab7881-b6f2-4191-bcca-51ffba2b9920
-title: index
+title: shopify
 content_blocks:
   - _bookshop_name: hero/splash
     content: >-
@@ -33,7 +33,7 @@ content_blocks:
     section:
       transition: swoosh
       background: primary
-  - _bookshop_name: text
+  - _bookshop_name: testimonial/single
     content: >-
       Nulla lacinia nisl eget dictum posuere. Praesent suscipit faucibus risus,
       id fringilla lectus scelerisque tincidunt. Aenean quis turpis in velit

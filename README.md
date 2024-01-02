@@ -14,7 +14,8 @@ Primary layout components similar to Shopify sections. These blocks stack vertic
 | [Simple Grid](src/components/grid/simple/) | grid/simple | Content section with list of items with images. | ✔ |
 | [Side by Side](src/components/grid/side-by-side/) | grid/side-by-side | Content section with image. | ✔ |
 | [Simple Text](src/components/text/) | text | Just a block of text. | ✔ |
-| [Testimonial Cards](src/components/cards/testimonials/) | cards/testimonials | Client testimonials with headshot, title, & company. | ✔ | 
+| [Testimonial Cards](src/components/testimonial/cards/) | testimonial/cards | Client testimonials with headshot, title, & company. | ✔ | 
+| [Single Testimonial](src/components/testimonial/single/) | testimonial/single | Client testimonial with logo, headshot, title, & company. | ✔ | 
 | [Post Cards](src/components/cards/posts/) | cards/posts | Blog & Project, with primary image and excerpt. | ✔ |
 | [Form](src/components/form/) | form | Capture form builder with basic inputs. | ✔ |
 | [FAQs](src/components/faqs/) | faqs | Frequently Ask Questions with toggle to show answer. | ✔ |

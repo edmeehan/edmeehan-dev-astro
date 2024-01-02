@@ -1,0 +1,27 @@
+spec:
+  structures:
+    - content_blocks
+  label: Testimonial
+  description: Display a single testimonial
+  icon: record_voice_over
+  tags:
+    - testimonial
+
+blueprint:
+  testimonial: null
+  section:
+    transition: curve
+    background: primary
+    animation: false
+
+_inputs:
+  testimonial:
+    type: select
+    options:
+      value_key: uuid
+      values: data.testimonials
+      preview:
+        text:
+          - key: name
+        image:
+          - key: image

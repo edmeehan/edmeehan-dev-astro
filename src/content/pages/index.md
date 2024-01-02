@@ -70,7 +70,7 @@ content_blocks:
       media_align: center
       media_expand: false
       is_mini: true
-  - _bookshop_name: cards/testimonials
+  - _bookshop_name: testimonial/cards
     content: >-
       <h3 class="h2">Client stories</h3>
 
