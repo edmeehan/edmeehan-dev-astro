@@ -117,6 +117,29 @@ if (headshot_image) {
       }
     }
   }
+
+  .section--animate {
+    .testimonial-single .content{
+      > * {
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+      }
+      > *:first-child {
+        transform: translateX(10vw);
+      }
+      > *:last-child {
+        transform: translateX(-10vw);
+      }
+    }
+    &.animate {
+      .testimonial-single .content{
+        > * {
+          opacity: 1;
+          transform: translateX(0vw);
+        }
+      }  
+    }
+  }
 </style>
 
 <div class="testimonial-single mini" data-testimonial-single>

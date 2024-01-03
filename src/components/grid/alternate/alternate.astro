@@ -154,10 +154,11 @@ const md = new MarkdownIt({ html: true });
     }
   }
 </style>
-<div class:list={[`grid-alternate`,`grid-alternate--${layout.format}`, { mini: layout.is_mini }]}
-  data-grid-alternate
-  style={{}}
->
+<div class:list={[
+    `grid-alternate`,
+    `grid-alternate--${layout.format}`,
+    { mini: layout.is_mini }
+  ]} data-grid-alternate>
   <div class="media" style={{'--align': layout.media_align }}>
     { image && <Image image={image}
       srcset={[400,500,600,700,800,1000,1200,1400,1600]}
