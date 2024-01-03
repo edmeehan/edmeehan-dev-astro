@@ -101,7 +101,7 @@ const sizes = '(max-width: 579px) calc(100vw - 3rem),(max-width: 1654px) calc(50
   }
 
   // uses a intersection observer to animate the testimonial
-  .section--animate {
+  @include section-animate {
     .card-post {
       transition: transform 500ms var(--offset, 100ms),
         opacity 500ms var(--offset, 100ms);

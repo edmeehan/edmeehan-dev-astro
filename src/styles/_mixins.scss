@@ -108,3 +108,9 @@
     @content;
   }
 }
+// ----------- CLOUD CANNON
+@mixin section-animate {
+  body.cms-editor-active .section--animate {
+    @content;
+  }
+}

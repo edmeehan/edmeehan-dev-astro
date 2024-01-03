@@ -166,7 +166,4 @@ const set_prev = !is_first; // && prev.background !== 'loud';
     }, { threshold: 0, root: null, rootMargin: '-30% 0% -30% 0%' });
     [...sectionAnimation].forEach(section => observer.observe(section));
   }
-  if (window.inEditorMode) {
-    [...sectionAnimation].forEach(section => section.classList.remove('section--animate'));
-  }
 </script>
