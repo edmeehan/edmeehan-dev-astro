@@ -34,16 +34,11 @@ content_blocks:
       transition: swoosh
       background: primary
   - _bookshop_name: testimonial/single
-    content: >-
-      Nulla lacinia nisl eget dictum posuere. Praesent suscipit faucibus risus,
-      id fringilla lectus scelerisque tincidunt. Aenean quis turpis in velit
-      congue tempus. Donec at nunc finibus, euismod enim in, convallis lacus.
-    cta:
+    testimonial: 4d31cf68-4293-4669-b9d6-c93c6204f564
     section:
       transition: swoosh
       background: loud
-    layout:
-      text_align: center
+      animation: true
   - _bookshop_name: grid/alternate
     content: >-
       <p class="eyebrow">Shopify Solutions</p>
