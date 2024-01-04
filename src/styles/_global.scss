@@ -92,6 +92,7 @@ span.sup {
   }
 }
 
+.hero_headline,
 h1,.h1 {
   // mobile default
   font-size: $text_mobile_hero_headline;
@@ -103,6 +104,7 @@ h1,.h1 {
   }
 }
 
+.section_headline,
 h2,.h2 {
   // mobile default
   font-size: $text_mobile_section_headline;
@@ -114,7 +116,8 @@ h2,.h2 {
   }
 }
 
-h3,.h3 {
+.mini_headline,
+h4,.h4 {
   // mobile default
   font-size: $text_mobile_mini_headline;
   line-height: $text_mobile_mini_headline_line_height;
@@ -125,49 +128,57 @@ h3,.h3 {
   }
 }
 
+h3,.h3 {
+  // mobile default
+  font-size: 1.3rem;
+  line-height: 1.25em;
+  // laptop small
+  @include media-laptop {
+    font-size: 1.5rem;
+    line-height: 1.25em;
+  }
+}
+
+.hero_headline,
+.section_headline,
+.mini_headline,
 h1,.h1,
 h2,.h2,
-h3,.h3 {
+h3,.h3,
+h4,.h4 {
   margin-top: 0;
   font-weight: $text_weight_bold;
+  strong {
+    @extend .highlight;
+    font-weight: inherit;
+  }
 }
 
 .text-center {
   text-align: center;
-  .rt > * {
+  > .rt {
     margin-left: auto;
     margin-right: auto;
   }
 }
 .text-left {
   text-align: left;
-  .rt > * {
+  > .rt {
     margin-right: auto;
   }
 }
 .text-right {
   text-align: right;
-  .rt > * {
+  > .rt {
     margin-left: auto;
   }
 }
 
 .rt {
-  p {
-    max-width: 34.5em;
-  }
+  max-width: 35rem;
 
-  h1,.h1 {
-    max-width: 12.5em;
-  }
-
-  h1,.h1,
-  h2,.h2,
-  h3,.h3 {
-    strong {
-      @extend .highlight;
-      font-weight: inherit;
-    }
+  &--wide {
+    max-width: 45rem;
   }
 
   ul {
@@ -180,10 +191,10 @@ h3,.h3 {
   }
 
   /* rich text wrapper - center text */
-  .rt-center  {text-align: center;}
-  .rt-left    {text-align: left;}
-  .rt-right   {text-align: right;}
-  .rt-justify {text-align: justify;}
+  // .rt-center  {text-align: center;}
+  // .rt-left    {text-align: left;}
+  // .rt-right   {text-align: right;}
+  // .rt-justify {text-align: justify;}
 }
 
 .step-down {
@@ -213,13 +224,13 @@ h3,.h3 {
 }
 
 /* ------------ ENGAGEMENT MARKER STYLES ------------ */
-#gatsby-focus-wrapper {
-  position: relative;
-}
-.engagmentMarker {
-  position: absolute;
-  opacity: 0;
-}
+// #gatsby-focus-wrapper {
+//   position: relative;
+// }
+// .engagmentMarker {
+//   position: absolute;
+//   opacity: 0;
+// }
 
 // .keepscrolling {
 //   @include media-tablet {

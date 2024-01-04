@@ -87,7 +87,7 @@ content_blocks:
           * Tracking setup review and recommendations.
 
           * Team training.
-  - _bookshop_name: cards/testimonials
+  - _bookshop_name: testimonial/cards
     content: >-
       <h3 class="h2">Client stories</h3>
 

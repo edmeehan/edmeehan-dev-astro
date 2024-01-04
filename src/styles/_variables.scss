@@ -49,11 +49,11 @@ $text_mobile_line_height: 1.5em;
 $text_mobile_line_height_root: 1.5rem;
 $text_mobile_eyebrow: 1.1rem;
 $text_mobile_eyebrow_line_height: 1.3em;
-$text_mobile_hero_headline: 2.125rem;
+$text_mobile_hero_headline: 2.125rem; // H1
 $text_mobile_hero_headline_line_height: 1.2em;
-$text_mobile_mini_headline: 1.187rem;
+$text_mobile_mini_headline: 1.187rem; // H3
 $text_mobile_mini_headline_line_height: 1.263em;
-$text_mobile_section_headline: 1.625rem;
+$text_mobile_section_headline: 1.625rem; // H2
 $text_mobile_section_headline_line_height: 1.1em;
 $text_mobile_step_down: .875rem;
 $text_mobile_step_down_line_height: 1.428em;
@@ -63,16 +63,17 @@ $text_mobile_cta: .875rem;
 $text_mobile_cta_line_height: 1.428em;
 
 $text_laptop_font_size: 18px;
+
 $text_desktop_font_size: 22px;
 $text_desktop_line_height: 1.363em;
 $text_desktop_line_height_root: 1.363rem;
-$text_desktop_eyebrow: 1.1rem;
+$text_desktop_eyebrow: 1.15rem;
 $text_desktop_eyebrow_line_height: 1.3em;
-$text_desktop_hero_headline: 3.272rem;
+$text_desktop_hero_headline: 3.272rem; // H1
 $text_desktop_hero_headline_line_height: 1.1em;
-$text_desktop_mini_headline: 1.09rem;
+$text_desktop_mini_headline: 1.09rem; // H3
 $text_desktop_mini_headline_line_height: 1.25em;
-$text_desktop_section_headline: 2.181rem;
+$text_desktop_section_headline: 2.181rem; // H2
 $text_desktop_section_headline_line_height: 1.1em;
 $text_desktop_step_down: .818rem;
 $text_desktop_step_down_line_height: 1.5em;
@@ -88,6 +89,7 @@ $layout_max_width: 1600px;
 $layout_max_width_small: 1250px;
 $layout_max_width_medium: 1400px;
 $layout_gutter: 1.5rem;
+
 // z-index
 $zindex_base: 0;
 $zindex_background: 1;
@@ -96,11 +98,13 @@ $zindex_popover: 50;
 $zindex_menu: 100;
 $zindex_modal: 200;
 $zindex_top: 300;
+
 // rounded corners
 $radius_sm: 4px;
 $radius_md: .4rem;
 $radius_lg: 1rem;
 $radius_circle: 1000px;
+
 // media query sizes
 $mobileS: 320px;
 $mobileM: 375px;

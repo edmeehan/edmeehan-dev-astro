@@ -15,6 +15,12 @@
     },
     {
       "_bookshop_name": "global/link",
+      "label": "Shopify",
+      "link": "/shopify/",
+      "new_tab": false
+    },
+    {
+      "_bookshop_name": "global/link",
       "label": "Analytics",
       "link": "/analytics/",
       "new_tab": true
@@ -37,11 +43,10 @@
       "_bookshop_name": "global/cta",
       "label": "Contact Me",
       "link": "/contact/",
-      "new_tab": false,
-      "style": "secondary"
+      "style": "secondary",
+      "new_tab": false
     }
   ],
-
   "_inputs": {
     "logo": {
       "type": "object",

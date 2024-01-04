@@ -52,7 +52,7 @@ const md = new MarkdownIt({ html: true });
     }
   }
 
-  .section--animate {
+  @include section-animate {
     .grid-simple .item {
       transition: transform 500ms var(--offset, 100ms),
         opacity 500ms var(--offset, 100ms);

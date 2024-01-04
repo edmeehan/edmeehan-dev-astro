@@ -393,7 +393,7 @@ _inputs:
     type: select
     options:
       allow_empty: true
-      values: _select_data.layout_image_vert
+      values: _select_data.flex_align
     comment: Set the vertical alignment of image.
   content_blocks[*].layout.image_width:
     type: select
@@ -430,10 +430,14 @@ _select_data:
   layout_image_align:
     left: Left
     right: Right
-  layout_image_vert:
+  flex_align:
     flex-start: Top
     center: Center
     flex-end: Bottom
+  grid_align:
+    start: Top
+    center: Center
+    end: Bottom
   layout_image_width:
     small: Small
     large: Large

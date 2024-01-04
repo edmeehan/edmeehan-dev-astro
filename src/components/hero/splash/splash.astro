@@ -11,6 +11,7 @@ const md = new MarkdownIt({ html: true });
     margin-left: auto;
     margin-right: auto;
     max-width: 75rem;
+    padding-bottom: 5rem;
 
     @include media-mobile-lg {
       padding-left: 1rem;
@@ -21,9 +22,9 @@ const md = new MarkdownIt({ html: true });
       display: grid;
       align-items: center;
       justify-content: center;
-      min-height: 80vh;
       padding-left: 2rem;
       padding-right: 2rem;
+      padding-top: 1rem;
       grid-template-columns:
         [content-start]
         45%
@@ -37,9 +38,7 @@ const md = new MarkdownIt({ html: true });
 
     > .content {
       position: relative;
-      @include media-tablet-max {
-        padding-bottom: 4rem;
-      }
+
       @include media-tablet {
         grid-column: content;
         grid-row: 1 / span 1;
@@ -48,12 +47,19 @@ const md = new MarkdownIt({ html: true });
     > .image {
       position: relative;
       width: 100%;
-      z-index: -1;
-      margin-bottom: -100px;
 
       @include media-tablet {
         grid-column: image;
         grid-row: 1 / span 1;
+        margin-bottom: 0;
+      }
+
+      @include media-mobile-lg {
+        z-index: -1;
+        margin-bottom: -2rem;
+      }
+
+      @include media-tablet {
         margin-bottom: 0;
       }
     }

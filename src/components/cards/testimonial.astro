@@ -76,7 +76,7 @@ if (headshot) {
     }
   }
   // uses a intersection observer to animate the testimonial
-  .section--animate {
+  @include section-animate {
     .card-testimonial {
       transition: transform 500ms var(--offset, 100ms),
         opacity 500ms var(--offset, 100ms);
@@ -105,7 +105,7 @@ if (headshot) {
 >
   <header>
     <div class='text'>
-      <h5 class='h3'>{ name }</h5>
+      <h5 class='mini_headline'>{ name }</h5>
       <div class='step-down'>{ company } | { title }</div>
     </div>
     { headshot && (

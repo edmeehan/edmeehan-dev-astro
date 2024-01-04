@@ -1,0 +1,171 @@
+---
+import {imgix} from 'src/shared/utilities.js'
+import MarkdownIt from 'markdown-it';
+import testimonialsData from 'data/testimonials.json';
+const { testimonial } = Astro.props;
+const { name, company, title, testimonial_textarea, headshot_image, svg_logo } = testimonialsData.find(({uuid}) => uuid === testimonial) || {};
+const md = new MarkdownIt({ html: true });
+let headshot_x1, headshot_x2;
+if (headshot_image) {
+  headshot_x1 = imgix(headshot_image,110,1);
+  headshot_x2 = imgix(headshot_image,110,2);
+}
+---
+<style lang="scss" is:global>
+  .testimonial-single {
+    @extend %primary-wrapper;
+
+    > .content {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      display: grid;
+
+      .text {
+        h4 {
+          margin-bottom: 0;
+        }
+      }
+
+      .headshot {
+        border-radius: $radius_circle;
+        display: inline-block;
+      }
+
+      .logo {
+        background-color: $color_text_default;
+        border-radius: $radius_circle;
+        display: inline-block;
+        z-index: 1;
+      }
+
+      .media {
+        display: flex;
+      }
+
+      .body {
+        font-size: 1.35rem;
+        line-height: 1.35em;
+        font-style: italic;
+      }
+
+      @include media-tablet-max {
+        row-gap: 1rem;
+        
+        header {
+          display: grid;
+          grid-template-columns: min-content auto;
+          gap: 2rem;
+          align-items: center;
+          grid-row: 2 / 3;
+        }
+        .media {
+          grid-column: 1 / span 1;
+          grid-row: 1 / 2;
+          align-items: flex-end;
+        }
+        .logo {
+          margin-left: -30px;
+        }
+        .text {
+          grid-column: 2 / span 1;
+          grid-row: 1 / 2;
+        }
+        .body {
+          grid-row: 1 / 2;
+        }
+      }
+
+      @include media-tablet {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+        column-gap: 5rem;
+        grid-template-columns: 2fr 3fr;
+        align-items: center;
+
+        header {
+          text-align: right;
+        }
+
+        .text {
+          margin-bottom: 1rem;
+        }
+
+        .body {
+          position: relative;
+          &::after {
+            content: "";
+            display: block;
+            width: 1px;
+            height: 100%;
+            background-color: $color_text_default;
+            opacity: .3;
+            position: absolute;
+            top: 0;
+            left: -2.5rem;
+          }
+        }
+
+        .media {
+          justify-content: flex-end;
+          align-items: flex-end;
+        }
+
+        .logo {
+          margin-right: -30px;
+          order: -1;
+        }
+      }
+    }
+  }
+
+  @include section-animate {
+    .testimonial-single .content{
+      > * {
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+      }
+      > *:first-child {
+        transform: translateX(10vw);
+      }
+      > *:last-child {
+        transform: translateX(-10vw);
+      }
+    }
+    &.animate {
+      .testimonial-single .content{
+        > * {
+          opacity: 1;
+          transform: translateX(0vw);
+        }
+      }  
+    }
+  }
+</style>
+
+<div class="testimonial-single mini" data-testimonial-single>
+  <div class="content">
+    { !!testimonial && (
+    <header>
+      <div class='text'>
+        <h4 class='section_headline'>{ name }</h4>
+        <div class='mini_headline'>{ title } <br/> <strong>{ company }</strong></div>
+      </div>
+      <div class="media">
+        { headshot_image && (
+        <img src={headshot_x1} class="headshot"
+          srcset={`${headshot_x1}, ${headshot_x2} 2x`}
+          alt={`photo of ${name}`} width="110" height="110">
+        )}
+        { svg_logo && (
+        <img src={svg_logo} class="logo"
+          alt={`${company} logo`} width="60" height="60">
+        )}
+      </div>
+    </header>
+    <div class="body" set:html={md.render(testimonial_textarea)}></div>
+    )}
+    { !testimonial && (
+    <script>console.error('No testimonial found');</script>
+    )}
+  </div>
+</div>

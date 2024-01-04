@@ -89,7 +89,7 @@ content_blocks:
           * You're an agency or company that requires time tracking.
 
           * You will be reselling my services as your own.
-  - _bookshop_name: cards/testimonials
+  - _bookshop_name: testimonial/cards
     content: >-
       <h3 class="h2">Client stories</h3>
 
@@ -142,9 +142,10 @@ content_blocks:
       transition: curve
       background: secondary
     layout:
-      image_align: left
-      image_width: large
-      image_vert: center
+      format: top_hat
+      items: grid_2
+      media_align: start
+      is_mini: true
     grid_items:
       - image:
         content: >-
@@ -214,16 +215,19 @@ content_blocks:
       src: /uploads/pages/web-dev-logos.svg
       alt: whales and water
       title:
-      width: 812
-      height: 349
+      width: 900
+      height: 
       loading: lazy
     section:
       transition: swoosh
       background: primary
       animation: true
     layout:
-      image_align: right
-      image_width: large
+      format: left
+      content_align: center
+      media_align: center
+      media_expand: true
+      is_mini: true
   - _bookshop_name: faqs
     content: >-
       <h4 class="h2"><strong>Frequently Asked Questions</strong></h4>

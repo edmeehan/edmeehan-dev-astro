@@ -5,7 +5,7 @@ spec:
   description: Display multiple testimonials in cards
   icon: record_voice_over
   tags:
-    - cards
+    - testimonial
 
 blueprint:
   content: >-

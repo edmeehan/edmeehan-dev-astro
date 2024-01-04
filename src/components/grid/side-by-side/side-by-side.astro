@@ -2,18 +2,17 @@
 import MarkdownIt from 'markdown-it';
 import Image from 'src/components/global/image/image.astro';
 import CTA from 'src/components/global/cta/cta.astro';
-const { content, image, cta, layout, section } = Astro.props;
+const { content, image, cta, layout } = Astro.props;
 const md = new MarkdownIt({ html: true });
 ---
 <style lang="scss" is:global>
   .grid-sbs {
     @extend %primary-wrapper;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     gap: 3rem;
-    flex-direction: column-reverse;
     padding: 3.5rem 0;
-
 
     @include media-tablet-max {
       .content {
@@ -26,15 +25,19 @@ const md = new MarkdownIt({ html: true });
     }
 
     @include media-tablet {
-      flex-direction: row;
-      align-items: center;
       gap: 1.5rem;
+      justify-content: center;
+      flex-direction: row;
+      align-items: stretch;
 
-      .image--small {
-        flex: 0 0 50%;
+      .content {
+        align-self: var(--align);
       }
-      .image--large {
-        flex: 0 0 65%;
+      .media {
+        align-self: var(--align);
+        &--expand {
+          flex: 1 0 auto;
+        }
       }
 
       &.grid-sbs--left {}
@@ -51,7 +54,7 @@ const md = new MarkdownIt({ html: true });
     }
   }
 
-  .section--animate {
+  @include section-animate {
     .grid-sbs {
       > * {
         opacity: 0;
@@ -74,8 +77,17 @@ const md = new MarkdownIt({ html: true });
     }
   }
 </style>
-<div class:list={['grid-sbs','mini',`grid-sbs--${layout.image_align}`]} data-grid-side-by-side>
-  <div class:list={[`image--${layout.image_width}`]}>
+<div data-grid-side-by-side
+  class:list={[
+    'grid-sbs',
+    { mini: layout.is_mini },
+    `grid-sbs--${layout.format}`
+  ]}>
+  <div class:list={[
+      "media",
+      {"media--expand": layout.media_expand }
+    ]}
+    style={{'--align': layout.media_align, '--justify': layout.media_justify }}>
     { image && <Image image={image}
       srcset={[400,500,600,700,800,1000,1200,1400,1600]}
       sizes={ layout.image_width === 'small'
@@ -84,7 +96,7 @@ const md = new MarkdownIt({ html: true });
       }
     />}
   </div>
-  <div class="content">
+  <div class="content" style={{'--align': layout.content_align}}>
     { content && <div class="rt" set:html={md.render(content)}></div>}
     { cta && <CTA {...cta} />}
   </div>
