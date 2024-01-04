@@ -117,11 +117,11 @@ content_blocks:
       text_align: center
 seo:
   no_index: false
-  page_title: Expert Shopify Plus Development Services
+  page_title: Shopify Theme & App Integration Specialist
   page_description: >-
-    Discover top-tier Shopify Plus development services tailored to upscale your
-    e-commerce business. Elevate your Shopify Plus store today and drive growth,
-    engagement, and sales.
+    Elevate your online store with Ed Meehan's Shopify expertise in theme
+    development, app integration, and analytics. Based in San Diego, Ed offers
+    tailored solutions for dynamic e-commerce growth and customer engagement.
   featured_image:
   open_graph_type: website
   canonical_url:
