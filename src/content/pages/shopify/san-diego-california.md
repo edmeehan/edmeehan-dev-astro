@@ -34,11 +34,11 @@ content_blocks:
       transition: curve
       background: primary
 seo:
-  no_index: false
+  no_index: true
   page_title:
   page_description:
   featured_image:
   open_graph_type: website
   canonical_url:
-hidden: false
+hidden: true
 ---
