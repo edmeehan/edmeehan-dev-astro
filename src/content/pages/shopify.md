@@ -27,7 +27,7 @@ content_blocks:
     cta:
       _bookshop_name: global/cta
       label: Reach out and introduce yourself
-      link:
+      link: /consultation-request/
       style: secondary
       new_tab: false
     section:
@@ -109,7 +109,7 @@ content_blocks:
     cta:
       _bookshop_name: global/cta
       label: Contact Me Now
-      link:
+      link: /consultation-request/
       style: loud
       new_tab: false
     section:
