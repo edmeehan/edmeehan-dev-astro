@@ -55,11 +55,13 @@ content_blocks:
       presence.
     image:
       _bookshop_name: global/image
-      src: /uploads/placeholders/splash_sm.png
-      alt: test
-      title: test
-      width: 575
-      height: 500
+      src: /uploads/pages/shopify-box-comp.png
+      alt: >-
+        an open laptop with the Shopify logo on the screen near a stack of
+        shipping boxes
+      title: Shopify Expert
+      width: 600
+      height: 600
       loading: lazy
     cta:
     grid_items:
