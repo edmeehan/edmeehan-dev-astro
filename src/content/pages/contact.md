@@ -19,8 +19,8 @@ content_blocks:
       I no longer answer unknown numbers.
 
 
-      **Your information is safe with me.** I do not sell any information to
-      third parties and will only share your information if you ask me to.
+      **Your email is safe with me.** I do not sell any information to third
+      parties and will only share your information if you ask me to.
     form:
       _bookshop_name: form/builder
       name: contact
@@ -47,8 +47,8 @@ content_blocks:
           required: true
 seo:
   no_index: false
-  page_title: Contact freelance web developer in San Diego, California
-  page_description: You can contact me by phone or email by filling out the form on this page.
+  page_title: Contact Me
+  page_description: A simple form awaits you here. Nothing more to say except hello.
   featured_image:
   open_graph_type:
   canonical_url:

@@ -38,6 +38,12 @@
         },
         {
           "_bookshop_name": "global/link",
+          "label": "Shopify",
+          "link": "/shopify/",
+          "new_tab": false
+        },
+        {
+          "_bookshop_name": "global/link",
           "label": "Analytics",
           "link": "/analytics/",
           "new_tab": false
