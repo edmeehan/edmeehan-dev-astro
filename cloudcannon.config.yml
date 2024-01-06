@@ -13,7 +13,7 @@ collections_config:
   pages:
     path: src/content/pages
     output: true
-    url: /[slug]/index.html
+    url: /[full_slug]/index.html
     name: Pages
     icon: web
     singular_name: Page
